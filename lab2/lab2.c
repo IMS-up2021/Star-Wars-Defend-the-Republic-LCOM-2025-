@@ -32,7 +32,8 @@ int main(int argc, char *argv[]) {
 int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
 
   
-  int ipc_status;
+  int ipc_status, r;
+  uint8_t irq_set;
   message msg;
 
   while( 1 ) { /* You may want to use a different condition */

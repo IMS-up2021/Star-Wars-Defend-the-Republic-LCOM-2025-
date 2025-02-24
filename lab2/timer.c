@@ -17,24 +17,34 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   
   controlWord = (controlWord & 0x0F) | TIMER_LSB_MSB;
 
-  // TODO
+  uint32_t counter = TIMER_FREQ / freq;
+  uint8_t lsb, msb;
+  util_get_LSB(counter, &lsb);
+  util_get_MSB(counter, &msb);
 
-
+  uint8_t selectedTimer
   switch (timer) {
   case 0:
     controlWord |= TIMER_SEL0;
+    selectedTimer = TIMER_0;
     break;
   case 1:
     controlWord |= TIMER_SEL1;
+    selectedTimer = TIMER_1;
     break;
   case 2:
     controlWord |= TIMER_SEL2;
+    selectedTimer = TIMER_2;
     break;
   default:
     return 1;
   }
 
+  if(sys_outb(TIMER_CTRL, controlWord) != 0) return 1;
 
+  if(sys_outb(counter, lsb) != 0) return 1;
+  if(sys_outb(counter, msb) != 0) return 1;
+  
   return 0;
 }
 
