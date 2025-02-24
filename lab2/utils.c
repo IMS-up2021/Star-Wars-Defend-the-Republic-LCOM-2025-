@@ -2,23 +2,24 @@
 
 #include <stdint.h>
 
+// Least significant bits
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  if (lsb == NULL) return 1; 
+  *lsb = val & 0xFF;
+  return 0;
 }
 
+// Most significant bits
 int(util_get_MSB)(uint16_t val, uint8_t *msb) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
+  if (msb == NULL) return 1;
+  *msb = (val >> 8);
   return 1;
 }
 
 int (util_sys_inb)(int port, uint8_t *value) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  if (value == NULL) return 1;
+  uint32_t temp_val;
+  int ret = sys_inb(port, &temp_val);
+  *value =  0xFF & temp_val;
+  return ret;
 }
