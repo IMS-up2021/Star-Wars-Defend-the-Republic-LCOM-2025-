@@ -16,6 +16,7 @@ int(util_get_MSB)(uint16_t val, uint8_t *msb) {
   return 1;
 }
 
+// Transform 32 bit output in 8 bit output. Error prevention.
 int (util_sys_inb)(int port, uint8_t *value) {
   if (value == NULL) return 1;
   uint32_t temp_val;

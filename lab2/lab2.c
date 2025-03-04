@@ -46,7 +46,7 @@ int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
           switch (_ENDPOINT_P(msg.m_source)) {
                case HARDWARE: /* hardware interrupt notification */				
                    if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
-                       ...   /* process it */
+                          /* process it */
                    }
                    break;
                default:

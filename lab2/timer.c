@@ -50,7 +50,8 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
 // subscrição das interrupções
 int (timer_subscribe_int)(uint8_t *bit_no) {
-  *bit_no = hook_id;
+  if(bit_no == NULL) return 1;
+  *bit_no = BIT(hook_id);
   int sys_policy = sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id);
   if (sys_policy != 0) return 1;
   return 0;
@@ -68,18 +69,42 @@ void (timer_int_handler)() {
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   if(st == NULL || timer < 0  || timer > 2) return 1; // interruption in case: the address memory is not defined, and the timer not int the correct interval
-  uint8_t RBC = (TIMER_RB_CMD | TIMER_RB_SEL(timer));
-  sys_outb(TIMER_CTRL, RBC);
-
+  uint8_t RBC = (TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer)); // construímos o READ BACK COMMAND (ver tabela)
+  if(sys_outb(TIMER_CTRL, RBC) != 0) return 1; 
+  if(util_sys_inb(TIMER_0 + timer, st)) return 1;
   return 0;
 }
 
-int (timer_display_conf)(uint8_t timer, uint8_t st,
-                        enum timer_status_field field) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
+  union timer_status_field val;
 
-  return 1;
+  switch(field) {
+
+    case tsf_all:
+      val.byte = st;
+      break;
+    case tsf_initial:
+      st = (st >> 4); & 0x03; // Bitwise AND to isolate the last two bits (0x03 = 0011)
+      if(st == 1) val.in_mode = LSB_only;
+      else if (st == 2) val.in_mode = MSB_only
+      else if (st == 3) val.in_mode = MSB_after_LSB;
+      else val.in_mode = INVAL_val;
+      break;
+    case tsf_mode:
+      st = (st >> 1) & 0x07;
+      if(st == 6) val.count_mode = 2; // Mode 2 - Rate Generator
+      else if(st == 7) val.count_mode =3; // Mode 3 - Square Wave Generator
+      else val.count_mode = st;
+      break;
+    case tsf_base:
+      val.bcd = st & TIMER_BCD;
+      break;
+    default:
+      return 1;
+  }
+
+  if(timer_print_config(timer, field, val) != 0) return 1;
+  return 0;
 }
 
 /*
