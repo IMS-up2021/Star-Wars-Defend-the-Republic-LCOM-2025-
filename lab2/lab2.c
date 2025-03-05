@@ -6,6 +6,12 @@
 
 extern int counter;
 
+/**
+ * @brief Main function of the program
+ * @param argc Number of arguments
+ * @param argv Arguments
+ * @return 0 if successful, 1 otherwise
+ */
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
@@ -30,6 +36,12 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
+/**
+ * @brief Timer Test Read Configuration - Test the reading of the configuration of a timer
+ * @param timer Timer to read the configuration
+ * @param field Field to display (all, initial, mode, base)
+ * @return 0 if successful, 1 otherwise
+ */
 int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
   uint8_t status;
   
@@ -44,11 +56,22 @@ int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
   return 0; //success
 }
 
+/**
+ * @brief Timer Test Time Base - Test the setting of the timer frequency
+ * @param timer Timer to set the frequency
+ * @param freq Frequency to set
+ * @return 0 if successful, 1 otherwise
+ */
 int(timer_test_time_base)(uint8_t timer, uint32_t freq)   {
   if(timer > 2 || freq < 19) return 1;
   return timer_set_frequency(timer, freq);
 }
 
+/**
+ * @brief Timer Test Interruption - Test the subscription to the interruption of the timer and then the unsubscription
+ * @param time Time to wait
+ * @return 0 if successful, 1 otherwise
+ */
 int(timer_test_int)(uint8_t time) {
   int ipc_status, r;
   uint8_t hook_id_timer;

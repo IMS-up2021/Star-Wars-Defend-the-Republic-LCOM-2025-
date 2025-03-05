@@ -8,6 +8,12 @@
 int counter = 0;
 int hook_id = 0;
 
+/**
+ * @brief Set the frequency of a timer
+ * @param timer Timer to configure
+ * @param freq Frequency to set
+ * @return 0 if successful, 1 otherwise
+ */
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
   if (freq > TIMER_FREQ || freq < 19) return 1; // freq can't go bellow 19 because after a certain point the counter does an overflow
@@ -48,7 +54,11 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   return 0;
 }
 
-// subscrição das interrupções
+/**
+ * @brief Subscribes and enables Timer 0 interrupts (Default type of Interruption: Pooling, changes to Interrupt)
+ * @param bit_no 
+ * @return 0 if successful, 1 otherwise
+ */
 int (timer_subscribe_int)(uint8_t *bit_no) {
   if(bit_no == NULL) return 1;
   *bit_no = BIT(hook_id);
@@ -57,16 +67,28 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
   return 0;
 }
 
-// desliga as interrupções
+/**
+ * @brief Unsubscribes Timer 0 interrupts (Default type of Interruption: Pooling, returns to it)
+ * @return 0 if successful, 1 otherwise
+ */
 int (timer_unsubscribe_int)() {
   if (sys_irqrmpolicy(&hook_id) != 0) return 1; 
   return 0;
 }
 
+/**
+ * @brief Timer interrupt handler - increments the counter
+ */
 void (timer_int_handler)() {
   counter++;
 }
 
+/**
+ * @brief Timer get Configuration - Reads the configuration of a timer, builds the READ BACK COMMAND and stores the configuration
+ * @param timer Timer to get the configuration
+ * @param st Address to store the configuration
+ * @return 0 if successful, 1 otherwise
+ */
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   if(st == NULL || timer < 0  || timer > 2) return 1; // interruption in case: the address memory is not defined, and the timer not int the correct interval
   uint8_t RBC = (TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer)); // construímos o READ BACK COMMAND (ver tabela)
@@ -75,6 +97,13 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   return 0;
 }
 
+/**
+ * @brief Timer display Configuration - Displays the configuration of a timer, by reading the READ BACK COMMAND
+ * @param timer Timer to display the configuration
+ * @param st Address that has stored the configuration
+ * @param field Field to display (all, initial, mode, base)
+ * @return 0 if successful, 1 otherwise
+ */
 int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
   union timer_status_field_val val;
 
@@ -106,9 +135,3 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
   if(timer_print_config(timer, field, val) != 0) return 1;
   return 0;
 }
-
-/*
-" make clean && make
-  lcom_run lab2 "config -t 0"
-"
-*/
