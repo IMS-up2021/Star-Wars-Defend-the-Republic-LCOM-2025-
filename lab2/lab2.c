@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+extern int counter;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -30,46 +31,30 @@ int main(int argc, char *argv[]) {
 }
 
 int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
-
+  uint8_t status;
   
-  int ipc_status, r;
-  uint8_t irq_set;
-  message msg;
+  // Retrieve timer configuration
+  int error = timer_get_conf(timer, &status);
+  if (error) { return error; } // Return error if retrieval fails
 
-  while( 1 ) { /* You may want to use a different condition */
-      /* Get a request message. */
-      if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
-          printf("driver_receive failed with: %d", r);
-          continue;
-      }
-      if (is_ipc_notify(ipc_status)) { /* received notification */
-          switch (_ENDPOINT_P(msg.m_source)) {
-               case HARDWARE: /* hardware interrupt notification */				
-                   if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
-                          /* process it */
-                   }
-                   break;
-               default:
-                   break; /* no other notifications expected: do nothing */	
-           }
-       } else { /* received a standard message, not a notification */
-           /* no standard messages expected: do nothing */
-       }
-   }
+  // Display the configuration based on the requested field
+  error = timer_display_conf(timer, status, field);
+  if(error) { return error; } // Return error if display fails
 
-  return 1;
+  return 0; //success
 }
 
-int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+int(timer_test_time_base)(uint8_t timer, uint32_t freq)   {
+  return timer_set_frequency(timer, freq);
 }
 
 int(timer_test_int)(uint8_t time) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
 
-  return 1;
+  int error = timer_subscribe_int(time);
+  if(error) return error;
+
+  error = timer_unsubscribe_int();
+  if(error) return error;
+
+  return 0;
 }

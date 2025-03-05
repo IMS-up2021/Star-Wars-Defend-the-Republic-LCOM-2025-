@@ -22,7 +22,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   util_get_LSB(counter, &lsb);
   util_get_MSB(counter, &msb);
 
-  uint8_t selectedTimer
+  uint8_t selectedTimer;
   switch (timer) {
   case 0:
     controlWord |= TIMER_SEL0;
@@ -76,7 +76,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 }
 
 int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
-  union timer_status_field val;
+  union timer_status_field_val val;
 
   switch(field) {
 
@@ -84,9 +84,9 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
       val.byte = st;
       break;
     case tsf_initial:
-      st = (st >> 4); & 0x03; // Bitwise AND to isolate the last two bits (0x03 = 0011)
+      st = (st >> 4) & 0x03; // Bitwise AND to isolate the last two bits (0x03 = 0011)
       if(st == 1) val.in_mode = LSB_only;
-      else if (st == 2) val.in_mode = MSB_only
+      else if (st == 2) val.in_mode = MSB_only;
       else if (st == 3) val.in_mode = MSB_after_LSB;
       else val.in_mode = INVAL_val;
       break;
