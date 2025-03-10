@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['utils_2ec_0',['utils.c',['../utils_8c.html',1,'']]]
+  ['timer_2ec_0',['timer.c',['../lab2_2timer_8c.html',1,'(Global Namespace)'],['../lab3_2timer_8c.html',1,'(Global Namespace)']]]
 ];

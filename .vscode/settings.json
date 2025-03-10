@@ -1,7 +1,5 @@
 {
     "files.associations": {
-        "lcf.h": "c",
-        "stdint.h": "c",
-        "timer.h": "c"
+        "keyboard.h": "c"
     }
 }

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['i8254_0',['i8254',['../group__i8254.html',1,'']]],
-  ['i8254_2eh_1',['i8254.h',['../i8254_8h.html',1,'']]]
+  ['hook_5fid_0',['hook_id',['../lab2_2timer_8c.html#a96f78a87d064e47d627d222f67a8d012',1,'hook_id:&#160;timer.c'],['../lab3_2timer_8c.html#a96f78a87d064e47d627d222f67a8d012',1,'hook_id:&#160;timer.c']]]
 ];

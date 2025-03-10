@@ -2,6 +2,10 @@
 
 #include <stdint.h>
 
+#ifdef LAB3
+uint32_t counter_kbd = 0;
+#endif
+
 /**
  * @brief Get the Least significant bits of a 16 bit value and store it in a 8 bit variable
  * @param val 16 bit value

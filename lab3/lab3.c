@@ -5,6 +5,14 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "keyboard.h"
+#include "KBC.h"
+
+extern uint32_t counter_kbd;
+extern uint8_t scancode;
+extern int r;
+
+
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
@@ -30,17 +38,40 @@ int main(int argc, char *argv[]) {
 }
 
 int(kbd_test_scan)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  int ipc_status;
+  uint8_t irq_set;
 
-  return 1;
+  message msg;
+
+  if(kbd_subscribe_int(&irq_set) != 0) return 1;
+  
+  while (scancode != ESC_BREAK) {
+    if( driver_receive(ANY, &msg, &ipc_status) != 0) {
+      printf("error");
+      continue;
+    }
+    if(is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source))
+      {
+      case HARDWARE:
+        if(msg.m_notify.interrupts & irq_set) {
+          kbc_ih(); // adiciona ao contador interno
+          kbd_print_scancode(!(scancode & MAKE_CODE), scancode == TWO_BYTE_CODE ? 2 : 1, &scancode);
+          }
+        }
+     
+  } }
+
+  if (kbd_unsubscribe_int() != 0) return 1;
+  if (kbd_print_no_sysinb(counter_kbd) != 0) return 1;
+
+  return 0;
 }
 
 int(kbd_test_poll)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+ /* To be completed by the students */
+ printf("%s is not yet implemented!\n", __func__);
+ return 1;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {

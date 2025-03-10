@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['util_5fget_5flsb_0',['util_get_LSB',['../utils_8c.html#a81621440b3d65680979425e39aa8c789',1,'utils.c']]],
-  ['util_5fget_5fmsb_1',['util_get_MSB',['../utils_8c.html#a6a880076cd2ec468834438b6e0c58836',1,'utils.c']]],
-  ['util_5fsys_5finb_2',['util_sys_inb',['../utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4',1,'utils.c']]]
+  ['read_5fkbc_5fout_0',['read_kbc_out',['../KBC_8c.html#a76afa4b9f70ee16ae069af6d5fade345',1,'read_kbc_out(uint8_t port, uint8_t *cmdByteOut):&#160;KBC.c'],['../KBC_8h.html#a76afa4b9f70ee16ae069af6d5fade345',1,'read_kbc_out(uint8_t port, uint8_t *cmdByteOut):&#160;KBC.c']]],
+  ['read_5fkbc_5fstatus_1',['read_kbc_status',['../KBC_8c.html#ac024af91b156e4fc61ee3886b891de21',1,'read_KBC_status(uint8_t *status):&#160;KBC.c'],['../KBC_8h.html#a9edb3a96f97468ad130824d48604a918',1,'read_KBC_status(uint8_t *status) int(write_kbc_cmd)(uint8_t port:&#160;KBC.h']]]
 ];
