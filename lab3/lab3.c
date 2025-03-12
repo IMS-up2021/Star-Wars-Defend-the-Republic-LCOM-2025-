@@ -9,6 +9,7 @@
 #include "KBC.h"
 
 extern uint32_t counter_kbd;
+extern uint32_t counter;
 extern uint8_t scancode;
 extern int r;
 
@@ -60,7 +61,8 @@ int(kbd_test_scan)() {
           }
         }
      
-  } }
+    } 
+  }
 
   if (kbd_unsubscribe_int() != 0) return 1;
   if (kbd_print_no_sysinb(counter_kbd) != 0) return 1;
@@ -78,8 +80,42 @@ int(kbd_test_poll)() {
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  int ipc_status;
+  uint8_t irq_set_kbd, irq_set_timer;
+  int seconds = 0;
+  message msg;
 
-  return 1;
+  if(timer_subscribe_int(&irq_set_timer) != 0) return 1;
+  if(kbd_subscribe_int(&irq_set_kbd) != 0) return 1;
+  
+  while (scancode != ESC_BREAK && seconds < n) {
+    if( driver_receive(ANY, &msg, &ipc_status) != 0) {
+      printf("error");
+      continue;
+    }
+    if(is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source))
+      {
+      case HARDWARE:
+        if(msg.m_notify.interrupts & irq_set_kbd) {
+          kbc_ih(); 
+          kbd_print_scancode(!(scancode & MAKE_CODE), scancode == TWO_BYTE_CODE ? 2 : 1, &scancode);
+          seconds = 0;
+          counter = 0;
+          }
+
+        if (msg.m_notify.interrupts & irq_set_timer) {
+          timer_int_handler();
+          if (counter % 60 == 0) seconds++;
+        }
+        break;
+      }
+    } 
+  }
+
+  if (timer_unsubscribe_int() != 0) return 1;
+  if (kbd_unsubscribe_int() != 0) return 1;
+  if (kbd_print_no_sysinb(counter_kbd) != 0) return 1;
+
+  return 0;
 }
