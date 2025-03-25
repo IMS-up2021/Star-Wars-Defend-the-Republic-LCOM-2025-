@@ -2,7 +2,7 @@
 
 
 int (read_KBC_status)(uint8_t* status){
-    return util_sys_inb(KBD_STAT_REG, status);
+    return util_sys_inb(KBC_STATUS_REG, status);
 }
 
 int (write_kbc_cmd)(uint8_t port, uint8_t cmdByte) {
@@ -45,14 +45,22 @@ int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut) {
                 printf("Error: output read failed\n");
                 return 1;
             }
-            if((status & ERR_PARITY) != 0) {
+            if((status & PARITY_ERROR) != 0) {
                 printf("Error: Parity error\n");
                 return 1;
             }
-            if((status & ERR_TIMEOUT) != 0) {
+            if((status & TIMEOUT_ERROR) != 0) {
                 printf("Error: Timeout error\n");
                 return 1;
             }
+            if (mouse && !(status & BIT(5))) {              
+                printf("Error: Mouse output not found\n");  
+                return 1;
+            } 
+            if (!mouse && (status & BIT(5))) {                
+                printf("Error: Keyboard output not found\n"); 
+                return 1;
+            } 
             return 0;
         }
         tickdelay(micros_to_ticks(WAIT_KBC));
