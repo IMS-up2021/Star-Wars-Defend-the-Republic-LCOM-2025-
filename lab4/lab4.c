@@ -16,6 +16,17 @@ extern uint8_t byte_index;
 extern int counter;
 
 
+// Definição dos estados da máquina de estados
+typedef enum {
+  START,
+  UP,
+  VERTEX,
+  DOWN,
+  END
+} State;
+
+State state = START;
+
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
@@ -125,14 +136,94 @@ int (mouse_test_async)(uint8_t idle_time) {
   return 0;
 }
 
-int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerence) {
-    /* To be completed */
-    printf("%s: under construction\n", __func__);
-    return 1;
+// função auxiliar
+void update_state_machine(uint8_t tolerence) {
+  switch (state) {
+      case START:
+          // Transição I
+          if (mouse_packet.lb && !mouse_packet.rb && !mouse_packet.mb) state = UP;
+          break;
+      case UP:
+          // Transição II: Se soltar o botão esquerdo
+          if (!mouse_packet.lb) state = VERTEX;
+          // Transição III: Se o botão direito for pressionado
+          else if (mouse_packet.rb) state = END;
+          break;
+      case VERTEX:
+          // Transição IV: Se o botão esquerdo for pressionado novamente
+          if (mouse_packet.lb) state = DOWN;
+          // Transição F: Se o botão direito for pressionado
+          else if (mouse_packet.rb) state = END;
+          break;
+      case DOWN:
+          // Transição V: Se soltar o botão esquerdo
+          if (!mouse_packet.lb) state = START;
+          // Transição VI: Se o botão direito for pressionado
+          else if (mouse_packet.rb) state = END;
+          break;
+      case END:
+          // Estado final, nenhuma transição adicional
+          break;
+  }
 }
 
-int (mouse_test_remote)(uint16_t period, uint8_t cnt) {
-    /* This year you need not implement this. */
-    printf("%s(%u, %u): under construction\n", __func__, period, cnt);
-    return 1;
+int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerence) {
+  int ipc_status;
+  message msg;
+  uint8_t mouse_mask;
+
+  if (mouse_subscribe_int(&mouse_mask) != 0) return 1;
+  if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
+
+  while (state != END) {
+    if (driver_receive(ANY, &msg, &ipc_status) != 0){
+      printf("Error");
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)){
+      switch(_ENDPOINT_P(msg.m_source)){
+        case HARDWARE: 
+          if (msg.m_notify.interrupts & mouse_mask){
+            mouse_ih();
+            mouse_sync_bytes();
+            if (byte_index == 3) {
+              mouse_bytes_to_packet();
+              update_state_machine(tolerence); // Atualizar a Máquina de Estados
+              byte_index = 0;
+            }
+          }
+      }
+    }
+  }
+
+  if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
+  if (mouse_unsubscribe_int() != 0) return 1;
+
+  return 0;
+}
+
+int (mouse_test_remote)(uint16_t period, uint8_t cnt) { // remote mode (polling já é o default de LCF)
+
+  while (cnt) {
+    if (mouse_write(MOUSE_READ_DATA) != 0) return 1;
+    mouse_ih();
+    mouse_sync_bytes();    
+    if (byte_index == 3) {
+        mouse_bytes_to_packet();
+        mouse_print_packet(&mouse_packet);
+        byte_index = 0;
+        cnt--;
+        tickdelay(micros_to_ticks(period * 1000));    // microssegundos até ler o próximo pacote
+    }
+  }
+
+  if (mouse_write(ENABLE_STREAM_MODE) != 0) return 1;
+  if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
+
+  // KBC volta ao estado normal
+  uint8_t commandByte = minix_get_dflt_kbc_cmd_byte(); // isto já é dado pelo LCF
+  if (write_kbc_cmd(KBC_IN_CMD, KBC_WRITE_CMD) != 0) return 1;
+  if (write_kbc_cmd(KBC_WRITE_CMD, commandByte) != 0) return 1;
+
+  return 0;
 }
