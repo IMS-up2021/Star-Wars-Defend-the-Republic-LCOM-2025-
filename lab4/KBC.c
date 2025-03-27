@@ -29,7 +29,7 @@ int (write_kbc_cmd)(uint8_t port, uint8_t cmdByte) {
     return 1;
 }
 
-int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut) {
+int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut, uint8_t mouse) {
 
     uint8_t status;
     uint8_t attemps = MAX_ATTEMPS;
@@ -57,7 +57,7 @@ int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut) {
                 printf("Error: Mouse output not found\n");  
                 return 1;
             } 
-            if (!mouse && (status & BIT(5))) {                
+            if (mouse && (status & BIT(5))) {                
                 printf("Error: Keyboard output not found\n"); 
                 return 1;
             } 
@@ -69,6 +69,7 @@ int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut) {
     return 1;    
 }
 
+/*
 int (kbc_restore)() {
     uint8_t commandWord;
 
@@ -82,3 +83,4 @@ int (kbc_restore)() {
 
     return 0; // Retorna sucesso
 }
+*/

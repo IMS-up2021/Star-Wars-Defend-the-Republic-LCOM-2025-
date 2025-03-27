@@ -1,7 +1,7 @@
 #include "mouse.h"
 
-struct packet mouse_packet
-int mouse_hook_id = 4 // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
+struct packet mouse_packet;
+int mouse_hook_id = 4; // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
 uint8_t byte_index = 0;
 uint8_t current_byte; // último byte a ser lido
 uint8_t mouse_bytes[3];
@@ -58,8 +58,8 @@ int (mouse_write)(uint8_t command) {
 
     do{
         attemps--;
-        if (write_KBC_command(KBC_IN_CMD, WRITE_BYTE_MOUSE)) return 1;
-        if (write_KBC_command(KBC_OUT_CMD, command)) return 1;
+        if (write_kbc_cmd(KBC_IN_CMD, WRITE_BYTE_MOUSE)) return 1;
+        if (write_kbc_cmd(KBC_OUT_CMD, command)) return 1;
         tickdelay(micros_to_ticks(WAIT_KBC));
         if (util_sys_inb(KBC_OUT_CMD, &mouse_response)) return 1;
         if (mouse_response == ACK) return 0;

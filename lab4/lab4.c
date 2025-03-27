@@ -5,6 +5,15 @@
 #include <stdio.h>
 
 // Any header files included below this line should have been created by you
+#include "i8042.h"
+#include "i8254.h"
+#include "KBC.h"
+#include "mouse.h"
+
+extern struct packet mouse_packet;
+extern uint8_t byte_index;
+extern int timer_counter;
+
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -32,9 +41,40 @@ int main(int argc, char *argv[]) {
 
 
 int (mouse_test_packet)(uint32_t cnt) {
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, cnt);
-    return 1;
+    int ipc_status;
+    message msg;
+    uint8_t mouse_mask; //interpretação das interrupções
+
+    if (mouse_subscribe_int(&mouse_mask) != 0) return 1;
+    if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
+
+    while (cnt) { // cnt pacotes
+      if (driver_receive(ANY, &msg, &ipc_status) != 0){
+        printf("Error");
+        continue;
+      }
+      if (is_ipc_notify(ipc_status)){
+        switch(_ENDPOINT_P(msg.m_source)){
+          case HARDWARE: 
+            if (msg.m_notify.interrupts & mouse_mask){  // Se for uma interrupção do rato
+              mouse_ih();                               // Lemos mais um byte
+              mouse_sync_bytes();                       // Sincronizamos esse byte no pacote respectivo
+              if (byte_index == 3) {                    // Quando tivermos três bytes do mesmo pacote
+                mouse_bytes_to_packet();                // Formamos o pacote
+                mouse_print_packet(&mouse_packet);      // Mostramos o pacote
+                byte_index = 0;
+                cnt--;
+              }
+            }
+            break;
+        }
+      }
+    }
+
+    if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
+    if (mouse_unsubscribe_int() != 0) return 1;
+
+    return 0;
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
@@ -43,7 +83,7 @@ int (mouse_test_async)(uint8_t idle_time) {
     return 1;
 }
 
-int (mouse_test_gesture)() {
+int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerence) {
     /* To be completed */
     printf("%s: under construction\n", __func__);
     return 1;

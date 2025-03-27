@@ -26,7 +26,7 @@ int (write_kbc_cmd)(uint8_t port, uint8_t cmdByte);
  * @param cmdByteOut Address of the variable to store the output
  * @return 0 if successful, 1 otherwise
  */
-int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut);
+int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut, uint8_t mouse);
 
 /**
  * @brief Writes a command to the KBC
@@ -34,7 +34,7 @@ int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut);
  * @param cmdByte Command to write
  * @return 0 if successful, 1 otherwise
  */
-int (kbc_restore)();
+// int (kbc_restore)();
 
 
 
