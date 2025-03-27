@@ -1,5 +1,6 @@
 // IMPORTANT: you must include the following line in all your C files
 #include <lcom/lcf.h>
+#include <lcom/lab4.h>
 
 #include <stdint.h>
 #include <stdio.h>
@@ -12,7 +13,7 @@
 
 extern struct packet mouse_packet;
 extern uint8_t byte_index;
-extern int timer_counter;
+extern int counter;
 
 
 int main(int argc, char *argv[]) {
@@ -41,46 +42,87 @@ int main(int argc, char *argv[]) {
 
 
 int (mouse_test_packet)(uint32_t cnt) {
-    int ipc_status;
-    message msg;
-    uint8_t mouse_mask; //interpretação das interrupções
+  int ipc_status;
+  message msg;
+  uint8_t mouse_mask; //interpretação das interrupções
 
-    if (mouse_subscribe_int(&mouse_mask) != 0) return 1;
-    if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
+  if (mouse_subscribe_int(&mouse_mask) != 0) return 1;
+  if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
 
-    while (cnt) { // cnt pacotes
-      if (driver_receive(ANY, &msg, &ipc_status) != 0){
-        printf("Error");
-        continue;
-      }
-      if (is_ipc_notify(ipc_status)){
-        switch(_ENDPOINT_P(msg.m_source)){
-          case HARDWARE: 
-            if (msg.m_notify.interrupts & mouse_mask){  // Se for uma interrupção do rato
-              mouse_ih();                               // Lemos mais um byte
-              mouse_sync_bytes();                       // Sincronizamos esse byte no pacote respectivo
-              if (byte_index == 3) {                    // Quando tivermos três bytes do mesmo pacote
-                mouse_bytes_to_packet();                // Formamos o pacote
-                mouse_print_packet(&mouse_packet);      // Mostramos o pacote
-                byte_index = 0;
-                cnt--;
-              }
+  while (cnt) { // cnt pacotes
+    if (driver_receive(ANY, &msg, &ipc_status) != 0){
+      printf("Error");
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)){
+      switch(_ENDPOINT_P(msg.m_source)){
+        case HARDWARE: 
+          if (msg.m_notify.interrupts & mouse_mask){  // Se for uma interrupção do rato
+            mouse_ih();                               // Lemos mais um byte
+            mouse_sync_bytes();                       // Sincronizamos esse byte no pacote respectivo
+            if (byte_index == 3) {                    // Quando tivermos três bytes do mesmo pacote
+              mouse_bytes_to_packet();                // Formamos o pacote
+              mouse_print_packet(&mouse_packet);      // Mostramos o pacote
+              byte_index = 0;
+              cnt--;
             }
-            break;
-        }
+          }
+          break;
       }
     }
+  }
 
-    if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
-    if (mouse_unsubscribe_int() != 0) return 1;
+  if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
+  if (mouse_unsubscribe_int() != 0) return 1;
 
-    return 0;
+  return 0;
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, idle_time);
-    return 1;
+
+  int ipc_status;
+  message msg;
+  uint8_t seconds = 0;
+  uint8_t mouse_mask = 0, timer_mask = 0;
+  uint16_t timer_freq = sys_hz();
+
+  if (mouse_subscribe_int(&mouse_mask) != 0) return 1;
+  if (timer_subscribe_int(&timer_mask) != 0) return 1;
+  if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
+
+  while (seconds < idle_time) {
+    if (driver_receive(ANY, &msg, &ipc_status) != 0){
+      printf("Error");
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)){
+      switch(_ENDPOINT_P(msg.m_source)){
+        case HARDWARE: 
+          if (msg.m_notify.interrupts & timer_mask) { // timer
+            timer_int_handler();
+            if (counter % timer_freq == 0) seconds++;
+          }
+          if (msg.m_notify.interrupts & mouse_mask){ // mouse
+            mouse_ih();
+            mouse_sync_bytes();
+            if (byte_index == 3) {
+              mouse_bytes_to_packet();
+              mouse_print_packet(&mouse_packet);
+              byte_index = 0;
+            }
+            seconds = 0;
+            counter = 0;
+          }
+          break;
+      }
+    }
+  }
+
+  if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
+  if (timer_unsubscribe_int() != 0) return 1;
+  if (mouse_unsubscribe_int() != 0) return 1;
+
+  return 0;
 }
 
 int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerence) {
