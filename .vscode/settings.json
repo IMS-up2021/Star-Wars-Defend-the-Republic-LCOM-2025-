@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "keyboard.h": "c"
+        "*.sqlbook": "sql",
+        "*.ndjson": "jsonl",
+        "*.dbclient-js": "javascript",
+        "keyboard.h": "c",
+        "lcf.h": "c"
     }
 }
