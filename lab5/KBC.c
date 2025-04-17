@@ -1,4 +1,5 @@
 #include "KBC.h"
+#include <lcom/lcf.h> // Include for u32_t definition
 
 
 int (read_KBC_status)(uint8_t* status){
@@ -75,7 +76,7 @@ int (kbc_restore)() {
     uint8_t commandWord;
 
     if(write_kbc_cmd(0x64, 0x20) != 0) return 1; // Solicita o byte de comando atual do KBC
-    if(read_kbc_out(0x60, &commandWord) != 0) return 1; // Lê o byte de comando (retornado pela porta 0x60)
+    if(read_kbc_out(0x60, &commandWord, 0) != 0) return 1; // Lê o byte de comando (retornado pela porta 0x60)
 
     commandWord = commandWord | BIT(0); // Define o bit 0 para ativar interrupções do teclado
 

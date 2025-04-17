@@ -7,10 +7,11 @@
 #include <stdio.h>
 
 // Any header files included below this line should have been created by you
-#include "graphic.h"
-#include "kbd.h"
-#include "utils.h"
-#include "VBE_MACROS.h"
+#include "graphics.h"
+#include "VBE.h"
+#include "i8042.h"
+#include "i8254.h"
+#include "keyboard.h"
 
 extern vbe_mode_info_t mode_info;
 extern uint8_t scancode[2];
@@ -94,11 +95,39 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  /* To be completed */
-  printf("%s(0x%03x, %u, 0x%08x, %d): under construction\n", __func__,
-         mode, no_rectangles, first, step);
 
-  return 1;
+  if(set_frame_buffer(mode) != 0) return 1;
+  if(set_graphic_mode(mode) != 0) return 1;
+
+  uint16_t width = mode_info.XResolution / no_rectangles;
+  uint16_t height = mode_info.YResolution / no_rectangles;
+
+  for(uint8_t row = 0; row < no_rectangles; row++) {
+    for(uint8_t col = 0; col < no_rectangles; col++) {
+      uint32_t color;
+
+      if(mode_info.MemoryModel == DIRECT_COLOR) {
+        uint32_t red = (R(first) + col * step) % (1 << mode_info.RedMaskSize);
+        uint32_t green = (G(first) + row * step) % (1 << mode_info.GreenMaskSize);
+        uint32_t blue = (B(first) + (col + row) * step) % (1 << mode_info.BlueMaskSize);
+
+        color = (red << mode_info.RedFieldPosition) |
+                (green << mode_info.GreenFieldPosition) |
+                (blue << mode_info.BlueFieldPosition);
+      } else {
+        color = (first + (row * no_rectangles + col) * step) % (1 << mode_info.BitsPerPixel);
+      }
+
+      if (vg_draw_rectangle(col * width, row * height, width, height, color) != 0) {
+        return 1;
+      }
+    }
+  }
+
+  if(waiting_ESC_key() != 0) return 1;
+  if(vg_exit() != 0) return 1;
+
+  return 0;
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {

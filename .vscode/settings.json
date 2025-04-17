@@ -4,6 +4,14 @@
         "*.ndjson": "jsonl",
         "*.dbclient-js": "javascript",
         "keyboard.h": "c",
-        "lcf.h": "c"
+        "lcf.h": "c",
+        "timer.h": "c",
+        "graphics.h": "c",
+        "vbe.h": "c",
+        "stdint.h": "c",
+        "stdio.h": "c",
+        "i8254.h": "c",
+        "kbc.h": "c",
+        "i8042.h": "c"
     }
 }

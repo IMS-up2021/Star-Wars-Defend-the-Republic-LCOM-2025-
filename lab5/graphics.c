@@ -49,8 +49,7 @@ int (set_frame_buffer)(uint16_t mode){
     memset(&mode_info, 0, sizeof(mode_info));
     if(vbe_get_mode_info(mode, &mode_info)) return 1;
   
-    uint8_t bytes_per_pixel = (BitsPerPixel + 7) / 8;
-    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
+    uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
     
     struct minix_mem_range physic_addresses;
     physic_addresses.mr_base = mode_info.PhysBasePtr; 
@@ -135,5 +134,5 @@ uint32_t (G)(uint32_t first){
 
 
 uint32_t (B)(uint32_t first) {
-    return ((1 << mode_info.BlueMaskSize) - 1) & (first >> mousse_info.BlueFieldPosition);
+    return ((1 << mode_info.BlueMaskSize) - 1) & (first >> mode_info.BlueFieldPosition);
 }

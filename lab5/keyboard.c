@@ -19,7 +19,7 @@ void (kbc_ih)() {
     printf("Error: Could not read scancode!\n");
 }
 
-int(keyboard_restore)() {
+int(kbd_restore)() {
     uint8_t commandByte;
 
     if(write_kbc_cmd(KBC_IN_CMD, KBC_READ_CMD) != 0) return 1;
