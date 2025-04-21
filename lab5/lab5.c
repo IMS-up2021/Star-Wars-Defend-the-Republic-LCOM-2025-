@@ -95,18 +95,26 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
+  // Retrieve mode information using vbe_get_mode_info()
+  if (vbe_get_mode_info(mode, &mode_info) != 0) {
+    printf("Error: Failed to get VBE mode info\n");
+    return 1;
+  }
 
-  if(set_frame_buffer(mode) != 0) return 1;
-  if(set_graphic_mode(mode) != 0) return 1;
+  // Set the frame buffer and graphics mode
+  if (set_frame_buffer(mode) != 0) return 1;
+  if (set_graphic_mode(mode) != 0) return 1;
 
+  // Calculate rectangle dimensions
   uint16_t width = mode_info.XResolution / no_rectangles;
   uint16_t height = mode_info.YResolution / no_rectangles;
 
-  for(uint8_t row = 0; row < no_rectangles; row++) {
-    for(uint8_t col = 0; col < no_rectangles; col++) {
+  // Draw the pattern of rectangles
+  for (uint8_t row = 0; row < no_rectangles; row++) {
+    for (uint8_t col = 0; col < no_rectangles; col++) {
       uint32_t color;
 
-      if(mode_info.MemoryModel == DIRECT_COLOR) {
+      if (mode_info.MemoryModel == DIRECT_COLOR) { // Direct color mode
         uint32_t red = (R(first) + col * step) % (1 << mode_info.RedMaskSize);
         uint32_t green = (G(first) + row * step) % (1 << mode_info.GreenMaskSize);
         uint32_t blue = (B(first) + (col + row) * step) % (1 << mode_info.BlueMaskSize);
@@ -114,7 +122,7 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
         color = (red << mode_info.RedFieldPosition) |
                 (green << mode_info.GreenFieldPosition) |
                 (blue << mode_info.BlueFieldPosition);
-      } else {
+      } else { // Indexed color mode
         color = (first + (row * no_rectangles + col) * step) % (1 << mode_info.BitsPerPixel);
       }
 
@@ -124,17 +132,25 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
     }
   }
 
-  if(waiting_ESC_key() != 0) return 1;
-  if(vg_exit() != 0) return 1;
+  // Wait for ESC key and exit graphics mode
+  if (waiting_ESC_key() != 0) return 1;
+  if (vg_exit() != 0) return 1;
 
   return 0;
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
-  /* To be completed */
-  printf("%s(%8p, %u, %u): under construction\n", __func__, xpm, x, y);
+  if(set_frame_buffer(VBE_768p_INDEXED)) return 1;
+  
+  if(set_graphic_mode(VBE_768p_INDEXED)) return 1;
 
-  return 1;
+  if (print_xpm(xpm, x, y) != 0) return 1;
+
+  if (waiting_ESC_key()) return 1;
+
+  if (vg_exit() != 0) return 1;
+
+  return 0;
 }
 
 int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,

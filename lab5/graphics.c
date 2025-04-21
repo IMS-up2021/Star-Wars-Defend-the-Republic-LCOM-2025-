@@ -96,6 +96,21 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
     return 0;
 }
 
+int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
+
+    xpm_image_t img;
+  
+    uint8_t *colors = xpm_load(xpm, XPM_INDEXED, &img);
+  
+    for (int h = 0 ; h < img.height ; h++) {
+      for (int w = 0 ; w < img.width ; w++) {
+        if (vg_draw_pixel(x + w, y + h, *colors) != 0) return 1;
+        colors++; 
+      }
+    }
+    return 0;
+  }
+
 int (normalize_color)(uint32_t color, uint32_t *new_color){
     if (mode_info.BitsPerPixel == 32) *new_color = color;
     else *new_color = color & (BIT(mode_info.BitsPerPixel) - 1);
