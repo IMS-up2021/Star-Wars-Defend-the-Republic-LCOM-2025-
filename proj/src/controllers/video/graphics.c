@@ -1,5 +1,5 @@
 #include <lcom/lcf.h>
-#include "graphics.h"
+#include "./graphics.h"
 
 #define BIT(n) (1 << (n))
 

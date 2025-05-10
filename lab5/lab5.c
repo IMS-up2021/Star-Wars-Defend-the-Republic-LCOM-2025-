@@ -12,6 +12,7 @@
 #include "i8042.h"
 #include "i8254.h"
 #include "keyboard.h"
+#include "pixmap.h"
 
 extern vbe_mode_info_t mode_info;
 extern uint8_t scancode[2];
@@ -140,11 +141,11 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
-  if(set_frame_buffer(VBE_768p_INDEXED)) return 1;
+  if(set_frame_buffer(VBE_1024p_DC)) return 1;
   
-  if(set_graphic_mode(VBE_768p_INDEXED)) return 1;
+  if(set_graphic_mode(VBE_1024p_DC)) return 1;
 
-  if (print_xpm(xpm, x, y) != 0) return 1;
+  if (print_xpm(ana, x, y) != 0) return 1;
 
   if (waiting_ESC_key()) return 1;
 

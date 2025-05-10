@@ -1,4 +1,6 @@
-#include "interrupt_manager.h"
+#include <lcom/lcf.h>
+#include "controllers/video/graphics.h"
+#include "xpms/pose_1.xpm"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -25,13 +27,15 @@ int main(int argc, char *argv[]) {
 }
 
 int(proj_main_loop)(int argc, char *argv[]) {
-  
+  /*
   // set up interrupts and some graphics
   init();
   // main gameplay loop
   main_loop();
   // free resources and return minix to default state
   leave();
+*/
+   print_xpm(pose_1, 0, 0);
 
   return 0;
   

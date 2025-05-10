@@ -7,7 +7,7 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
-    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="3" type="long" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="4" type="long" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakeProjectFlavorService">
@@ -20,8 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/lab2/lab2.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/lab2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/timer.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/timer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/graphics.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/graphics.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/graphics.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/graphics.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/lab5" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/lab5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/lab5.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/lab5.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/lab5.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/lab5.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +69,8 @@
     "cf.advertisement.text.has.clang-format": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "lab2",
-    "last_opened_file_path": "/home/jose-b-reis/FEUP_Github/feup_github/2a/da",
+    "git-widget-placeholder": "proj__main",
+    "last_opened_file_path": "/home/jose-b-reis/repos/MINIX-LCOM/shared/grupo_2leic18_2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,6 +95,7 @@
       <workItem from="1740152257742" duration="7000" />
       <workItem from="1740406459165" duration="158000" />
       <workItem from="1740406623659" duration="3153000" />
+      <workItem from="1746809207800" duration="1292000" />
     </task>
     <servers />
   </component>

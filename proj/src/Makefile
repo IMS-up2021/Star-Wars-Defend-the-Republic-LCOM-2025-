@@ -2,11 +2,12 @@
 PROG=proj
 
 .PATH: ${.CURDIR}/controllers/
+.PATH: ${.CURDIR}/controllers/video/
 .PATH: ${.CURDIR}/game/
 
 # source code files to be compiled
 
-SRCS = main.c
+SRCS = main.c graphics.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
