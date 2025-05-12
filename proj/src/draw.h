@@ -39,9 +39,13 @@ int draw_button(Button *button);
 int draw_cursor(Cursor *cursor);
 int draw_wall(Wall *wall);
 int draw_background(uint8_t *background);
-int draw_player(Player *player);
 int draw_charater(Character *character); // isto depois vai ser preciso mudar para o sprite do personagem, que vai ser uma struct com o xpm e a posição (isto é só um exemplo)
 
+int draw_health_bar(Player *player); // isto depois vai ser preciso mudar para o sprite do personagem, que vai ser uma struct com o xpm e a posição (isto é só um exemplo)
+int draw_health_bar_enemy(Player *player); // isto depois vai ser preciso mudar para o sprite do personagem, que vai ser uma struct com o xpm e a posição (isto é só um exemplo)
+int draw_gold_bar(Player *player); // isto depois vai ser preciso mudar para o sprite do personagem, que vai ser uma struct com o xpm e a posição (isto é só um exemplo)
+int draw_menu(); // dependendo do estado do jogo, vai desenhar o background, os personagens, os botões e o cursor
+int draw_instructions(); // dependendo do estado do jogo, vai desenhar o background, os personagens, os botões e o cursor
 int draw_game(); // dependendo do estado do jogo, vai desenhar o background, os personagens, as paredes e os botões
 
 #endif 
