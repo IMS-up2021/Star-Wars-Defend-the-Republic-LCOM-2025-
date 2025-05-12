@@ -35,7 +35,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
   // free resources and return minix to default state
   leave();
 */
-   print_xpm(pose_1, 0, 0);
+   // print_xpm(pose_1, 0, 0);
 
   return 0;
   

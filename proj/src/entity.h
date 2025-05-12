@@ -6,6 +6,7 @@
 
 
 typedef struct {      
+    int gold;
     unsigned int max_health;  
 } Player;
 
