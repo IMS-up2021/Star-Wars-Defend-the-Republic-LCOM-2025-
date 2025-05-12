@@ -21,16 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab5/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab5/graphics.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/graphics.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab5/graphics.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/graphics.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab5/lab5" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/lab5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab5/lab5.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/lab5.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab5/lab5.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/lab5.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/pixmap.h" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/pixmap.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +69,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -95,7 +90,7 @@
       <workItem from="1740152257742" duration="7000" />
       <workItem from="1740406459165" duration="158000" />
       <workItem from="1740406623659" duration="3153000" />
-      <workItem from="1746809207800" duration="1292000" />
+      <workItem from="1746809207800" duration="5918000" />
     </task>
     <servers />
   </component>
