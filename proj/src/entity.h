@@ -31,6 +31,13 @@ typedef struct {
     const bool top;              
 } Wall;
 
+typedef struct {
+    unsigned int pos_x;
+    unsigned int pos_y;
+    const unsigned int width;
+    const unsigned int height;
+    const uint8_t *sprite;
+} Cursor;
 
 bool update_character(Character *character);
 
@@ -39,5 +46,7 @@ Wall *create_wall(bool top);
 Character *create_character(xpm_map_t xpm);
 
 Player *create_player(unsigned int max_health);
+
+Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm);
 
 #endif
