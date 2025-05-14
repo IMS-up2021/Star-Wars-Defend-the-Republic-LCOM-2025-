@@ -18,4 +18,6 @@ void (mouse_bytes_to_packet)();
 
 int (mouse_write)(uint8_t command);
 
+void (update_mouse_location)(Cursor *cursor);
+
 #endif
