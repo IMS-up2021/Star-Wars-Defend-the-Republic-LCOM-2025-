@@ -1,7 +1,7 @@
 #include <sys/time.h>
 
 #include "manager.h"
-#include "draw.h"
+// #include "draw.h"
 
 uint32_t timer_irq_set, kbd_irq_set, mouse_irq_set;
 
@@ -41,7 +41,8 @@ int (initialize_graphics)() {
     kbd_irq_set = BIT(kbd_bit_no);
     mouse_irq_set = BIT(mouse_bit_no);
 
-    if (vg_init() == NULL) {
+    uint16_t mode_info = VBE_1024p_DC; 
+    if (vg_init(mode_info) == NULL) {
         printf("Error initializing graphics mode\n");
         mouse_unsubscribe_int();
         kbd_unsubscribe_int();
@@ -49,14 +50,7 @@ int (initialize_graphics)() {
         return 1;
     }
 
-    if (load_xpms() != 0) {
-        printf("Error loading XPMs\n");
-        mouse_unsubscribe_int();
-        kbd_unsubscribe_int();
-        timer_unsubscribe_int();
-        return 1;
-    }
-
+    /*
     init_background_menu();
     init_buttons();
     init_cursor();
@@ -64,7 +58,7 @@ int (initialize_graphics)() {
     init_players();
     init_background_game_over();
     init_background_instructions();
-    init_background();
+    init_background(); */
 
     return 0;
 }

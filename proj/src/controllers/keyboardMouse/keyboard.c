@@ -1,5 +1,4 @@
 #include "keyboard.h"
-#include "KBC.h"
 
 uint8_t scancode = 0;
 int keyboard_hook_id = 1;

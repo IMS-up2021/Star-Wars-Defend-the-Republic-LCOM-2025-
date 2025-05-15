@@ -10,8 +10,8 @@
 extern uint32_t timer_irq_set;
 extern uint32_t kbd_irq_set;
 extern uint32_t mouse_irq_set;
-extern void *frame_buffer;
-extern void *second_buffer;
+extern uint8_t *frame_buffer;
+extern uint8_t *second_buffer;
 extern uint16_t center_x;
 extern uint16_t center_y;
 extern uint64_t delta_time;
