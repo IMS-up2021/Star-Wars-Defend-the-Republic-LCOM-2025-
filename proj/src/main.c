@@ -31,6 +31,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
   // Initialize graphics mode
   int (initialize_graphics)();
 
+  printf("Graphics mode initialized\n");
+  // Load menu assets
   // Exit game
   int (exit_game)(); 
 

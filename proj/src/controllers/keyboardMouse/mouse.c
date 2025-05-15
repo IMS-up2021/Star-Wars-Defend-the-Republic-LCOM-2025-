@@ -1,4 +1,5 @@
 #include "mouse.h"
+#include "KBC.h"
 
 struct packet mouse_packet;
 int mouse_hook_id = 4; // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
