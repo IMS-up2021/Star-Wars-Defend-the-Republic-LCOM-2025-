@@ -28,14 +28,19 @@ int main(int argc, char *argv[]) {
 
 int(proj_main_loop)(int argc, char *argv[]) {
   /*
-  // set up interrupts and some graphics
-  init();
-  // main gameplay loop
-  main_loop();
-  // free resources and return minix to default state
-  leave();
+
+    // Initialize graphics and other resources
+    initialize_graphics();
+
+    // Load menu assets
+    load_menu_assets();
+
+    // Start the game loop
+    game_loop();
+
+    // Clean up resources
+    cleanup_graphics();
 */
-   // print_xpm(pose_1, 0, 0);
 
   return 0;
   
