@@ -23,7 +23,7 @@ int (load_menu_assets)();
 int (game_loop)();
 
 int (exit_game)();
-void (load_xpms)();
+// void (load_xpms)();
 void (handle_timer_event)();
 void (handle_kbd_event)(uint8_t scancode[]);
 void (handle_mouse_event)(struct packet pp);

@@ -29,12 +29,14 @@ int main(int argc, char *argv[]) {
 
 int(proj_main_loop)(int argc, char *argv[]) {
   // Initialize graphics mode
-  int (initialize_graphics)();
+  initialize_graphics();
+
+  load_menu_assets();
 
   printf("Graphics mode initialized\n");
   // Load menu assets
   // Exit game
-  int (exit_game)(); 
+  exit_game(); 
 
   return 0;
   

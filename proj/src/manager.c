@@ -1,6 +1,7 @@
 #include <sys/time.h>
 
 #include "manager.h"
+#include "xpms/background.xpm"
 // #include "draw.h"
 
 uint32_t timer_irq_set, kbd_irq_set, mouse_irq_set;
@@ -61,6 +62,10 @@ int (initialize_graphics)() {
     init_background(); */
 
     return 0;
+}
+
+int (load_menu_assets)() {
+    print_xpm(background, 0, 0);
 }
 
 int (exit_game)() {
