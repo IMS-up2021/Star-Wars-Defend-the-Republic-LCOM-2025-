@@ -18,7 +18,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="" />
+    <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/KBC.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/graphics.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/keyboard.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/mouse.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/timer.o" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
