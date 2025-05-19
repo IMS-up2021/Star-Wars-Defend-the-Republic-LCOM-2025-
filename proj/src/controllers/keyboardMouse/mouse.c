@@ -1,6 +1,7 @@
 #include "mouse.h"
 #include "entity.h"
 #include "draw.h"
+#include "KBC.h"
 
 struct packet mouse_packet;
 int mouse_hook_id = 4; // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
@@ -81,18 +82,18 @@ void (update_mouse_location)(Cursor *cursor){
         new_x = 0;
     }
 
-    if(new_x > x_max - cursor->width){
-        new_x = x_max - cursor->width;
+    if(new_x > (int)(x_max - cursor->width)){
+        new_x = (int)(x_max - cursor->width);
     }
 
     if(new_y < 0){
         new_y = 0;
     }
 
-    if(new_y > y_max - cursor->height){
-        new_y = y_max - cursor->height;
+    if(new_y > (int)(y_max - cursor->height)){
+        new_y = (int)(y_max - cursor->height);
     }
 
-    cursor->pos_x = new_x;
-    cursor->pos_y = new_y;
+    cursor->pos_x = (unsigned int)new_x;
+    cursor->pos_y = (unsigned int)new_y;
 }
