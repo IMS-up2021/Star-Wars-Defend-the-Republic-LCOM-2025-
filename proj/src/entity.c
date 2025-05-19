@@ -1,6 +1,6 @@
 #include "entity.h"
 #include <math.h>
-
+#include <lcom/lcf.h>
 
 bool update_character(Character *character) {
     if (character == NULL) return false;
