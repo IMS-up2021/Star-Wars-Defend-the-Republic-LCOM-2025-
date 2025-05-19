@@ -65,7 +65,8 @@ int (initialize_graphics)() {
 }
 
 int (load_menu_assets)() {
-    print_xpm(background, 0, 0);
+    // print_xpm(background, 0, 0);
+    return 0;
 }
 
 int (exit_game)() {
