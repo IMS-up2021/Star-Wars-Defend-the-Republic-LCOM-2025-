@@ -6,7 +6,7 @@
 #include "xpms/play_button.xpm" // Play button image
 #include "xpms/instructions_button.xpm" // Instructions button image
 #include "xpms/exit_button.xpm" // Exit button image
-#include "graphics.h" // For vg_draw_pixmap()
+#include "controllers/video/graphics.h" // For vg_draw_pixmap()
 
 
 // Declare assets

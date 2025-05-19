@@ -43,13 +43,16 @@ int (initialize_graphics)() {
     mouse_irq_set = BIT(mouse_bit_no);
 
     uint16_t mode_info = VBE_1024p_DC; 
-    if (vg_init(mode_info) == NULL) {
+    if (set_frame_buffer(mode_info) == 1) {
         printf("Error initializing graphics mode\n");
         mouse_unsubscribe_int();
         kbd_unsubscribe_int();
         timer_unsubscribe_int();
         return 1;
     }
+
+    // load_menu_assets();
+     // draw_menu();
 
     /*
     init_background_menu();
@@ -64,10 +67,6 @@ int (initialize_graphics)() {
     return 0;
 }
 
-int (load_menu_assets)() {
-    // print_xpm(background, 0, 0);
-    return 0;
-}
 
 int (exit_game)() {
     if (mouse_unsubscribe_int() != 0) {

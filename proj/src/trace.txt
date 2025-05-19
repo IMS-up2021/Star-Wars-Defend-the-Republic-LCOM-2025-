@@ -1,0 +1,24 @@
+@lcflib.a:2019, lcf_start
+  proj_main_loop(argc, argv)
+> proj_main_loop(0, [NULL])
+  @manager.c:17, initialize_graphics
+    timer_subscribe_int(&timer_bit_no)
+  > timer_subscribe_int(addr: 0xeffff793 [0])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/timer//timer.c:65, timer_subscribe_int
+      sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id)
+    > sys_irqsetpolicy(0, 1, addr: 0x822f4d0 [0])
+    < sys_irqsetpolicy(0, 1, addr: 0x822f4d0 [10]) -> (ret: 0)
+  < timer_subscribe_int(addr: 0xeffff793 [1]) -> (ret: 0)
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/keyboardMouse//keyboard.c:10, kbd_subscribe_int
+    sys_irqsetpolicy(IRQ_KBC, IRQ_REENABLE | IRQ_EXCLUSIVE, &keyboard_hook_id)
+  > sys_irqsetpolicy(1, 3, addr: 0x822e848 [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x822e848 [11]) -> (ret: 0)
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/keyboardMouse//mouse.c:15, mouse_subscribe_int
+    sys_irqsetpolicy(IRQ_MOUSE, IRQ_REENABLE | IRQ_EXCLUSIVE, &mouse_hook_id)
+  > sys_irqsetpolicy(12, 3, addr: 0x822e84c [4])
+  < sys_irqsetpolicy(12, 3, addr: 0x822e84c [12]) -> (ret: 0)
+  @manager.c:33, initialize_graphics
+    mouse_enable_data_reporting()
+  @manager.c:46, initialize_graphics
+    vg_init(mode_info)
+  > vg_init(0x11a)

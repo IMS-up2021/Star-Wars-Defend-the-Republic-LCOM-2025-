@@ -6,6 +6,7 @@
 #include "controllers/keyboardMouse/keyboard.h"
 #include "controllers/keyboardMouse/mouse.h"
 #include "controllers/video/graphics.h"
+#include "menu.h"
 
 extern uint32_t timer_irq_set;
 extern uint32_t kbd_irq_set;
@@ -17,8 +18,6 @@ extern uint16_t center_y;
 extern uint64_t delta_time;
 
 int (initialize_graphics)();
-
-int (load_menu_assets)();
 
 int (game_loop)();
 
