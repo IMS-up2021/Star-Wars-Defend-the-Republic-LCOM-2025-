@@ -1,6 +1,4 @@
-#include <lcom/lcf.h>
-#include "controllers/video/graphics.h"
-#include "xpms/pose_1.xpm"
+#include "manager.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -8,11 +6,11 @@ int main(int argc, char *argv[]) {
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/g5/proj/src/trace.txt");
+  lcf_trace_calls("/home/lcom/labs/grupo_2leic18_2/proj/src/trace.txt");
 
   // enables to save the output of printf function calls on a file
   // [comment this out if you don't want/need it]
-  lcf_log_output("/home/lcom/labs/g5/proj/src/output.txt");
+  lcf_log_output("/home/lcom/labs/grupo_2leic18_2/proj/src/output.txt");
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
@@ -27,15 +25,13 @@ int main(int argc, char *argv[]) {
 }
 
 int(proj_main_loop)(int argc, char *argv[]) {
-  /*
-  // set up interrupts and some graphics
-  init();
-  // main gameplay loop
-  main_loop();
-  // free resources and return minix to default state
-  leave();
-*/
-   // print_xpm(pose_1, 0, 0);
+  // Initialize graphics mode
+  initialize_graphics();
+
+
+  printf("Graphics mode initialized\n");
+  // Exit game
+  exit_game(); 
 
   return 0;
   

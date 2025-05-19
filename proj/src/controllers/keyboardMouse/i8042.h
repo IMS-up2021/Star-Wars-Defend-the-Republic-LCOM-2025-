@@ -48,7 +48,7 @@
 
 
 #define ENABLE_INT          BIT(0)
-#define MOUSE_ACK           OxFA
+#define MOUSE_ACK           0xFA
 #define MOUSE_NACK          0xFE
 
 // CONTROL byte
