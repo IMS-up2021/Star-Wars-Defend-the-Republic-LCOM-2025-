@@ -5,6 +5,7 @@ PROG=proj
 .PATH: ${.CURDIR}/controllers/video/
 .PATH: ${.CURDIR}/controllers/keyboardMouse/
 .PATH: ${.CURDIR}/controllers/timer/
+.PATH: ${.CURDIR}/handlers/
 .PATH: ${.CURDIR}/game/
 
 # additional compilation flags
@@ -12,7 +13,7 @@ PROG=proj
 CFLAGS += -pedantic -DPROJ
 
 # source code files to be compiled
-SRCS = main.c graphics.c keyboard.c KBC.c timer.c mouse.c manager.c utils.c 
+SRCS = main.c graphics.c keyboard.c KBC.c timer.c mouse.c manager.c utils.c kbd_handler.c 
 
 
 # additional dependencies and libraries
