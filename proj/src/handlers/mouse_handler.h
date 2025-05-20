@@ -2,4 +2,4 @@
 #include "controllers/keyboardMouse/mouse.h"
 #include "gameState.h"
 
-void handle_mouse_event(struct packet pp);
+void mouse_event_handler(struct packet pp);
