@@ -24,7 +24,6 @@ int (set_graphic_mode)(uint16_t submode){
     return 0;
 }
 
-// vg_init() is given
 // Set minix to text mode
 int (set_text_mode)() {
     reg86_t reg86;
@@ -79,76 +78,45 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     return 0;
 }
 
-int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-    for (unsigned int i = 0; i < len; i++) {
-        if (vg_draw_pixel(x + 1, y, color) != 0) return 1;
-    }
-    return 0;
-}
 
-int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
-    for (unsigned int i = 0; i < height; i++) {
-        if (vg_draw_hline(x, y + 1, width, color) != 0){
-            vg_exit();
-            return 1;
+int vg_draw_pixmap(uint8_t *pixmap, uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
+    if (mode_info.BitsPerPixel == 8) {
+        // 8bpp indexed color
+        for (uint16_t i = 0; i < height; i++) {
+            for (uint16_t j = 0; j < width; j++) {
+                uint8_t color = pixmap[i * width + j];
+                vg_draw_pixel(x + j, y + i, color);
+            }
         }
+    } else if (mode_info.BitsPerPixel == 16) {
+        // 16bpp direct color (5:6:5)
+        uint32_t* pix = (uint32_t*)pixmap; // XPM_8_8_8_8 loads as 32bpp
+        for (uint16_t i = 0; i < height; i++) {
+            for (uint16_t j = 0; j < width; j++) {
+                uint32_t color32 = pix[i * width + j];
+                uint8_t r = (color32 >> 16) & 0xFF;
+                uint8_t g = (color32 >> 8) & 0xFF;
+                uint8_t b = color32 & 0xFF;
+                uint16_t color16 = ((r >> (8 - mode_info.RedMaskSize)) << mode_info.RedFieldPosition) | 
+                    ((g >> (8 - mode_info.GreenMaskSize)) << mode_info.GreenFieldPosition) | 
+                    ((b >> (8 - mode_info.BlueMaskSize)) << mode_info.BlueFieldPosition);
+                vg_draw_pixel(x + j, y + i, color16);
+            }
+        }
+    } else if (mode_info.BitsPerPixel == 32) {
+        // 32bpp direct color
+        uint32_t* pix = (uint32_t*)pixmap;
+        for (uint16_t i = 0; i < height; i++) {
+            for (uint16_t j = 0; j < width; j++) {
+                uint32_t color = pix[i * width + j];
+                vg_draw_pixel(x + j, y + i, color);
+            }
+        }
+    } else {
+        printf("Unsupported color depth: %d\n", mode_info.BitsPerPixel);
+        return 1;
     }
     return 0;
 }
 
-int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
-
-    xpm_image_t img;
-  
-    uint8_t *colors = xpm_load(xpm, XPM_INDEXED, &img);
-  
-    for (int h = 0 ; h < img.height ; h++) {
-      for (int w = 0 ; w < img.width ; w++) {
-        if (vg_draw_pixel(x + w, y + h, *colors) != 0) return 1;
-        colors++; 
-      }
-    }
-    return 0;
-  }
-
-int (normalize_color)(uint32_t color, uint32_t *new_color){
-    if (mode_info.BitsPerPixel == 32) *new_color = color;
-    else *new_color = color & (BIT(mode_info.BitsPerPixel) - 1);
-    return 0;
-}
-
-
-uint32_t (direct_mode)(uint32_t R, uint32_t G, uint32_t B) {
-    return (R << mode_info.RedFieldPosition) | (G << mode_info.GreenFieldPosition) | (B << mode_info.BlueFieldPosition);
-}
-
-uint32_t (indexed_mode)(uint16_t col, uint16_t row, uint8_t step, uint32_t first, uint8_t n){
-    return (first + (row * n + col) * step) % (1 << mode_info.BitsPerPixel); 
-}
-
-uint32_t (Red)(unsigned j, uint8_t step, uint32_t first) {
-    return(R(first) + j * step) % (1 << mode_info.BitsPerPixel);
-}
-
-uint32_t (Green)(unsigned j, uint8_t step, uint32_t first) {
-    return(G(first) + j * step) % (1 << mode_info.BitsPerPixel);
-}
-
-uint32_t (Blue)(unsigned j, unsigned i, uint8_t step, uint32_t first) {
-    return(B(first) + j * step) % (1 << mode_info.BitsPerPixel);
-} 
-
-uint32_t (R)(uint32_t first) {
-    return ((1 << mode_info.RedMaskSize) - 1) & (first >> mode_info.RedFieldPosition);
-}
-
-uint32_t (G)(uint32_t first){
-    return ((1 << mode_info.GreenMaskSize) - 1) & (first >> mode_info.GreenFieldPosition);
-}
-
-
-
-uint32_t (B)(uint32_t first) {
-    return ((1 << mode_info.BlueMaskSize) - 1) & (first >> mode_info.BlueFieldPosition);
-}
 

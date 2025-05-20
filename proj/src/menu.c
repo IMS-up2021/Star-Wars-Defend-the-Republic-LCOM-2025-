@@ -3,7 +3,7 @@
 #include "xpms/play_button.xpm"
 #include "xpms/instructions_button.xpm"
 #include "xpms/exit_button.xpm"
-#include "xpms/test.xpm"
+#include "xpms/test.h"
 
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
@@ -11,22 +11,20 @@
 #include "gameState.h"
 #include "controllers/video/graphics.h"
 
+
+
 // Draw the menu
 void draw_menu() {
-    // Load the menu assets
-    xpm_image_t img;
-    uint8_t *colors = xpm_load(test_xpm, XPM_INDEXED, &img);
-    if (!colors) {
-        printf("Failed to load test_xpm!\n");
+    xpm_image_t menu_bg;
+    uint8_t *bg_menu = xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg);
+    if (bg_menu == NULL) {
+        printf("Error loading background menu\n");
         return;
     }
-    // Only draw if loaded successfully
-    print_xpm(test_xpm, 0, 0);
 
-   /* print_xpm(menu_bg_xpm, 0, 0);
-    print_xpm(play_button_xpm, 300, 200);
-    print_xpm(instructions_button_xpm, 300, 300);
-    print_xpm(exit_button_xpm, 300, 400);*/
+    // Draw the background
+    vg_draw_pixmap(bg_menu, 0, 0, menu_bg.width, menu_bg.height);
+
    
 }
 

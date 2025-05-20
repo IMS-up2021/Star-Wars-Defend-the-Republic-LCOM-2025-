@@ -50,6 +50,13 @@ int (initialize_graphics)() {
         timer_unsubscribe_int();
         return 1;
     }
+    if (set_graphic_mode(mode_info) == 1) {
+        printf("Error setting graphics mode\n");
+        mouse_unsubscribe_int();
+        kbd_unsubscribe_int();
+        timer_unsubscribe_int();
+        return 1;
+    }
 
     // load_menu_assets();
      // draw_menu();
