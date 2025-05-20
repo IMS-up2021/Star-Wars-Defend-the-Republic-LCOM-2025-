@@ -5,10 +5,4 @@
 #include "gameState.h"
 
 
-void handle_timer_event();
-
-void handle_menu();
-
-void handle_game();
-
-void handle_instructions();
+void timer_event_handler();
