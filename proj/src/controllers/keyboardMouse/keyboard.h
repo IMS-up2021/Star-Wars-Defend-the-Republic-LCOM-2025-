@@ -22,4 +22,6 @@ void (kbc_ih)();
 
 int(kbd_restore)();
 
+extern uint8_t scancode;
+
 #endif

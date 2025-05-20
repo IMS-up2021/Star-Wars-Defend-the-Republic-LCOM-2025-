@@ -1,5 +1,5 @@
 /* XPM */
-static char *_a8f16eb5a4b41eac4862f9886906c66bRSiI1uZ9YSUSSRv[] = {
+static const char *menu_bg_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "1536 1024 256 2 ",
 "   c #050301",

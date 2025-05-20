@@ -11,6 +11,8 @@ typedef enum {
     EXIT
 } gameState;
 
+void gameLoop(void);
+
 extern gameState state;
 
 void setGameState(gameState newState);

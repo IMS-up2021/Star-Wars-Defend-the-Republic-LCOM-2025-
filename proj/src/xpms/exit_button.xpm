@@ -1,5 +1,5 @@
 /* XPM */
-static char *f0a3bc13a7044f558f47ea415517efabf82SdA5kUuAbdthY[] = {
+static const char *exit_button_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "487 153 248 2 ",
 "   c None",

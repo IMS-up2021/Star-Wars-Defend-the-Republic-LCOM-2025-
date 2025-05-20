@@ -1,5 +1,5 @@
 /* XPM */
-static char *bb388230bcbf490fc1a1ccf44db21e7cIqmRL66m5UeFbqCB[] = {
+static const char *instructions_button_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "689 158 250 2 ",
 "   c None",

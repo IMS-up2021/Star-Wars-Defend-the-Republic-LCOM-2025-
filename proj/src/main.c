@@ -1,4 +1,5 @@
 #include "manager.h"
+#include "gameState.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -25,14 +26,14 @@ int main(int argc, char *argv[]) {
 }
 
 int(proj_main_loop)(int argc, char *argv[]) {
-  // Initialize graphics mode
-  initialize_graphics();
-
-
+  if (initialize_graphics() != 0) {
+    printf("Failed to initialize graphics!\n");
+    return 1;
+  }
   printf("Graphics mode initialized\n");
-  // Exit game
-  exit_game(); 
-
-  return 0;
   
+  gameLoop(); // Start the game loop
+  exit_game(); 
+  return 0;
 }
+

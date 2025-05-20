@@ -1,5 +1,5 @@
 /* XPM */
-static char *_99cbd6dd258487cbf708b25ded41e4bVipw3POrOYJ1u6tW[] = {
+static const char *play_button_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "691 230 247 2 ",
 "   c None",

@@ -1,43 +1,37 @@
 #include "gameState.h"
 #include "menu.h"
-#include "gameplay.h"
-#include "instructions.h"
+#include "controllers/keyboardMouse/keyboard.h"
+#include <lcom/lcf.h>
 
-// Initialize the current game state
+extern uint32_t kbd_irq_set; // Use the one from manager.c
+
 gameState state = MAIN_MENU;
 
-// Function to change the game state
-void setGameState(gameState newState) {
-    state = newState;
-}
-
-// Main game loop
-void gameLoop() {
+void gameLoop(void) {
+    int ipc_status, r;
+    message msg;
     bool running = true;
 
+
     while (running) {
-        switch (state) {
-            case MAIN_MENU:
-                draw_menu(); // Render the main menu
-                // handleMenuInput(); // Handle input for the menu
-                break;
+        draw_menu(); // Draw the menu
 
-            case PLAYING:
-                draw_game();
-                // handleGameplayInput(); // Handle input for gameplay
-                break;
-
-            case INSTRUCTIONS:
-                draw_instructions(); // Render the instructions screen
-                // handleInstructionsInput(); // Handle input for instructions
-                break;
-
-            case EXIT:
-                running = false; // Exit the game loop
-                break;
-
-            default:
-                break;
+        if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+            continue;
+        }
+        if (is_ipc_notify(msg.m_type)) {
+            switch (_ENDPOINT_P(msg.m_source)) {
+                case HARDWARE:
+                    if (msg.m_notify.interrupts & kbd_irq_set) {
+                        kbc_ih();
+                        if (scancode == 0x81) { // ESC break code
+                            running = false;
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

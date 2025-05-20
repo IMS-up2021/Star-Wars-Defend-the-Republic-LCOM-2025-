@@ -1,35 +1,35 @@
+
+#include "xpms/menu_bg.xpm"
+#include "xpms/play_button.xpm"
+#include "xpms/instructions_button.xpm"
+#include "xpms/exit_button.xpm"
+#include "xpms/test.xpm"
+
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
 #include "menu.h"
 #include "gameState.h"
-#include "xpms/menu_bg.xpm" // Background image
-#include "xpms/play_button.xpm" // Play button image
-#include "xpms/instructions_button.xpm" // Instructions button image
-#include "xpms/exit_button.xpm" // Exit button image
-#include "controllers/video/graphics.h" // For vg_draw_pixmap()
-
-
-// Declare assets
-xpm_image_t bg_menu, play_button, instructions_button, exit_button;
-
-// Load the menu assets
-void load_menu_assets() {
-    xpm_load(bg_menu_xpm, XPM_8_8_8_8, &bg_menu);
-    xpm_load(play_button_xpm, XPM_8_8_8_8, &play_button);
-    xpm_load(instructions_button_xpm, XPM_8_8_8_8, &instructions_button);
-    xpm_load(exit_button_xpm, XPM_8_8_8_8, &exit_button);
-}
+#include "controllers/video/graphics.h"
 
 // Draw the menu
 void draw_menu() {
-    // Draw the background
-    vg_draw_pixmap(bg_menu.bytes, 0, 0, bg_menu.width, bg_menu.height);
+    // Load the menu assets
+    xpm_image_t img;
+    uint8_t *colors = xpm_load(test_xpm, XPM_INDEXED, &img);
+    if (!colors) {
+        printf("Failed to load test_xpm!\n");
+        return;
+    }
+    // Only draw if loaded successfully
+    print_xpm(test_xpm, 0, 0);
 
-    // Draw the buttons
-    vg_draw_pixmap(play_button.bytes, 300, 200, play_button.width, play_button.height); // Play button
-    vg_draw_pixmap(instructions_button.bytes, 300, 300, instructions_button.width, instructions_button.height); // Instructions button
-    vg_draw_pixmap(exit_button.bytes, 300, 400, exit_button.width, exit_button.height); // Exit button
+   /* print_xpm(menu_bg_xpm, 0, 0);
+    print_xpm(play_button_xpm, 300, 200);
+    print_xpm(instructions_button_xpm, 300, 300);
+    print_xpm(exit_button_xpm, 300, 400);*/
+   
 }
+
 
 // Handle menu input 
 /*void handle_menu_input() {

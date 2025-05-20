@@ -151,3 +151,4 @@ uint32_t (G)(uint32_t first){
 uint32_t (B)(uint32_t first) {
     return ((1 << mode_info.BlueMaskSize) - 1) & (first >> mode_info.BlueFieldPosition);
 }
+
