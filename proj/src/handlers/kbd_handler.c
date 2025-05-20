@@ -1,9 +1,11 @@
 #include "kbd_handler.h"
-// #include "draw.h"
 #include "manager.h"
+#include <stdbool.h>
+
 
 bool changed;
-Player *player1;
+bool two_byte;
+gameState state;
 
 void kbd_event_handler(uint8_t scan_code[2]) {
     switch (state) {
@@ -16,7 +18,9 @@ void kbd_event_handler(uint8_t scan_code[2]) {
             break;
         case PLAYING:
 
-            bool two_byte = (scan_code[0] == TWO_BYTE_SC);
+            if (scan_code[0] == TWO_BYTE_CODE) two_byte = true;
+            else two_byte = false;
+            
             uint8_t key_code = two_byte ? scan_code[1] : scan_code[0];
 
             if (two_byte) {
