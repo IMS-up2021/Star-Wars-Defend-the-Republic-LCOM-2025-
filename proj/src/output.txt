@@ -1,1 +1,5 @@
+BitsPerPixel: 16
+Red: Size 5, Pos 11
+Green: Size 6, Pos 5
+Blue: Size 5, Pos 0
 Graphics mode initialized

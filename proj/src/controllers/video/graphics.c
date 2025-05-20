@@ -47,6 +47,11 @@ int (set_frame_buffer)(uint16_t mode){
 
     memset(&mode_info, 0, sizeof(mode_info));
     if(vbe_get_mode_info(mode, &mode_info)) return 1;
+
+    printf("BitsPerPixel: %d\n", mode_info.BitsPerPixel);
+    printf("Red: Size %d, Pos %d\n", mode_info.RedMaskSize, mode_info.RedFieldPosition);
+    printf("Green: Size %d, Pos %d\n", mode_info.GreenMaskSize, mode_info.GreenFieldPosition);
+    printf("Blue: Size %d, Pos %d\n", mode_info.BlueMaskSize, mode_info.BlueFieldPosition);
   
     uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
     
@@ -73,43 +78,31 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     unsigned int BytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
     unsigned int index = (mode_info.XResolution * y + x) * BytesPerPixel;
     
-    memcpy(&frame_buffer[index], &color, BytesPerPixel);
+    for(unsigned int i = 0; i < BytesPerPixel; i++){
+        frame_buffer[index + i] = (color >> (8 * i)) & 0xFF;
+    }
 
     return 0;
 }
 
+int (normalize_color)(uint32_t color, uint32_t *new_color){
+    if (mode_info.BitsPerPixel == 32) *new_color = color;
+    else *new_color = color & (BIT(mode_info.BitsPerPixel) - 1);
+    return 0;
+}
 
 int vg_draw_pixmap(uint8_t *pixmap, uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
-    if (mode_info.BitsPerPixel == 8) {
-        // 8bpp indexed color
-        for (uint16_t i = 0; i < height; i++) {
-            for (uint16_t j = 0; j < width; j++) {
-                uint8_t color = pixmap[i * width + j];
-                vg_draw_pixel(x + j, y + i, color);
-            }
-        }
-    } else if (mode_info.BitsPerPixel == 16) {
+    if (mode_info.BitsPerPixel == 16) {
         // 16bpp direct color (5:6:5)
-        uint32_t* pix = (uint32_t*)pixmap; // XPM_8_8_8_8 loads as 32bpp
+        uint32_t* pix = (uint32_t*)pixmap; 
         for (uint16_t i = 0; i < height; i++) {
             for (uint16_t j = 0; j < width; j++) {
                 uint32_t color32 = pix[i * width + j];
                 uint8_t r = (color32 >> 16) & 0xFF;
                 uint8_t g = (color32 >> 8) & 0xFF;
                 uint8_t b = color32 & 0xFF;
-                uint16_t color16 = ((r >> (8 - mode_info.RedMaskSize)) << mode_info.RedFieldPosition) | 
-                    ((g >> (8 - mode_info.GreenMaskSize)) << mode_info.GreenFieldPosition) | 
-                    ((b >> (8 - mode_info.BlueMaskSize)) << mode_info.BlueFieldPosition);
+                uint16_t color16 = ((r >> 3) << 1) | ((g >> 2) << 5) | (b >> 3);
                 vg_draw_pixel(x + j, y + i, color16);
-            }
-        }
-    } else if (mode_info.BitsPerPixel == 32) {
-        // 32bpp direct color
-        uint32_t* pix = (uint32_t*)pixmap;
-        for (uint16_t i = 0; i < height; i++) {
-            for (uint16_t j = 0; j < width; j++) {
-                uint32_t color = pix[i * width + j];
-                vg_draw_pixel(x + j, y + i, color);
             }
         }
     } else {

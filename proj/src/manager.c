@@ -58,12 +58,10 @@ int (initialize_graphics)() {
         return 1;
     }
 
-    // load_menu_assets();
-     // draw_menu();
+    //load_menu_assets();
+ 
 
     /*
-    init_background_menu();
-    init_buttons();
     init_cursor();
     init_walls();
     init_players();
@@ -78,21 +76,30 @@ int (initialize_graphics)() {
 int (exit_game)() {
     if (mouse_unsubscribe_int() != 0) {
         printf("Error unsubscribing mouse interrupts\n");
+        fflush(stdout);
         return 1;
     }
     if (kbd_unsubscribe_int() != 0) {
         printf("Error unsubscribing keyboard interrupts\n");
+        fflush(stdout);
         return 1;
     }
     if (timer_unsubscribe_int() != 0) {
         printf("Error unsubscribing timer interrupts\n");
+        fflush(stdout);
         return 1;
     }
     if (mouse_enable_data_reporting() != 0) {
         printf("Error disabling mouse data reporting\n");
+        fflush(stdout);
         return 1;
     }
-    vg_exit();
+    if(vg_exit() == 1) {
+        printf("Error exiting graphics mode\n");
+        fflush(stdout);
+        return 1;
+    }
+    
 
     return 0;
 }

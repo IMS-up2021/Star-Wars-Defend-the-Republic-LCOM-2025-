@@ -1,5 +1,6 @@
 #include "manager.h"
 #include "gameState.h"
+#include <lcom/lcf.h>
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)

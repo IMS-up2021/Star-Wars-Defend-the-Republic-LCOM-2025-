@@ -1,6 +1,7 @@
 #include "gameState.h"
 #include "menu.h"
 #include "controllers/keyboardMouse/keyboard.h"
+#include "manager.h"
 #include <lcom/lcf.h>
 
 extern uint32_t kbd_irq_set; // Use the one from manager.c
@@ -11,6 +12,7 @@ void gameLoop(void) {
     int ipc_status, r;
     message msg;
     bool running = true;
+    lcf_log_output("/home/lcom/labs/grupo_2leic18_2/proj/src/output.txt");
 
 
     while (running) {
@@ -24,8 +26,15 @@ void gameLoop(void) {
                 case HARDWARE:
                     if (msg.m_notify.interrupts & kbd_irq_set) {
                         kbc_ih();
-                        if (scancode == 0x81) { // ESC break code
-                            running = false;
+                        if (scancode == ESC_BREAK) { // ESC break code
+                            if (exit_game() == 0) { // Call exit_game() and check for success
+                                running = false;
+                                printf("Game exited successfully\n");
+                                fflush(stdout);
+                            } else {
+                                printf("Error during game exit\n");
+                                fflush(stdout);
+                            }
                         }
                     }
                     break;
