@@ -94,15 +94,15 @@ int (normalize_color)(uint32_t color, uint32_t *new_color){
 int vg_draw_pixmap(uint8_t *pixmap, uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
     if (mode_info.BitsPerPixel == 16) {
         // 16bpp direct color (5:6:5)
-        uint32_t* pix = (uint32_t*)pixmap; 
+        uint16_t* pix = (uint16_t*)pixmap; 
         for (uint16_t i = 0; i < height; i++) {
             for (uint16_t j = 0; j < width; j++) {
-                uint32_t color32 = pix[i * width + j];
-                uint8_t r = (color32 >> 16) & 0xFF;
-                uint8_t g = (color32 >> 8) & 0xFF;
-                uint8_t b = color32 & 0xFF;
-                uint16_t color16 = ((r >> 3) << 1) | ((g >> 2) << 5) | (b >> 3);
-                vg_draw_pixel(x + j, y + i, color16);
+               uint16_t color16 = pix[i * width + j];
+               vg_draw_pixel(x + j, y + i, (uint32_t)color16);
+
+               if(vg_draw_pixel(x + j, y + i, (uint32_t)color16) != 0){
+                printf("Error drawing pixel at (%u, %u) for pixmap. \n", x + y, y + i);
+               }
             }
         }
     } else {
