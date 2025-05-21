@@ -105,7 +105,32 @@ int vg_draw_pixmap(uint8_t *pixmap, uint16_t x, uint16_t y, uint16_t width, uint
                }
             }
         }
-    } else {
+    } 
+    else if(mode_info.BitsPerPixel == 32){
+        uint32_t* pix = (uint32_t*)pixmap;
+
+        for(uint16_t i = 0; i < height; i++){
+            for(uint16_t j = 0; j < width; j++){
+                uint32_t color32 = pix[i * width + j];
+
+                uint8_t r = (color32 >> 16) & 0xFF;
+                uint8_t g = (color32 >> 8) & 0xFF;
+                uint8_t b = color32 & 0xFF;
+
+                uint32_t framebuffer_color32 = 0;
+                framebuffer_color32 |= ((uint32_t)(r >> (8 - mode_info.RedMaskSize))) << mode_info.RedFieldPosition;
+                framebuffer_color32 |= ((uint32_t)(g >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
+                framebuffer_color32 |= ((uint32_t)(b >> (8 - mode_info.BlueMaskSize))) << mode_info.BlueFieldPosition;
+
+                vg_draw_pixel(x + j, y + i, framebuffer_color32);
+
+                if(vg_draw_pixel(x + j, y + i, framebuffer_color32)){
+                    printf("Error drawing pixel at (%u, %u) for pixmap. \n", x + y, y + i);
+                }
+            }
+        }
+    }
+    else {
         printf("Unsupported color depth: %d\n", mode_info.BitsPerPixel);
         return 1;
     }
