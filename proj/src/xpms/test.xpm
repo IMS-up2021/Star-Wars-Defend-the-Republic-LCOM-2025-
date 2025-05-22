@@ -1,8 +1,0 @@
-/* XPM */
-static const char *test_xpm[] = {
-"2 2 2 1",
-"a	c #FFFFFF",
-"b	c #000000",
-"ab",
-"ba"
-};
