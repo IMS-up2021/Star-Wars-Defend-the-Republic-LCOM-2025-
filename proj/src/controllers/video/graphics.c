@@ -1,5 +1,6 @@
 #include <lcom/lcf.h>
 #include "./graphics.h"
+#include <math.h>
 
 #define BIT(n) (1 << (n))
 
@@ -96,66 +97,138 @@ int (normalize_color)(uint32_t color, uint32_t *new_color){
     return 0;
 }
 
-int vg_draw_pixmap(uint8_t *pixmap, uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
-    // Calculate BytesPerPixel
-    uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
-    uint32_t screen_pitch = mode_info.XResolution * bytes_per_pixel; // Bytes per screen line
+static int get_source_rgb(uint8_t *src_pixel_ptr, uint8_t src_bytes_per_pixel, 
+                          uint8_t *r_out, uint8_t *g_out, uint8_t *b_out) {
+    if (src_bytes_per_pixel == 2) { // Assuming 5:6:5 format (like XPM_5_6_5)
+        uint16_t color16 = *(uint16_t*)src_pixel_ptr;
+        // Standard 5:6:5 (RRRRR GGGGGG BBBBB)
+        // Expand 5-bit R to 8-bit: (val * 255) / 31 or val << 3 | val >> 2
+        // Expand 6-bit G to 8-bit: (val * 255) / 63 or val << 2 | val >> 4
+        *r_out = (uint8_t)((((color16 >> 11) & 0x1F) * 255U) / 31U);
+        *g_out = (uint8_t)((((color16 >> 5)  & 0x3F) * 255U) / 63U);
+        *b_out = (uint8_t)((( color16        & 0x1F) * 255U) / 31U);
+        return 0;
+    } else if (src_bytes_per_pixel == 4) { // Assuming XPM_8_8_8_8 (e.g., 0xAARRGGBB or 0x00RRGGBB)
+        uint32_t color32_src = *(uint32_t*)src_pixel_ptr;
+        // Assuming R is in bits 16-23, G in 8-15, B in 0-7
+        *r_out = (color32_src >> 16) & 0xFF;
+        *g_out = (color32_src >> 8)  & 0xFF;
+        *b_out =  color32_src        & 0xFF;
+        // Alpha ((color32_src >> 24) & 0xFF) is ignored here for simplicity
+        return 0;
+    } else if (src_bytes_per_pixel == 3) { // Assuming XPM_8_8_8 (e.g., R, G, B bytes in order)
+        // Order can depend on XPM library. Assuming R, G, B order.
+        *r_out = src_pixel_ptr[0]; // R
+        *g_out = src_pixel_ptr[1]; // G
+        *b_out = src_pixel_ptr[2]; // B
+        return 0;
+    }
+    // Unsupported source format
+    printf("get_source_rgb: Unsupported source bpp: %d\n", src_bytes_per_pixel);
+    return 1; 
+}
 
-    for (uint16_t current_y = 0; current_y < height; ++current_y) {
-        uint16_t screen_y_coord = y + current_y;
 
-        // if current row is outside screen, skip it
-        if (screen_y_coord >= mode_info.YResolution) {
-            break; 
+int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_t original_height, uint8_t  src_bytes_per_pixel,
+    uint16_t screen_target_x, uint16_t screen_target_y, uint16_t screen_target_width, uint16_t screen_target_height) {
+        
+    if (!pixmap_data || original_width == 0 || original_height == 0 || 
+        screen_target_width == 0 || screen_target_height == 0 || src_bytes_per_pixel == 0) {
+        printf("vg_draw_scaled_pixmap: Invalid parameters.\n");
+        return 1;
+    }
+
+    uint8_t framebuffer_bpp = (mode_info.BitsPerPixel + 7) / 8;
+    uint32_t src_pitch_bytes = original_width * src_bytes_per_pixel;
+    // uint32_t dest_screen_pitch_bytes = mode_info.XResolution * framebuffer_bpp; // Not directly used for pixel addressing in loop
+
+    // Calculate scaling ratios. Using float for precision.
+    // ratio = source_dimension / target_dimension
+    float x_ratio = (float)original_width / screen_target_width;
+    float y_ratio = (float)original_height / screen_target_height;
+
+    for (uint16_t ty = 0; ty < screen_target_height; ++ty) { // Target Y on the scaled image
+        uint16_t current_screen_y = screen_target_y + ty;
+
+        // Simple vertical clipping for the target row
+        if (current_screen_y >= mode_info.YResolution) {
+            continue; // or break if Y is guaranteed to increase
         }
 
-        // Pointer to the start of the current row in the framebuffer
-        uint8_t *dest_row_start = frame_buffer + screen_y_coord * screen_pitch;
+        // Calculate corresponding Y in source image (Nearest Neighbor)
+        // Use floorf to ensure we pick a valid pixel index.
+        // sy_float = ty * y_ratio; sx_float = tx * x_ratio;
+        uint16_t sy = (uint16_t)floorf(ty * y_ratio);
+        // Clamp sy to be within source image bounds (paranoia, ratio should handle it if target isn't 0)
+        if (sy >= original_height) sy = original_height - 1;
 
-        if (mode_info.BitsPerPixel == 16) {
-            // 16bpp direct color (e.g., RGB565)
-            uint16_t *src_row = (uint16_t *)(pixmap + current_y * width * 2); // 2 bytes per pixel
-            uint16_t *dest_pixel_ptr_16 = (uint16_t *)(dest_row_start + x * 2);
+        for (uint16_t tx = 0; tx < screen_target_width; ++tx) { // Target X on the scaled image
+            uint16_t current_screen_x = screen_target_x + tx;
 
-            for (uint16_t current_x = 0; current_x < width; ++current_x) {
-                uint16_t screen_x_coord = x + current_x;
-
-                if (screen_x_coord >= mode_info.XResolution) {
-                    break;
-                }
-
-                dest_pixel_ptr_16[current_x] = src_row[current_x];
+            // Simple horizontal clipping for the target pixel
+            if (current_screen_x >= mode_info.XResolution) {
+                continue; // or break if X is guaranteed to increase
             }
-        } 
-        else if (mode_info.BitsPerPixel == 32) {
-            uint32_t *src_row = (uint32_t *)(pixmap + current_y * width * 4); // 4 bytes per pixel
-            uint32_t *dest_pixel_ptr_32 = (uint32_t *)(dest_row_start + x * 4);
 
-            for (uint16_t current_x = 0; current_x < width; ++current_x) {
-                uint16_t screen_x_coord = x + current_x;
+            // Calculate corresponding X in source image (Nearest Neighbor)
+            uint16_t sx = (uint16_t)floorf(tx * x_ratio);
+            // Clamp sx
+            if (sx >= original_width) sx = original_width - 1;
 
-                if (screen_x_coord >= mode_info.XResolution) {
-                    break;
-                }
+            // Get pointer to the source pixel
+            uint8_t *src_pixel_ptr = pixmap_data + (sy * src_pitch_bytes) + (sx * src_bytes_per_pixel);
 
-                uint32_t pixmap_color32 = src_row[current_x];
-
-                uint8_t r_in = (pixmap_color32 >> 16) & 0xFF;
-                uint8_t g_in = (pixmap_color32 >> 8) & 0xFF;
-                uint8_t b_in = pixmap_color32 & 0xFF;
-
-                uint32_t framebuffer_color32 = 0;
-
-                framebuffer_color32 |= ((uint32_t)(r_in >> (8 - mode_info.RedMaskSize))) << mode_info.RedFieldPosition;
-                framebuffer_color32 |= ((uint32_t)(g_in >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
-                framebuffer_color32 |= ((uint32_t)(b_in >> (8 - mode_info.BlueMaskSize))) << mode_info.BlueFieldPosition;
-              
-
-                dest_pixel_ptr_32[current_x] = framebuffer_color32;
+            // Extract R, G, B components from source (normalized to 8-bit per channel)
+            uint8_t r_src, g_src, b_src;
+            if (get_source_rgb(src_pixel_ptr, src_bytes_per_pixel, &r_src, &g_src, &b_src) != 0) {
+                // Error in getting source color, skip this pixel or return error
+                printf("vg_draw_scaled_pixmap: Error getting source RGB at (%u,%u) from src_bpp %u\n", sx, sy, src_bytes_per_pixel);
+                continue; 
             }
-        } else {
-            printf("Unsupported color depth for optimized pixmap drawing: %d\n", mode_info.BitsPerPixel);
-            return 1; 
+            
+            // Pointer to destination pixel in framebuffer
+            uint8_t *dest_fb_pixel_ptr = frame_buffer + 
+                                         (current_screen_y * mode_info.XResolution * framebuffer_bpp) +
+                                         (current_screen_x * framebuffer_bpp);
+
+            // Convert and write to framebuffer based on framebuffer's BPP
+            if (mode_info.BitsPerPixel == 32) {
+                uint32_t color32_fb = 0;
+                color32_fb |= ((uint32_t)(r_src >> (8 - mode_info.RedMaskSize)))   << mode_info.RedFieldPosition;
+                color32_fb |= ((uint32_t)(g_src >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
+                color32_fb |= ((uint32_t)(b_src >> (8 - mode_info.BlueMaskSize)))  << mode_info.BlueFieldPosition;
+                // Handle reserved bits (often for Alpha, set to opaque 0xFF if applicable)
+                if (mode_info.RsvdMaskSize > 0) {
+                     color32_fb |= ((1UL << mode_info.RsvdMaskSize) - 1) << mode_info.RsvdFieldPosition;
+                }
+                *(uint32_t*)dest_fb_pixel_ptr = color32_fb;
+            } else if (mode_info.BitsPerPixel == 16) {
+                uint16_t color16_fb = 0;
+                // Convert 8-bit r_src, g_src, b_src to the framebuffer's 16-bit format
+                color16_fb |= ((uint16_t)(r_src >> (8 - mode_info.RedMaskSize)))   << mode_info.RedFieldPosition;
+                color16_fb |= ((uint16_t)(g_src >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
+                color16_fb |= ((uint16_t)(b_src >> (8 - mode_info.BlueMaskSize)))  << mode_info.BlueFieldPosition;
+                *(uint16_t*)dest_fb_pixel_ptr = color16_fb;
+            } else if (mode_info.BitsPerPixel == 24) {
+                // Assuming BGR packed for framebuffer (common for 24-bit)
+                // And Red/Green/Blue FieldPosition and MaskSize define this order
+                if (mode_info.BlueFieldPosition == 0 && mode_info.BlueMaskSize == 8 &&
+                    mode_info.GreenFieldPosition == 8 && mode_info.GreenMaskSize == 8 &&
+                    mode_info.RedFieldPosition == 16 && mode_info.RedMaskSize == 8) {
+                    dest_fb_pixel_ptr[0] = b_src; // Blue
+                    dest_fb_pixel_ptr[1] = g_src; // Green
+                    dest_fb_pixel_ptr[2] = r_src; // Red
+                } else {
+                    // More generic (but slower) 24-bit writing would involve bit-shifting
+                    // the r_src, g_src, b_src into a temporary uint32_t according to field positions
+                    // and then memcpy'ing 3 bytes. For now, this handles common BGR.
+                    printf("vg_draw_scaled_pixmap: Unsupported 24-bit framebuffer format.\n");
+                    // Potentially skip this pixel or return an error for the whole function
+                }
+            } else {
+                printf("vg_draw_scaled_pixmap: Unsupported framebuffer BitsPerPixel: %d\n", mode_info.BitsPerPixel);
+                return 1; // Or skip pixel
+            }
         }
     }
     return 0;
