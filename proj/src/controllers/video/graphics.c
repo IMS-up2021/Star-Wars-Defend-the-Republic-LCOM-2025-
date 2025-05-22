@@ -4,7 +4,7 @@
 #define BIT(n) (1 << (n))
 
 vbe_mode_info_t mode_info; 
-
+uint8_t *video_mem; 
 uint8_t *frame_buffer;
 
 // set minix to graphic mode
@@ -78,10 +78,15 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     unsigned int BytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
     unsigned int index = (mode_info.XResolution * y + x) * BytesPerPixel;
     
-    for(unsigned int i = 0; i < BytesPerPixel; i++){
-        frame_buffer[index + i] = (color >> (8 * i)) & 0xFF;
-    }
+    memcpy(&frame_buffer[index], &color, BytesPerPixel);
 
+    return 0;
+}
+
+int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
+    for (unsigned int i = 0; i < len; i++) {
+        if (vg_draw_pixel(x + 1, y, color) != 0) return 1;
+    }
     return 0;
 }
 
@@ -92,47 +97,66 @@ int (normalize_color)(uint32_t color, uint32_t *new_color){
 }
 
 int vg_draw_pixmap(uint8_t *pixmap, uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
-    if (mode_info.BitsPerPixel == 16) {
-        // 16bpp direct color (5:6:5)
-        uint16_t* pix = (uint16_t*)pixmap; 
-        for (uint16_t i = 0; i < height; i++) {
-            for (uint16_t j = 0; j < width; j++) {
-               uint16_t color16 = pix[i * width + j];
-               vg_draw_pixel(x + j, y + i, (uint32_t)color16);
+    // Calculate BytesPerPixel
+    uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
+    uint32_t screen_pitch = mode_info.XResolution * bytes_per_pixel; // Bytes per screen line
 
-               if(vg_draw_pixel(x + j, y + i, (uint32_t)color16) != 0){
-                printf("Error drawing pixel at (%u, %u) for pixmap. \n", x + y, y + i);
-               }
-            }
+    for (uint16_t current_y = 0; current_y < height; ++current_y) {
+        uint16_t screen_y_coord = y + current_y;
+
+        // if current row is outside screen, skip it
+        if (screen_y_coord >= mode_info.YResolution) {
+            break; 
         }
-    } 
-    else if(mode_info.BitsPerPixel == 32){
-        uint32_t* pix = (uint32_t*)pixmap;
 
-        for(uint16_t i = 0; i < height; i++){
-            for(uint16_t j = 0; j < width; j++){
-                uint32_t color32 = pix[i * width + j];
+        // Pointer to the start of the current row in the framebuffer
+        uint8_t *dest_row_start = frame_buffer + screen_y_coord * screen_pitch;
 
-                uint8_t r = (color32 >> 16) & 0xFF;
-                uint8_t g = (color32 >> 8) & 0xFF;
-                uint8_t b = color32 & 0xFF;
+        if (mode_info.BitsPerPixel == 16) {
+            // 16bpp direct color (e.g., RGB565)
+            uint16_t *src_row = (uint16_t *)(pixmap + current_y * width * 2); // 2 bytes per pixel
+            uint16_t *dest_pixel_ptr_16 = (uint16_t *)(dest_row_start + x * 2);
+
+            for (uint16_t current_x = 0; current_x < width; ++current_x) {
+                uint16_t screen_x_coord = x + current_x;
+
+                if (screen_x_coord >= mode_info.XResolution) {
+                    break;
+                }
+
+                dest_pixel_ptr_16[current_x] = src_row[current_x];
+            }
+        } 
+        else if (mode_info.BitsPerPixel == 32) {
+            uint32_t *src_row = (uint32_t *)(pixmap + current_y * width * 4); // 4 bytes per pixel
+            uint32_t *dest_pixel_ptr_32 = (uint32_t *)(dest_row_start + x * 4);
+
+            for (uint16_t current_x = 0; current_x < width; ++current_x) {
+                uint16_t screen_x_coord = x + current_x;
+
+                if (screen_x_coord >= mode_info.XResolution) {
+                    break;
+                }
+
+                uint32_t pixmap_color32 = src_row[current_x];
+
+                uint8_t r_in = (pixmap_color32 >> 16) & 0xFF;
+                uint8_t g_in = (pixmap_color32 >> 8) & 0xFF;
+                uint8_t b_in = pixmap_color32 & 0xFF;
 
                 uint32_t framebuffer_color32 = 0;
-                framebuffer_color32 |= ((uint32_t)(r >> (8 - mode_info.RedMaskSize))) << mode_info.RedFieldPosition;
-                framebuffer_color32 |= ((uint32_t)(g >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
-                framebuffer_color32 |= ((uint32_t)(b >> (8 - mode_info.BlueMaskSize))) << mode_info.BlueFieldPosition;
 
-                vg_draw_pixel(x + j, y + i, framebuffer_color32);
+                framebuffer_color32 |= ((uint32_t)(r_in >> (8 - mode_info.RedMaskSize))) << mode_info.RedFieldPosition;
+                framebuffer_color32 |= ((uint32_t)(g_in >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
+                framebuffer_color32 |= ((uint32_t)(b_in >> (8 - mode_info.BlueMaskSize))) << mode_info.BlueFieldPosition;
+              
 
-                if(vg_draw_pixel(x + j, y + i, framebuffer_color32)){
-                    printf("Error drawing pixel at (%u, %u) for pixmap. \n", x + y, y + i);
-                }
+                dest_pixel_ptr_32[current_x] = framebuffer_color32;
             }
+        } else {
+            printf("Unsupported color depth for optimized pixmap drawing: %d\n", mode_info.BitsPerPixel);
+            return 1; 
         }
-    }
-    else {
-        printf("Unsupported color depth: %d\n", mode_info.BitsPerPixel);
-        return 1;
     }
     return 0;
 }
