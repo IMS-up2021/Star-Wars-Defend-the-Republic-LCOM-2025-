@@ -74,28 +74,7 @@ int (set_frame_buffer)(uint16_t mode){
     return 0;
 }
 
-int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-    if (x >= mode_info.XResolution || y >= mode_info.YResolution) return 1;
-    unsigned int BytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
-    unsigned int index = (mode_info.XResolution * y + x) * BytesPerPixel;
-    
-    memcpy(&frame_buffer[index], &color, BytesPerPixel);
 
-    return 0;
-}
-
-int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-    for (unsigned int i = 0; i < len; i++) {
-        if (vg_draw_pixel(x + 1, y, color) != 0) return 1;
-    }
-    return 0;
-}
-
-int (normalize_color)(uint32_t color, uint32_t *new_color){
-    if (mode_info.BitsPerPixel == 32) *new_color = color;
-    else *new_color = color & (BIT(mode_info.BitsPerPixel) - 1);
-    return 0;
-}
 
 static int get_source_rgb(uint8_t *src_pixel_ptr, uint8_t src_bytes_per_pixel, 
                           uint8_t *r_out, uint8_t *g_out, uint8_t *b_out) {
