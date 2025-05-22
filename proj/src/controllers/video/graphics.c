@@ -119,14 +119,11 @@ int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_
 
     uint8_t framebuffer_bpp = (mode_info.BitsPerPixel + 7) / 8;
     uint32_t src_pitch_bytes = original_width * src_bytes_per_pixel;
-    // uint32_t dest_screen_pitch_bytes = mode_info.XResolution * framebuffer_bpp; // Not directly used for pixel addressing in loop
 
-    // Calculate scaling ratios. Using float for precision.
-    // ratio = source_dimension / target_dimension
     float x_ratio = (float)original_width / screen_target_width;
     float y_ratio = (float)original_height / screen_target_height;
 
-    for (uint16_t ty = 0; ty < screen_target_height; ++ty) { // Target Y on the scaled image
+    for (uint16_t ty = 0; ty < screen_target_height; ++ty) {
         uint16_t current_screen_y = screen_target_y + ty;
 
         // Simple vertical clipping for the target row
@@ -135,8 +132,6 @@ int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_
         }
 
         // Calculate corresponding Y in source image (Nearest Neighbor)
-        // Use floorf to ensure we pick a valid pixel index.
-        // sy_float = ty * y_ratio; sx_float = tx * x_ratio;
         uint16_t sy = (uint16_t)floorf(ty * y_ratio);
         // Clamp sy to be within source image bounds (paranoia, ratio should handle it if target isn't 0)
         if (sy >= original_height) sy = original_height - 1;
@@ -198,11 +193,7 @@ int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_
                     dest_fb_pixel_ptr[1] = g_src; // Green
                     dest_fb_pixel_ptr[2] = r_src; // Red
                 } else {
-                    // More generic (but slower) 24-bit writing would involve bit-shifting
-                    // the r_src, g_src, b_src into a temporary uint32_t according to field positions
-                    // and then memcpy'ing 3 bytes. For now, this handles common BGR.
                     printf("vg_draw_scaled_pixmap: Unsupported 24-bit framebuffer format.\n");
-                    // Potentially skip this pixel or return an error for the whole function
                 }
             } else {
                 printf("vg_draw_scaled_pixmap: Unsupported framebuffer BitsPerPixel: %d\n", mode_info.BitsPerPixel);
