@@ -74,28 +74,6 @@ int (set_frame_buffer)(uint16_t mode){
     return 0;
 }
 
-int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-    if (x >= mode_info.XResolution || y >= mode_info.YResolution) return 1;
-    unsigned int BytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
-    unsigned int index = (mode_info.XResolution * y + x) * BytesPerPixel;
-    
-    memcpy(&frame_buffer[index], &color, BytesPerPixel);
-
-    return 0;
-}
-
-int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-    for (unsigned int i = 0; i < len; i++) {
-        if (vg_draw_pixel(x + 1, y, color) != 0) return 1;
-    }
-    return 0;
-}
-
-int (normalize_color)(uint32_t color, uint32_t *new_color){
-    if (mode_info.BitsPerPixel == 32) *new_color = color;
-    else *new_color = color & (BIT(mode_info.BitsPerPixel) - 1);
-    return 0;
-}
 
 static int get_source_rgb(uint8_t *src_pixel_ptr, uint8_t src_bytes_per_pixel, 
                           uint8_t *r_out, uint8_t *g_out, uint8_t *b_out) {
@@ -156,8 +134,6 @@ int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_
         }
 
         // Calculate corresponding Y in source image (Nearest Neighbor)
-        // Use floorf to ensure we pick a valid pixel index.
-        // sy_float = ty * y_ratio; sx_float = tx * x_ratio;
         uint16_t sy = (uint16_t)floorf(ty * y_ratio);
         // Clamp sy to be within source image bounds (paranoia, ratio should handle it if target isn't 0)
         if (sy >= original_height) sy = original_height - 1;
@@ -192,39 +168,13 @@ int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_
                                          (current_screen_x * framebuffer_bpp);
 
             // Convert and write to framebuffer based on framebuffer's BPP
-            if (mode_info.BitsPerPixel == 32) {
-                uint32_t color32_fb = 0;
-                color32_fb |= ((uint32_t)(r_src >> (8 - mode_info.RedMaskSize)))   << mode_info.RedFieldPosition;
-                color32_fb |= ((uint32_t)(g_src >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
-                color32_fb |= ((uint32_t)(b_src >> (8 - mode_info.BlueMaskSize)))  << mode_info.BlueFieldPosition;
-                // Handle reserved bits (often for Alpha, set to opaque 0xFF if applicable)
-                if (mode_info.RsvdMaskSize > 0) {
-                     color32_fb |= ((1UL << mode_info.RsvdMaskSize) - 1) << mode_info.RsvdFieldPosition;
-                }
-                *(uint32_t*)dest_fb_pixel_ptr = color32_fb;
-            } else if (mode_info.BitsPerPixel == 16) {
+            if (mode_info.BitsPerPixel == 16) {
                 uint16_t color16_fb = 0;
                 // Convert 8-bit r_src, g_src, b_src to the framebuffer's 16-bit format
                 color16_fb |= ((uint16_t)(r_src >> (8 - mode_info.RedMaskSize)))   << mode_info.RedFieldPosition;
                 color16_fb |= ((uint16_t)(g_src >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
                 color16_fb |= ((uint16_t)(b_src >> (8 - mode_info.BlueMaskSize)))  << mode_info.BlueFieldPosition;
-                *(uint16_t*)dest_fb_pixel_ptr = color16_fb;
-            } else if (mode_info.BitsPerPixel == 24) {
-                // Assuming BGR packed for framebuffer (common for 24-bit)
-                // And Red/Green/Blue FieldPosition and MaskSize define this order
-                if (mode_info.BlueFieldPosition == 0 && mode_info.BlueMaskSize == 8 &&
-                    mode_info.GreenFieldPosition == 8 && mode_info.GreenMaskSize == 8 &&
-                    mode_info.RedFieldPosition == 16 && mode_info.RedMaskSize == 8) {
-                    dest_fb_pixel_ptr[0] = b_src; // Blue
-                    dest_fb_pixel_ptr[1] = g_src; // Green
-                    dest_fb_pixel_ptr[2] = r_src; // Red
-                } else {
-                    // More generic (but slower) 24-bit writing would involve bit-shifting
-                    // the r_src, g_src, b_src into a temporary uint32_t according to field positions
-                    // and then memcpy'ing 3 bytes. For now, this handles common BGR.
-                    printf("vg_draw_scaled_pixmap: Unsupported 24-bit framebuffer format.\n");
-                    // Potentially skip this pixel or return an error for the whole function
-                }
+                *(uint16_t*)dest_fb_pixel_ptr = color16_fb; 
             } else {
                 printf("vg_draw_scaled_pixmap: Unsupported framebuffer BitsPerPixel: %d\n", mode_info.BitsPerPixel);
                 return 1; // Or skip pixel
