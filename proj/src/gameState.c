@@ -18,8 +18,8 @@ void gameLoop(void) {
     bool running = true;
     lcf_log_output("/home/lcom/labs/grupo_2leic18_2/proj/src/output.txt");
 
-    draw_menu(); // Draw the menu
     init_cursor();
+    draw_menu(); // Draw the menu
 
     while (running) {
         

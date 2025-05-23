@@ -45,3 +45,20 @@ bool init_cursor(void) {
     }
     return true;
 }
+
+int draw_cursor(Cursor *cursor) {
+  if (!cursor) {
+    printf("%s: NULL cursor\n", __func__);
+    return 1;
+  }
+
+
+  for (uint16_t h = 0; h < cursor->height; h++) {
+    for (uint16_t w = 0; w < cursor->width; w++) {
+      if (vg_draw_pixel(mouse_pos.x + w, mouse_pos.y + h, cursor->sprite[w + h * cursor->width])) {
+        return 1;
+      }
+    }
+  }
+  return 0;
+}

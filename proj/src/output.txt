@@ -5,3 +5,5 @@ Blue: Size 5, Pos 0
 Graphics mode initialized
 Error loading xpm image
 Error creating cursor
+draw_cursor: NULL cursor
+draw_menu: draw_cursor(cursor) error
