@@ -1,7 +1,6 @@
 #include <sys/time.h>
 #include <lcom/lcf.h>
 #include "manager.h"
-#include "xpms/mouse_cursor.xpm"
 
 uint32_t timer_irq_set, kbd_irq_set, mouse_irq_set;
 

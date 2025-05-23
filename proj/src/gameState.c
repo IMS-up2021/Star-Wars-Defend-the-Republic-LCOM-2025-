@@ -3,7 +3,7 @@
 #include "controllers/keyboardMouse/keyboard.h"
 #include "manager.h"
 #include <lcom/lcf.h>
-#include "controllers/keyboardMouse/mouse.h"
+#include "entity.h"
 
 
 extern uint32_t kbd_irq_set; // Use the one from manager.c
@@ -19,7 +19,7 @@ void gameLoop(void) {
     lcf_log_output("/home/lcom/labs/grupo_2leic18_2/proj/src/output.txt");
 
     draw_menu(); // Draw the menu
-    init_cursor(); // Initialize the cursor
+    init_cursor();
 
     while (running) {
         

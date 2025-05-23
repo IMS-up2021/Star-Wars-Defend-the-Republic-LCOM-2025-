@@ -3,14 +3,9 @@
 #include "menu.h"
 #include "gameState.h"
 
-
+Cursor *cursor;
 Position mouse_pos;
 
-
-bool mouse_over_button(Position mouse, Button *btn) {
-    return mouse.x >= btn->pos_x && mouse.x <= btn->pos_x + btn->width &&
-           mouse.y >= btn->pos_y && mouse.y <= btn->pos_y + btn->height;
-}
 
 
 void mouse_event_handler(struct packet pp) {
@@ -20,19 +15,22 @@ void mouse_event_handler(struct packet pp) {
             update_mouse_location(cursor);
             if (!pp.lb) return;
 
-            if (mouse_over_button(mouse_pos, play_button)) play_button->on_click();
-            else if (mouse_over_button(mouse_pos, exit_button)) exit_button->on_click();
-            else if (mouse_over_button(mouse_pos, instruction_button)) instruction_button->on_click();
-            
+            // coordenadas dos botões~: EXEMPLOS
+            if (mouse_pos.x >= 0 && mouse_pos.x <= 200 && mouse_pos.y >= 0 && mouse_pos.y <= 100) {
+                state = PLAYING;
+            } else if (mouse_pos.x >= 0 && mouse_pos.x <= 200 && mouse_pos.y >= 100 && mouse_pos.y <= 200) {
+                state = INSTRUCTIONS;
+            } else if (mouse_pos.x >= 0 && mouse_pos.x <= 200 && mouse_pos.y >= 200 && mouse_pos.y <= 300) {
+                state = EXIT;
+            }
+
             break;
 
         case PLAYING:
-            update_mouse(pp.delta_x, pp.delta_y);
+            update_mouse_location(cursor);
             if (!pp.lb) return;
 
-            if (mouse_over_button(mouse_pos, pause_button)) pause_button->on_click(); 
-            else if (mouse_over_button(mouse_pos, faster_button)) faster_button->on_click();
-            else if (mouse_over_button(mouse_pos, slower_button)) slower_button->on_click();
+           // coordenadas dos botões
             
             
             // falta meter a lógica das setas verdes, para dar spawn do personagem
@@ -40,10 +38,10 @@ void mouse_event_handler(struct packet pp) {
             break;
 
         case INSTRUCTIONS:
-            update_mouse(pp.delta_x, pp.delta_y);
+            update_mouse_location(cursor);
             if (!pp.lb) return;
 
-            if (mouse_over_button(mouse_pos, back_button)) back_button->on_click();
+            // coordenadas dos botões
             break;
 
         case EXIT:

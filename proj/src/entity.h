@@ -27,12 +27,14 @@ typedef struct {
 typedef struct {
     unsigned int pos_x;
     unsigned int pos_y;
-    const unsigned int width;
-    const unsigned int height;
-    const uint8_t *sprite;
+    unsigned int width;
+    unsigned int height;
+    uint8_t *sprite;
 } Cursor;
 
 
 Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm);
+
+bool (init_cursor)(void);
 
 #endif
