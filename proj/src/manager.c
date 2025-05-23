@@ -1,8 +1,7 @@
 #include <sys/time.h>
 #include <lcom/lcf.h>
 #include "manager.h"
-#include "xpms/background.xpm"
-// #include "draw.h"
+#include "xpms/mouse_cursor.xpm"
 
 uint32_t timer_irq_set, kbd_irq_set, mouse_irq_set;
 
@@ -56,18 +55,7 @@ int (initialize_graphics)() {
         kbd_unsubscribe_int();
         timer_unsubscribe_int();
         return 1;
-    }
-
-    //load_menu_assets();
- 
-
-    /*
-    init_cursor();
-    init_walls();
-    init_players();
-    init_background_game_over();
-    init_background_instructions();
-    init_background(); */
+    } 
 
     return 0;
 }

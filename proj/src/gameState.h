@@ -11,6 +11,14 @@ typedef enum {
     EXIT
 } gameState;
 
+typedef struct Position {
+  uint16_t x;
+  uint16_t y;
+} Position;
+
+
+extern Position mouse_pos;
+
 void gameLoop(void);
 
 extern gameState state;

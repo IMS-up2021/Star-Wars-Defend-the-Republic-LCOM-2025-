@@ -1,8 +1,8 @@
 #include "xpms/menu_bg.xpm"
-
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
 #include "menu.h"
+#include "entity.h"
 #include "gameState.h"
 #include "controllers/video/graphics.h"
 
@@ -19,7 +19,6 @@ void draw_menu() {
     const uint8_t xpm_source_bpp = 2; //5:6:5
 
     vg_draw_scaled_pixmap(bg_menu, menu_bg.width, menu_bg.height, xpm_source_bpp, 0, 0, mode_info.XResolution, mode_info.YResolution);
-
 }
 
 

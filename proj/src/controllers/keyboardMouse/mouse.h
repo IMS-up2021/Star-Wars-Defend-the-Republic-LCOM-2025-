@@ -20,4 +20,6 @@ int (mouse_write)(uint8_t command);
 
 void (update_mouse_location)(Cursor *cursor);
 
+bool (init_cursor)(void);
+
 #endif

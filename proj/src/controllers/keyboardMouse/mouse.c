@@ -1,13 +1,22 @@
 #include "mouse.h"
 #include "entity.h"
-#include "draw.h"
+#include <lcom/xpm.h>
 #include "KBC.h"
+#include "gameState.h"
+#include "controllers/video/graphics.h"
+#include "xpms/mouse_cursor.xpm"
 
 struct packet mouse_packet;
 int mouse_hook_id = 4; // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
 uint8_t byte_index = 0;
 uint8_t current_byte; // último byte a ser lido
 uint8_t mouse_bytes[3];
+
+Cursor *cursor;
+uint16_t x_max = 1024;
+uint16_t y_max = 768;
+
+Position mouse_pos = {210, 330};
 
 // Subscrição das interrupções - Modo REENABLE para modo EXCLUSIVE
 int (mouse_subscribe_int)(uint8_t *bit_no) {
@@ -96,4 +105,26 @@ void (update_mouse_location)(Cursor *cursor){
 
     cursor->pos_x = (unsigned int)new_x;
     cursor->pos_y = (unsigned int)new_y;
+}
+
+/*
+int draw_cursor(Cursor *cursor) {
+  if (!cursor) {
+    printf("%s: NULL cursor\n", __func__);
+    return 1;
+  }
+  if (!cursor->sprite) {
+    printf("%s: Cursor sprite data is NULL\n", __func__);
+    return 1; // Ou talvez não desenhe nada e retorne 0 se for um cursor "invisível"
+  }
+
+  screen_x = (uint16_t)mouse_pos.x;
+  screen_y = (uint16_t)mouse_pos.y;
+
+  return vg_draw_scaled_pixmap(cursor->sprite, cursor->width, cursor->height, 2, 0, 0, cursor->width, cursor->height);
+} */
+
+bool init_cursor(void) {
+    cursor = create_cursor(mouse_pos.x, mouse_pos.y, (xpm_map_t)mouse_cursor_xpm);
+    return true;
 }
