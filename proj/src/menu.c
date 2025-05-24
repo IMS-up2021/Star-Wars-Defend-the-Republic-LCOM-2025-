@@ -1,4 +1,5 @@
 #include "xpms/menu_bg.xpm"
+#include "xpms/mouse_cursor.xpm"
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
 #include "menu.h"
@@ -6,7 +7,7 @@
 #include "gameState.h"
 #include "controllers/video/graphics.h"
 
-Cursor *cursor;
+extern Cursor *cursor;
 
 
 // Draw the menu
@@ -21,9 +22,7 @@ void draw_menu() {
 
     vg_draw_scaled_pixmap(bg_menu, menu_bg.width, menu_bg.height, xpm_source_bpp, 0, 0, mode_info.XResolution, mode_info.YResolution);
 
-    if (draw_cursor(cursor)) {
-        printf("%s: draw_cursor(cursor) error\n", __func__);
-    }
+    if (draw_cursor(cursor)) printf("%s: draw_cursor(cursor) error\n", __func__);
 }
 
 

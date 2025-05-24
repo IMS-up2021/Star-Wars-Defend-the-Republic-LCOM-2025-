@@ -6,7 +6,6 @@
 #include "xpms/mouse_cursor.xpm"
 
 Cursor *cursor;
-
 Position mouse_pos = {210, 330};
 
 Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm) {
@@ -22,7 +21,7 @@ Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm) {
     Cursor *cursor = (Cursor *)malloc(sizeof(Cursor));
     if (cursor == NULL) {
         printf("Error allocating memory for cursor\n");
-        free(sprite); // liberar a imagem se não puder alocar o cursor
+        free(sprite); 
         return NULL;
     }
 
@@ -46,19 +45,20 @@ bool init_cursor(void) {
     return true;
 }
 
-int draw_cursor(Cursor *cursor) {
-  if (!cursor) {
-    printf("%s: NULL cursor\n", __func__);
-    return 1;
-  }
-
-
-  for (uint16_t h = 0; h < cursor->height; h++) {
-    for (uint16_t w = 0; w < cursor->width; w++) {
-      if (vg_draw_pixel(mouse_pos.x + w, mouse_pos.y + h, cursor->sprite[w + h * cursor->width])) {
+int draw_cursor(Cursor *c) {
+    if (!c || !c->sprite) {
+        printf("%s: NULL cursor or NULL sprite\n", __func__);
         return 1;
-      }
     }
-  }
-  return 0;
+
+    uint8_t src_bpp_for_cursor = 2;
+
+    float scale_factor = 1.5f; // Para 50% maior
+
+    uint16_t target_width = (uint16_t)(c->width * scale_factor);
+    uint16_t target_height = (uint16_t)(c->height * scale_factor);
+
+    vg_draw_scaled_pixmap(c->sprite, c->width, c->height, src_bpp_for_cursor, mouse_pos.x, mouse_pos.y, target_width, target_height)
+
+    return 0;
 }

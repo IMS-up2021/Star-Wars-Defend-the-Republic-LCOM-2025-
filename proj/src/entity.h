@@ -36,6 +36,7 @@ typedef struct {
 Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm);
 
 bool (init_cursor)(void);
+
 int draw_cursor(Cursor *cursor);
 
 #endif
