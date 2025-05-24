@@ -4,15 +4,11 @@
 #include "KBC.h"
 #include "gameState.h"
 
-struct packet mouse_packet;
+extern struct packet mouse_packet;
 int mouse_hook_id = 4; // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
 uint8_t byte_index = 0;
 uint8_t current_byte; // último byte a ser lido
 uint8_t mouse_bytes[3];
-
-Cursor *cursor;
-uint16_t x_max = 1024;
-uint16_t y_max = 768;
 
 
 // Subscrição das interrupções - Modo REENABLE para modo EXCLUSIVE
@@ -74,35 +70,7 @@ int (mouse_write)(uint8_t command) {
     return 1;
 }
 
-void (update_mouse_location)(Cursor *cursor){
 
-    //Convert delta values to signed integers
-    int16_t dx = mouse_packet.delta_x;
-    int16_t dy = mouse_packet.delta_y;
-
-    // Update cursor position with deltas (invert y for screen coordinates)
-    int new_x = (int)cursor->pos_x + dx;
-    int new_y = (int)cursor->pos_y - dy;
-
-    if(new_x < 0){
-        new_x = 0;
-    }
-
-    if(new_x > (int)(x_max - cursor->width)){
-        new_x = (int)(x_max - cursor->width);
-    }
-
-    if(new_y < 0){
-        new_y = 0;
-    }
-
-    if(new_y > (int)(y_max - cursor->height)){
-        new_y = (int)(y_max - cursor->height);
-    }
-
-    cursor->pos_x = (unsigned int)new_x;
-    cursor->pos_y = (unsigned int)new_y;
-}
 
 
 
