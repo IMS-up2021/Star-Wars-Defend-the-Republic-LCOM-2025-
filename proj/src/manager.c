@@ -2,10 +2,12 @@
 #include <lcom/lcf.h>
 #include "manager.h"
 
+
+
 uint32_t timer_irq_set, kbd_irq_set, mouse_irq_set;
+bool mouse_ready;
 
 int kbd_i;
-bool mouse_ready;
 int timer_counter;
 
 uint64_t delta_time;
@@ -28,13 +30,13 @@ int (initialize_graphics)() {
         return 1;
     }
 
-    if (mouse_enable_data_reporting() != 0) {
+    if (mouse_write(ENBL_DATA_REP)) {
         printf("Error enabling mouse data reporting\n");
         mouse_unsubscribe_int();
         kbd_unsubscribe_int();
         timer_unsubscribe_int();
         return 1;
-    }
+    } 
 
     timer_irq_set = BIT(timer_bit_no);
     kbd_irq_set = BIT(kbd_bit_no);

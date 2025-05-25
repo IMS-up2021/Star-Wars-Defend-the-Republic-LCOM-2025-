@@ -39,4 +39,6 @@ bool (init_cursor)(void);
 
 int draw_cursor(Cursor *cursor);
 
+void update_mouse_location(int16_t delta_x, int16_t delta_y);
+
 #endif

@@ -6,6 +6,8 @@
 #include "i8042.h"
 #include "entity.h"
 
+extern struct packet mouse_packet;
+
 int (mouse_subscribe_int)(uint8_t *bit_no);
 
 int (mouse_unsubscribe_int)();
@@ -17,8 +19,6 @@ void (mouse_sync_bytes)();
 void (mouse_bytes_to_packet)();
 
 int (mouse_write)(uint8_t command);
-
-void (update_mouse_location)(Cursor *cursor);
 
 
 #endif

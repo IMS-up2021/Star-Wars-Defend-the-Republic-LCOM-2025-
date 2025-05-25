@@ -69,32 +69,25 @@ int draw_cursor(Cursor *c) {
     return 0;
 }
 
-void (update_mouse_location)(Cursor *cursor){
+void (update_mouse_location)(int16_t delta_x, int16_t delta_y){
 
-    //Convert delta values to signed integers
-    int16_t dx = mouse_packet.delta_x;
-    int16_t dy = mouse_packet.delta_y;
+    int32_t temp_x = mouse_pos.x;
+    int32_t temp_y = mouse_pos.y;
+    float mouse_sensitivity = 2.0f; // Experimente valores como 1.5, 2.0, 2.5, etc.
 
-    // Update cursor position with deltas (invert y for screen coordinates)
-    int new_x = (int)cursor->pos_x + dx;
-    int new_y = (int)cursor->pos_y - dy;
+    // ... dentro de update_mouse_location, antes de adicionar aos temp_x, temp_y
+    delta_x = (int16_t)(delta_x * mouse_sensitivity);
+    delta_y = (int16_t)(delta_y * mouse_sensitivity); // Cuidado com a inversão aqui se já a faz mais tarde
 
-    if(new_x < 0){
-        new_x = 0;
-    }
+    temp_x += delta_x;
+    temp_y -= delta_y;
 
-    if(new_x > (int)(x_max - cursor->width)){
-        new_x = (int)(x_max - cursor->width);
-    }
+    if (temp_x < 0) temp_x = 0;
+    if (temp_x > x_max) temp_x = x_max; // Assumindo x_max é compatível com int32_t
 
-    if(new_y < 0){
-        new_y = 0;
-    }
+    if (temp_y < 0) temp_y = 0;
+    if (temp_y > y_max) temp_y = y_max; // Assumindo y_max é compatível com int32_t
 
-    if(new_y > (int)(y_max - cursor->height)){
-        new_y = (int)(y_max - cursor->height);
-    }
-
-    cursor->pos_x = (unsigned int)new_x;
-    cursor->pos_y = (unsigned int)new_y;
+    mouse_pos.x = (unsigned int)temp_x;
+    mouse_pos.y = (unsigned int)temp_y;
 }

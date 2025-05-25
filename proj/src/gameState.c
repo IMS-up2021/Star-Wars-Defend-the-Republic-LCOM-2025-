@@ -1,14 +1,20 @@
+#include <lcom/lcf.h>
+
 #include "gameState.h"
 #include "menu.h"
-#include "controllers/keyboardMouse/keyboard.h"
-#include "manager.h"
-#include <lcom/lcf.h>
 #include "entity.h"
+#include "manager.h"
+
+#include "controllers/keyboardMouse/mouse.h"
+#include "controllers/keyboardMouse/keyboard.h"
+
+#include "handlers/mouse_handler.h"
 
 
-extern uint32_t kbd_irq_set; // Use the one from manager.c
-extern uint32_t mouse_irq_set; // Use the one from manager.c
-bool mouse_ready = true;
+extern bool mouse_ready;
+
+struct packet mouse_packet; 
+
 
 gameState state = MAIN_MENU;
 
@@ -19,42 +25,37 @@ void gameLoop(void) {
     lcf_log_output("/home/lcom/labs/grupo_2leic18_2/proj/src/output.txt");
 
     init_cursor();
-    draw_menu(); // Draw the menu
 
     while (running) {
-        
+        if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) continue;
 
-        if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-            continue;
-        }
-        if (is_ipc_notify(msg.m_type)) {
-            switch (_ENDPOINT_P(msg.m_source)) {
-                case HARDWARE:
-                    if (msg.m_notify.interrupts & kbd_irq_set) {
-                        kbc_ih();
-                        if (scancode == ESC_BREAK) { // ESC break code
-                            if (exit_game() == 0) { // Call exit_game() and check for success
-                                running = false;
-                                printf("Game exited successfully\n");
-                                fflush(stdout);
-                            } else {
-                                printf("Error during game exit\n");
-                                fflush(stdout);
-                            }
-                        }
+        if (is_ipc_notify(ipc_status)) {
+            if (_ENDPOINT_P(msg.m_source) == HARDWARE) {
+                if (msg.m_notify.interrupts & mouse_irq_set) {
+                    mouse_ih();
+                    if (mouse_ready) {
+                        mouse_event_handler(mouse_packet);
+                        mouse_ready = false;
                     }
-                    if (msg.m_notify.interrupts & mouse_irq_set) {
-                        mouse_ih();
-
-                        if (mouse_ready) {
-                            mouse_ready = false;
-                            // handle_mouse_event(pp);
-                        }
-                    }
-                    break;
-                default:
-                    break;
+                }
+                // ... (lógica do teclado, se houver) ...
             }
+        } else {
+            printf("Loop: NAO ENTROU no if is_ipc_notify. msg.m_type foi 0x%X.\n", msg.m_type);
+        }
+
+        switch (state) { 
+            case MAIN_MENU:
+                draw_menu();
+                break;
+            case PLAYING:
+                // draw_playing_screen(); // Função que desenha o ecrã de jogo, incluindo o cursor
+                break;
+            case INSTRUCTIONS:
+                // draw_instructions_screen(); // etc.
+                break;
+            default:
+                break;
         }
     }
 }
