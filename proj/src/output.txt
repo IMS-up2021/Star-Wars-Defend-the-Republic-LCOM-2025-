@@ -3,31 +3,3 @@ Red: Size 5, Pos 11
 Green: Size 6, Pos 5
 Blue: Size 5, Pos 0
 Graphics mode initialized
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=0 | Bytes: 08 01 00
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-1 | Bytes: 28 00 FF
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-3 | Bytes: 28 00 FD
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-7 | Bytes: 28 00 F9
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-4 | Bytes: 28 00 FC
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-5 | Bytes: 28 00 FB
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-2 | Bytes: 28 01 FE
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-1 | Bytes: 28 01 FF
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-1 | Bytes: 28 00 FF
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-1 | Bytes: 28 00 FF
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-1 | Bytes: 28 01 FF
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-2 | Bytes: 28 00 FE
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-4 | Bytes: 28 01 FC
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-2 | Bytes: 28 00 FE
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-6 | Bytes: 28 00 FA
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-4 | Bytes: 28 00 FC
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-5 | Bytes: 28 00 FB
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-6 | Bytes: 28 00 FA
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-3 | Bytes: 28 00 FD
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-5 | Bytes: 28 01 FB
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-4 | Bytes: 28 01 FC
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-3 | Bytes: 28 00 FD
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-4 | Bytes: 28 01 FC
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-3 | Bytes: 28 01 FD
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-5 | Bytes: 28 00 FB
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-3 | Bytes: 28 01 FD
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=1 dY=-5 | Bytes: 28 01 FB
-Mouse Pkt: LB=0 RB=0 MB=0 | dX=0 dY=-4 | Bytes: 28 00 FC

@@ -86,12 +86,6 @@ void (mouse_ih)() {
                 mouse_packet.delta_x = dx;
                 mouse_packet.delta_y = dy;
 
-                // DESCOMENTE ESTE PRINTF PARA DEPURAR OS PACOTES DO RATO
-                printf("Mouse Pkt: LB=%d RB=%d MB=%d | dX=%d dY=%d | Bytes: %02X %02X %02X\n",
-                       mouse_packet.lb ? 1:0, mouse_packet.rb ? 1:0, mouse_packet.mb ? 1:0,
-                       mouse_packet.delta_x, mouse_packet.delta_y,
-                       mouse_packet.bytes[0], mouse_packet.bytes[1], mouse_packet.bytes[2]);
-
                 byte_index = 0;
                 mouse_ready = true;
             }
@@ -141,6 +135,8 @@ int (mouse_write)(uint8_t command_to_mouse) {
             printf("mouse_write: Failed to send command (0x%02X) to KBC for mouse\n", command_to_mouse);
             return 1;
         }
+
+        tickdelay(micros_to_ticks(20000));
         
         uint8_t status_after_cmd;
         if (util_sys_inb(KBC_STAT_REG, &status_after_cmd)) continue; 

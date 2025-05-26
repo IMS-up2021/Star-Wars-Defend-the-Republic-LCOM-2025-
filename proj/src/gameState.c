@@ -7,7 +7,7 @@
 
 #include "controllers/keyboardMouse/mouse.h"
 #include "controllers/keyboardMouse/keyboard.h"
-
+#include "controllers/timer/timer.h"
 #include "handlers/mouse_handler.h"
 
 
@@ -38,12 +38,14 @@ void gameLoop(void) {
                         mouse_ready = false;
                     }
                 }
-                // ... (lógica do teclado, se houver) ...
+                if (msg.m_notify.interrupts & timer_irq_set) {
+                    timer_int_handler();
+                    printf("Timer interrupt received.\n");
             }
         } else {
             printf("Loop: NAO ENTROU no if is_ipc_notify. msg.m_type foi 0x%X.\n", msg.m_type);
         }
-
+        /*
         switch (state) { 
             case MAIN_MENU:
                 draw_menu();
@@ -57,5 +59,6 @@ void gameLoop(void) {
             default:
                 break;
         }
+    }*/
     }
 }
