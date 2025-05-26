@@ -1,5 +1,5 @@
 /* XPM */
-static char *result[] = {
+static char *attack_2_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "57 47 19 1 ",
 "  c #000001",

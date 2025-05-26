@@ -1,4 +1,5 @@
 #include "manager.h"
+#include "animations.h"
 #include <lcom/lcf.h>
 
 int main(int argc, char *argv[]) {
@@ -31,6 +32,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
 
   printf("Graphics mode initialized\n");
+  test_animations();
   // Exit game
   exit_game(); 
 

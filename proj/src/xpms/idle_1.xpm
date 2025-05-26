@@ -1,5 +1,5 @@
 /* XPM */
-static const char *pose_1[] = {
+static const char *idle_1[] = {
 /* columns rows colors chars-per-pixel */
 "33 60 25 1 ",
 "  c None",
