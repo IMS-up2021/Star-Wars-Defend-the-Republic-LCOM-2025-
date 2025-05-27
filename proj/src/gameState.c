@@ -31,6 +31,22 @@ void gameLoop(void) {
 
         if (is_ipc_notify(ipc_status)) {
             if (_ENDPOINT_P(msg.m_source) == HARDWARE) {
+                if (msg.m_notify.interrupts & timer_irq_set) {
+                    timer_int_handler();
+                    switch (state) { 
+                        case MAIN_MENU:
+                            draw_menu();
+                            break;
+                        case PLAYING:
+                            // draw_playing_screen(); // Função que desenha o ecrã de jogo, incluindo o cursor
+                            break;
+                        case INSTRUCTIONS:
+                            // draw_instructions_screen(); // etc.
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 if (msg.m_notify.interrupts & mouse_irq_set) {
                     mouse_ih();
                     if (mouse_ready) {
@@ -38,27 +54,10 @@ void gameLoop(void) {
                         mouse_ready = false;
                     }
                 }
-                if (msg.m_notify.interrupts & timer_irq_set) {
-                    timer_int_handler();
-                    printf("Timer interrupt received.\n");
+                
+            } else {
+                printf("Loop: NAO ENTROU no if is_ipc_notify. msg.m_type foi 0x%X.\n", msg.m_type);
             }
-        } else {
-            printf("Loop: NAO ENTROU no if is_ipc_notify. msg.m_type foi 0x%X.\n", msg.m_type);
         }
-        /*
-        switch (state) { 
-            case MAIN_MENU:
-                draw_menu();
-                break;
-            case PLAYING:
-                // draw_playing_screen(); // Função que desenha o ecrã de jogo, incluindo o cursor
-                break;
-            case INSTRUCTIONS:
-                // draw_instructions_screen(); // etc.
-                break;
-            default:
-                break;
-        }
-    }*/
     }
 }

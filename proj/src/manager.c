@@ -42,6 +42,9 @@ int (initialize_graphics)() {
     kbd_irq_set = BIT(kbd_bit_no);
     mouse_irq_set = BIT(mouse_bit_no);
 
+    printf("Interrupcao do Timer subscrita. Hook ID usado = %d, timer_irq_set = 0x%08X\n",
+       timer_bit_no, timer_irq_set);
+
     uint16_t mode_info = VBE_1024p_DC; 
     if (set_frame_buffer(mode_info) == 1) {
         printf("Error initializing graphics mode\n");
@@ -57,6 +60,14 @@ int (initialize_graphics)() {
         timer_unsubscribe_int();
         return 1;
     } 
+
+    if (timer_set_frequency(0, 60) != 0) { // Exemplo para 60 FPS
+        printf("ERRO: Falha ao configurar a frequencia do Timer 0!\n");
+        // Lidar com o erro, talvez não continuar
+    } else {
+        printf("Sucesso: Frequencia do Timer 0 configurada para 60 Hz.\n");
+    }
+
 
     return 0;
 }
