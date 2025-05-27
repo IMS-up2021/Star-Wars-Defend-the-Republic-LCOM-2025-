@@ -27,7 +27,37 @@
   @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
     sys_inb(port, &temp_val)
   > sys_inb(0x64, addr: 0xeffff6f8)
-  < sys_inb(0x64, addr: 0xeffff6f8 [0x1c = 0b00011100])
+  < sys_inb(0x64, addr: 0xeffff6f8 [0x1d = 0b00011101])
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/keyboardMouse//KBC.c:14, kbc_write_byte
+    sys_outb(port, byte_to_write)
+  > sys_outb(0x60, 0xf4 = 0b11110100)
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/keyboardMouse//mouse.c:139, mouse_write
+    micros_to_ticks(20000)
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/keyboardMouse//mouse.c:139, mouse_write
+    tickdelay(micros_to_ticks(20000))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+    sys_inb(port, &temp_val)
+  > sys_inb(0x64, addr: 0xeffff724)
+  < sys_inb(0x64, addr: 0xeffff724 [0x1d = 0b00011101])
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+    sys_inb(port, &temp_val)
+  > sys_inb(0x60, addr: 0xeffff724)
+  < sys_inb(0x60, addr: 0xeffff724 [0x9c = 0b10011100])
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/keyboardMouse//mouse.c:152, mouse_write
+    printf("Mouse response: 0x%02X to command 0x%02X (attempt %d)\n", mouse_response, command_to_mouse, MAX_ATTEMPS - attempts)
+    "Mouse response: 0x9C to command 0xF4 (attempt 1)"
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+    sys_inb(port, &temp_val)
+  > sys_inb(0x64, addr: 0xeffff6f8)
+  < sys_inb(0x64, addr: 0xeffff6f8 [0x3d = 0b00111101])
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/keyboardMouse//KBC.c:14, kbc_write_byte
+    sys_outb(port, byte_to_write)
+  > sys_outb(0x64, 0xd4 = 0b11010100)
+  @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+    sys_inb(port, &temp_val)
+  > sys_inb(0x64, addr: 0xeffff6f8)
+  < sys_inb(0x64, addr: 0xeffff6f8 [0x3d = 0b00111101])
   @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/keyboardMouse//KBC.c:14, kbc_write_byte
     sys_outb(port, byte_to_write)
   > sys_outb(0x60, 0xf4 = 0b11110100)
@@ -75,8 +105,8 @@
   > sys_int86(addr: 0xeffff730 [AX: 4f02, BX: 411a, CX: 0000, DX: 0000, ES: 0000, DI: 0000])
   < sys_int86(addr: 0xeffff730 [AX: 004f, BX: 411a, CX: 0000, DX: 0000, ES: 0000, DI: 0000]) -> (ret: 0)
   @manager.c:64, initialize_graphics
-    timer_set_frequency(0, 60)
-  > timer_set_frequency(0, 60)
+    timer_set_frequency(0, 30)
+  > timer_set_frequency(0, 30)
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/timer//timer.c:40, timer_set_frequency
       timer_get_conf(timer, &controlWord)
     > timer_get_conf(0, addr: 0xeffff6ab)
@@ -90,25 +120,22 @@
     < timer_get_conf(0, addr: 0xeffff6ab [0x36 = 0b00110110]) -> (ret: 0)
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/timer//timer.c:46, timer_set_frequency
       util_get_LSB(counter, &lsb)
-    > util_get_LSB(0x4dae, addr: 0xeffff6aa)
-    < util_get_LSB(0x4dae, addr: 0xeffff6aa [0xae]) -> (ret: 0)
+    > util_get_LSB(0x9b5c, addr: 0xeffff6aa)
+    < util_get_LSB(0x9b5c, addr: 0xeffff6aa [0x5c]) -> (ret: 0)
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/timer//timer.c:47, timer_set_frequency
       util_get_MSB(counter, &msb)
-    > util_get_MSB(0x4dae, addr: 0xeffff6a9)
-    < util_get_MSB(0x4dae, addr: 0xeffff6a9 [0x4d]) -> (ret: 0)
+    > util_get_MSB(0x9b5c, addr: 0xeffff6a9)
+    < util_get_MSB(0x9b5c, addr: 0xeffff6a9 [0x9b]) -> (ret: 0)
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/timer//timer.c:67, timer_set_frequency
       sys_outb(TIMER_CTRL, controlWord)
     > sys_outb(0x43, 0x36 = 0b00110110)
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/timer//timer.c:69, timer_set_frequency
       sys_outb(selectedTimer, lsb)
-    > sys_outb(0x40, 0xae = 0b10101110)
+    > sys_outb(0x40, 0x5c = 0b01011100)
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers/timer//timer.c:70, timer_set_frequency
       sys_outb(selectedTimer, msb)
-    > sys_outb(0x40, 0x4d = 0b01001101)
-  < timer_set_frequency(0, 60) -> (ret: 0)
-  @manager.c:68, initialize_graphics
-    printf("Sucesso: Frequencia do Timer 0 configurada para 60 Hz.\n")
-    "Sucesso: Frequencia do Timer 0 configurada para 60 Hz."
+    > sys_outb(0x40, 0x9b = 0b10011011)
+  < timer_set_frequency(0, 30) -> (ret: 0)
   @main.c:34, proj_main_loop
     printf("Graphics mode initialized\n")
     "Graphics mode initialized"
@@ -116,93 +143,117 @@
     xpm_load(xpm, XPM_5_6_5, &image)
   > xpm_load(addr: 0x85301dc, XPM_5_6_5, addr: 0xeffff6c0)
   < xpm_load(addr: 0x85301dc, XPM_5_6_5, addr: 0xeffff6c0 [12x19 : 456 bytes]) -> (ret: 0x8555000)
-  @gameState.c:32, gameLoop
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010011]>)
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x8565000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x64, addr: 0xeffff634)
-    < sys_inb(0x64, addr: 0xeffff634 [0x1c = 0b00011100])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0xfa = 0b11111010])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x8865000)
-  @gameState.c:32, gameLoop
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x8b65000)
-  @gameState.c:32, gameLoop
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x8e65000)
-  @gameState.c:32, gameLoop
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x9165000)
-  @gameState.c:32, gameLoop
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @gameState.c:37, gameLoop
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x9465000)
-  @gameState.c:32, gameLoop
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @gameState.c:37, gameLoop
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x9765000)
-  @gameState.c:32, gameLoop
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x9a65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -211,18 +262,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x28 = 0b00101000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x9d65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -231,18 +282,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xa065000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -251,18 +302,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xa365000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -271,18 +322,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xa665000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -291,18 +342,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xa965000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -311,18 +362,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xac65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -331,18 +382,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xaf65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -351,18 +402,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xb265000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -371,18 +422,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfc = 0b11111100])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xb565000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -391,18 +442,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x04 = 0b00000100])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xb865000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -411,18 +462,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfd = 0b11111101])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xbb65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -431,18 +482,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfb = 0b11111011])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xbe65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -451,18 +502,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xc165000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -471,18 +522,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xc465000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -491,18 +542,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfd = 0b11111101])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xc765000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -511,18 +562,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x02 = 0b00000010])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xca65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -531,18 +582,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfe = 0b11111110])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xcd65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -551,18 +602,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfa = 0b11111010])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xd065000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -571,18 +622,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xd365000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -591,18 +642,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xd665000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -611,18 +662,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfb = 0b11111011])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xd965000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -631,18 +682,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xdc65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -651,18 +702,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xdf65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -671,18 +722,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfc = 0b11111100])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xe265000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -691,18 +742,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xe565000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -711,18 +762,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xe865000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -731,18 +782,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfa = 0b11111010])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xeb65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -751,18 +802,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xee65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -771,18 +822,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xf165000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -791,18 +842,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfd = 0b11111101])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xf465000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -811,18 +862,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x28 = 0b00101000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xf765000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -831,18 +882,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xfa65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -851,18 +902,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfb = 0b11111011])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0xfd65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -871,18 +922,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x10065000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -891,18 +942,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x10365000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -911,18 +962,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfa = 0b11111010])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x10665000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -931,18 +982,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x10965000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -951,18 +1002,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x10c65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -971,18 +1022,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfd = 0b11111101])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x10f65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -991,18 +1042,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x11265000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1011,18 +1062,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x11565000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1031,18 +1082,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfb = 0b11111011])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x11865000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1051,18 +1102,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x28 = 0b00101000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x11b65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1071,18 +1122,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x11e65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1091,18 +1142,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfc = 0b11111100])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x12165000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1111,18 +1162,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x28 = 0b00101000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x12465000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1131,18 +1182,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x12765000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1151,18 +1202,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfa = 0b11111010])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x12a65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1171,18 +1222,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x28 = 0b00101000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x12d65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1191,18 +1242,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x13065000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1211,18 +1262,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfb = 0b11111011])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x13365000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1231,18 +1282,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x28 = 0b00101000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x02 = 0b00000010])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x13665000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1251,58 +1302,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x13965000)
-  @gameState.c:53, gameLoop
-    mouse_ih()
-    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
-      sys_inb(port, &temp_val)
-    > sys_inb(0x64, addr: 0xeffff634)
-    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
-    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
-      sys_inb(port, &temp_val)
-    > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfd = 0b11111101])
-  @gameState.c:32, gameLoop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
-    timer_int_handler()
-  @menu.c:19, draw_menu
-    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
-  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
-  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x13c65000)
-  @gameState.c:53, gameLoop
-    mouse_ih()
-    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
-      sys_inb(port, &temp_val)
-    > sys_inb(0x64, addr: 0xeffff634)
-    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
-    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
-      sys_inb(port, &temp_val)
-    > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x28 = 0b00101000])
-  @gameState.c:32, gameLoop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
-    timer_int_handler()
-  @menu.c:19, draw_menu
-    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
-  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
-  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x13f65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1312,17 +1323,57 @@
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
     < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
-  @gameState.c:32, gameLoop
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x13c65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x13f65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x14265000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1331,18 +1382,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfb = 0b11111011])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x14565000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1351,18 +1402,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x14865000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1371,18 +1422,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x14b65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1391,18 +1442,18 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xfd = 0b11111101])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x14e65000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1411,18 +1462,98 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0x38 = 0b00111000])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
   < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x15165000)
-  @gameState.c:53, gameLoop
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x15465000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x15765000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x15a65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x18 = 0b00011000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x15d65000)
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1432,17 +1563,17 @@
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
     < sys_inb(0x60, addr: 0xeffff634 [0xfe = 0b11111110])
-  @gameState.c:32, gameLoop
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
   > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
-  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x15465000)
-  @gameState.c:53, gameLoop
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x16065000)
+  @gameState.c:51, gameLoop
     mouse_ih()
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
@@ -1451,12 +1582,552 @@
     @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
       sys_inb(port, &temp_val)
     > sys_inb(0x60, addr: 0xeffff634)
-    < sys_inb(0x60, addr: 0xeffff634 [0xf9 = 0b11111001])
-  @gameState.c:32, gameLoop
+    < sys_inb(0x60, addr: 0xeffff634 [0x02 = 0b00000010])
+  @gameState.c:30, gameLoop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
-  @gameState.c:37, gameLoop
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x16365000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x16665000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x16965000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x16c65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x18 = 0b00011000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x16f65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0xfe = 0b11111110])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x17265000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x02 = 0b00000010])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x17565000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x18 = 0b00011000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x17865000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x17b65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x17e65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x18165000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x18465000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x18765000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x18 = 0b00011000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x18a65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0xff = 0b11111111])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x18d65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x19065000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x19365000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x19665000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x19965000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x19c65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x19f65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x01 = 0b00000001])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x1a265000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x1a565000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x07 = 0b00000111])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x1a865000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x03 = 0b00000011])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x1ab65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x1ae65000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x08 = 0b00001000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
+    timer_int_handler()
+  @menu.c:19, draw_menu
+    xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)
+  > xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0)
+  < xpm_load(addr: 0x8530238, XPM_5_6_5, addr: 0xeffff6e0 [1536x1024 : 3145728 bytes]) -> (ret: 0x1b165000)
+  @gameState.c:51, gameLoop
+    mouse_ih()
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x64, addr: 0xeffff634)
+    < sys_inb(0x64, addr: 0xeffff634 [0x3d = 0b00111101])
+    @/home/lcom/labs/grupo_2leic18_2/proj/src/controllers//utils.c:38, util_sys_inb
+      sys_inb(port, &temp_val)
+    > sys_inb(0x60, addr: 0xeffff634)
+    < sys_inb(0x60, addr: 0xeffff634 [0x00 = 0b00000000])
+  @gameState.c:30, gameLoop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff730, addr: 0xeffff778)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000010001]>)
+  @gameState.c:35, gameLoop
     timer_int_handler()
   @menu.c:19, draw_menu
     xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg)

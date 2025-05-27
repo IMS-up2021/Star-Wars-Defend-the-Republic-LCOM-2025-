@@ -61,13 +61,7 @@ int (initialize_graphics)() {
         return 1;
     } 
 
-    if (timer_set_frequency(0, 60) != 0) { // Exemplo para 60 FPS
-        printf("ERRO: Falha ao configurar a frequencia do Timer 0!\n");
-        // Lidar com o erro, talvez não continuar
-    } else {
-        printf("Sucesso: Frequencia do Timer 0 configurada para 60 Hz.\n");
-    }
-
+    if (timer_set_frequency(0, 30) != 0) { printf("ERRO: Falha ao configurar a frequencia do Timer 0!\n");}
 
     return 0;
 }

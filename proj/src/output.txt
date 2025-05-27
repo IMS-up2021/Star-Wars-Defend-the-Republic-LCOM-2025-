@@ -1,7 +1,7 @@
+Mouse response: 0x9C to command 0xF4 (attempt 1)
 Interrupcao do Timer subscrita. Hook ID usado = 0, timer_irq_set = 0x00000001
 BitsPerPixel: 16
 Red: Size 5, Pos 11
 Green: Size 6, Pos 5
 Blue: Size 5, Pos 0
-Sucesso: Frequencia do Timer 0 configurada para 60 Hz.
 Graphics mode initialized
