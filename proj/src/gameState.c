@@ -12,6 +12,8 @@
 
 
 extern bool mouse_ready;
+extern Cursor *cursor;
+extern uint8_t *double_buffer;
 
 struct packet mouse_packet; 
 
@@ -33,6 +35,9 @@ void gameLoop(void) {
             if (_ENDPOINT_P(msg.m_source) == HARDWARE) {
                 if (msg.m_notify.interrupts & timer_irq_set) {
                     timer_int_handler();
+
+                    unsigned int _frame_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
+                    memset(double_buffer, 0, _frame_size);
                     switch (state) { 
                         case MAIN_MENU:
                             draw_menu();
@@ -46,11 +51,13 @@ void gameLoop(void) {
                         default:
                             break;
                     }
+                    vg_swap_buffers();
                 }
                 if (msg.m_notify.interrupts & mouse_irq_set) {
                     mouse_ih();
                     if (mouse_ready) {
                         mouse_event_handler(mouse_packet);
+                        draw_cursor(cursor);
                         mouse_ready = false;
                     }
                 }

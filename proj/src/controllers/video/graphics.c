@@ -7,6 +7,7 @@
 vbe_mode_info_t mode_info; 
 uint8_t *video_mem; 
 uint8_t *frame_buffer;
+uint8_t *double_buffer = NULL;
 
 // set minix to graphic mode
 int (set_graphic_mode)(uint16_t submode){
@@ -53,8 +54,8 @@ int (set_frame_buffer)(uint16_t mode){
     printf("Red: Size %d, Pos %d\n", mode_info.RedMaskSize, mode_info.RedFieldPosition);
     printf("Green: Size %d, Pos %d\n", mode_info.GreenMaskSize, mode_info.GreenFieldPosition);
     printf("Blue: Size %d, Pos %d\n", mode_info.BlueMaskSize, mode_info.BlueFieldPosition);
-  
-    uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
+    uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
+    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
     
     struct minix_mem_range physic_addresses;
     physic_addresses.mr_base = mode_info.PhysBasePtr; 
@@ -70,6 +71,13 @@ int (set_frame_buffer)(uint16_t mode){
       printf("Virtual memory allocation error");
       return 1;
     }
+
+    // Allocate secondary buffer in RAM
+    double_buffer = malloc(frame_size);
+    if (double_buffer == NULL) {
+        printf("Double buffer allocation failed\n");
+        return 1;
+    }
   
     return 0;
 }
@@ -79,8 +87,22 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     unsigned int BytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
     unsigned int index = (mode_info.XResolution * y + x) * BytesPerPixel;
     
-    memcpy(&frame_buffer[index], &color, BytesPerPixel);
+    memcpy(&double_buffer[index], &color, BytesPerPixel);
+    //memcpy(&frame_buffer[index], &color, BytesPerPixel);
 
+    return 0;
+}
+
+int (vg_swap_buffers)() {
+    unsigned int bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
+    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
+
+    if (double_buffer == NULL || frame_buffer == NULL) {
+        printf("Buffer not initialized\n");
+        return 1;
+    }
+
+    memcpy(frame_buffer, double_buffer, frame_size);
     return 0;
 }
 
@@ -173,7 +195,7 @@ int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_
             }
             
             // Pointer to destination pixel in framebuffer
-            uint8_t *dest_fb_pixel_ptr = frame_buffer + 
+            uint8_t *dest_fb_pixel_ptr = double_buffer + 
                                          (current_screen_y * mode_info.XResolution * framebuffer_bpp) +
                                          (current_screen_x * framebuffer_bpp);
 

@@ -64,23 +64,22 @@ int draw_cursor(Cursor *c) {
     uint16_t target_width = (uint16_t)(c->width * scale_factor);
     uint16_t target_height = (uint16_t)(c->height * scale_factor);
 
-    vg_draw_scaled_pixmap(c->sprite, c->width, c->height, src_bpp_for_cursor, mouse_pos.x, mouse_pos.y, target_width, target_height);
+    vg_draw_scaled_pixmap(c->sprite, c->width, c->height, src_bpp_for_cursor, cursor->pos_x, cursor->pos_y, target_width, target_height);
 
     return 0;
 }
 
 void (update_mouse_location)(int16_t delta_x, int16_t delta_y){
-
-    int32_t temp_x = mouse_pos.x;
-    int32_t temp_y = mouse_pos.y;
-    float mouse_sensitivity = 2.0f; // Experimente valores como 1.5, 2.0, 2.5, etc.
+    int32_t temp_x = cursor->pos_x;
+    int32_t temp_y = cursor->pos_y;
+    float mouse_sensitivity = 1.5f; // Experimente valores como 1.5, 2.0, 2.5, etc.
 
     // ... dentro de update_mouse_location, antes de adicionar aos temp_x, temp_y
     delta_x = (int16_t)(delta_x * mouse_sensitivity);
     delta_y = (int16_t)(delta_y * mouse_sensitivity); // Cuidado com a inversão aqui se já a faz mais tarde
 
     temp_x += delta_x;
-    temp_y -= delta_y;
+    temp_y += delta_y;
 
     if (temp_x < 0) temp_x = 0;
     if (temp_x > x_max) temp_x = x_max; // Assumindo x_max é compatível com int32_t
@@ -88,6 +87,6 @@ void (update_mouse_location)(int16_t delta_x, int16_t delta_y){
     if (temp_y < 0) temp_y = 0;
     if (temp_y > y_max) temp_y = y_max; // Assumindo y_max é compatível com int32_t
 
-    mouse_pos.x = (unsigned int)temp_x;
-    mouse_pos.y = (unsigned int)temp_y;
+    cursor->pos_x = (unsigned int)temp_x;
+    cursor->pos_y = (unsigned int)temp_y;
 }

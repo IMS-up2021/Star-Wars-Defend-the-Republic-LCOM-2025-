@@ -61,7 +61,7 @@ int (initialize_graphics)() {
         return 1;
     } 
 
-    if (timer_set_frequency(0, 30) != 0) { printf("ERRO: Falha ao configurar a frequencia do Timer 0!\n");}
+    if (timer_set_frequency(0, 60) != 0) { printf("ERRO: Falha ao configurar a frequencia do Timer 0!\n");}
 
     return 0;
 }

@@ -35,7 +35,7 @@ int (mouse_unsubscribe_int)() {
 void (mouse_ih)() {
     uint8_t status;
     uint8_t byte_just_read;
-
+   
     // Ler o registo de estado do KBC
     if (util_sys_inb(KBC_STAT_REG, &status)) { // KBC_STAT_REG é 0x64
         printf("mouse_ih: Error reading KBC status register\n");
