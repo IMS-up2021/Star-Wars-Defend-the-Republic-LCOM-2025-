@@ -8,7 +8,9 @@
 #include "controllers/keyboardMouse/mouse.h"
 #include "controllers/keyboardMouse/keyboard.h"
 #include "controllers/timer/timer.h"
+
 #include "handlers/mouse_handler.h"
+#include "handlers/timer_handler.h"
 
 
 extern bool mouse_ready;
@@ -39,19 +41,9 @@ void gameLoop(void) {
                     if (timer_global_counter % 2 == 0) {
                         unsigned int _frame_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
                         memset(double_buffer, 0, _frame_size);
-                        switch (state) { 
-                            case MAIN_MENU:
-                                draw_menu();
-                                break;
-                            case PLAYING:
-                                // draw_playing_screen(); // Função que desenha o ecrã de jogo, incluindo o cursor
-                                break;
-                            case INSTRUCTIONS:
-                                // draw_instructions_screen(); // etc.
-                                break;
-                            default:
-                                break;
-                        }
+
+                        timer_event_handler(state);
+
                         draw_cursor(cursor);
 
                         vg_swap_buffers();
@@ -62,7 +54,6 @@ void gameLoop(void) {
                     mouse_ih();
                     if (mouse_ready) {
                         mouse_event_handler(mouse_packet);
-                        // draw_cursor(cursor);
                         mouse_ready = false;
                     }
                 }
