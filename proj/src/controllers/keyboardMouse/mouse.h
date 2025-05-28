@@ -4,6 +4,9 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 #include "i8042.h"
+#include "entity.h"
+
+extern struct packet mouse_packet;
 
 int (mouse_subscribe_int)(uint8_t *bit_no);
 
@@ -16,5 +19,6 @@ void (mouse_sync_bytes)();
 void (mouse_bytes_to_packet)();
 
 int (mouse_write)(uint8_t command);
+
 
 #endif

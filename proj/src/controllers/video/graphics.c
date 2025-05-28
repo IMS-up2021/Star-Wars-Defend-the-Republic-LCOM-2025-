@@ -7,6 +7,7 @@
 vbe_mode_info_t mode_info; 
 uint8_t *video_mem; 
 uint8_t *frame_buffer;
+uint8_t *double_buffer = NULL;
 
 // set minix to graphic mode
 int (set_graphic_mode)(uint16_t submode){
@@ -53,8 +54,8 @@ int (set_frame_buffer)(uint16_t mode){
     printf("Red: Size %d, Pos %d\n", mode_info.RedMaskSize, mode_info.RedFieldPosition);
     printf("Green: Size %d, Pos %d\n", mode_info.GreenMaskSize, mode_info.GreenFieldPosition);
     printf("Blue: Size %d, Pos %d\n", mode_info.BlueMaskSize, mode_info.BlueFieldPosition);
-  
-    uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
+    uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
+    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
     
     struct minix_mem_range physic_addresses;
     physic_addresses.mr_base = mode_info.PhysBasePtr; 
@@ -70,10 +71,40 @@ int (set_frame_buffer)(uint16_t mode){
       printf("Virtual memory allocation error");
       return 1;
     }
+
+    // Allocate secondary buffer in RAM
+    double_buffer = malloc(frame_size);
+    if (double_buffer == NULL) {
+        printf("Double buffer allocation failed\n");
+        return 1;
+    }
   
     return 0;
 }
 
+int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
+    if (x >= mode_info.XResolution || y >= mode_info.YResolution) return 1;
+    unsigned int BytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
+    unsigned int index = (mode_info.XResolution * y + x) * BytesPerPixel;
+    
+    memcpy(&double_buffer[index], &color, BytesPerPixel);
+    //memcpy(&frame_buffer[index], &color, BytesPerPixel);
+
+    return 0;
+}
+
+int (vg_swap_buffers)() {
+    unsigned int bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
+    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
+
+    if (double_buffer == NULL || frame_buffer == NULL) {
+        printf("Buffer not initialized\n");
+        return 1;
+    }
+
+    memcpy(frame_buffer, double_buffer, frame_size);
+    return 0;
+}
 
 
 static int get_source_rgb(uint8_t *src_pixel_ptr, uint8_t src_bytes_per_pixel, 
@@ -161,40 +192,18 @@ int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_
             }
             
             // Pointer to destination pixel in framebuffer
-            uint8_t *dest_fb_pixel_ptr = frame_buffer + 
+            uint8_t *dest_fb_pixel_ptr = double_buffer + 
                                          (current_screen_y * mode_info.XResolution * framebuffer_bpp) +
                                          (current_screen_x * framebuffer_bpp);
 
             // Convert and write to framebuffer based on framebuffer's BPP
-            if (mode_info.BitsPerPixel == 32) {
-                uint32_t color32_fb = 0;
-                color32_fb |= ((uint32_t)(r_src >> (8 - mode_info.RedMaskSize)))   << mode_info.RedFieldPosition;
-                color32_fb |= ((uint32_t)(g_src >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
-                color32_fb |= ((uint32_t)(b_src >> (8 - mode_info.BlueMaskSize)))  << mode_info.BlueFieldPosition;
-                // Handle reserved bits (often for Alpha, set to opaque 0xFF if applicable)
-                if (mode_info.RsvdMaskSize > 0) {
-                     color32_fb |= ((1UL << mode_info.RsvdMaskSize) - 1) << mode_info.RsvdFieldPosition;
-                }
-                *(uint32_t*)dest_fb_pixel_ptr = color32_fb;
-            } else if (mode_info.BitsPerPixel == 16) {
+            if (mode_info.BitsPerPixel == 16) {
                 uint16_t color16_fb = 0;
                 // Convert 8-bit r_src, g_src, b_src to the framebuffer's 16-bit format
                 color16_fb |= ((uint16_t)(r_src >> (8 - mode_info.RedMaskSize)))   << mode_info.RedFieldPosition;
                 color16_fb |= ((uint16_t)(g_src >> (8 - mode_info.GreenMaskSize))) << mode_info.GreenFieldPosition;
                 color16_fb |= ((uint16_t)(b_src >> (8 - mode_info.BlueMaskSize)))  << mode_info.BlueFieldPosition;
-                *(uint16_t*)dest_fb_pixel_ptr = color16_fb;
-            } else if (mode_info.BitsPerPixel == 24) {
-                // Assuming BGR packed for framebuffer (common for 24-bit)
-                // And Red/Green/Blue FieldPosition and MaskSize define this order
-                if (mode_info.BlueFieldPosition == 0 && mode_info.BlueMaskSize == 8 &&
-                    mode_info.GreenFieldPosition == 8 && mode_info.GreenMaskSize == 8 &&
-                    mode_info.RedFieldPosition == 16 && mode_info.RedMaskSize == 8) {
-                    dest_fb_pixel_ptr[0] = b_src; // Blue
-                    dest_fb_pixel_ptr[1] = g_src; // Green
-                    dest_fb_pixel_ptr[2] = r_src; // Red
-                } else {
-                    printf("vg_draw_scaled_pixmap: Unsupported 24-bit framebuffer format.\n");
-                }
+                *(uint16_t*)dest_fb_pixel_ptr = color16_fb; 
             } else {
                 printf("vg_draw_scaled_pixmap: Unsupported framebuffer BitsPerPixel: %d\n", mode_info.BitsPerPixel);
                 return 1; // Or skip pixel

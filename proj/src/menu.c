@@ -1,25 +1,29 @@
 #include "xpms/menu_bg.xpm"
-
+#include "xpms/mouse_cursor.xpm"
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
 #include "menu.h"
+#include "entity.h"
 #include "gameState.h"
 #include "controllers/video/graphics.h"
 
+extern Cursor *cursor;
+    const uint8_t xpm_source_bpp = 2; //5:6:5
+uint8_t *bg_menu;
+    xpm_image_t menu_bg;
 
+void load_menu_assets() {
+
+    // Load the XPM images
+    bg_menu = xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg);
+
+}
 
 // Draw the menu
 void draw_menu() {
-    // Load the menu assets
-    xpm_image_t menu_bg;
-
-    // Load the XPM images
-    uint8_t *bg_menu = xpm_load(menu_bg_xpm, XPM_5_6_5, &menu_bg);
-
-    const uint8_t xpm_source_bpp = 2; //5:6:5
-
     vg_draw_scaled_pixmap(bg_menu, menu_bg.width, menu_bg.height, xpm_source_bpp, 0, 0, mode_info.XResolution, mode_info.YResolution);
 
+   // if (draw_cursor(cursor)) printf("%s: draw_cursor(cursor) error\n", __func__);
 }
 
 

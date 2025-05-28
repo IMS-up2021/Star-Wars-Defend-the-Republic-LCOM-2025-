@@ -25,29 +25,20 @@ typedef struct {
 
 
 typedef struct {
-    const unsigned int x_pos;  
-    const unsigned int y_pos;   
-    const unsigned int width;    
-    const unsigned int height;  
-    const bool top;              
-} Wall;
-
-typedef struct {
     unsigned int pos_x;
     unsigned int pos_y;
-    const unsigned int width;
-    const unsigned int height;
-    const uint8_t *sprite;
+    unsigned int width;
+    unsigned int height;
+    uint8_t *sprite;
 } Cursor;
 
-bool update_character(Character *character);
-
-Wall *create_wall(bool top);
-
-Character *create_character(xpm_map_t xpm);
-
-Player *create_player(unsigned int max_health);
 
 Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm);
+
+bool (init_cursor)(void);
+
+int draw_cursor(Cursor *cursor);
+
+void update_mouse_location(int16_t delta_x, int16_t delta_y);
 
 #endif

@@ -5,12 +5,14 @@
 #include "controllers/timer/timer.h"
 #include "controllers/keyboardMouse/keyboard.h"
 #include "controllers/keyboardMouse/mouse.h"
+#include "controllers/keyboardMouse/KBC.h"
 #include "controllers/video/graphics.h"
 #include "menu.h"
 
 extern uint32_t timer_irq_set;
 extern uint32_t kbd_irq_set;
 extern uint32_t mouse_irq_set;
+
 extern uint8_t *frame_buffer;
 extern uint8_t *second_buffer;
 extern uint16_t center_x;
