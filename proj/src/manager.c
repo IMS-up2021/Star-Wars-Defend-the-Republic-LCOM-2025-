@@ -66,6 +66,8 @@ int (initialize_graphics)() {
 
 
     load_menu_assets();
+    load_instructions_assets();
+    //load_game_assets();
     return 0;
 }
 

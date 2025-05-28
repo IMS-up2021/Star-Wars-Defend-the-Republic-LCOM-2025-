@@ -7,7 +7,7 @@
 #include "controllers/keyboardMouse/mouse.h"
 
 Cursor *cursor;
-Position mouse_pos = {210, 330};
+Position mouse_pos = {600, 800};
 
 uint16_t x_max = 1024;
 uint16_t y_max = 768;
