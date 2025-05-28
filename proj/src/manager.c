@@ -22,14 +22,7 @@ int (initialize_graphics)() {
         printf("Error subscribing keyboard interrupts\n");
         timer_unsubscribe_int();
         return 1;
-    }
-    if (mouse_subscribe_int(&mouse_bit_no) != 0) {
-        printf("Error subscribing mouse interrupts\n");
-        kbd_unsubscribe_int();
-        timer_unsubscribe_int();
-        return 1;
-    }
-
+    }  
     if (mouse_write(ENBL_DATA_REP)) {
         printf("Error enabling mouse data reporting\n");
         mouse_unsubscribe_int();
@@ -37,6 +30,14 @@ int (initialize_graphics)() {
         timer_unsubscribe_int();
         return 1;
     } 
+    if (mouse_subscribe_int(&mouse_bit_no) != 0) {
+        printf("Error subscribing mouse interrupts\n");
+        kbd_unsubscribe_int();
+        timer_unsubscribe_int();
+        return 1;
+    }
+
+
 
     timer_irq_set = BIT(timer_bit_no);
     kbd_irq_set = BIT(kbd_bit_no);
@@ -63,6 +64,8 @@ int (initialize_graphics)() {
 
     if (timer_set_frequency(0, 60) != 0) { printf("ERRO: Falha ao configurar a frequencia do Timer 0!\n");}
 
+
+    load_menu_assets();
     return 0;
 }
 

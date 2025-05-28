@@ -15,6 +15,8 @@ int (kbc_write_byte)(uint8_t port, uint8_t byte_to_write) {
 
             return 0; // Sucesso
         }
+        tickdelay(micros_to_ticks(WAIT_KBC));
+
     }
     return 1; // Falhou após tentativas
 }
@@ -47,7 +49,7 @@ int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut, uint8_t mouse) {
                 printf("Error: Mouse output not found\n");  
                 return 1;
             } 
-            if (mouse && (status & BIT(5))) {                
+            if (!mouse && (status & BIT(5))) {                
                 printf("Error: Keyboard output not found\n"); 
                 return 1;
             } 
