@@ -9,8 +9,8 @@
 Cursor *cursor;
 Position mouse_pos = {890, 800};
 
-uint16_t x_max = 1024;
-uint16_t y_max = 768;
+uint16_t x_max = 1274;
+uint16_t y_max = 938;
 
 struct packet mouse_packet;
 
