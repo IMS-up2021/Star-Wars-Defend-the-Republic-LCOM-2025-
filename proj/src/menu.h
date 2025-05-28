@@ -10,6 +10,12 @@
 #define INSTR_BTN_Y1  715
 #define INSTR_BTN_Y2  850
 
+//exit button coordinates
+#define EXIT_BTN_X1  790
+#define EXIT_BTN_X2  935
+#define EXIT_BTN_Y1  715
+#define EXIT_BTN_Y2  890
+
 void load_menu_assets(void);
 void draw_menu(void);
 

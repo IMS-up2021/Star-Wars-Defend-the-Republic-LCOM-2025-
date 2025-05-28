@@ -57,10 +57,14 @@ void gameLoop(void) {
                         mouse_ready = false;
                     }
                 }
+                if (state == EXIT) {
+                    running = false;
+                }
                 
             } else {
                 printf("Loop: NAO ENTROU no if is_ipc_notify. msg.m_type foi 0x%X.\n", msg.m_type);
             }
+            
         }
     }
 }

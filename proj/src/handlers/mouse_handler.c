@@ -19,6 +19,12 @@ void mouse_event_handler(struct packet mouse_packet) {
             if (mouse_pos.x >= INSTR_BTN_X1 && mouse_pos.x <= INSTR_BTN_X2 &&
             mouse_pos.y >= INSTR_BTN_Y1 && mouse_pos.y <= INSTR_BTN_Y2) {
             state = INSTRUCTIONS;
+            }
+            if (mouse_pos.x >= EXIT_BTN_X1 && mouse_pos.x <= EXIT_BTN_X2 &&
+            mouse_pos.y >= EXIT_BTN_Y1 && mouse_pos.y <= EXIT_BTN_Y2) {
+            printf("Exit button clicked!\n");
+            state = EXIT;
+            return;
         }
         break;
 
@@ -44,3 +50,5 @@ void mouse_event_handler(struct packet mouse_packet) {
             break;
     }
 }
+
+

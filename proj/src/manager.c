@@ -67,7 +67,7 @@ int (initialize_graphics)() {
 
     load_menu_assets();
     load_instructions_assets();
-    //load_game_assets();
+    load_game_assets();
     return 0;
 }
 
@@ -93,7 +93,7 @@ int (exit_game)() {
         fflush(stdout);
         return 1;
     }
-    if(vg_exit() == 1) {
+    if(vg_exit() != 0) {
         printf("Error exiting graphics mode\n");
         fflush(stdout);
         return 1;
