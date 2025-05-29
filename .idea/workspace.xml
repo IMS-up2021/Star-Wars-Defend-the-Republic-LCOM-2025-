@@ -7,7 +7,7 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
-    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="4" type="long" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="5" type="long" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakeProjectFlavorService">
@@ -21,13 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/game.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/handlers/mouse_handler.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/handlers/mouse_handler.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/handlers/timer_handler.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/handlers/timer_handler.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/entity.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/proj" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/proj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/trace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/trace.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/jump_8.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/jump_8.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/mouse_cursor.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/mouse_cursor.xpm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +99,7 @@
       <workItem from="1748530269692" duration="983000" />
       <workItem from="1748531453949" duration="5003000" />
       <workItem from="1748541421066" duration="743000" />
+      <workItem from="1748542873038" duration="9689000" />
     </task>
     <servers />
   </component>
