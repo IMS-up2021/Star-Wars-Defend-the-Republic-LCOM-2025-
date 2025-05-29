@@ -5,24 +5,6 @@
 #include <lcom/lcf.h>
 
 
-typedef struct {      
-    int gold;
-    unsigned int max_health;  
-} Player;
-
-
-typedef struct {
-    const unsigned int x_pos;  
-    const unsigned int y_pos;   
-    const unsigned int width;    
-    const unsigned int height;
-    const unsigned int damage;
-    const unsigned int health;
-    const unsigned int speed;
-    const unsigned int attack_range;
-    bool enemy; 
-} Character;
-
 
 typedef struct {
     unsigned int pos_x;

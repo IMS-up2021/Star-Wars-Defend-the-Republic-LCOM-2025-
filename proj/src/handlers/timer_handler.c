@@ -2,6 +2,7 @@
 #include "gameState.h"
 #include "manager.h"
 #include "menu.h"
+#include "enemy.h"
 
 
 void timer_event_handler(gameState game_state) {
@@ -11,6 +12,7 @@ void timer_event_handler(gameState game_state) {
             break;
         case PLAYING:
             draw_game();
+            spawnEnemies();
             break;
         case INSTRUCTIONS:
             draw_instructions();
