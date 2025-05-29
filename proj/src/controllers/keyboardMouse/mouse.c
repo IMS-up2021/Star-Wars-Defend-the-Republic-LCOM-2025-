@@ -5,9 +5,9 @@
 #include "gameState.h"
 
 struct packet mouse_packet;
-int mouse_hook_id = 4; // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
+int mouse_hook_id = 4;
 uint8_t byte_index = 0;
-uint8_t current_byte; // último byte a ser lido
+uint8_t current_byte;
 uint8_t mouse_bytes[3];
 
 bool mouse_ready = false;
@@ -23,7 +23,7 @@ int (mouse_subscribe_int)(uint8_t *bit_no) {
         return 1;
     }
 
-    return 0; // Sucesso
+    return 0;
 }
 
 // Desativação
@@ -41,8 +41,7 @@ void (mouse_ih)() {
             byte_index++;
         
     } 
-
-            // Se o pacote de 3 bytes estiver completo
+    // Se o pacote de 3 bytes estiver completo
     if (byte_index == 3) {
         for (int i = 0; i < 3; i++) {
             mouse_packet.bytes[i] = mouse_bytes[i];
@@ -64,32 +63,6 @@ void (mouse_ih)() {
         byte_index = 0;
         mouse_ready = true;
     }
-    
-
-}
-
-void (mouse_sync_bytes)() {
-    if(byte_index == 0 && (current_byte & FIRST_BYTE)) {
-        mouse_bytes[byte_index] = current_byte;
-        byte_index++;
-    }
-    else if (byte_index > 0) {
-        mouse_bytes[byte_index] = current_byte;
-        byte_index++;
-    }
-}
-
-void (mouse_bytes_to_packet)() {
-    for (int i = 0; i < 3; i++) {
-        mouse_packet.bytes[i] = mouse_bytes[i];
-    }
-    mouse_packet.rb = mouse_bytes[0] & MOUSE_RB;
-    mouse_packet.mb = mouse_bytes[0] & MOUSE_MB;
-    mouse_packet.lb = mouse_bytes[0] & MOUSE_LB;
-    mouse_packet.x_ov = mouse_bytes[0] & MOUSE_X_OVERFLOW;
-    mouse_packet.y_ov = mouse_bytes[0] & MOUSE_Y_OVERFLOW;
-    mouse_packet.delta_x = (mouse_bytes[0] & MOUSE_X_DELTA) ? (0xFF00 | mouse_bytes[1]) : mouse_bytes[1];
-    mouse_packet.delta_y = (mouse_bytes[0] & MOUSE_Y_DELTA) ? (0xFF00 | mouse_bytes[2]) : mouse_bytes[2];
 }
 
 
@@ -115,13 +88,13 @@ int (mouse_write)(uint8_t command_to_mouse) {
                 continue; // Tentar novamente
             }
             if (mouse_response == MOUSE_ACK) { // MOUSE_ACK é 0xFA
-                return 0; // Sucesso
+                return 0;
             } else {
                 printf("Mouse response: 0x%02X to command 0x%02X (attempt %d)\n", mouse_response, command_to_mouse, MAX_ATTEMPS - attempts);
             }
     } while (attempts > 0);
 
-    return 1; // Falhou
+    return 1;
 }
 
 

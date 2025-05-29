@@ -13,12 +13,12 @@ int (kbc_write_byte)(uint8_t port, uint8_t byte_to_write) {
         if ((status & FULL_IN_BUF) == 0) { // FULL_IN_BUF é BIT(1)
             if (sys_outb(port, byte_to_write) != 0) return 1;
 
-            return 0; // Sucesso
+            return 0;
         }
         tickdelay(micros_to_ticks(WAIT_KBC));
 
     }
-    return 1; // Falhou após tentativas
+    return 1;
 }
 
 int (read_kbc_out)(uint8_t port, uint8_t *cmdByteOut, uint8_t mouse) {

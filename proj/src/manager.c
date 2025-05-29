@@ -37,18 +37,9 @@ int (initialize_graphics)() {
         return 1;
     }
 
-
-
     timer_irq_set = BIT(timer_bit_no);
     kbd_irq_set = BIT(kbd_bit_no);
     mouse_irq_set = BIT(mouse_bit_no);
-
-    printf("Interrupcao do kbd subscrita. Hook ID usado = %d, kbd_irq_set = 0x%08X\n",
-       kbd_bit_no, kbd_irq_set);
-    printf("Interrupcao do mouse subscrita. Hook ID usado = %d, mouse_irq_set = 0x%08X\n",
-         mouse_bit_no, mouse_irq_set);
-    printf("Interrupcao do timer subscrita. Hook ID usado = %d, timer_irq_set = 0x%08X\n",
-        timer_bit_no, timer_irq_set);
 
     uint16_t mode_info = VBE_1024p_DC; 
     if (set_frame_buffer(mode_info) == 1) {
@@ -68,10 +59,10 @@ int (initialize_graphics)() {
 
     if (timer_set_frequency(0, 60) != 0) { printf("ERRO: Falha ao configurar a frequencia do Timer 0!\n");}
 
-
     load_menu_assets();
     load_instructions_assets();
     load_game_assets();
+    
     return 0;
 }
 
@@ -102,7 +93,6 @@ int (exit_game)() {
         fflush(stdout);
         return 1;
     }
-    
 
     return 0;
 }

@@ -21,12 +21,6 @@ extern uint64_t delta_time;
 
 int (initialize_graphics)();
 
-int (game_loop)();
-
 int (exit_game)();
-// void (load_xpms)();
-void (handle_timer_event)();
-void (handle_kbd_event)(uint8_t scancode[]);
-void (handle_mouse_event)(struct packet pp);
 
 #endif // MANAGER_H

@@ -50,10 +50,6 @@ int (set_frame_buffer)(uint16_t mode){
     memset(&mode_info, 0, sizeof(mode_info));
     if(vbe_get_mode_info(mode, &mode_info)) return 1;
 
-    printf("BitsPerPixel: %d\n", mode_info.BitsPerPixel);
-    printf("Red: Size %d, Pos %d\n", mode_info.RedMaskSize, mode_info.RedFieldPosition);
-    printf("Green: Size %d, Pos %d\n", mode_info.GreenMaskSize, mode_info.GreenFieldPosition);
-    printf("Blue: Size %d, Pos %d\n", mode_info.BlueMaskSize, mode_info.BlueFieldPosition);
     uint8_t bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
     unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
     
@@ -88,7 +84,6 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     unsigned int index = (mode_info.XResolution * y + x) * BytesPerPixel;
     
     memcpy(&double_buffer[index], &color, BytesPerPixel);
-    //memcpy(&frame_buffer[index], &color, BytesPerPixel);
 
     return 0;
 }
@@ -133,8 +128,6 @@ static int get_source_rgb(uint8_t *src_pixel_ptr, uint8_t src_bytes_per_pixel,
         *b_out = src_pixel_ptr[2]; // B
         return 0;
     }
-    // Unsupported source format
-    printf("get_source_rgb: Unsupported source bpp: %d\n", src_bytes_per_pixel);
     return 1; 
 }
 

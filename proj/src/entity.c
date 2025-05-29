@@ -70,23 +70,17 @@ int draw_cursor(Cursor *c) {
 }
 
 void (update_mouse_location)(int16_t delta_x, int16_t delta_y){
-    //printf("Updating mouse location: delta_x = %d, delta_y = %d\n", delta_x, delta_y);
     int32_t temp_x = cursor->pos_x;
     int32_t temp_y = cursor->pos_y;
-    float mouse_sensitivity = 1.0f; // Experimente valores como 1.5, 2.0, 2.5, etc.
-
-    // ... dentro de update_mouse_location, antes de adicionar aos temp_x, temp_y
-    delta_x = (int16_t)(delta_x * mouse_sensitivity);
-    delta_y = (int16_t)(delta_y * mouse_sensitivity); // Cuidado com a inversão aqui se já a faz mais tarde
 
     temp_x += delta_x;
     temp_y -= delta_y;
 
     if (temp_x < 0) temp_x = 0;
-    if (temp_x > x_max) temp_x = x_max; // Assumindo x_max é compatível com int32_t
+    if (temp_x > x_max) temp_x = x_max;
 
     if (temp_y < 0) temp_y = 0;
-    if (temp_y > y_max) temp_y = y_max; // Assumindo y_max é compatível com int32_t
+    if (temp_y > y_max) temp_y = y_max;
 
     cursor->pos_x = (unsigned int)temp_x;
     cursor->pos_y = (unsigned int)temp_y;
