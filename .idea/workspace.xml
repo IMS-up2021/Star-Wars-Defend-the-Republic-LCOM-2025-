@@ -21,8 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/entity.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/entity.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/game.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/handlers/mouse_handler.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/handlers/mouse_handler.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/manager.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/manager.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/manager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/manager.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/manager.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/menu.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/menu.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/menu.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/proj" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/proj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/trace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/trace.txt" afterDir="false" />
@@ -55,28 +63,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.advertisement.text.has.clang-format": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "handler__mouse",
-    "last_opened_file_path": "/home/jose-b-reis/repos/MINIX-LCOM/shared/grupo_2leic18_2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.advertisement.text.has.clang-format&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;handler__mouse&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jose-b-reis/repos/MINIX-LCOM/shared/grupo_2leic18_2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -94,6 +102,8 @@
       <workItem from="1740406459165" duration="158000" />
       <workItem from="1740406623659" duration="3153000" />
       <workItem from="1746809207800" duration="5918000" />
+      <workItem from="1748530269692" duration="983000" />
+      <workItem from="1748531453949" duration="1055000" />
     </task>
     <servers />
   </component>

@@ -31,9 +31,6 @@
 void load_menu_assets(void);
 void draw_menu(void);
 
-void load_game_assets(void);
-void draw_game(void);
-
 void load_instructions_assets(void);
 void draw_instructions(void);
 

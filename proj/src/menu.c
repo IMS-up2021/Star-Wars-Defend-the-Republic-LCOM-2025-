@@ -26,15 +26,6 @@ void draw_menu() {
     vg_draw_scaled_pixmap(bg_menu, menu_bg.width, menu_bg.height, xpm_source_bpp, 0, 0, mode_info.XResolution, mode_info.YResolution);
 }
 
-void load_game_assets() {
-    // Load the XPM images
-    bg_game = xpm_load(background_xpm, XPM_5_6_5, &game_bg);
-}
-
-
-void draw_game() {
-    vg_draw_scaled_pixmap(bg_game, game_bg.width, game_bg.height, xpm_source_bpp, 0, 0, mode_info.XResolution, mode_info.YResolution);
-}
 
 void load_instructions_assets() {
     bg_instructions = xpm_load(instructions_xpm, XPM_5_6_5, &instructions_bg);

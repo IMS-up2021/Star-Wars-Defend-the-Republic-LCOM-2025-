@@ -8,6 +8,7 @@
 #include "controllers/keyboardMouse/KBC.h"
 #include "controllers/video/graphics.h"
 #include "menu.h"
+#include "game.h"
 
 extern uint32_t timer_irq_set;
 extern uint32_t kbd_irq_set;

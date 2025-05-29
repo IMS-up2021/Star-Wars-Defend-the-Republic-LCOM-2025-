@@ -3,6 +3,7 @@
 #include "menu.h"
 #include "gameState.h"
 #include "entity.h"
+#include "game.h"
 
 
 Cursor *cursor;
@@ -34,14 +35,37 @@ void mouse_event_handler(struct packet mouse_packet) {
 
         case PLAYING:
             update_mouse_location(mouse_packet.delta_x, mouse_packet.delta_y);
-            if (!mouse_packet.lb) return;
+        if (!mouse_packet.lb) return;
 
-           // coordenadas dos botões
-            
-            
-            // falta meter a lógica das setas verdes, para dar spawn do personagem
+        // Verifica se clicou no botão PAUSE
+        if (cursor->pos_x >= PAUSE_BTN_X1 && cursor->pos_x <= PAUSE_BTN_X2 &&
+            cursor->pos_y >= PAUSE_BTN_Y1 && cursor->pos_y <= PAUSE_BTN_Y2) {
+            printf("Pause button clicked!\n");
+            //state = PAUSED;
+            return;
+            }
 
-            break;
+        // Verifica se clicou no botão RESUME
+        if (cursor->pos_x >= RESUME_BTN_X1 && cursor->pos_x <= RESUME_BTN_X2 &&
+            cursor->pos_y >= RESUME_BTN_Y1 && cursor->pos_y <= RESUME_BTN_Y2) {
+            printf("Resume button clicked!\n");
+            // Provavelmente queres manter o estado em PLAYING
+            // Mas pode ser útil em caso de retomar de PAUSED
+            //state = PLAYING;
+            return;
+            }
+
+        // Verifica se clicou no botão FAST
+        if (cursor->pos_x >= FAST_BTN_X1 && cursor->pos_x <= FAST_BTN_X2 &&
+            cursor->pos_y >= FAST_BTN_Y1 && cursor->pos_y <= FAST_BTN_Y2) {
+            printf("Fast button clicked! Spawning fast character...\n");
+            // Aqui podes chamar a função que faz o spawn de um personagem rápido
+            return;
+            }
+
+        // Aqui podes continuar com outras lógicas do estado PLAYING
+        break;
+
 
         case INSTRUCTIONS:
             update_mouse_location(mouse_packet.delta_x, mouse_packet.delta_y);

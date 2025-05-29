@@ -13,7 +13,7 @@ PROG=proj
 CFLAGS += -pedantic -DPROJ -O2
 
 # source code files to be compiled
-SRCS = main.c graphics.c keyboard.c KBC.c timer.c mouse.c manager.c utils.c entity.c gameState.c menu.c mouse_handler.c timer_handler.c kbd_handler.c
+SRCS = main.c graphics.c keyboard.c KBC.c timer.c mouse.c manager.c utils.c entity.c gameState.c menu.c game.c mouse_handler.c timer_handler.c kbd_handler.c
 
 
 # additional dependencies and libraries

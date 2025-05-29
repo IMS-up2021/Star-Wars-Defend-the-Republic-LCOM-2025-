@@ -6,6 +6,8 @@
 
 extern vbe_mode_info_t mode_info;
 extern uint8_t* frame_buffer;
+extern const uint8_t xpm_source_bpp;
+
 
 int (set_graphic_mode)(uint16_t submode);
 int (set_text_mode)();
