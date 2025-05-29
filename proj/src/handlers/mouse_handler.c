@@ -4,6 +4,7 @@
 #include "gameState.h"
 #include "entity.h"
 #include "game.h"
+#include "buttons.h"
 
 
 Cursor *cursor;
@@ -36,6 +37,31 @@ void mouse_event_handler(struct packet mouse_packet) {
         case PLAYING:
             update_mouse_location(mouse_packet.delta_x, mouse_packet.delta_y);
         if (!mouse_packet.lb) return;
+
+         if (cursor->pos_x >= BTN1_X1 && cursor->pos_x <= BTN1_X2 &&
+        cursor->pos_y >= BTN1_Y1 && cursor->pos_y <= BTN1_Y2) {
+        printf("Button 1 clicked!\n");
+        return;
+        }
+        if (cursor->pos_x >= BTN2_X1 && cursor->pos_x <= BTN2_X2 &&
+            cursor->pos_y >= BTN2_Y1 && cursor->pos_y <= BTN2_Y2) {
+            printf("Button 2 clicked!\n");
+            return;
+        }
+        if (cursor->pos_x >= BTN3_X1 && cursor->pos_x <= BTN3_X2 &&
+            cursor->pos_y >= BTN3_Y1 && cursor->pos_y <= BTN3_Y2) {
+            printf("Button 3 clicked!\n");
+            return;
+        }
+        if (cursor->pos_x >= BTN4_X1 && cursor->pos_x <= BTN4_X2 &&
+            cursor->pos_y >= BTN4_Y1 && cursor->pos_y <= BTN4_Y2) {
+            printf("Button 4 clicked!\n");}
+
+        if (cursor->pos_x >= BTN5_X1 && cursor->pos_x <= BTN5_X2 &&
+            cursor->pos_y >= BTN5_Y1 && cursor->pos_y <= BTN5_Y2) {
+            printf("Button 5 clicked!\n");
+        return;
+    }
 
         // Verifica se clicou no botão PAUSE
         if (cursor->pos_x >= PAUSE_BTN_X1 && cursor->pos_x <= PAUSE_BTN_X2 &&

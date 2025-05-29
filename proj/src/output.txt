@@ -5,795 +5,807 @@ BitsPerPixel: 16
 Red: Size 5, Pos 11
 Green: Size 6, Pos 5
 Blue: Size 5, Pos 0
+Failed to load game background XPM!
 Graphics mode initialized
-Cursor position updated: x = 254, y = 134
-Cursor position updated: x = 229, y = 117
-Cursor position updated: x = 210, y = 108
-Cursor position updated: x = 184, y = 99
-Cursor position updated: x = 122, y = 86
-Cursor position updated: x = 60, y = 83
-Cursor position updated: x = 39, y = 85
-Cursor position updated: x = 0, y = 95
-Cursor position updated: x = 0, y = 101
-Cursor position updated: x = 0, y = 116
-Cursor position updated: x = 0, y = 126
-Cursor position updated: x = 0, y = 146
-Cursor position updated: x = 0, y = 167
-Cursor position updated: x = 0, y = 176
-Cursor position updated: x = 0, y = 196
-Cursor position updated: x = 0, y = 206
-Cursor position updated: x = 0, y = 225
-Cursor position updated: x = 0, y = 241
-Cursor position updated: x = 0, y = 247
-Cursor position updated: x = 0, y = 252
-Cursor position updated: x = 0, y = 259
-Cursor position updated: x = 0, y = 261
-Cursor position updated: x = 5, y = 252
-Cursor position updated: x = 11, y = 245
-Cursor position updated: x = 18, y = 242
-Cursor position updated: x = 43, y = 239
-Cursor position updated: x = 52, y = 243
-Cursor position updated: x = 74, y = 260
-Cursor position updated: x = 86, y = 271
-Cursor position updated: x = 111, y = 308
-Cursor position updated: x = 125, y = 330
-Cursor position updated: x = 164, y = 408
-Cursor position updated: x = 174, y = 434
-Cursor position updated: x = 182, y = 458
-Cursor position updated: x = 194, y = 491
-Cursor position updated: x = 208, y = 512
-Cursor position updated: x = 215, y = 519
-Cursor position updated: x = 221, y = 525
-Cursor position updated: x = 226, y = 531
-Cursor position updated: x = 233, y = 539
-Cursor position updated: x = 250, y = 561
-Cursor position updated: x = 266, y = 586
-Cursor position updated: x = 277, y = 601
-Cursor position updated: x = 294, y = 626
-Cursor position updated: x = 304, y = 637
-Cursor position updated: x = 318, y = 656
-Cursor position updated: x = 328, y = 671
-Cursor position updated: x = 337, y = 681
-Cursor position updated: x = 341, y = 686
-Cursor position updated: x = 345, y = 691
-Cursor position updated: x = 347, y = 693
-Cursor position updated: x = 348, y = 694
-Cursor position updated: x = 349, y = 696
-Cursor position updated: x = 350, y = 698
-Cursor position updated: x = 350, y = 701
-Cursor position updated: x = 351, y = 703
-Cursor position updated: x = 351, y = 704
-Cursor position updated: x = 351, y = 705
-Cursor position updated: x = 351, y = 706
-Cursor position updated: x = 351, y = 707
-Cursor position updated: x = 352, y = 709
-Cursor position updated: x = 355, y = 714
-Cursor position updated: x = 356, y = 717
-Cursor position updated: x = 359, y = 723
-Cursor position updated: x = 361, y = 726
-Cursor position updated: x = 365, y = 732
-Cursor position updated: x = 369, y = 738
-Cursor position updated: x = 371, y = 740
-Cursor position updated: x = 374, y = 746
-Cursor position updated: x = 377, y = 750
-Cursor position updated: x = 381, y = 758
-Cursor position updated: x = 383, y = 762
-Cursor position updated: x = 386, y = 770
-Cursor position updated: x = 388, y = 774
-Cursor position updated: x = 391, y = 780
-Cursor position updated: x = 393, y = 783
-Cursor position updated: x = 393, y = 784
-Cursor position updated: x = 393, y = 785
-Cursor position updated: x = 393, y = 785
-Cursor position updated: x = 393, y = 785
-Cursor position updated: x = 398, y = 785
-Cursor position updated: x = 402, y = 785
-Cursor position updated: x = 407, y = 785
-Cursor position updated: x = 415, y = 785
-Cursor position updated: x = 422, y = 785
-Cursor position updated: x = 436, y = 785
-Cursor position updated: x = 444, y = 787
-Cursor position updated: x = 451, y = 788
-Cursor position updated: x = 480, y = 795
-Cursor position updated: x = 489, y = 797
-Cursor position updated: x = 504, y = 800
-Cursor position updated: x = 555, y = 815
-Cursor position updated: x = 576, y = 819
-Cursor position updated: x = 615, y = 830
-Cursor position updated: x = 653, y = 840
-Cursor position updated: x = 669, y = 845
-Cursor position updated: x = 692, y = 851
-Cursor position updated: x = 701, y = 854
-Cursor position updated: x = 715, y = 858
-Cursor position updated: x = 721, y = 860
-Cursor position updated: x = 728, y = 863
-Cursor position updated: x = 742, y = 869
-Cursor position updated: x = 750, y = 872
-Cursor position updated: x = 765, y = 879
-Cursor position updated: x = 780, y = 886
-Cursor position updated: x = 793, y = 892
-Cursor position updated: x = 799, y = 894
-Cursor position updated: x = 808, y = 898
-Cursor position updated: x = 817, y = 900
-Cursor position updated: x = 822, y = 900
-Cursor position updated: x = 830, y = 899
-Cursor position updated: x = 837, y = 898
-Cursor position updated: x = 841, y = 898
-Cursor position updated: x = 849, y = 897
-Cursor position updated: x = 853, y = 897
-Cursor position updated: x = 859, y = 896
-Cursor position updated: x = 873, y = 894
-Cursor position updated: x = 878, y = 894
-Cursor position updated: x = 883, y = 893
-Cursor position updated: x = 898, y = 892
-Cursor position updated: x = 903, y = 892
-Cursor position updated: x = 913, y = 892
-Cursor position updated: x = 923, y = 892
-Cursor position updated: x = 927, y = 892
-Cursor position updated: x = 931, y = 893
-Cursor position updated: x = 942, y = 895
-Cursor position updated: x = 945, y = 896
-Cursor position updated: x = 947, y = 896
-Cursor position updated: x = 953, y = 897
-Cursor position updated: x = 956, y = 897
-Cursor position updated: x = 957, y = 897
-Cursor position updated: x = 960, y = 898
-Cursor position updated: x = 961, y = 898
-Cursor position updated: x = 962, y = 898
-Cursor position updated: x = 964, y = 899
-Cursor position updated: x = 967, y = 900
-Cursor position updated: x = 969, y = 901
-Cursor position updated: x = 970, y = 901
-Cursor position updated: x = 974, y = 901
-Cursor position updated: x = 976, y = 901
-Cursor position updated: x = 980, y = 904
-Cursor position updated: x = 982, y = 905
-Cursor position updated: x = 988, y = 908
-Cursor position updated: x = 994, y = 914
-Cursor position updated: x = 996, y = 916
-Cursor position updated: x = 998, y = 918
-Cursor position updated: x = 1002, y = 922
-Cursor position updated: x = 1005, y = 926
-Cursor position updated: x = 1007, y = 928
-Cursor position updated: x = 1009, y = 933
-Cursor position updated: x = 1011, y = 938
-Cursor position updated: x = 1011, y = 940
-Cursor position updated: x = 1011, y = 942
-Cursor position updated: x = 1011, y = 945
-Cursor position updated: x = 1011, y = 946
-Cursor position updated: x = 1011, y = 946
-Fast button clicked! Spawning fast character...
-Game set to fast speed.
-Cursor position updated: x = 1011, y = 946
-Cursor position updated: x = 1008, y = 940
-Cursor position updated: x = 1005, y = 931
-Cursor position updated: x = 1002, y = 908
-Cursor position updated: x = 1002, y = 897
-Cursor position updated: x = 1000, y = 869
-Cursor position updated: x = 1000, y = 858
-Cursor position updated: x = 1000, y = 840
-Cursor position updated: x = 1000, y = 830
-Cursor position updated: x = 1000, y = 813
-Cursor position updated: x = 999, y = 803
-Cursor position updated: x = 996, y = 785
-Cursor position updated: x = 995, y = 776
-Cursor position updated: x = 995, y = 767
-Cursor position updated: x = 992, y = 754
-Cursor position updated: x = 989, y = 744
-Cursor position updated: x = 986, y = 736
-Cursor position updated: x = 983, y = 732
-Cursor position updated: x = 974, y = 723
-Cursor position updated: x = 969, y = 718
-Cursor position updated: x = 958, y = 706
-Cursor position updated: x = 951, y = 700
-Cursor position updated: x = 945, y = 696
-Cursor position updated: x = 935, y = 688
-Cursor position updated: x = 924, y = 682
-Cursor position updated: x = 918, y = 679
-Cursor position updated: x = 904, y = 674
-Cursor position updated: x = 897, y = 671
-Cursor position updated: x = 888, y = 668
-Cursor position updated: x = 865, y = 662
-Cursor position updated: x = 846, y = 658
-Cursor position updated: x = 838, y = 658
-Cursor position updated: x = 828, y = 657
-Cursor position updated: x = 821, y = 657
-Cursor position updated: x = 818, y = 657
-Cursor position updated: x = 814, y = 658
-Cursor position updated: x = 810, y = 660
-Cursor position updated: x = 807, y = 664
-Cursor position updated: x = 817, y = 656
-Cursor position updated: x = 829, y = 648
-Cursor position updated: x = 847, y = 641
-Cursor position updated: x = 896, y = 623
-Cursor position updated: x = 923, y = 616
-Cursor position updated: x = 978, y = 609
-Cursor position updated: x = 1004, y = 608
-Cursor position updated: x = 1048, y = 609
-Cursor position updated: x = 1079, y = 614
-Cursor position updated: x = 1100, y = 621
-Cursor position updated: x = 1107, y = 625
-Cursor position updated: x = 1116, y = 634
-Cursor position updated: x = 1121, y = 641
-Cursor position updated: x = 1122, y = 659
-Cursor position updated: x = 1121, y = 666
-Cursor position updated: x = 1110, y = 681
-Cursor position updated: x = 1087, y = 699
-Cursor position updated: x = 1037, y = 718
-Cursor position updated: x = 1004, y = 729
-Cursor position updated: x = 909, y = 749
-Cursor position updated: x = 854, y = 757
-Cursor position updated: x = 743, y = 763
-Cursor position updated: x = 670, y = 759
-Cursor position updated: x = 644, y = 749
-Cursor position updated: x = 629, y = 739
-Cursor position updated: x = 609, y = 712
-Cursor position updated: x = 601, y = 671
-Cursor position updated: x = 614, y = 612
-Cursor position updated: x = 630, y = 579
-Cursor position updated: x = 676, y = 519
-Cursor position updated: x = 758, y = 461
-Cursor position updated: x = 797, y = 440
-Cursor position updated: x = 877, y = 415
-Cursor position updated: x = 906, y = 414
-Cursor position updated: x = 944, y = 419
-Cursor position updated: x = 956, y = 423
-Cursor position updated: x = 968, y = 433
-Cursor position updated: x = 972, y = 442
-Cursor position updated: x = 968, y = 460
-Cursor position updated: x = 960, y = 469
-Cursor position updated: x = 921, y = 491
-Cursor position updated: x = 880, y = 504
-Cursor position updated: x = 787, y = 534
-Cursor position updated: x = 737, y = 543
-Cursor position updated: x = 646, y = 551
-Cursor position updated: x = 621, y = 551
-Cursor position updated: x = 587, y = 544
-Cursor position updated: x = 575, y = 534
-Cursor position updated: x = 575, y = 524
-Cursor position updated: x = 592, y = 493
-Cursor position updated: x = 610, y = 489
-Cursor position updated: x = 678, y = 444
-Cursor position updated: x = 758, y = 418
-Cursor position updated: x = 820, y = 419
-Cursor position updated: x = 857, y = 434
-Cursor position updated: x = 866, y = 442
-Cursor position updated: x = 879, y = 460
-Cursor position updated: x = 879, y = 479
-Cursor position updated: x = 874, y = 487
-Cursor position updated: x = 859, y = 491
-Cursor position updated: x = 797, y = 518
-Cursor position updated: x = 696, y = 551
-Cursor position updated: x = 645, y = 563
-Cursor position updated: x = 588, y = 569
-Cursor position updated: x = 577, y = 569
-Cursor position updated: x = 565, y = 561
-Cursor position updated: x = 565, y = 553
-Cursor position updated: x = 582, y = 523
-Cursor position updated: x = 603, y = 504
-Cursor position updated: x = 634, y = 489
-Cursor position updated: x = 702, y = 463
-Cursor position updated: x = 734, y = 457
-Cursor position updated: x = 785, y = 459
-Cursor position updated: x = 804, y = 466
-Cursor position updated: x = 829, y = 484
-Cursor position updated: x = 838, y = 491
-Cursor position updated: x = 851, y = 514
-Cursor position updated: x = 857, y = 534
-Cursor position updated: x = 862, y = 552
-Cursor position updated: x = 863, y = 562
-Cursor position updated: x = 864, y = 570
-Cursor position updated: x = 871, y = 572
-Cursor position updated: x = 879, y = 577
-Cursor position updated: x = 889, y = 582
-Cursor position updated: x = 917, y = 602
-Cursor position updated: x = 951, y = 633
-Cursor position updated: x = 988, y = 673
-Cursor position updated: x = 1002, y = 691
-Cursor position updated: x = 1024, y = 722
-Cursor position updated: x = 1034, y = 736
-Cursor position updated: x = 1045, y = 757
-Cursor position updated: x = 1050, y = 765
-Cursor position updated: x = 1056, y = 778
-Cursor position updated: x = 1060, y = 791
-Cursor position updated: x = 1064, y = 802
-Cursor position updated: x = 1064, y = 806
-Cursor position updated: x = 1064, y = 814
-Cursor position updated: x = 1063, y = 818
-Cursor position updated: x = 1061, y = 824
-Cursor position updated: x = 1060, y = 827
-Cursor position updated: x = 1058, y = 833
-Cursor position updated: x = 1058, y = 836
-Cursor position updated: x = 1056, y = 841
-Cursor position updated: x = 1055, y = 843
-Cursor position updated: x = 1054, y = 844
-Cursor position updated: x = 1054, y = 849
-Cursor position updated: x = 1054, y = 850
-Cursor position updated: x = 1054, y = 857
-Cursor position updated: x = 1053, y = 864
-Cursor position updated: x = 1051, y = 867
-Cursor position updated: x = 1048, y = 876
-Cursor position updated: x = 1041, y = 885
-Cursor position updated: x = 1038, y = 889
-Cursor position updated: x = 1033, y = 899
-Cursor position updated: x = 1029, y = 902
-Cursor position updated: x = 1023, y = 911
-Cursor position updated: x = 1017, y = 917
-Cursor position updated: x = 1014, y = 921
-Cursor position updated: x = 1010, y = 925
-Cursor position updated: x = 1007, y = 930
-Cursor position updated: x = 1006, y = 931
-Cursor position updated: x = 1005, y = 932
-Cursor position updated: x = 1004, y = 933
-Cursor position updated: x = 1003, y = 935
-Cursor position updated: x = 1003, y = 937
-Cursor position updated: x = 1002, y = 939
-Cursor position updated: x = 1000, y = 942
-Cursor position updated: x = 1000, y = 946
-Cursor position updated: x = 998, y = 951
-Cursor position updated: x = 997, y = 953
-Cursor position updated: x = 995, y = 957
-Cursor position updated: x = 995, y = 958
-Cursor position updated: x = 995, y = 959
-Cursor position updated: x = 995, y = 960
-Cursor position updated: x = 995, y = 960
-Fast button clicked! Spawning fast character...
-Game set to fast speed.
-Cursor position updated: x = 995, y = 960
-Cursor position updated: x = 995, y = 960
-Fast button clicked! Spawning fast character...
-Game set to fast speed.
-Cursor position updated: x = 995, y = 960
-Cursor position updated: x = 995, y = 960
-Fast button clicked! Spawning fast character...
-Game set to fast speed.
-Cursor position updated: x = 995, y = 960
-Cursor position updated: x = 995, y = 960
-Fast button clicked! Spawning fast character...
-Game set to fast speed.
-Cursor position updated: x = 995, y = 960
-Cursor position updated: x = 989, y = 956
-Cursor position updated: x = 982, y = 950
-Cursor position updated: x = 961, y = 929
-Cursor position updated: x = 929, y = 890
-Cursor position updated: x = 912, y = 866
-Cursor position updated: x = 879, y = 814
-Cursor position updated: x = 852, y = 774
-Cursor position updated: x = 843, y = 758
-Cursor position updated: x = 828, y = 734
-Cursor position updated: x = 822, y = 726
-Cursor position updated: x = 813, y = 711
-Cursor position updated: x = 806, y = 698
-Cursor position updated: x = 801, y = 686
-Cursor position updated: x = 799, y = 680
-Cursor position updated: x = 797, y = 673
-Cursor position updated: x = 797, y = 672
-Cursor position updated: x = 797, y = 670
-Cursor position updated: x = 797, y = 669
-Cursor position updated: x = 797, y = 667
-Cursor position updated: x = 800, y = 665
-Cursor position updated: x = 812, y = 659
-Cursor position updated: x = 819, y = 658
-Cursor position updated: x = 833, y = 657
-Cursor position updated: x = 849, y = 661
-Cursor position updated: x = 856, y = 664
-Cursor position updated: x = 867, y = 674
-Cursor position updated: x = 872, y = 681
-Cursor position updated: x = 877, y = 692
-Cursor position updated: x = 877, y = 696
-Cursor position updated: x = 875, y = 706
-Cursor position updated: x = 864, y = 714
-Cursor position updated: x = 858, y = 717
-Cursor position updated: x = 842, y = 718
-Cursor position updated: x = 833, y = 718
-Cursor position updated: x = 810, y = 710
-Cursor position updated: x = 800, y = 701
-Cursor position updated: x = 777, y = 677
-Cursor position updated: x = 766, y = 660
-Cursor position updated: x = 755, y = 625
-Cursor position updated: x = 755, y = 587
-Cursor position updated: x = 765, y = 553
-Cursor position updated: x = 772, y = 533
-Cursor position updated: x = 784, y = 515
-Cursor position updated: x = 808, y = 491
-Cursor position updated: x = 801, y = 494
-Cursor position updated: x = 792, y = 496
-Cursor position updated: x = 773, y = 496
-Cursor position updated: x = 743, y = 490
-Cursor position updated: x = 725, y = 483
-Cursor position updated: x = 703, y = 473
-Cursor position updated: x = 648, y = 446
-Cursor position updated: x = 581, y = 416
-Cursor position updated: x = 546, y = 403
-Cursor position updated: x = 489, y = 388
-Cursor position updated: x = 467, y = 386
-Cursor position updated: x = 433, y = 390
-Cursor position updated: x = 424, y = 393
-Cursor position updated: x = 411, y = 402
-Cursor position updated: x = 406, y = 414
-Cursor position updated: x = 403, y = 440
-Cursor position updated: x = 404, y = 455
-Cursor position updated: x = 413, y = 482
-Cursor position updated: x = 420, y = 492
-Cursor position updated: x = 438, y = 505
-Cursor position updated: x = 460, y = 508
-Cursor position updated: x = 473, y = 503
-Cursor position updated: x = 495, y = 490
-Cursor position updated: x = 509, y = 471
-Cursor position updated: x = 520, y = 449
-Cursor position updated: x = 536, y = 407
-Cursor position updated: x = 541, y = 393
-Cursor position updated: x = 542, y = 379
-Cursor position updated: x = 542, y = 375
-Cursor position updated: x = 542, y = 373
-Cursor position updated: x = 535, y = 377
-Cursor position updated: x = 526, y = 387
-Cursor position updated: x = 513, y = 416
-Cursor position updated: x = 505, y = 434
-Cursor position updated: x = 497, y = 462
-Cursor position updated: x = 496, y = 479
-Cursor position updated: x = 498, y = 485
-Cursor position updated: x = 510, y = 492
-Cursor position updated: x = 523, y = 492
-Cursor position updated: x = 558, y = 479
-Cursor position updated: x = 583, y = 461
-Cursor position updated: x = 622, y = 419
-Cursor position updated: x = 634, y = 404
-Cursor position updated: x = 646, y = 387
-Cursor position updated: x = 648, y = 383
-Cursor position updated: x = 650, y = 379
-Cursor position updated: x = 648, y = 377
-Cursor position updated: x = 641, y = 378
-Cursor position updated: x = 625, y = 390
-Cursor position updated: x = 617, y = 400
-Cursor position updated: x = 601, y = 430
-Cursor position updated: x = 594, y = 448
-Cursor position updated: x = 591, y = 492
-Cursor position updated: x = 595, y = 532
-Cursor position updated: x = 601, y = 547
-Cursor position updated: x = 616, y = 564
-Cursor position updated: x = 633, y = 569
-Cursor position updated: x = 643, y = 566
-Cursor position updated: x = 664, y = 541
-Cursor position updated: x = 673, y = 518
-Cursor position updated: x = 688, y = 461
-Cursor position updated: x = 690, y = 434
-Cursor position updated: x = 687, y = 396
-Cursor position updated: x = 685, y = 385
-Cursor position updated: x = 677, y = 372
-Cursor position updated: x = 674, y = 369
-Cursor position updated: x = 664, y = 368
-Cursor position updated: x = 657, y = 375
-Cursor position updated: x = 644, y = 412
-Cursor position updated: x = 640, y = 439
-Cursor position updated: x = 637, y = 492
-Cursor position updated: x = 637, y = 514
-Cursor position updated: x = 644, y = 547
-Cursor position updated: x = 649, y = 557
-Cursor position updated: x = 667, y = 568
-Cursor position updated: x = 693, y = 565
-Cursor position updated: x = 709, y = 556
-Cursor position updated: x = 741, y = 523
-Cursor position updated: x = 754, y = 500
-Cursor position updated: x = 767, y = 474
-Cursor position updated: x = 768, y = 461
-Cursor position updated: x = 767, y = 451
-Cursor position updated: x = 759, y = 439
-Cursor position updated: x = 752, y = 434
-Cursor position updated: x = 738, y = 432
-Cursor position updated: x = 724, y = 438
-Cursor position updated: x = 718, y = 447
-Cursor position updated: x = 710, y = 476
-Cursor position updated: x = 709, y = 492
-Cursor position updated: x = 713, y = 537
-Cursor position updated: x = 724, y = 575
-Cursor position updated: x = 730, y = 590
-Cursor position updated: x = 746, y = 610
-Cursor position updated: x = 753, y = 617
-Cursor position updated: x = 791, y = 617
-Cursor position updated: x = 800, y = 613
-Cursor position updated: x = 816, y = 595
-Cursor position updated: x = 824, y = 603
-Cursor position updated: x = 834, y = 613
-Cursor position updated: x = 866, y = 642
-Cursor position updated: x = 883, y = 657
-Cursor position updated: x = 915, y = 691
-Cursor position updated: x = 949, y = 722
-Cursor position updated: x = 977, y = 753
-Cursor position updated: x = 988, y = 765
-Cursor position updated: x = 1001, y = 777
-Cursor position updated: x = 1021, y = 796
-Cursor position updated: x = 1028, y = 802
-Cursor position updated: x = 1038, y = 812
-Cursor position updated: x = 1041, y = 815
-Cursor position updated: x = 1044, y = 818
-Cursor position updated: x = 1046, y = 820
-Cursor position updated: x = 1047, y = 821
-Cursor position updated: x = 1049, y = 823
-Cursor position updated: x = 1052, y = 826
-Cursor position updated: x = 1055, y = 829
-Cursor position updated: x = 1061, y = 833
-Cursor position updated: x = 1066, y = 837
-Cursor position updated: x = 1068, y = 838
-Cursor position updated: x = 1071, y = 840
-Cursor position updated: x = 1072, y = 840
-Cursor position updated: x = 1077, y = 844
-Cursor position updated: x = 1080, y = 846
-Cursor position updated: x = 1091, y = 856
-Cursor position updated: x = 1105, y = 866
-Cursor position updated: x = 1111, y = 869
-Cursor position updated: x = 1119, y = 874
-Cursor position updated: x = 1121, y = 877
-Cursor position updated: x = 1125, y = 880
-Cursor position updated: x = 1129, y = 886
-Cursor position updated: x = 1129, y = 889
-Cursor position updated: x = 1129, y = 898
-Cursor position updated: x = 1129, y = 902
-Cursor position updated: x = 1129, y = 905
-Cursor position updated: x = 1129, y = 909
-Cursor position updated: x = 1129, y = 910
-Cursor position updated: x = 1130, y = 911
-Cursor position updated: x = 1130, y = 912
-Cursor position updated: x = 1135, y = 919
-Cursor position updated: x = 1141, y = 926
-Cursor position updated: x = 1145, y = 929
-Cursor position updated: x = 1153, y = 937
-Cursor position updated: x = 1160, y = 943
-Cursor position updated: x = 1160, y = 943
-Resume button clicked!
-Game resumed at normal speed.
-Cursor position updated: x = 1160, y = 943
-Cursor position updated: x = 1148, y = 941
-Cursor position updated: x = 1132, y = 937
-Cursor position updated: x = 1083, y = 918
-Cursor position updated: x = 1052, y = 899
-Cursor position updated: x = 962, y = 839
-Cursor position updated: x = 864, y = 758
-Cursor position updated: x = 821, y = 717
-Cursor position updated: x = 784, y = 673
-Cursor position updated: x = 703, y = 571
-Cursor position updated: x = 688, y = 546
-Cursor position updated: x = 669, y = 512
-Cursor position updated: x = 662, y = 501
-Cursor position updated: x = 653, y = 490
-Cursor position updated: x = 650, y = 485
-Cursor position updated: x = 647, y = 482
-Cursor position updated: x = 645, y = 479
-Cursor position updated: x = 645, y = 478
-Cursor position updated: x = 650, y = 478
-Cursor position updated: x = 665, y = 480
-Cursor position updated: x = 677, y = 483
-Cursor position updated: x = 702, y = 489
-Cursor position updated: x = 719, y = 492
-Cursor position updated: x = 746, y = 498
-Cursor position updated: x = 766, y = 499
-Cursor position updated: x = 772, y = 500
-Cursor position updated: x = 776, y = 500
-Cursor position updated: x = 782, y = 499
-Cursor position updated: x = 782, y = 493
-Cursor position updated: x = 779, y = 490
-Cursor position updated: x = 755, y = 464
-Cursor position updated: x = 740, y = 451
-Cursor position updated: x = 711, y = 433
-Cursor position updated: x = 688, y = 424
-Cursor position updated: x = 681, y = 422
-Cursor position updated: x = 673, y = 421
-Cursor position updated: x = 672, y = 421
-Cursor position updated: x = 671, y = 422
-Cursor position updated: x = 673, y = 425
-Cursor position updated: x = 684, y = 431
-Cursor position updated: x = 691, y = 432
-Cursor position updated: x = 709, y = 434
-Cursor position updated: x = 727, y = 430
-Cursor position updated: x = 734, y = 426
-Cursor position updated: x = 740, y = 422
-Cursor position updated: x = 747, y = 413
-Cursor position updated: x = 751, y = 407
-Cursor position updated: x = 751, y = 405
-Cursor position updated: x = 750, y = 403
-Cursor position updated: x = 747, y = 402
-Cursor position updated: x = 737, y = 406
-Cursor position updated: x = 726, y = 417
-Cursor position updated: x = 722, y = 424
-Cursor position updated: x = 718, y = 432
-Cursor position updated: x = 712, y = 452
-Cursor position updated: x = 713, y = 460
-Cursor position updated: x = 714, y = 464
-Cursor position updated: x = 726, y = 470
-Cursor position updated: x = 734, y = 470
-Cursor position updated: x = 752, y = 463
-Cursor position updated: x = 771, y = 447
-Cursor position updated: x = 778, y = 438
-Cursor position updated: x = 787, y = 423
-Cursor position updated: x = 790, y = 414
-Cursor position updated: x = 790, y = 411
-Cursor position updated: x = 783, y = 405
-Cursor position updated: x = 777, y = 405
-Cursor position updated: x = 769, y = 405
-Cursor position updated: x = 741, y = 420
-Cursor position updated: x = 730, y = 433
-Cursor position updated: x = 713, y = 469
-Cursor position updated: x = 706, y = 488
-Cursor position updated: x = 700, y = 506
-Cursor position updated: x = 700, y = 517
-Cursor position updated: x = 702, y = 533
-Cursor position updated: x = 707, y = 542
-Cursor position updated: x = 714, y = 544
-Cursor position updated: x = 729, y = 537
-Cursor position updated: x = 751, y = 505
-Cursor position updated: x = 752, y = 513
-Cursor position updated: x = 755, y = 524
-Cursor position updated: x = 762, y = 561
-Cursor position updated: x = 773, y = 619
-Cursor position updated: x = 779, y = 653
-Cursor position updated: x = 794, y = 723
-Cursor position updated: x = 804, y = 779
-Cursor position updated: x = 810, y = 804
-Cursor position updated: x = 818, y = 842
-Cursor position updated: x = 820, y = 858
-Cursor position updated: x = 825, y = 884
-Cursor position updated: x = 827, y = 893
-Cursor position updated: x = 830, y = 905
-Cursor position updated: x = 832, y = 912
-Cursor position updated: x = 832, y = 913
-Cursor position updated: x = 832, y = 915
-Cursor position updated: x = 832, y = 916
-Cursor position updated: x = 834, y = 917
-Cursor position updated: x = 836, y = 926
-Cursor position updated: x = 838, y = 931
-Cursor position updated: x = 839, y = 935
-Cursor position updated: x = 841, y = 942
-Cursor position updated: x = 842, y = 943
-Cursor position updated: x = 842, y = 944
-Cursor position updated: x = 842, y = 945
-Cursor position updated: x = 842, y = 946
-Cursor position updated: x = 842, y = 946
-Pause button clicked!
-Game paused.
-Cursor position updated: x = 842, y = 946
-Cursor position updated: x = 837, y = 938
-Cursor position updated: x = 820, y = 918
-Cursor position updated: x = 809, y = 902
-Cursor position updated: x = 796, y = 884
-Cursor position updated: x = 747, y = 813
-Cursor position updated: x = 729, y = 788
-Cursor position updated: x = 697, y = 733
-Cursor position updated: x = 683, y = 710
-Cursor position updated: x = 666, y = 670
-Cursor position updated: x = 660, y = 645
-Cursor position updated: x = 659, y = 637
-Cursor position updated: x = 660, y = 629
-Cursor position updated: x = 677, y = 610
-Cursor position updated: x = 687, y = 607
-Cursor position updated: x = 714, y = 605
-Cursor position updated: x = 728, y = 606
-Cursor position updated: x = 762, y = 614
-Cursor position updated: x = 779, y = 620
-Cursor position updated: x = 791, y = 625
-Cursor position updated: x = 810, y = 637
-Cursor position updated: x = 815, y = 643
-Cursor position updated: x = 821, y = 665
-Cursor position updated: x = 818, y = 674
-Cursor position updated: x = 813, y = 683
-Cursor position updated: x = 796, y = 698
-Cursor position updated: x = 775, y = 709
-Cursor position updated: x = 763, y = 713
-Cursor position updated: x = 741, y = 714
-Cursor position updated: x = 731, y = 711
-Cursor position updated: x = 717, y = 698
-Cursor position updated: x = 709, y = 676
-Cursor position updated: x = 709, y = 664
-Cursor position updated: x = 720, y = 638
-Cursor position updated: x = 729, y = 626
-Cursor position updated: x = 755, y = 603
-Cursor position updated: x = 772, y = 595
-Cursor position updated: x = 794, y = 587
-Cursor position updated: x = 801, y = 585
-Cursor position updated: x = 810, y = 584
-Cursor position updated: x = 812, y = 584
-Cursor position updated: x = 812, y = 587
-Cursor position updated: x = 808, y = 590
-Cursor position updated: x = 795, y = 592
-Cursor position updated: x = 790, y = 592
-Cursor position updated: x = 782, y = 592
-Cursor position updated: x = 780, y = 592
-Cursor position updated: x = 779, y = 591
-Cursor position updated: x = 786, y = 577
-Cursor position updated: x = 794, y = 571
-Cursor position updated: x = 815, y = 563
-Cursor position updated: x = 825, y = 560
-Cursor position updated: x = 841, y = 558
-Cursor position updated: x = 847, y = 558
-Cursor position updated: x = 852, y = 558
-Cursor position updated: x = 854, y = 558
-Cursor position updated: x = 854, y = 560
-Cursor position updated: x = 854, y = 564
-Cursor position updated: x = 850, y = 567
-Cursor position updated: x = 841, y = 574
-Cursor position updated: x = 844, y = 583
-Cursor position updated: x = 854, y = 607
-Cursor position updated: x = 862, y = 624
-Cursor position updated: x = 874, y = 643
-Cursor position updated: x = 901, y = 687
-Cursor position updated: x = 932, y = 728
-Cursor position updated: x = 948, y = 749
-Cursor position updated: x = 973, y = 784
-Cursor position updated: x = 984, y = 795
-Cursor position updated: x = 997, y = 812
-Cursor position updated: x = 1005, y = 821
-Cursor position updated: x = 1007, y = 824
-Cursor position updated: x = 1009, y = 826
-Cursor position updated: x = 1010, y = 829
-Cursor position updated: x = 1013, y = 833
-Cursor position updated: x = 1015, y = 834
-Cursor position updated: x = 1019, y = 839
-Cursor position updated: x = 1021, y = 841
-Cursor position updated: x = 1025, y = 846
-Cursor position updated: x = 1031, y = 850
-Cursor position updated: x = 1034, y = 853
-Cursor position updated: x = 1038, y = 855
-Cursor position updated: x = 1047, y = 860
-Cursor position updated: x = 1058, y = 864
-Cursor position updated: x = 1063, y = 867
-Cursor position updated: x = 1072, y = 873
-Cursor position updated: x = 1080, y = 878
-Cursor position updated: x = 1084, y = 881
-Cursor position updated: x = 1090, y = 885
-Cursor position updated: x = 1092, y = 887
-Cursor position updated: x = 1094, y = 888
-Cursor position updated: x = 1096, y = 889
-Cursor position updated: x = 1097, y = 890
-Cursor position updated: x = 1098, y = 891
-Cursor position updated: x = 1101, y = 893
-Cursor position updated: x = 1105, y = 898
-Cursor position updated: x = 1108, y = 902
-Cursor position updated: x = 1112, y = 908
-Cursor position updated: x = 1114, y = 910
-Cursor position updated: x = 1115, y = 912
-Cursor position updated: x = 1117, y = 914
-Cursor position updated: x = 1119, y = 918
-Cursor position updated: x = 1122, y = 920
-Cursor position updated: x = 1126, y = 924
-Cursor position updated: x = 1132, y = 932
-Cursor position updated: x = 1138, y = 939
-Cursor position updated: x = 1140, y = 942
-Cursor position updated: x = 1144, y = 946
-Cursor position updated: x = 1146, y = 948
-Cursor position updated: x = 1147, y = 949
-Cursor position updated: x = 1147, y = 950
-Cursor position updated: x = 1147, y = 950
-Resume button clicked!
-Game resumed at normal speed.
-Cursor position updated: x = 1147, y = 950
-Cursor position updated: x = 1144, y = 943
-Cursor position updated: x = 1141, y = 935
-Cursor position updated: x = 1130, y = 913
-Cursor position updated: x = 1123, y = 899
-Cursor position updated: x = 1115, y = 884
-Cursor position updated: x = 1099, y = 844
-Cursor position updated: x = 1081, y = 797
-Cursor position updated: x = 1071, y = 773
-Cursor position updated: x = 1064, y = 754
-Cursor position updated: x = 1052, y = 722
-Cursor position updated: x = 1048, y = 711
-Cursor position updated: x = 1043, y = 695
-Cursor position updated: x = 1039, y = 686
-Cursor position updated: x = 1038, y = 683
-Cursor position updated: x = 1037, y = 681
-Cursor position updated: x = 1042, y = 678
-Cursor position updated: x = 1050, y = 675
-Cursor position updated: x = 1067, y = 674
-Cursor position updated: x = 1077, y = 674
-Cursor position updated: x = 1088, y = 674
-Cursor position updated: x = 1110, y = 677
-Cursor position updated: x = 1114, y = 678
-Cursor position updated: x = 1117, y = 679
-Cursor position updated: x = 1118, y = 679
-Cursor position updated: x = 1118, y = 681
-Cursor position updated: x = 1112, y = 686
-Cursor position updated: x = 1106, y = 688
-Cursor position updated: x = 1090, y = 692
-Cursor position updated: x = 1071, y = 694
-Cursor position updated: x = 1063, y = 694
-Cursor position updated: x = 1046, y = 692
-Cursor position updated: x = 1038, y = 691
+Cursor position updated: x = 260, y = 141
+Cursor position updated: x = 260, y = 145
+Cursor position updated: x = 260, y = 146
+Cursor position updated: x = 260, y = 150
+Cursor position updated: x = 260, y = 153
+Cursor position updated: x = 260, y = 159
+Cursor position updated: x = 260, y = 165
+Cursor position updated: x = 260, y = 167
+Cursor position updated: x = 260, y = 171
+Cursor position updated: x = 260, y = 173
+Cursor position updated: x = 260, y = 180
+Cursor position updated: x = 260, y = 184
+Cursor position updated: x = 260, y = 186
+Cursor position updated: x = 260, y = 188
+Cursor position updated: x = 260, y = 190
+Cursor position updated: x = 260, y = 194
+Cursor position updated: x = 260, y = 196
+Cursor position updated: x = 260, y = 199
+Cursor position updated: x = 260, y = 203
+Cursor position updated: x = 260, y = 206
+Cursor position updated: x = 260, y = 212
+Cursor position updated: x = 260, y = 215
+Cursor position updated: x = 260, y = 217
+Cursor position updated: x = 260, y = 223
+Cursor position updated: x = 260, y = 225
+Cursor position updated: x = 260, y = 228
+Cursor position updated: x = 260, y = 230
+Cursor position updated: x = 260, y = 235
+Cursor position updated: x = 260, y = 238
+Cursor position updated: x = 260, y = 242
+Cursor position updated: x = 260, y = 244
+Cursor position updated: x = 260, y = 250
+Cursor position updated: x = 260, y = 253
+Cursor position updated: x = 261, y = 260
+Cursor position updated: x = 261, y = 265
+Cursor position updated: x = 261, y = 269
+Cursor position updated: x = 261, y = 272
+Cursor position updated: x = 262, y = 276
+Cursor position updated: x = 263, y = 284
+Cursor position updated: x = 263, y = 288
+Cursor position updated: x = 263, y = 292
+Cursor position updated: x = 263, y = 294
+Cursor position updated: x = 263, y = 301
+Cursor position updated: x = 264, y = 305
+Cursor position updated: x = 264, y = 308
+Cursor position updated: x = 264, y = 311
+Cursor position updated: x = 265, y = 316
+Cursor position updated: x = 265, y = 319
+Cursor position updated: x = 266, y = 321
+Cursor position updated: x = 267, y = 326
+Cursor position updated: x = 267, y = 333
+Cursor position updated: x = 268, y = 335
+Cursor position updated: x = 268, y = 338
+Cursor position updated: x = 269, y = 345
+Cursor position updated: x = 270, y = 348
+Cursor position updated: x = 270, y = 350
+Cursor position updated: x = 271, y = 353
+Cursor position updated: x = 271, y = 355
+Cursor position updated: x = 272, y = 358
+Cursor position updated: x = 273, y = 362
+Cursor position updated: x = 273, y = 364
+Cursor position updated: x = 274, y = 366
+Cursor position updated: x = 275, y = 370
+Cursor position updated: x = 275, y = 373
+Cursor position updated: x = 276, y = 375
+Cursor position updated: x = 276, y = 378
+Cursor position updated: x = 278, y = 383
+Cursor position updated: x = 278, y = 386
+Cursor position updated: x = 278, y = 387
+Cursor position updated: x = 279, y = 392
+Cursor position updated: x = 280, y = 393
+Cursor position updated: x = 280, y = 395
+Cursor position updated: x = 281, y = 397
+Cursor position updated: x = 281, y = 401
+Cursor position updated: x = 281, y = 403
+Cursor position updated: x = 281, y = 406
+Cursor position updated: x = 282, y = 408
+Cursor position updated: x = 282, y = 411
+Cursor position updated: x = 282, y = 413
+Cursor position updated: x = 283, y = 421
+Cursor position updated: x = 283, y = 423
+Cursor position updated: x = 284, y = 427
+Cursor position updated: x = 284, y = 433
+Cursor position updated: x = 284, y = 435
+Cursor position updated: x = 284, y = 441
+Cursor position updated: x = 284, y = 444
+Cursor position updated: x = 285, y = 660
+Cursor position updated: x = 69, y = 916
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Scancode: 0x1 (make code)
+Scancode: 0x0 (make code)
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 1, y = 988
+Cursor position updated: x = 2, y = 988
+Cursor position updated: x = 2, y = 988
+Cursor position updated: x = 3, y = 988
+Cursor position updated: x = 3, y = 988
+Cursor position updated: x = 4, y = 988
+Cursor position updated: x = 4, y = 988
+Cursor position updated: x = 5, y = 988
+Cursor position updated: x = 6, y = 988
+Cursor position updated: x = 7, y = 988
+Cursor position updated: x = 7, y = 988
+Cursor position updated: x = 8, y = 988
+Cursor position updated: x = 9, y = 988
+Cursor position updated: x = 10, y = 988
+Cursor position updated: x = 10, y = 988
+Cursor position updated: x = 11, y = 988
+Cursor position updated: x = 12, y = 988
+Cursor position updated: x = 12, y = 988
+Cursor position updated: x = 13, y = 988
+Cursor position updated: x = 14, y = 988
+Cursor position updated: x = 14, y = 988
+Cursor position updated: x = 15, y = 988
+Cursor position updated: x = 15, y = 988
+Cursor position updated: x = 16, y = 988
+Cursor position updated: x = 16, y = 988
+Cursor position updated: x = 16, y = 988
+Cursor position updated: x = 16, y = 988
+Cursor position updated: x = 16, y = 988
+Cursor position updated: x = 16, y = 988
+Cursor position updated: x = 17, y = 988
+Cursor position updated: x = 17, y = 987
+Cursor position updated: x = 17, y = 985
+Cursor position updated: x = 17, y = 981
+Cursor position updated: x = 17, y = 980
+Cursor position updated: x = 17, y = 972
+Cursor position updated: x = 17, y = 971
+Cursor position updated: x = 17, y = 969
+Cursor position updated: x = 17, y = 965
+Cursor position updated: x = 17, y = 960
+Cursor position updated: x = 17, y = 954
+Cursor position updated: x = 20, y = 939
+Cursor position updated: x = 25, y = 910
+Cursor position updated: x = 27, y = 896
+Cursor position updated: x = 29, y = 881
+Cursor position updated: x = 30, y = 874
+Cursor position updated: x = 34, y = 847
+Cursor position updated: x = 36, y = 835
+Cursor position updated: x = 38, y = 823
+Cursor position updated: x = 39, y = 813
+Cursor position updated: x = 42, y = 793
+Cursor position updated: x = 43, y = 786
+Cursor position updated: x = 44, y = 778
+Cursor position updated: x = 45, y = 771
+Cursor position updated: x = 46, y = 758
+Cursor position updated: x = 47, y = 751
+Cursor position updated: x = 48, y = 745
+Cursor position updated: x = 49, y = 737
+Cursor position updated: x = 51, y = 726
+Cursor position updated: x = 0, y = 702
+Cursor position updated: x = 0, y = 700
+Cursor position updated: x = 1, y = 700
+Cursor position updated: x = 4, y = 700
+Cursor position updated: x = 12, y = 699
+Cursor position updated: x = 15, y = 699
+Cursor position updated: x = 20, y = 699
+Cursor position updated: x = 29, y = 699
+Cursor position updated: x = 30, y = 699
+Cursor position updated: x = 40, y = 700
+Cursor position updated: x = 43, y = 700
+Cursor position updated: x = 47, y = 701
+Cursor position updated: x = 52, y = 701
+Cursor position updated: x = 56, y = 702
+Cursor position updated: x = 62, y = 702
+Cursor position updated: x = 66, y = 703
+Cursor position updated: x = 75, y = 703
+Cursor position updated: x = 84, y = 704
+Cursor position updated: x = 89, y = 704
+Cursor position updated: x = 93, y = 704
+Cursor position updated: x = 100, y = 704
+Cursor position updated: x = 103, y = 705
+Cursor position updated: x = 106, y = 705
+Cursor position updated: x = 110, y = 705
+Cursor position updated: x = 116, y = 706
+Cursor position updated: x = 119, y = 706
+Cursor position updated: x = 122, y = 707
+Cursor position updated: x = 125, y = 707
+Cursor position updated: x = 130, y = 708
+Cursor position updated: x = 134, y = 709
+Cursor position updated: x = 137, y = 709
+Cursor position updated: x = 140, y = 710
+Cursor position updated: x = 146, y = 711
+Cursor position updated: x = 149, y = 711
+Cursor position updated: x = 151, y = 711
+Cursor position updated: x = 155, y = 712
+Cursor position updated: x = 163, y = 712
+Cursor position updated: x = 167, y = 713
+Cursor position updated: x = 170, y = 713
+Cursor position updated: x = 175, y = 713
+Cursor position updated: x = 181, y = 713
+Cursor position updated: x = 185, y = 713
+Cursor position updated: x = 189, y = 713
+Cursor position updated: x = 191, y = 713
+Cursor position updated: x = 196, y = 713
+Cursor position updated: x = 197, y = 713
+Cursor position updated: x = 198, y = 713
+Cursor position updated: x = 199, y = 713
+Cursor position updated: x = 199, y = 713
+Cursor position updated: x = 201, y = 713
+Cursor position updated: x = 204, y = 714
+Cursor position updated: x = 211, y = 717
+Cursor position updated: x = 215, y = 718
+Cursor position updated: x = 220, y = 720
+Cursor position updated: x = 225, y = 721
+Cursor position updated: x = 232, y = 722
+Cursor position updated: x = 236, y = 723
+Cursor position updated: x = 240, y = 723
+Cursor position updated: x = 250, y = 725
+Cursor position updated: x = 254, y = 726
+Cursor position updated: x = 259, y = 726
+Cursor position updated: x = 265, y = 727
+Cursor position updated: x = 275, y = 728
+Cursor position updated: x = 277, y = 729
+Cursor position updated: x = 282, y = 729
+Cursor position updated: x = 286, y = 730
+Cursor position updated: x = 292, y = 731
+Cursor position updated: x = 295, y = 732
+Cursor position updated: x = 298, y = 732
+Cursor position updated: x = 300, y = 733
+Cursor position updated: x = 305, y = 734
+Cursor position updated: x = 308, y = 734
+Cursor position updated: x = 311, y = 734
+Cursor position updated: x = 313, y = 735
+Cursor position updated: x = 317, y = 735
+Cursor position updated: x = 320, y = 735
+Cursor position updated: x = 321, y = 735
+Cursor position updated: x = 322, y = 735
+Cursor position updated: x = 324, y = 735
+Cursor position updated: x = 325, y = 735
+Cursor position updated: x = 326, y = 735
+Cursor position updated: x = 327, y = 735
+Cursor position updated: x = 330, y = 735
+Cursor position updated: x = 333, y = 735
+Cursor position updated: x = 342, y = 735
+Cursor position updated: x = 350, y = 734
+Cursor position updated: x = 352, y = 734
+Cursor position updated: x = 359, y = 734
+Cursor position updated: x = 363, y = 734
+Cursor position updated: x = 369, y = 734
+Cursor position updated: x = 372, y = 734
+Cursor position updated: x = 374, y = 734
+Cursor position updated: x = 377, y = 734
+Cursor position updated: x = 381, y = 734
+Cursor position updated: x = 382, y = 734
+Cursor position updated: x = 383, y = 734
+Cursor position updated: x = 385, y = 734
+Cursor position updated: x = 387, y = 734
+Cursor position updated: x = 388, y = 734
+Cursor position updated: x = 389, y = 734
+Cursor position updated: x = 390, y = 734
+Cursor position updated: x = 391, y = 734
+Cursor position updated: x = 393, y = 735
+Cursor position updated: x = 394, y = 735
+Cursor position updated: x = 395, y = 735
+Cursor position updated: x = 396, y = 735
+Cursor position updated: x = 396, y = 735
+vg_draw_scaled_pixmap: Invalid parameters.
+Cursor position updated: x = 396, y = 735
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
+vg_draw_scaled_pixmap: Invalid parameters.
