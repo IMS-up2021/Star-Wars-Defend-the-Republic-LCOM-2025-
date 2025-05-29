@@ -11,6 +11,7 @@
 
 #include "handlers/mouse_handler.h"
 #include "handlers/timer_handler.h"
+#include "handlers/kbd_handler.h"
 
 
 extern bool mouse_ready;
@@ -55,30 +56,22 @@ void gameLoop(void) {
                         vg_swap_buffers();
                     }
                 }
-            if (msg.m_notify.interrupts & kbd_irq_set) {
-                kbc_ih();
-                if (scancode[kbd_index] == TWO_BYTE_CODE) {
-                    kbd_index++;
-                    return;
-               }
+                if (msg.m_notify.interrupts & kbd_irq_set) {
+                    kbc_ih();
 
-               kbd_index = 0;
+                    if (scancode[kbd_index] == TWO_BYTE_CODE) {
+                        kbd_index++;
+                        continue;
+                    }
 
-               uint16_t full_scancode = (scancode[0] == TWO_BYTE_CODE) ?
-                                    ((scancode[0] << 8) | scancode[1]) :
-                                    scancode[0];
+                    kbd_index = 0;
 
-        	   bool is_break = (full_scancode & 0x80) != 0;
-               printf("Scancode: 0x%X (%s code)\n", full_scancode, is_break ? "break" : "make");
+                    kbd_event_handler(scancode);
 
-               // Transição de estado se ESC for largado no MAIN_MENU
-               if (state == MAIN_MENU && full_scancode == ESC_BREAK) {
-                   state = EXIT;
-               }
+                    scancode[0] = 0;
+                    scancode[1] = 0;
+                }
 
-               scancode[0] = 0;
-               scancode[1] = 0;
-            }
             if (msg.m_notify.interrupts & mouse_irq_set) {
                 mouse_ih();
                 if (mouse_ready) {

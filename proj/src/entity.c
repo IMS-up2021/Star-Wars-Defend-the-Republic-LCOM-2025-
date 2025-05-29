@@ -10,7 +10,7 @@ Cursor *cursor;
 Position mouse_pos = {260, 140};
 
 uint16_t x_max = 1274;
-uint16_t y_max = 938;
+uint16_t y_max = 988;
 
 struct packet mouse_packet;
 
@@ -70,7 +70,7 @@ int draw_cursor(Cursor *c) {
 }
 
 void (update_mouse_location)(int16_t delta_x, int16_t delta_y){
-    printf("Updating mouse location: delta_x = %d, delta_y = %d\n", delta_x, delta_y);
+    //printf("Updating mouse location: delta_x = %d, delta_y = %d\n", delta_x, delta_y);
     int32_t temp_x = cursor->pos_x;
     int32_t temp_y = cursor->pos_y;
     float mouse_sensitivity = 1.0f; // Experimente valores como 1.5, 2.0, 2.5, etc.
@@ -90,4 +90,7 @@ void (update_mouse_location)(int16_t delta_x, int16_t delta_y){
 
     cursor->pos_x = (unsigned int)temp_x;
     cursor->pos_y = (unsigned int)temp_y;
+
+    printf("Cursor position updated: x = %u, y = %u\n", cursor->pos_x, cursor->pos_y);
+
 }
