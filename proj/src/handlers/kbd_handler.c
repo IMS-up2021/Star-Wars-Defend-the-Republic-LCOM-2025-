@@ -18,10 +18,10 @@ int kbd_state = 1;
 void kbd_event_handler(uint8_t scan_code[2]) {
     uint16_t full_scancode;
 
-    if (scancode[0] == TWO_BYTE_CODE)
-        full_scancode = (scancode[0] << 8) | scancode[1];
+    if (scan_code[0] == TWO_BYTE_CODE)
+        full_scancode = (scan_code[0] << 8) | scan_code[1];
     else
-        full_scancode = scancode[0];
+        full_scancode = scan_code[0];
 
     bool is_break = (full_scancode & 0x80) != 0;
     printf("Scancode: 0x%X (%s code)\n", full_scancode, is_break ? "break" : "make");

@@ -22,8 +22,8 @@ void timer_event_handler(gameState game_state) {
                     draw_characters3();
                     break;
                 default:
-                    load_characters1_assets();
-                    draw_characters1();
+                    load_game_assets();
+                    draw_game();
                     break;
             }
             break;
