@@ -2,6 +2,7 @@
 #include "gameState.h"
 #include "manager.h"
 #include "menu.h"
+#include "graphics.h"
 
 void kbd_event_handler(uint8_t scan_code[2]) {
     uint16_t full_scancode;
@@ -23,7 +24,10 @@ void kbd_event_handler(uint8_t scan_code[2]) {
                 state = EXIT;
         break;
         case INSTRUCTIONS:
+            if (full_scancode == ESC_BREAK)
+                state = MAIN_MENU;
         case PLAYING:
+        
             if (full_scancode == ESC_BREAK)
                 state = MAIN_MENU;
         break;
@@ -31,3 +35,4 @@ void kbd_event_handler(uint8_t scan_code[2]) {
             break;
     }
 }
+

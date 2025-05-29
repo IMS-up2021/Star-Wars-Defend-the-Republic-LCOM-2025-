@@ -8,4 +8,6 @@
 
 void kbd_event_handler(uint8_t scan_code[2]);
 
+void kbd_playing_handler()
+
 #endif // KBD_HANDLER_H
