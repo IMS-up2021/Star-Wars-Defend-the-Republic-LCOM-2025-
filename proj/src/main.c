@@ -32,9 +32,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
   printf("Graphics mode initialized\n");
-  
   gameLoop(); // Start the game loop
   exit_game(); 
-  return 0;
+ return 0;
 }
 

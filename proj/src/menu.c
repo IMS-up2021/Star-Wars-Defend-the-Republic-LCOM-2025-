@@ -10,6 +10,7 @@
 #include "gameState.h"
 #include "controllers/video/graphics.h"
 
+
 extern Cursor *cursor;
 const uint8_t xpm_source_bpp = 2; //5:6:5
 uint8_t *bg_menu, *bg_game, *bg_instructions;
@@ -36,8 +37,8 @@ void draw_game() {
 }
 
 void load_instructions_assets() {
-    // Load the XPM images
     bg_instructions = xpm_load(instructions_xpm, XPM_5_6_5, &instructions_bg);
+    if (!bg_instructions) printf("Failed to load instructions XPM!\n");
 }
 
 void draw_instructions() {
