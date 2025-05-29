@@ -1,4 +1,3 @@
-#include "xpms/selected1.xpm"
 #include "xpms/selected2.xpm"
 #include "xpms/selected3.xpm"
 
@@ -16,6 +15,7 @@ void load_characters2_assets(){
 }
 
 void draw_characters2(){
+    load_characters2_assets();
     vg_draw_scaled_pixmap(sel2, selected2.width, selected2.height, 2, 0, 0, mode_info.XResolution, mode_info.YResolution);
 }
 
@@ -24,5 +24,6 @@ void load_characters3_assets(){
 }
 
 void draw_characters3(){
+    load_characters3_assets();
     vg_draw_scaled_pixmap(sel3, selected3.width, selected3.height, 2, 0, 0, mode_info.XResolution, mode_info.YResolution);
 }

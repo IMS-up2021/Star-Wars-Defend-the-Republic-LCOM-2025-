@@ -6,123 +6,592 @@ Red: Size 5, Pos 11
 Green: Size 6, Pos 5
 Blue: Size 5, Pos 0
 Graphics mode initialized
-Cursor position updated: x = 259, y = 140
-Cursor position updated: x = 254, y = 148
-Cursor position updated: x = 250, y = 153
-Cursor position updated: x = 245, y = 164
-Cursor position updated: x = 237, y = 176
-Cursor position updated: x = 222, y = 201
-Cursor position updated: x = 215, y = 212
-Cursor position updated: x = 210, y = 233
-Cursor position updated: x = 206, y = 267
-Cursor position updated: x = 201, y = 292
-Cursor position updated: x = 199, y = 300
-Cursor position updated: x = 198, y = 307
-Cursor position updated: x = 196, y = 308
-Cursor position updated: x = 195, y = 308
-Cursor position updated: x = 194, y = 309
-Cursor position updated: x = 187, y = 311
-Cursor position updated: x = 183, y = 311
-Cursor position updated: x = 172, y = 311
-Cursor position updated: x = 170, y = 311
-Cursor position updated: x = 167, y = 311
-Cursor position updated: x = 164, y = 311
-Cursor position updated: x = 162, y = 311
-Cursor position updated: x = 162, y = 312
-Cursor position updated: x = 163, y = 312
-Cursor position updated: x = 164, y = 312
-Cursor position updated: x = 166, y = 312
-Cursor position updated: x = 170, y = 317
-Cursor position updated: x = 173, y = 319
-Cursor position updated: x = 194, y = 332
-Cursor position updated: x = 202, y = 339
-Cursor position updated: x = 224, y = 357
-Cursor position updated: x = 230, y = 362
-Cursor position updated: x = 242, y = 372
-Cursor position updated: x = 261, y = 392
-Cursor position updated: x = 269, y = 400
-Cursor position updated: x = 285, y = 413
-Cursor position updated: x = 290, y = 416
-Cursor position updated: x = 293, y = 418
-Cursor position updated: x = 301, y = 421
-Cursor position updated: x = 310, y = 421
-Cursor position updated: x = 314, y = 418
-Cursor position updated: x = 314, y = 417
-Cursor position updated: x = 309, y = 413
-Cursor position updated: x = 302, y = 410
-Cursor position updated: x = 301, y = 410
-Cursor position updated: x = 301, y = 411
-Cursor position updated: x = 301, y = 413
-Cursor position updated: x = 301, y = 419
-Cursor position updated: x = 302, y = 439
-Cursor position updated: x = 313, y = 496
-Cursor position updated: x = 316, y = 515
-Cursor position updated: x = 329, y = 594
-Cursor position updated: x = 342, y = 645
-Cursor position updated: x = 355, y = 696
-Cursor position updated: x = 363, y = 728
-Cursor position updated: x = 367, y = 744
-Cursor position updated: x = 377, y = 782
-Cursor position updated: x = 378, y = 791
-Cursor position updated: x = 382, y = 801
-Cursor position updated: x = 385, y = 809
-Cursor position updated: x = 385, y = 810
-Cursor position updated: x = 386, y = 810
-Cursor position updated: x = 386, y = 811
-Cursor position updated: x = 390, y = 814
-Cursor position updated: x = 393, y = 818
-Cursor position updated: x = 397, y = 823
-Cursor position updated: x = 406, y = 831
-Cursor position updated: x = 412, y = 833
-Cursor position updated: x = 413, y = 835
-Cursor position updated: x = 417, y = 837
-Cursor position updated: x = 417, y = 838
-Cursor position updated: x = 417, y = 838
-Cursor position updated: x = 418, y = 838
-Cursor position updated: x = 418, y = 838
+Cursor position updated: x = 260, y = 146
+Cursor position updated: x = 266, y = 166
+Cursor position updated: x = 272, y = 176
+Cursor position updated: x = 287, y = 201
+Cursor position updated: x = 296, y = 216
+Cursor position updated: x = 310, y = 236
+Cursor position updated: x = 340, y = 288
+Cursor position updated: x = 346, y = 298
+Cursor position updated: x = 360, y = 326
+Cursor position updated: x = 363, y = 334
+Cursor position updated: x = 371, y = 359
+Cursor position updated: x = 375, y = 368
+Cursor position updated: x = 378, y = 379
+Cursor position updated: x = 388, y = 404
+Cursor position updated: x = 394, y = 429
+Cursor position updated: x = 398, y = 441
+Cursor position updated: x = 413, y = 495
+Cursor position updated: x = 416, y = 511
+Cursor position updated: x = 420, y = 515
+Cursor position updated: x = 429, y = 566
+Cursor position updated: x = 431, y = 576
+Cursor position updated: x = 434, y = 605
+Cursor position updated: x = 434, y = 613
+Cursor position updated: x = 434, y = 623
+Cursor position updated: x = 434, y = 624
+Cursor position updated: x = 433, y = 625
+Cursor position updated: x = 432, y = 625
+Cursor position updated: x = 431, y = 625
+Cursor position updated: x = 430, y = 624
+Cursor position updated: x = 428, y = 624
+Cursor position updated: x = 426, y = 623
+Cursor position updated: x = 423, y = 623
+Cursor position updated: x = 421, y = 623
+Cursor position updated: x = 417, y = 623
+Cursor position updated: x = 411, y = 623
+Cursor position updated: x = 410, y = 623
+Cursor position updated: x = 406, y = 623
+Cursor position updated: x = 404, y = 623
+Cursor position updated: x = 398, y = 622
+Cursor position updated: x = 396, y = 621
+Cursor position updated: x = 395, y = 620
+Cursor position updated: x = 393, y = 619
+Cursor position updated: x = 392, y = 618
+Cursor position updated: x = 391, y = 616
+Cursor position updated: x = 390, y = 615
+Cursor position updated: x = 389, y = 614
+Cursor position updated: x = 389, y = 612
+Cursor position updated: x = 389, y = 611
+Cursor position updated: x = 389, y = 610
+Cursor position updated: x = 389, y = 609
+Cursor position updated: x = 389, y = 610
+Cursor position updated: x = 390, y = 614
+Cursor position updated: x = 391, y = 623
+Cursor position updated: x = 392, y = 631
+Cursor position updated: x = 394, y = 636
+Cursor position updated: x = 394, y = 643
+Cursor position updated: x = 394, y = 651
+Cursor position updated: x = 392, y = 664
+Cursor position updated: x = 389, y = 677
+Cursor position updated: x = 385, y = 687
+Cursor position updated: x = 385, y = 685
+Cursor position updated: x = 385, y = 683
+Cursor position updated: x = 384, y = 683
+Cursor position updated: x = 383, y = 683
+Cursor position updated: x = 384, y = 683
+Cursor position updated: x = 384, y = 687
+Cursor position updated: x = 384, y = 688
+Cursor position updated: x = 385, y = 694
+Cursor position updated: x = 386, y = 697
+Cursor position updated: x = 387, y = 706
+Cursor position updated: x = 388, y = 709
+Cursor position updated: x = 390, y = 712
+Cursor position updated: x = 394, y = 721
+Cursor position updated: x = 397, y = 725
+Cursor position updated: x = 398, y = 729
+Cursor position updated: x = 399, y = 732
+Cursor position updated: x = 403, y = 742
+Cursor position updated: x = 404, y = 745
+Cursor position updated: x = 406, y = 751
+Cursor position updated: x = 407, y = 756
+Cursor position updated: x = 407, y = 759
+Cursor position updated: x = 409, y = 765
+Cursor position updated: x = 410, y = 767
+Cursor position updated: x = 410, y = 769
+Cursor position updated: x = 410, y = 770
+Cursor position updated: x = 410, y = 772
+Cursor position updated: x = 410, y = 775
+Cursor position updated: x = 410, y = 775
+Cursor position updated: x = 411, y = 775
+Cursor position updated: x = 411, y = 775
+Cursor position updated: x = 413, y = 771
+Cursor position updated: x = 415, y = 764
+Cursor position updated: x = 416, y = 762
+Cursor position updated: x = 417, y = 760
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
+Cursor position updated: x = 418, y = 759
+Cursor position updated: x = 566, y = 543
+Cursor position updated: x = 568, y = 541
+Cursor position updated: x = 570, y = 539
+Cursor position updated: x = 572, y = 538
+Cursor position updated: x = 572, y = 537
+Cursor position updated: x = 574, y = 535
+Cursor position updated: x = 575, y = 533
+Cursor position updated: x = 577, y = 531
+Cursor position updated: x = 580, y = 527
+Cursor position updated: x = 582, y = 526
+Cursor position updated: x = 583, y = 523
+Cursor position updated: x = 585, y = 520
+Cursor position updated: x = 590, y = 514
+Cursor position updated: x = 593, y = 509
+Cursor position updated: x = 599, y = 503
+Cursor position updated: x = 601, y = 501
+Cursor position updated: x = 603, y = 498
+Cursor position updated: x = 607, y = 493
+Cursor position updated: x = 609, y = 491
+Cursor position updated: x = 612, y = 488
+Cursor position updated: x = 613, y = 487
+Cursor position updated: x = 616, y = 484
+Cursor position updated: x = 617, y = 483
+Cursor position updated: x = 620, y = 481
+Cursor position updated: x = 621, y = 479
+Cursor position updated: x = 622, y = 479
+Cursor position updated: x = 624, y = 477
+Cursor position updated: x = 625, y = 477
+Cursor position updated: x = 625, y = 476
+Cursor position updated: x = 625, y = 475
+Cursor position updated: x = 626, y = 475
+Cursor position updated: x = 625, y = 475
+Cursor position updated: x = 622, y = 476
+Cursor position updated: x = 617, y = 478
+Cursor position updated: x = 611, y = 481
+Cursor position updated: x = 606, y = 481
+Cursor position updated: x = 601, y = 482
+Cursor position updated: x = 587, y = 485
+Cursor position updated: x = 583, y = 486
+Cursor position updated: x = 576, y = 487
+Cursor position updated: x = 566, y = 488
+Cursor position updated: x = 559, y = 490
+Cursor position updated: x = 548, y = 492
+Cursor position updated: x = 542, y = 493
+Cursor position updated: x = 533, y = 496
+Cursor position updated: x = 525, y = 497
+Cursor position updated: x = 521, y = 498
+Cursor position updated: x = 513, y = 500
+Cursor position updated: x = 508, y = 501
+Cursor position updated: x = 505, y = 501
+Cursor position updated: x = 501, y = 501
+Cursor position updated: x = 498, y = 501
+Cursor position updated: x = 489, y = 503
+Cursor position updated: x = 487, y = 503
+Cursor position updated: x = 481, y = 504
+Cursor position updated: x = 479, y = 504
+Cursor position updated: x = 477, y = 504
+Cursor position updated: x = 473, y = 504
+Cursor position updated: x = 471, y = 505
+Cursor position updated: x = 469, y = 505
+Scancode: 0x3 (make code)
+Scancode: 0x3 (make code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
+Cursor position updated: x = 477, y = 505
+Cursor position updated: x = 551, y = 526
+Cursor position updated: x = 569, y = 534
+Cursor position updated: x = 581, y = 536
+Cursor position updated: x = 583, y = 537
+Cursor position updated: x = 590, y = 538
+Cursor position updated: x = 591, y = 538
+Cursor position updated: x = 593, y = 538
+Cursor position updated: x = 596, y = 537
+Cursor position updated: x = 599, y = 536
+Cursor position updated: x = 605, y = 533
+Cursor position updated: x = 608, y = 533
+Cursor position updated: x = 621, y = 534
+Cursor position updated: x = 625, y = 534
+Cursor position updated: x = 627, y = 534
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
+Cursor position updated: x = 628, y = 533
+Cursor position updated: x = 590, y = 510
+Cursor position updated: x = 394, y = 504
+Cursor position updated: x = 396, y = 504
+Cursor position updated: x = 450, y = 498
+Cursor position updated: x = 527, y = 494
+Cursor position updated: x = 614, y = 482
+Cursor position updated: x = 770, y = 473
+Cursor position updated: x = 1025, y = 471
+Cursor position updated: x = 1095, y = 471
+Cursor position updated: x = 1187, y = 471
+Cursor position updated: x = 1194, y = 471
+Cursor position updated: x = 1189, y = 471
+Cursor position updated: x = 1180, y = 472
+Cursor position updated: x = 1128, y = 482
+Cursor position updated: x = 1072, y = 494
+Cursor position updated: x = 963, y = 514
+Cursor position updated: x = 909, y = 517
+Cursor position updated: x = 813, y = 539
+Cursor position updated: x = 792, y = 545
+Cursor position updated: x = 780, y = 548
+Cursor position updated: x = 776, y = 549
+Cursor position updated: x = 775, y = 551
+Cursor position updated: x = 775, y = 552
+Cursor position updated: x = 771, y = 555
+Cursor position updated: x = 768, y = 557
+Cursor position updated: x = 758, y = 567
+Cursor position updated: x = 748, y = 575
+Cursor position updated: x = 747, y = 564
+Cursor position updated: x = 734, y = 545
+Cursor position updated: x = 719, y = 537
+Cursor position updated: x = 686, y = 524
+Cursor position updated: x = 672, y = 522
+Cursor position updated: x = 639, y = 516
+Cursor position updated: x = 624, y = 509
+Cursor position updated: x = 617, y = 506
+Cursor position updated: x = 616, y = 504
+Cursor position updated: x = 610, y = 501
+Cursor position updated: x = 605, y = 499
+Cursor position updated: x = 600, y = 496
+Cursor position updated: x = 584, y = 491
+Cursor position updated: x = 570, y = 487
+Cursor position updated: x = 552, y = 483
+Cursor position updated: x = 542, y = 479
+Cursor position updated: x = 538, y = 479
+Cursor position updated: x = 527, y = 475
+Cursor position updated: x = 520, y = 473
+Cursor position updated: x = 499, y = 469
+Cursor position updated: x = 493, y = 468
+Cursor position updated: x = 481, y = 465
+Cursor position updated: x = 478, y = 464
+Cursor position updated: x = 477, y = 464
+Cursor position updated: x = 476, y = 464
+Cursor position updated: x = 476, y = 463
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Cursor position updated: x = 472, y = 459
+Cursor position updated: x = 223, y = 442
+Cursor position updated: x = 208, y = 444
+Cursor position updated: x = 185, y = 447
+Cursor position updated: x = 172, y = 449
+Cursor position updated: x = 160, y = 452
+Cursor position updated: x = 144, y = 456
+Cursor position updated: x = 134, y = 459
+Cursor position updated: x = 120, y = 463
+Cursor position updated: x = 104, y = 468
+Cursor position updated: x = 88, y = 475
+Cursor position updated: x = 66, y = 482
+Cursor position updated: x = 52, y = 487
+Cursor position updated: x = 28, y = 496
+Cursor position updated: x = 24, y = 499
+Cursor position updated: x = 17, y = 503
+Cursor position updated: x = 15, y = 503
+Cursor position updated: x = 12, y = 506
+Cursor position updated: x = 10, y = 507
+Cursor position updated: x = 7, y = 510
+Cursor position updated: x = 2, y = 514
+Cursor position updated: x = 1, y = 516
+Cursor position updated: x = 0, y = 518
+Cursor position updated: x = 0, y = 520
+Cursor position updated: x = 0, y = 522
+Cursor position updated: x = 0, y = 523
+Cursor position updated: x = 0, y = 525
+Cursor position updated: x = 0, y = 526
+Cursor position updated: x = 0, y = 529
+Cursor position updated: x = 0, y = 530
+Cursor position updated: x = 0, y = 534
+Cursor position updated: x = 0, y = 536
+Cursor position updated: x = 0, y = 541
+Cursor position updated: x = 0, y = 546
+Cursor position updated: x = 0, y = 554
+Cursor position updated: x = 0, y = 562
+Cursor position updated: x = 0, y = 568
+Cursor position updated: x = 0, y = 587
+Cursor position updated: x = 0, y = 596
+Cursor position updated: x = 0, y = 622
+Cursor position updated: x = 0, y = 635
+Cursor position updated: x = 0, y = 670
+Cursor position updated: x = 0, y = 686
+Cursor position updated: x = 0, y = 727
+Cursor position updated: x = 0, y = 751
+Cursor position updated: x = 2, y = 766
+Cursor position updated: x = 34, y = 839
+Cursor position updated: x = 53, y = 869
+Cursor position updated: x = 75, y = 894
+Cursor position updated: x = 126, y = 937
+Cursor position updated: x = 175, y = 961
+Cursor position updated: x = 205, y = 969
+Cursor position updated: x = 218, y = 971
+Cursor position updated: x = 278, y = 979
+Cursor position updated: x = 328, y = 981
+Cursor position updated: x = 402, y = 982
+Cursor position updated: x = 448, y = 982
+Cursor position updated: x = 490, y = 976
+Cursor position updated: x = 578, y = 955
+Scancode: 0x0 (make code)
+Cursor position updated: x = 630, y = 938
+Cursor position updated: x = 725, y = 898
+Scancode: 0x0 (make code)
+Cursor position updated: x = 767, y = 878
+Cursor position updated: x = 828, y = 830
+Cursor position updated: x = 853, y = 812
+Cursor position updated: x = 876, y = 790
+Cursor position updated: x = 894, y = 768
+Cursor position updated: x = 896, y = 758
+Cursor position updated: x = 890, y = 739
+Cursor position updated: x = 879, y = 728
+Cursor position updated: x = 820, y = 690
+Cursor position updated: x = 794, y = 678
+Cursor position updated: x = 673, y = 643
+Cursor position updated: x = 533, y = 624
+Cursor position updated: x = 464, y = 618
+Cursor position updated: x = 293, y = 607
+Cursor position updated: x = 217, y = 606
+Cursor position updated: x = 87, y = 606
+Cursor position updated: x = 41, y = 606
+Cursor position updated: x = 0, y = 611
+Cursor position updated: x = 0, y = 612
+Cursor position updated: x = 0, y = 614
+Cursor position updated: x = 0, y = 617
+Cursor position updated: x = 0, y = 618
+Cursor position updated: x = 1, y = 618
+Cursor position updated: x = 3, y = 619
+Cursor position updated: x = 4, y = 619
+Cursor position updated: x = 5, y = 619
+Cursor position updated: x = 6, y = 619
+Cursor position updated: x = 7, y = 619
+Cursor position updated: x = 9, y = 619
+Cursor position updated: x = 10, y = 619
+Cursor position updated: x = 11, y = 620
+Cursor position updated: x = 12, y = 621
+Cursor position updated: x = 13, y = 621
+Cursor position updated: x = 13, y = 622
+Cursor position updated: x = 14, y = 622
+Cursor position updated: x = 14, y = 623
+Cursor position updated: x = 14, y = 626
+Cursor position updated: x = 15, y = 630
+Cursor position updated: x = 15, y = 631
+Cursor position updated: x = 15, y = 633
+Scancode: 0x0 (make code)
+Cursor position updated: x = 16, y = 637
+Cursor position updated: x = 18, y = 639
+Cursor position updated: x = 20, y = 642
+Cursor position updated: x = 27, y = 649
+Scancode: 0x0 (make code)
+Scancode: 0x0 (make code)
+Cursor position updated: x = 34, y = 654
+Scancode: 0x0 (make code)
+Cursor position updated: x = 42, y = 865
+Cursor position updated: x = 54, y = 860
+Cursor position updated: x = 80, y = 849
+Cursor position updated: x = 87, y = 847
+Scancode: 0x0 (make code)
+Scancode: 0x84 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
 Scancode: 0x3 (make code)
 Scancode: 0x83 (break code)
 Scancode: 0x4 (make code)
 Scancode: 0x0 (make code)
-Cursor position updated: x = 418, y = 839
-Cursor position updated: x = 419, y = 841
+Cursor position updated: x = 97, y = 839
+Cursor position updated: x = 173, y = 738
+Cursor position updated: x = 14, y = 792
+Cursor position updated: x = 16, y = 792
+Cursor position updated: x = 20, y = 792
+Cursor position updated: x = 23, y = 792
+Cursor position updated: x = 24, y = 792
+Cursor position updated: x = 25, y = 792
+Cursor position updated: x = 29, y = 792
+Cursor position updated: x = 33, y = 792
+Cursor position updated: x = 35, y = 792
+Cursor position updated: x = 36, y = 793
+Cursor position updated: x = 37, y = 793
+Cursor position updated: x = 38, y = 793
+Cursor position updated: x = 43, y = 794
+Cursor position updated: x = 49, y = 796
+Cursor position updated: x = 51, y = 797
+Cursor position updated: x = 54, y = 800
+Cursor position updated: x = 56, y = 801
+Cursor position updated: x = 57, y = 804
+Cursor position updated: x = 60, y = 809
+Cursor position updated: x = 61, y = 816
+Cursor position updated: x = 61, y = 819
+Cursor position updated: x = 62, y = 824
+Cursor position updated: x = 62, y = 826
 Scancode: 0x4 (make code)
 Scancode: 0x84 (break code)
+Cursor position updated: x = 64, y = 813
+Cursor position updated: x = 73, y = 707
+Cursor position updated: x = 73, y = 702
+Cursor position updated: x = 73, y = 694
+Cursor position updated: x = 72, y = 690
+Cursor position updated: x = 71, y = 684
+Cursor position updated: x = 71, y = 671
+Cursor position updated: x = 71, y = 669
+Cursor position updated: x = 69, y = 660
+Cursor position updated: x = 69, y = 646
+Cursor position updated: x = 69, y = 638
+Cursor position updated: x = 69, y = 628
+Cursor position updated: x = 69, y = 620
+Cursor position updated: x = 69, y = 610
+Cursor position updated: x = 68, y = 592
+Cursor position updated: x = 67, y = 575
+Cursor position updated: x = 67, y = 565
+Cursor position updated: x = 66, y = 541
+Cursor position updated: x = 66, y = 530
+Cursor position updated: x = 66, y = 493
+Cursor position updated: x = 66, y = 482
+Cursor position updated: x = 65, y = 460
+Cursor position updated: x = 65, y = 446
+Cursor position updated: x = 65, y = 434
+Cursor position updated: x = 65, y = 420
+Cursor position updated: x = 65, y = 379
+Cursor position updated: x = 65, y = 362
+Cursor position updated: x = 67, y = 330
+Cursor position updated: x = 68, y = 305
+Cursor position updated: x = 69, y = 290
+Cursor position updated: x = 69, y = 265
+Cursor position updated: x = 69, y = 255
+Cursor position updated: x = 69, y = 234
+Cursor position updated: x = 69, y = 219
+Cursor position updated: x = 69, y = 201
+Cursor position updated: x = 69, y = 190
+Cursor position updated: x = 69, y = 166
+Cursor position updated: x = 69, y = 155
+Cursor position updated: x = 69, y = 149
+Cursor position updated: x = 67, y = 138
+Cursor position updated: x = 66, y = 130
+Cursor position updated: x = 64, y = 123
+Cursor position updated: x = 64, y = 122
+Cursor position updated: x = 63, y = 122
+Scancode: 0x0 (make code)
+Cursor position updated: x = 63, y = 126
+Scancode: 0x0 (make code)
+Cursor position updated: x = 67, y = 141
+Cursor position updated: x = 68, y = 151
+Cursor position updated: x = 72, y = 173
+Cursor position updated: x = 71, y = 201
+Cursor position updated: x = 71, y = 199
+Cursor position updated: x = 72, y = 198
+Cursor position updated: x = 72, y = 197
+Cursor position updated: x = 72, y = 196
+Cursor position updated: x = 72, y = 195
+Cursor position updated: x = 72, y = 194
+Cursor position updated: x = 73, y = 194
+Cursor position updated: x = 73, y = 193
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
 Scancode: 0x2 (make code)
 Scancode: 0x82 (break code)
-Cursor position updated: x = 421, y = 839
-Cursor position updated: x = 430, y = 831
-Cursor position updated: x = 431, y = 830
-Cursor position updated: x = 434, y = 827
-Cursor position updated: x = 437, y = 825
-Cursor position updated: x = 439, y = 823
-Cursor position updated: x = 440, y = 823
-Cursor position updated: x = 441, y = 823
-Cursor position updated: x = 443, y = 822
-Cursor position updated: x = 444, y = 822
-Cursor position updated: x = 446, y = 822
-Cursor position updated: x = 448, y = 821
-Cursor position updated: x = 450, y = 820
-Cursor position updated: x = 453, y = 819
-Cursor position updated: x = 456, y = 817
-Cursor position updated: x = 458, y = 815
-Cursor position updated: x = 461, y = 811
-Cursor position updated: x = 461, y = 809
-Cursor position updated: x = 461, y = 808
-Cursor position updated: x = 461, y = 807
-Cursor position updated: x = 461, y = 805
-Cursor position updated: x = 460, y = 801
-Cursor position updated: x = 459, y = 799
-Cursor position updated: x = 458, y = 795
-Cursor position updated: x = 456, y = 795
-Cursor position updated: x = 455, y = 795
-Cursor position updated: x = 454, y = 795
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
+Cursor position updated: x = 74, y = 193
+Cursor position updated: x = 79, y = 210
+Cursor position updated: x = 79, y = 212
+Cursor position updated: x = 79, y = 214
+Cursor position updated: x = 79, y = 218
+Cursor position updated: x = 79, y = 219
+Cursor position updated: x = 79, y = 221
+Cursor position updated: x = 79, y = 222
+Cursor position updated: x = 79, y = 224
+Cursor position updated: x = 77, y = 229
+Cursor position updated: x = 77, y = 230
+Cursor position updated: x = 75, y = 231
+Cursor position updated: x = 75, y = 234
+Cursor position updated: x = 74, y = 235
+Cursor position updated: x = 74, y = 236
+Cursor position updated: x = 74, y = 237
+Cursor position updated: x = 74, y = 238
+Cursor position updated: x = 73, y = 238
+Cursor position updated: x = 72, y = 243
+Cursor position updated: x = 71, y = 244
+Cursor position updated: x = 71, y = 246
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Cursor position updated: x = 74, y = 246
+Cursor position updated: x = 185, y = 222
+Cursor position updated: x = 186, y = 222
+Cursor position updated: x = 187, y = 222
+Cursor position updated: x = 190, y = 222
+Cursor position updated: x = 191, y = 222
+Cursor position updated: x = 190, y = 222
+Cursor position updated: x = 152, y = 263
+Cursor position updated: x = 137, y = 298
+Cursor position updated: x = 135, y = 306
+Cursor position updated: x = 133, y = 333
+Cursor position updated: x = 133, y = 342
+Cursor position updated: x = 133, y = 360
+Cursor position updated: x = 134, y = 372
+Cursor position updated: x = 135, y = 378
+Cursor position updated: x = 137, y = 389
+Cursor position updated: x = 137, y = 392
+Cursor position updated: x = 138, y = 396
+Cursor position updated: x = 139, y = 402
+Cursor position updated: x = 139, y = 410
+Cursor position updated: x = 139, y = 412
+Cursor position updated: x = 139, y = 414
+Cursor position updated: x = 139, y = 416
+Cursor position updated: x = 139, y = 418
+Cursor position updated: x = 139, y = 419
+Cursor position updated: x = 138, y = 421
+Cursor position updated: x = 138, y = 424
+Cursor position updated: x = 138, y = 426
+Cursor position updated: x = 138, y = 431
+Cursor position updated: x = 139, y = 433
+Cursor position updated: x = 139, y = 436
+Cursor position updated: x = 139, y = 442
+Cursor position updated: x = 139, y = 446
+Scancode: 0x0 (make code)
+Cursor position updated: x = 135, y = 458
+Scancode: 0x0 (make code)
+Cursor position updated: x = 131, y = 465
+Cursor position updated: x = 118, y = 487
+Cursor position updated: x = 112, y = 502
+Cursor position updated: x = 109, y = 510
+Cursor position updated: x = 106, y = 524
+Cursor position updated: x = 105, y = 534
+Cursor position updated: x = 103, y = 550
+Cursor position updated: x = 101, y = 558
+Cursor position updated: x = 98, y = 569
+Cursor position updated: x = 90, y = 588
+Cursor position updated: x = 87, y = 598
+Cursor position updated: x = 83, y = 610
+Cursor position updated: x = 83, y = 616
+Cursor position updated: x = 83, y = 619
+Cursor position updated: x = 83, y = 623
+Cursor position updated: x = 83, y = 625
+Cursor position updated: x = 85, y = 629
+Cursor position updated: x = 85, y = 630
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
 Scancode: 0x3 (make code)
 Scancode: 0x83 (break code)
 Scancode: 0x4 (make code)
 Scancode: 0x84 (break code)
 Scancode: 0x2 (make code)
 Scancode: 0x82 (break code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
+Scancode: 0x2 (make code)
+Scancode: 0x82 (break code)
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
+Cursor position updated: x = 87, y = 630
+Cursor position updated: x = 214, y = 534
+Cursor position updated: x = 469, y = 279
+Cursor position updated: x = 471, y = 278
+Cursor position updated: x = 472, y = 278
 Scancode: 0x1 (make code)
 Scancode: 0x81 (break code)
 Scancode: 0x1 (make code)

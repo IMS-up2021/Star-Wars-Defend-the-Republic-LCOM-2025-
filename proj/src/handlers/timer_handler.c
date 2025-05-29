@@ -14,16 +14,15 @@ void timer_event_handler(gameState game_state) {
         case PLAYING:
             switch(kbd_state){
                 case 2:
-                    load_characters2_assets();
                     draw_characters2();
                     break;
                 case 3:
-                    load_characters3_assets();
                     draw_characters3();
                     break;
-                default:
-                    load_game_assets();
+                case 1:
                     draw_game();
+                    break;
+                default:
                     break;
             }
             break;
