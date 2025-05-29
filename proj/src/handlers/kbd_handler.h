@@ -1,4 +1,4 @@
-##ifndef KBD_HANDLER_H
+#ifndef KBD_HANDLER_H
 #define KBD_HANDLER_H
 #include <lcom/lcf.h>
 
