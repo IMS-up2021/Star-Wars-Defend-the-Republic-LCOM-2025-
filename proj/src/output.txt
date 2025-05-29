@@ -1,0 +1,90 @@
+Interrupcao do kbd subscrita. Hook ID usado = 1, kbd_irq_set = 0x00000002
+Interrupcao do mouse subscrita. Hook ID usado = 4, mouse_irq_set = 0x00000010
+Interrupcao do timer subscrita. Hook ID usado = 0, timer_irq_set = 0x00000001
+BitsPerPixel: 16
+Red: Size 5, Pos 11
+Green: Size 6, Pos 5
+Blue: Size 5, Pos 0
+Graphics mode initialized
+Keyboard IRQ subscribed: irq_set=0x2
+Updating mouse location: delta_x = 9, delta_y = 3
+Updating mouse location: delta_x = 27, delta_y = 9
+Updating mouse location: delta_x = 20, delta_y = 8
+Updating mouse location: delta_x = 23, delta_y = 10
+Updating mouse location: delta_x = 52, delta_y = 28
+Updating mouse location: delta_x = 26, delta_y = 16
+Updating mouse location: delta_x = 41, delta_y = 28
+Updating mouse location: delta_x = 11, delta_y = 10
+Updating mouse location: delta_x = 12, delta_y = 11
+Updating mouse location: delta_x = 5, delta_y = 5
+Updating mouse location: delta_x = 1, delta_y = 1
+Updating mouse location: delta_x = 1, delta_y = -9
+Updating mouse location: delta_x = 0, delta_y = -13
+Updating mouse location: delta_x = -2, delta_y = -18
+Updating mouse location: delta_x = -2, delta_y = -54
+Updating mouse location: delta_x = 2, delta_y = -67
+Updating mouse location: delta_x = 9, delta_y = -65
+Updating mouse location: delta_x = 5, delta_y = -24
+Updating mouse location: delta_x = 12, delta_y = -35
+Updating mouse location: delta_x = 8, delta_y = -19
+Updating mouse location: delta_x = 12, delta_y = -13
+Updating mouse location: delta_x = 25, delta_y = -9
+Updating mouse location: delta_x = 21, delta_y = 1
+Updating mouse location: delta_x = 9, delta_y = 4
+Updating mouse location: delta_x = 3, delta_y = -5
+Updating mouse location: delta_x = 5, delta_y = -6
+Updating mouse location: delta_x = 15, delta_y = -12
+Updating mouse location: delta_x = 9, delta_y = -4
+Updating mouse location: delta_x = 12, delta_y = -2
+Updating mouse location: delta_x = 24, delta_y = 3
+Updating mouse location: delta_x = 28, delta_y = 13
+Updating mouse location: delta_x = 16, delta_y = 9
+Updating mouse location: delta_x = 23, delta_y = 22
+Updating mouse location: delta_x = 12, delta_y = 13
+Updating mouse location: delta_x = 21, delta_y = 29
+Updating mouse location: delta_x = 10, delta_y = 28
+Updating mouse location: delta_x = 3, delta_y = 9
+Updating mouse location: delta_x = -1, delta_y = 8
+Updating mouse location: delta_x = -20, delta_y = 14
+Updating mouse location: delta_x = -14, delta_y = 0
+Updating mouse location: delta_x = -21, delta_y = -2
+Updating mouse location: delta_x = -56, delta_y = -17
+Updating mouse location: delta_x = -65, delta_y = -33
+Updating mouse location: delta_x = -28, delta_y = -22
+Updating mouse location: delta_x = -49, delta_y = -48
+Updating mouse location: delta_x = -21, delta_y = -29
+Updating mouse location: delta_x = -14, delta_y = -26
+Updating mouse location: delta_x = -20, delta_y = -70
+Updating mouse location: delta_x = 1, delta_y = -19
+Updating mouse location: delta_x = 4, delta_y = -15
+Updating mouse location: delta_x = 11, delta_y = -26
+Updating mouse location: delta_x = 14, delta_y = -18
+Updating mouse location: delta_x = 11, delta_y = -8
+Updating mouse location: delta_x = 21, delta_y = -9
+Updating mouse location: delta_x = 13, delta_y = -4
+Updating mouse location: delta_x = 27, delta_y = 1
+Updating mouse location: delta_x = 25, delta_y = 11
+Updating mouse location: delta_x = 12, delta_y = 10
+Updating mouse location: delta_x = 12, delta_y = 11
+Updating mouse location: delta_x = 20, delta_y = 36
+Updating mouse location: delta_x = 3, delta_y = 10
+Updating mouse location: delta_x = -2, delta_y = 9
+Updating mouse location: delta_x = -8, delta_y = 14
+Updating mouse location: delta_x = -17, delta_y = 13
+Updating mouse location: delta_x = -10, delta_y = 3
+Updating mouse location: delta_x = -20, delta_y = 2
+Updating mouse location: delta_x = -10, delta_y = 0
+Updating mouse location: delta_x = -16, delta_y = -4
+Updating mouse location: delta_x = -11, delta_y = -6
+Updating mouse location: delta_x = -3, delta_y = -2
+Updating mouse location: delta_x = -4, delta_y = -4
+Updating mouse location: delta_x = 0, delta_y = -5
+Updating mouse location: delta_x = 3, delta_y = -3
+Updating mouse location: delta_x = 4, delta_y = -1
+Updating mouse location: delta_x = 6, delta_y = 0
+Updating mouse location: delta_x = 30, delta_y = 3
+Updating mouse location: delta_x = 11, delta_y = 4
+Updating mouse location: delta_x = 23, delta_y = 7
+Updating mouse location: delta_x = 11, delta_y = 5
+Scancode: 0x1 (make code)
+Scancode: 0x81 (break code)

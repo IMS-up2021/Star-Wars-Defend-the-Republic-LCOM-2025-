@@ -43,8 +43,12 @@ int (initialize_graphics)() {
     kbd_irq_set = BIT(kbd_bit_no);
     mouse_irq_set = BIT(mouse_bit_no);
 
-    printf("Interrupcao do Timer subscrita. Hook ID usado = %d, timer_irq_set = 0x%08X\n",
-       timer_bit_no, timer_irq_set);
+    printf("Interrupcao do kbd subscrita. Hook ID usado = %d, kbd_irq_set = 0x%08X\n",
+       kbd_bit_no, kbd_irq_set);
+    printf("Interrupcao do mouse subscrita. Hook ID usado = %d, mouse_irq_set = 0x%08X\n",
+         mouse_bit_no, mouse_irq_set);
+    printf("Interrupcao do timer subscrita. Hook ID usado = %d, timer_irq_set = 0x%08X\n",
+        timer_bit_no, timer_irq_set);
 
     uint16_t mode_info = VBE_1024p_DC; 
     if (set_frame_buffer(mode_info) == 1) {

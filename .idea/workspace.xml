@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/entity.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/entity.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/gameState.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/gameState.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/gameState.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/gameState.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/proj" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/proj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/trace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/trace.txt" afterDir="false" />
@@ -38,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="handler_game" />
+        <entry key="$PROJECT_DIR$" value="lab0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +65,7 @@
     "cf.advertisement.text.has.clang-format": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "handler__mouse",
+    "git-widget-placeholder": "handler__kbd",
     "last_opened_file_path": "/home/jose-b-reis/repos/MINIX-LCOM/shared/grupo_2leic18_2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
