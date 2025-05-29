@@ -4,6 +4,8 @@
 #include "menu.h"
 #include "enemy.h"
 
+//unsigned int enemy_spawn_timer = 0;
+
 
 void timer_event_handler(gameState game_state) {
     switch (state) {
@@ -11,7 +13,9 @@ void timer_event_handler(gameState game_state) {
             draw_menu();
             break;
         case PLAYING:
+            update_and_spawn_enemies();
             draw_game();
+            draw_enemies();
             break;
         case INSTRUCTIONS:
             draw_instructions();

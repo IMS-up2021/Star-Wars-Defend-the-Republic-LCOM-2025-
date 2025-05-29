@@ -1,388 +1,651 @@
-Interrupcao do kbd subscrita. Hook ID usado = 1, kbd_irq_set = 0x00000002
-Interrupcao do mouse subscrita. Hook ID usado = 4, mouse_irq_set = 0x00000010
-Interrupcao do timer subscrita. Hook ID usado = 0, timer_irq_set = 0x00000001
-BitsPerPixel: 16
-Red: Size 5, Pos 11
-Green: Size 6, Pos 5
-Blue: Size 5, Pos 0
-Graphics mode initialized
+Failed to load e1 sprite
+Failed to load e3 sprite
 Cursor position updated: x = 259, y = 140
-Cursor position updated: x = 257, y = 140
-Cursor position updated: x = 258, y = 141
-Cursor position updated: x = 259, y = 142
-Cursor position updated: x = 260, y = 144
-Cursor position updated: x = 261, y = 148
-Cursor position updated: x = 262, y = 149
-Cursor position updated: x = 263, y = 152
-Cursor position updated: x = 264, y = 154
-Cursor position updated: x = 264, y = 158
-Cursor position updated: x = 265, y = 162
-Cursor position updated: x = 268, y = 168
-Cursor position updated: x = 270, y = 171
-Cursor position updated: x = 271, y = 173
-Cursor position updated: x = 272, y = 176
-Cursor position updated: x = 273, y = 180
-Cursor position updated: x = 273, y = 181
-Cursor position updated: x = 275, y = 185
-Cursor position updated: x = 276, y = 188
-Cursor position updated: x = 277, y = 191
-Cursor position updated: x = 278, y = 194
-Cursor position updated: x = 279, y = 196
-Cursor position updated: x = 279, y = 199
-Cursor position updated: x = 282, y = 203
-Cursor position updated: x = 283, y = 207
-Cursor position updated: x = 284, y = 208
-Cursor position updated: x = 285, y = 211
-Cursor position updated: x = 287, y = 216
-Cursor position updated: x = 288, y = 219
-Cursor position updated: x = 289, y = 222
-Cursor position updated: x = 290, y = 225
-Cursor position updated: x = 290, y = 231
-Cursor position updated: x = 290, y = 234
-Cursor position updated: x = 291, y = 237
-Cursor position updated: x = 291, y = 239
-Cursor position updated: x = 292, y = 242
-Cursor position updated: x = 292, y = 243
-Cursor position updated: x = 292, y = 247
-Cursor position updated: x = 292, y = 248
-Cursor position updated: x = 293, y = 249
-Cursor position updated: x = 294, y = 252
-Cursor position updated: x = 295, y = 252
-Cursor position updated: x = 295, y = 253
-Cursor position updated: x = 295, y = 254
-Cursor position updated: x = 295, y = 255
-Cursor position updated: x = 295, y = 257
-Cursor position updated: x = 296, y = 257
-Cursor position updated: x = 296, y = 258
-Cursor position updated: x = 297, y = 259
-Cursor position updated: x = 297, y = 261
-Cursor position updated: x = 297, y = 262
-Cursor position updated: x = 298, y = 262
-Cursor position updated: x = 298, y = 263
-Cursor position updated: x = 299, y = 266
-Cursor position updated: x = 300, y = 271
-Cursor position updated: x = 301, y = 276
-Cursor position updated: x = 302, y = 278
-Cursor position updated: x = 303, y = 282
-Cursor position updated: x = 303, y = 285
-Cursor position updated: x = 303, y = 287
-Cursor position updated: x = 303, y = 288
-Cursor position updated: x = 303, y = 289
-Cursor position updated: x = 304, y = 293
-Cursor position updated: x = 304, y = 294
-Cursor position updated: x = 305, y = 296
-Cursor position updated: x = 306, y = 298
-Cursor position updated: x = 307, y = 299
-Cursor position updated: x = 307, y = 300
-Cursor position updated: x = 307, y = 303
-Cursor position updated: x = 307, y = 306
-Cursor position updated: x = 308, y = 311
-Cursor position updated: x = 308, y = 313
-Cursor position updated: x = 308, y = 314
-Cursor position updated: x = 308, y = 316
-Cursor position updated: x = 308, y = 319
-Cursor position updated: x = 309, y = 322
-Cursor position updated: x = 310, y = 325
-Cursor position updated: x = 310, y = 327
-Cursor position updated: x = 311, y = 334
-Cursor position updated: x = 311, y = 335
-Cursor position updated: x = 311, y = 338
-Cursor position updated: x = 311, y = 341
-Cursor position updated: x = 311, y = 343
-Cursor position updated: x = 311, y = 345
-Cursor position updated: x = 311, y = 348
-Cursor position updated: x = 312, y = 350
-Cursor position updated: x = 312, y = 351
-Cursor position updated: x = 312, y = 352
-Cursor position updated: x = 312, y = 353
-Cursor position updated: x = 312, y = 354
-Cursor position updated: x = 312, y = 355
-Cursor position updated: x = 312, y = 356
-Cursor position updated: x = 312, y = 357
-Cursor position updated: x = 312, y = 358
-Cursor position updated: x = 312, y = 360
-Cursor position updated: x = 312, y = 361
-Cursor position updated: x = 312, y = 363
-Cursor position updated: x = 312, y = 365
-Cursor position updated: x = 313, y = 366
-Cursor position updated: x = 315, y = 369
-Cursor position updated: x = 321, y = 379
-Cursor position updated: x = 325, y = 384
-Cursor position updated: x = 330, y = 389
-Cursor position updated: x = 332, y = 392
-Cursor position updated: x = 335, y = 397
-Cursor position updated: x = 337, y = 398
-Cursor position updated: x = 338, y = 400
-Cursor position updated: x = 340, y = 405
-Cursor position updated: x = 342, y = 408
-Cursor position updated: x = 343, y = 410
-Cursor position updated: x = 347, y = 417
-Cursor position updated: x = 349, y = 420
-Cursor position updated: x = 350, y = 424
-Cursor position updated: x = 352, y = 432
-Cursor position updated: x = 352, y = 437
-Cursor position updated: x = 354, y = 443
-Cursor position updated: x = 360, y = 449
-Cursor position updated: x = 361, y = 453
-Cursor position updated: x = 363, y = 457
-Cursor position updated: x = 365, y = 459
-Cursor position updated: x = 365, y = 463
-Cursor position updated: x = 367, y = 467
-Cursor position updated: x = 369, y = 470
-Cursor position updated: x = 369, y = 471
-Cursor position updated: x = 369, y = 472
-Cursor position updated: x = 369, y = 473
-Cursor position updated: x = 369, y = 475
-Cursor position updated: x = 369, y = 482
-Cursor position updated: x = 369, y = 491
-Cursor position updated: x = 369, y = 497
-Cursor position updated: x = 369, y = 501
-Cursor position updated: x = 369, y = 512
-Cursor position updated: x = 369, y = 517
-Cursor position updated: x = 369, y = 525
-Cursor position updated: x = 369, y = 538
-Cursor position updated: x = 369, y = 542
-Cursor position updated: x = 369, y = 549
-Cursor position updated: x = 372, y = 560
-Cursor position updated: x = 372, y = 566
-Cursor position updated: x = 372, y = 574
-Cursor position updated: x = 372, y = 579
-Cursor position updated: x = 374, y = 586
-Cursor position updated: x = 374, y = 588
-Cursor position updated: x = 374, y = 591
-Cursor position updated: x = 374, y = 593
-Cursor position updated: x = 374, y = 595
-Cursor position updated: x = 375, y = 596
-Cursor position updated: x = 375, y = 597
-Cursor position updated: x = 375, y = 598
-Cursor position updated: x = 375, y = 600
-Cursor position updated: x = 375, y = 601
-Cursor position updated: x = 375, y = 602
-Cursor position updated: x = 375, y = 603
-Cursor position updated: x = 375, y = 604
-Cursor position updated: x = 375, y = 605
-Cursor position updated: x = 375, y = 606
-Cursor position updated: x = 375, y = 607
-Cursor position updated: x = 375, y = 608
-Cursor position updated: x = 375, y = 609
-Cursor position updated: x = 378, y = 622
-Cursor position updated: x = 380, y = 629
-Cursor position updated: x = 383, y = 640
-Cursor position updated: x = 384, y = 649
-Cursor position updated: x = 385, y = 658
-Cursor position updated: x = 388, y = 663
-Cursor position updated: x = 392, y = 667
-Cursor position updated: x = 393, y = 670
-Cursor position updated: x = 396, y = 674
-Cursor position updated: x = 396, y = 677
-Cursor position updated: x = 398, y = 682
-Cursor position updated: x = 400, y = 688
-Cursor position updated: x = 403, y = 696
-Cursor position updated: x = 404, y = 700
-Cursor position updated: x = 405, y = 704
-Cursor position updated: x = 405, y = 708
-Cursor position updated: x = 406, y = 712
-Cursor position updated: x = 407, y = 715
-Cursor position updated: x = 408, y = 719
-Cursor position updated: x = 409, y = 726
-Cursor position updated: x = 409, y = 729
-Cursor position updated: x = 409, y = 732
-Cursor position updated: x = 409, y = 738
-Cursor position updated: x = 410, y = 742
-Cursor position updated: x = 410, y = 744
-Cursor position updated: x = 410, y = 745
-Cursor position updated: x = 410, y = 747
-Cursor position updated: x = 410, y = 748
-Cursor position updated: x = 410, y = 748
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Cursor position updated: x = 410, y = 748
-Enemy created at position (1200, 544) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 794) with type 1
-Enemy created at position (1200, 415) with type 1
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 415) with type 1
-Enemy created at position (1200, 415) with type 1
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 794) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 665) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 415) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 415) with type 1
-Enemy created at position (1200, 794) with type 1
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 794) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 544) with type 1
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 544) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 415) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 415) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 415) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 794) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 415) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 794) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 415) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 665) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 665) with type 1
-Enemy created at position (1200, 794) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 665) with type 1
-Enemy created at position (1200, 544) with type 1
-Enemy created at position (1200, 794) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 794) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 285) with type 1
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 544) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Enemy created at position (1200, 544) with type 1
-Scancode: 0x1 (make code)
-Enemy created at position (1200, 285) with type 1
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-vg_draw_scaled_pixmap: Invalid parameters.
-Error loading enemy sprite
-Scancode: 0x81 (break code)
-Scancode: 0x1 (make code)
-Scancode: 0x81 (break code)
+Cursor position updated: x = 260, y = 141
+Cursor position updated: x = 268, y = 146
+Cursor position updated: x = 272, y = 151
+Cursor position updated: x = 275, y = 154
+Cursor position updated: x = 278, y = 157
+Cursor position updated: x = 279, y = 158
+Cursor position updated: x = 281, y = 160
+Cursor position updated: x = 284, y = 162
+Cursor position updated: x = 284, y = 163
+Cursor position updated: x = 285, y = 164
+Cursor position updated: x = 286, y = 166
+Cursor position updated: x = 288, y = 168
+Cursor position updated: x = 289, y = 170
+Cursor position updated: x = 291, y = 173
+Cursor position updated: x = 294, y = 176
+Cursor position updated: x = 295, y = 178
+Cursor position updated: x = 297, y = 183
+Cursor position updated: x = 300, y = 189
+Cursor position updated: x = 301, y = 191
+Cursor position updated: x = 303, y = 195
+Cursor position updated: x = 303, y = 197
+Cursor position updated: x = 305, y = 202
+Cursor position updated: x = 307, y = 204
+Cursor position updated: x = 310, y = 208
+Cursor position updated: x = 311, y = 212
+Cursor position updated: x = 313, y = 216
+Cursor position updated: x = 316, y = 222
+Cursor position updated: x = 319, y = 227
+Cursor position updated: x = 321, y = 230
+Cursor position updated: x = 323, y = 234
+Cursor position updated: x = 324, y = 238
+Cursor position updated: x = 327, y = 241
+Cursor position updated: x = 330, y = 247
+Cursor position updated: x = 334, y = 254
+Cursor position updated: x = 336, y = 259
+Cursor position updated: x = 337, y = 264
+Cursor position updated: x = 339, y = 267
+Cursor position updated: x = 342, y = 272
+Cursor position updated: x = 342, y = 275
+Cursor position updated: x = 345, y = 279
+Cursor position updated: x = 346, y = 282
+Cursor position updated: x = 348, y = 286
+Cursor position updated: x = 348, y = 289
+Cursor position updated: x = 350, y = 292
+Cursor position updated: x = 351, y = 295
+Cursor position updated: x = 353, y = 300
+Cursor position updated: x = 354, y = 303
+Cursor position updated: x = 355, y = 305
+Cursor position updated: x = 356, y = 306
+Cursor position updated: x = 356, y = 308
+Cursor position updated: x = 357, y = 311
+Cursor position updated: x = 359, y = 314
+Cursor position updated: x = 360, y = 316
+Cursor position updated: x = 361, y = 319
+Cursor position updated: x = 362, y = 321
+Cursor position updated: x = 363, y = 323
+Cursor position updated: x = 364, y = 326
+Cursor position updated: x = 366, y = 332
+Cursor position updated: x = 369, y = 340
+Cursor position updated: x = 370, y = 342
+Cursor position updated: x = 372, y = 345
+Cursor position updated: x = 374, y = 348
+Cursor position updated: x = 375, y = 351
+Cursor position updated: x = 377, y = 355
+Cursor position updated: x = 378, y = 356
+Cursor position updated: x = 378, y = 359
+Cursor position updated: x = 378, y = 362
+Cursor position updated: x = 379, y = 363
+Cursor position updated: x = 380, y = 366
+Cursor position updated: x = 381, y = 372
+Cursor position updated: x = 382, y = 376
+Cursor position updated: x = 382, y = 381
+Cursor position updated: x = 383, y = 384
+Cursor position updated: x = 385, y = 391
+Cursor position updated: x = 386, y = 394
+Cursor position updated: x = 387, y = 397
+Cursor position updated: x = 388, y = 401
+Cursor position updated: x = 388, y = 404
+Cursor position updated: x = 388, y = 406
+Cursor position updated: x = 390, y = 409
+Cursor position updated: x = 390, y = 411
+Cursor position updated: x = 390, y = 413
+Cursor position updated: x = 390, y = 414
+Cursor position updated: x = 390, y = 415
+Cursor position updated: x = 391, y = 416
+Cursor position updated: x = 391, y = 417
+Cursor position updated: x = 391, y = 418
+Cursor position updated: x = 392, y = 420
+Cursor position updated: x = 392, y = 423
+Cursor position updated: x = 392, y = 424
+Cursor position updated: x = 392, y = 427
+Cursor position updated: x = 392, y = 431
+Cursor position updated: x = 393, y = 432
+Cursor position updated: x = 393, y = 437
+Cursor position updated: x = 394, y = 443
+Cursor position updated: x = 395, y = 447
+Cursor position updated: x = 435, y = 663
+Cursor position updated: x = 475, y = 879
+Cursor position updated: x = 515, y = 988
+Cursor position updated: x = 539, y = 988
+Cursor position updated: x = 291, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 292, y = 988
+Cursor position updated: x = 293, y = 988
+Cursor position updated: x = 293, y = 988
+Cursor position updated: x = 294, y = 988
+Cursor position updated: x = 295, y = 988
+Cursor position updated: x = 297, y = 988
+Cursor position updated: x = 297, y = 988
+Cursor position updated: x = 297, y = 988
+Cursor position updated: x = 337, y = 988
+Cursor position updated: x = 377, y = 988
+Cursor position updated: x = 177, y = 988
+Cursor position updated: x = 233, y = 988
+Cursor position updated: x = 273, y = 988
+Cursor position updated: x = 313, y = 988
+Cursor position updated: x = 353, y = 988
+Cursor position updated: x = 393, y = 988
+Cursor position updated: x = 433, y = 988
+Cursor position updated: x = 473, y = 988
+Cursor position updated: x = 529, y = 988
+Cursor position updated: x = 530, y = 988
+Cursor position updated: x = 532, y = 988
+Cursor position updated: x = 533, y = 988
+Cursor position updated: x = 534, y = 988
+Cursor position updated: x = 534, y = 988
+Cursor position updated: x = 535, y = 988
+Cursor position updated: x = 535, y = 988
+Cursor position updated: x = 536, y = 988
+Cursor position updated: x = 536, y = 987
+Cursor position updated: x = 536, y = 982
+Cursor position updated: x = 536, y = 980
+Cursor position updated: x = 535, y = 978
+Cursor position updated: x = 531, y = 978
+Cursor position updated: x = 527, y = 980
+Cursor position updated: x = 526, y = 980
+Cursor position updated: x = 521, y = 983
+Cursor position updated: x = 515, y = 987
+Cursor position updated: x = 505, y = 988
+Cursor position updated: x = 494, y = 988
+Cursor position updated: x = 475, y = 988
+Cursor position updated: x = 470, y = 988
+Cursor position updated: x = 468, y = 988
+Cursor position updated: x = 467, y = 988
+Cursor position updated: x = 465, y = 988
+Cursor position updated: x = 462, y = 988
+Cursor position updated: x = 459, y = 988
+Cursor position updated: x = 458, y = 988
+Cursor position updated: x = 457, y = 988
+Cursor position updated: x = 423, y = 988
+Cursor position updated: x = 355, y = 988
+Cursor position updated: x = 291, y = 988
+Cursor position updated: x = 247, y = 988
+Cursor position updated: x = 237, y = 988
+Cursor position updated: x = 237, y = 988
+Cursor position updated: x = 238, y = 988
+Cursor position updated: x = 240, y = 988
+Cursor position updated: x = 251, y = 988
+Cursor position updated: x = 265, y = 988
+Cursor position updated: x = 300, y = 988
+Cursor position updated: x = 345, y = 988
+Cursor position updated: x = 385, y = 988
+Cursor position updated: x = 470, y = 988
+Cursor position updated: x = 493, y = 988
+Cursor position updated: x = 496, y = 988
+Cursor position updated: x = 496, y = 988
+Cursor position updated: x = 495, y = 988
+Cursor position updated: x = 496, y = 988
+Cursor position updated: x = 497, y = 987
+Cursor position updated: x = 498, y = 985
+Cursor position updated: x = 500, y = 979
+Cursor position updated: x = 500, y = 966
+Cursor position updated: x = 500, y = 960
+Cursor position updated: x = 501, y = 956
+Cursor position updated: x = 501, y = 954
+Cursor position updated: x = 501, y = 953
+Cursor position updated: x = 501, y = 951
+Cursor position updated: x = 501, y = 949
+Cursor position updated: x = 501, y = 948
+Cursor position updated: x = 501, y = 947
+Cursor position updated: x = 501, y = 940
+Cursor position updated: x = 504, y = 932
+Cursor position updated: x = 508, y = 920
+Cursor position updated: x = 512, y = 907
+Cursor position updated: x = 516, y = 880
+Cursor position updated: x = 522, y = 853
+Cursor position updated: x = 526, y = 835
+Cursor position updated: x = 530, y = 823
+Cursor position updated: x = 532, y = 811
+Cursor position updated: x = 534, y = 801
+Cursor position updated: x = 536, y = 791
+Cursor position updated: x = 540, y = 783
+Cursor position updated: x = 548, y = 775
+Cursor position updated: x = 556, y = 767
+Cursor position updated: x = 564, y = 759
+Cursor position updated: x = 604, y = 757
+Cursor position updated: x = 388, y = 973
+Cursor position updated: x = 172, y = 948
+Cursor position updated: x = 186, y = 988
+Cursor position updated: x = 182, y = 988
+Cursor position updated: x = 181, y = 988
+Cursor position updated: x = 170, y = 986
+Cursor position updated: x = 167, y = 985
+Cursor position updated: x = 166, y = 983
+Cursor position updated: x = 166, y = 982
+Cursor position updated: x = 166, y = 981
+Cursor position updated: x = 166, y = 980
+Cursor position updated: x = 169, y = 975
+Cursor position updated: x = 172, y = 970
+Cursor position updated: x = 181, y = 957
+Cursor position updated: x = 195, y = 939
+Cursor position updated: x = 204, y = 927
+Cursor position updated: x = 214, y = 916
+Cursor position updated: x = 221, y = 907
+Cursor position updated: x = 233, y = 895
+Cursor position updated: x = 238, y = 889
+Cursor position updated: x = 250, y = 877
+Cursor position updated: x = 264, y = 865
+Cursor position updated: x = 273, y = 857
+Cursor position updated: x = 286, y = 845
+Cursor position updated: x = 295, y = 836
+Cursor position updated: x = 313, y = 823
+Cursor position updated: x = 340, y = 803
+Cursor position updated: x = 350, y = 795
+Cursor position updated: x = 367, y = 781
+Cursor position updated: x = 387, y = 765
+Cursor position updated: x = 406, y = 748
+Cursor position updated: x = 419, y = 737
+Cursor position updated: x = 444, y = 713
+Cursor position updated: x = 460, y = 697
+Cursor position updated: x = 475, y = 680
+Cursor position updated: x = 485, y = 670
+Cursor position updated: x = 497, y = 655
+Cursor position updated: x = 506, y = 646
+Cursor position updated: x = 516, y = 633
+Cursor position updated: x = 530, y = 618
+Cursor position updated: x = 551, y = 599
+Cursor position updated: x = 566, y = 585
+Cursor position updated: x = 574, y = 577
+Cursor position updated: x = 582, y = 576
+Cursor position updated: x = 600, y = 573
+Cursor position updated: x = 642, y = 568
+Cursor position updated: x = 720, y = 559
+Cursor position updated: x = 791, y = 551
+Cursor position updated: x = 871, y = 547
+Cursor position updated: x = 995, y = 541
+Cursor position updated: x = 1113, y = 533
+Cursor position updated: x = 1259, y = 525
+Cursor position updated: x = 1274, y = 525
+Cursor position updated: x = 1274, y = 525
+Cursor position updated: x = 1274, y = 525
+Cursor position updated: x = 1274, y = 525
+Cursor position updated: x = 1274, y = 525
+Cursor position updated: x = 1274, y = 522
+Cursor position updated: x = 1274, y = 521
+Cursor position updated: x = 1274, y = 515
+Cursor position updated: x = 1274, y = 510
+Cursor position updated: x = 1274, y = 506
+Cursor position updated: x = 1274, y = 506
+Cursor position updated: x = 1274, y = 506
+Cursor position updated: x = 1274, y = 506
+Cursor position updated: x = 1273, y = 507
+Cursor position updated: x = 1263, y = 511
+Cursor position updated: x = 1233, y = 519
+Cursor position updated: x = 1197, y = 531
+Cursor position updated: x = 1041, y = 560
+Cursor position updated: x = 841, y = 760
+Cursor position updated: x = 593, y = 988
+Cursor position updated: x = 601, y = 980
+Cursor position updated: x = 369, y = 924
+Cursor position updated: x = 121, y = 988
+Cursor position updated: x = 129, y = 948
+Cursor position updated: x = 128, y = 948
+Cursor position updated: x = 119, y = 951
+Cursor position updated: x = 102, y = 954
+Cursor position updated: x = 58, y = 962
+Cursor position updated: x = 32, y = 965
+Cursor position updated: x = 0, y = 969
+Cursor position updated: x = 0, y = 971
+Cursor position updated: x = 0, y = 974
+Cursor position updated: x = 0, y = 976
+Cursor position updated: x = 0, y = 976
+Cursor position updated: x = 0, y = 978
+Cursor position updated: x = 0, y = 979
+Cursor position updated: x = 0, y = 980
+Cursor position updated: x = 0, y = 982
+Cursor position updated: x = 0, y = 983
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 0, y = 988
+Cursor position updated: x = 2, y = 987
+Cursor position updated: x = 4, y = 985
+Cursor position updated: x = 5, y = 985
+Cursor position updated: x = 8, y = 983
+Cursor position updated: x = 10, y = 981
+Cursor position updated: x = 12, y = 980
+Cursor position updated: x = 13, y = 979
+Cursor position updated: x = 14, y = 978
+Cursor position updated: x = 15, y = 976
+Cursor position updated: x = 17, y = 975
+Cursor position updated: x = 18, y = 974
+Cursor position updated: x = 19, y = 974
+Cursor position updated: x = 20, y = 973
+Cursor position updated: x = 20, y = 972
+Cursor position updated: x = 20, y = 971
+Cursor position updated: x = 21, y = 971
+Cursor position updated: x = 23, y = 970
+Cursor position updated: x = 26, y = 967
+Cursor position updated: x = 35, y = 956
+Cursor position updated: x = 41, y = 950
+Cursor position updated: x = 57, y = 937
+Cursor position updated: x = 63, y = 931
+Cursor position updated: x = 83, y = 919
+Cursor position updated: x = 107, y = 905
+Cursor position updated: x = 115, y = 900
+Cursor position updated: x = 131, y = 890
+Cursor position updated: x = 136, y = 887
+Cursor position updated: x = 144, y = 883
+Cursor position updated: x = 149, y = 879
+Cursor position updated: x = 152, y = 876
+Cursor position updated: x = 157, y = 873
+Cursor position updated: x = 166, y = 865
+Cursor position updated: x = 178, y = 857
+Cursor position updated: x = 180, y = 855
+Cursor position updated: x = 184, y = 851
+Cursor position updated: x = 185, y = 849
+Cursor position updated: x = 187, y = 848
+Cursor position updated: x = 189, y = 847
+Cursor position updated: x = 192, y = 845
+Cursor position updated: x = 194, y = 843
+Cursor position updated: x = 196, y = 842
+Cursor position updated: x = 198, y = 839
+Cursor position updated: x = 199, y = 839
+Cursor position updated: x = 201, y = 837
+Cursor position updated: x = 203, y = 835
+Cursor position updated: x = 204, y = 834
+Cursor position updated: x = 205, y = 833
+Cursor position updated: x = 206, y = 833
+Cursor position updated: x = 206, y = 831
+Cursor position updated: x = 207, y = 831
+Cursor position updated: x = 208, y = 831
+Cursor position updated: x = 208, y = 830
+Cursor position updated: x = 209, y = 830
+Cursor position updated: x = 210, y = 829
+Cursor position updated: x = 211, y = 829
+Cursor position updated: x = 214, y = 829
+Cursor position updated: x = 219, y = 829
+Cursor position updated: x = 223, y = 829
+Cursor position updated: x = 235, y = 829
+Cursor position updated: x = 242, y = 829
+Cursor position updated: x = 245, y = 830
+Cursor position updated: x = 249, y = 831
+Cursor position updated: x = 252, y = 831
+Cursor position updated: x = 255, y = 831
+Cursor position updated: x = 261, y = 831
+Cursor position updated: x = 263, y = 831
+Cursor position updated: x = 268, y = 831
+Cursor position updated: x = 271, y = 831
+Cursor position updated: x = 273, y = 831
+Cursor position updated: x = 277, y = 831
+Cursor position updated: x = 279, y = 831
+Cursor position updated: x = 281, y = 831
+Cursor position updated: x = 283, y = 831
+Cursor position updated: x = 284, y = 831
+Cursor position updated: x = 286, y = 831
+Cursor position updated: x = 288, y = 831
+Cursor position updated: x = 290, y = 831
+Cursor position updated: x = 291, y = 831
+Cursor position updated: x = 292, y = 831
+Cursor position updated: x = 293, y = 831
+Cursor position updated: x = 294, y = 831
+Cursor position updated: x = 295, y = 831
+Cursor position updated: x = 298, y = 831
+Cursor position updated: x = 305, y = 831
+Cursor position updated: x = 314, y = 831
+Cursor position updated: x = 318, y = 831
+Cursor position updated: x = 328, y = 831
+Cursor position updated: x = 338, y = 831
+Cursor position updated: x = 342, y = 831
+Cursor position updated: x = 353, y = 829
+Cursor position updated: x = 365, y = 827
+Cursor position updated: x = 366, y = 827
+Cursor position updated: x = 370, y = 827
+Cursor position updated: x = 371, y = 827
+Cursor position updated: x = 372, y = 827
+Cursor position updated: x = 374, y = 827
+Cursor position updated: x = 376, y = 827
+Cursor position updated: x = 377, y = 827
+Cursor position updated: x = 379, y = 827
+Cursor position updated: x = 381, y = 827
+Cursor position updated: x = 382, y = 827
+Cursor position updated: x = 383, y = 827
+Cursor position updated: x = 386, y = 827
+Cursor position updated: x = 387, y = 827
+Cursor position updated: x = 388, y = 827
+Cursor position updated: x = 389, y = 827
+Cursor position updated: x = 390, y = 827
+Cursor position updated: x = 391, y = 827
+Cursor position updated: x = 393, y = 827
+Cursor position updated: x = 394, y = 827
+Cursor position updated: x = 395, y = 827
+Cursor position updated: x = 396, y = 826
+Cursor position updated: x = 397, y = 826
+Cursor position updated: x = 398, y = 826
+Cursor position updated: x = 399, y = 826
+Cursor position updated: x = 400, y = 826
+Cursor position updated: x = 401, y = 826
+Cursor position updated: x = 402, y = 826
+Cursor position updated: x = 403, y = 825
+Cursor position updated: x = 403, y = 825
+Cursor position updated: x = 403, y = 825
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 190). Total: 1
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Spawned enemy of type 1 at position (1200, 320). Total: 2
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Cursor position updated: x = 411, y = 865
+Cursor position updated: x = 505, y = 988
+Cursor position updated: x = 541, y = 988
+Cursor position updated: x = 558, y = 988
+Cursor position updated: x = 567, y = 988
+Cursor position updated: x = 573, y = 988
+Cursor position updated: x = 591, y = 988
+Cursor position updated: x = 622, y = 972
+Cursor position updated: x = 632, y = 963
+Cursor position updated: x = 645, y = 953
+Cursor position updated: x = 657, y = 945
+Cursor position updated: x = 678, y = 929
+Cursor position updated: x = 697, y = 917
+Cursor position updated: x = 709, y = 908
+Cursor position updated: x = 727, y = 894
+Cursor position updated: x = 770, y = 864
+Cursor position updated: x = 800, y = 846
+Cursor position updated: x = 822, y = 835
+Cursor position updated: x = 881, y = 815
+Cursor position updated: x = 915, y = 806
+Cursor position updated: x = 948, y = 800
+Cursor position updated: x = 966, y = 800
+Cursor position updated: x = 990, y = 800
+Cursor position updated: x = 1005, y = 801
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Cursor position updated: x = 1053, y = 820
+Cursor position updated: x = 1076, y = 842
+Cursor position updated: x = 1110, y = 868
+Cursor position updated: x = 1148, y = 897
+Cursor position updated: x = 1207, y = 941
+Cursor position updated: x = 1235, y = 956
+Cursor position updated: x = 1274, y = 979
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 985
+Cursor position updated: x = 1274, y = 981
+Cursor position updated: x = 1274, y = 974
+Cursor position updated: x = 1274, y = 966
+Cursor position updated: x = 1274, y = 960
+Cursor position updated: x = 1274, y = 944
+Cursor position updated: x = 1274, y = 937
+Cursor position updated: x = 1274, y = 930
+Cursor position updated: x = 1274, y = 926
+Cursor position updated: x = 1274, y = 920
+Cursor position updated: x = 1271, y = 914
+Cursor position updated: x = 1270, y = 910
+Cursor position updated: x = 1270, y = 909
+Cursor position updated: x = 1270, y = 908
+Cursor position updated: x = 1270, y = 907
+Cursor position updated: x = 1269, y = 905
+Cursor position updated: x = 1269, y = 902
+Cursor position updated: x = 1269, y = 899
+Cursor position updated: x = 1269, y = 894
+Cursor position updated: x = 1268, y = 889
+Cursor position updated: x = 1267, y = 881
+Cursor position updated: x = 1266, y = 878
+Cursor position updated: x = 1266, y = 877
+Cursor position updated: x = 1265, y = 875
+Cursor position updated: x = 1265, y = 873
+Cursor position updated: x = 1265, y = 870
+Cursor position updated: x = 1263, y = 866
+Cursor position updated: x = 1262, y = 860
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Cursor position updated: x = 1260, y = 855
+Cursor position updated: x = 1259, y = 852
+Cursor position updated: x = 1255, y = 844
+Cursor position updated: x = 1250, y = 838
+Cursor position updated: x = 1246, y = 832
+Cursor position updated: x = 1243, y = 826
+Cursor position updated: x = 1237, y = 816
+Cursor position updated: x = 1232, y = 809
+Cursor position updated: x = 1221, y = 792
+Cursor position updated: x = 1211, y = 777
+Cursor position updated: x = 1204, y = 767
+Cursor position updated: x = 1199, y = 762
+Cursor position updated: x = 1193, y = 753
+Cursor position updated: x = 1186, y = 743
+Cursor position updated: x = 1177, y = 733
+Cursor position updated: x = 1171, y = 724
+Cursor position updated: x = 1166, y = 718
+Cursor position updated: x = 1162, y = 712
+Cursor position updated: x = 1161, y = 711
+Cursor position updated: x = 1160, y = 710
+Cursor position updated: x = 1159, y = 710
+Cursor position updated: x = 1156, y = 710
+Cursor position updated: x = 1152, y = 710
+Cursor position updated: x = 1147, y = 709
+Cursor position updated: x = 1140, y = 707
+Cursor position updated: x = 1125, y = 700
+Cursor position updated: x = 1118, y = 699
+Cursor position updated: x = 1109, y = 694
+Cursor position updated: x = 1101, y = 690
+Cursor position updated: x = 1095, y = 686
+Cursor position updated: x = 1090, y = 683
+Cursor position updated: x = 1078, y = 676
+Cursor position updated: x = 1075, y = 674
+Cursor position updated: x = 1070, y = 669
+Cursor position updated: x = 838, y = 645
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 699). Total: 3
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 699). Total: 4
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 699). Total: 5
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Spawned enemy of type 1 at position (1200, 699). Total: 6
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 320). Total: 7
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Spawned enemy of type 1 at position (1200, 570). Total: 8
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Spawned enemy of type 1 at position (1200, 449). Total: 9
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 699). Total: 10
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 190). Total: 11
+Spawned enemy of type 1 at position (1200, 570). Total: 12
+Spawned enemy of type 1 at position (1200, 190). Total: 13
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Spawned enemy of type 1 at position (1200, 699). Total: 14
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 449). Total: 15
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Spawned enemy of type 1 at position (1200, 570). Total: 16
+Spawned enemy of type 1 at position (1200, 699). Total: 17
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Spawned enemy of type 1 at position (1200, 449). Total: 18
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Spawned enemy of type 1 at position (1200, 190). Total: 19
+Error: Sprite data not loaded or invalid for enemy type 2.
+Failed to create enemy of type 2.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Error: Sprite data not loaded or invalid for enemy type 0.
+Failed to create enemy of type 0.
+Spawned enemy of type 1 at position (1200, 190). Total: 20

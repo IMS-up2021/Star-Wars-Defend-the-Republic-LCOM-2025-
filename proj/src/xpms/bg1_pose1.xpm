@@ -1,5 +1,5 @@
 /* XPM */
-static const char *en1[] = {
+static const char *en1_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "35 71 12 1 ",
 "  c None",

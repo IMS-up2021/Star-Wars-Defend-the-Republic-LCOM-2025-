@@ -55,9 +55,15 @@ void gameLoop(void) {
 
                         draw_cursor(cursor);
 
-                        if (state == PLAYING) {
-                            spawnEnemies();
-                        }
+                        vg_swap_buffers();
+                    }
+                    if (timer_global_counter % 1 == 0) { 
+                        unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
+                        memset(double_buffer, 0, frame_size);
+
+                        timer_event_handler(state);
+
+                        draw_cursor(cursor);
 
                         vg_swap_buffers();
                     }
