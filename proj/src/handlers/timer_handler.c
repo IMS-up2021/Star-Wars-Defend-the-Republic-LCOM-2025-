@@ -2,6 +2,8 @@
 #include "gameState.h"
 #include "manager.h"
 #include "menu.h"
+#include "kbd_handler.h"
+#include "characters.h"
 
 
 void timer_event_handler(gameState game_state) {
@@ -10,7 +12,20 @@ void timer_event_handler(gameState game_state) {
             draw_menu();
             break;
         case PLAYING:
-            draw_game();
+            switch(kbd_state){
+                case 2:
+                    load_characters2_assets();
+                    draw_characters2();
+                    break;
+                case 3:
+                    load_characters3_assets();
+                    draw_characters3();
+                    break;
+                default:
+                    load_characters1_assets();
+                    draw_characters1();
+                    break;
+            }
             break;
         case INSTRUCTIONS:
             draw_instructions();

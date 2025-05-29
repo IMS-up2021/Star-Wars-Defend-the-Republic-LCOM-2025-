@@ -1,8 +1,19 @@
+#include "xpms/selected1.xpm"
+#include "xpms/selected2.xpm"
+#include "xpms/selected3.xpm"
+
+#include <lcom/lcf.h>
+#include <lcom/xpm.h>
+
 #include "kbd_handler.h"
 #include "gameState.h"
 #include "manager.h"
 #include "menu.h"
-#include "graphics.h"
+#include "characters.h"
+#include "controllers/video/graphics.h"
+
+extern vbe_mode_info_t mode_info;
+int kbd_state = 1;
 
 void kbd_event_handler(uint8_t scan_code[2]) {
     uint16_t full_scancode;
@@ -26,11 +37,21 @@ void kbd_event_handler(uint8_t scan_code[2]) {
         case INSTRUCTIONS:
             if (full_scancode == ESC_BREAK)
                 state = MAIN_MENU;
+            break;
         case PLAYING:
-        
-            if (full_scancode == ESC_BREAK)
+            if (full_scancode == ESC_BREAK){
                 state = MAIN_MENU;
-        break;
+            }
+            else if(full_scancode == ONE_T){
+                kbd_state = 1;
+            }
+            else if(full_scancode == TWO_T){
+                kbd_state = 2;
+            }
+            else if(full_scancode == THREE_T){
+                kbd_state = 3;
+            }
+            break;
         default:
             break;
     }

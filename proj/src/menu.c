@@ -1,6 +1,6 @@
 #include "xpms/menu_bg.xpm"
 #include "xpms/mouse_cursor.xpm"
-#include "xpms/background.xpm"
+#include "xpms/selected1.xpm"
 #include "xpms/Instructions.xpm"
 
 #include <lcom/lcf.h>
@@ -28,7 +28,7 @@ void draw_menu() {
 
 void load_game_assets() {
     // Load the XPM images
-    bg_game = xpm_load(background_xpm, XPM_5_6_5, &game_bg);
+    bg_game = xpm_load(selected1_xpm, XPM_5_6_5, &game_bg);
 }
 
 
