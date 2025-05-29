@@ -4,6 +4,7 @@
 #include "menu.h"
 #include "entity.h"
 #include "manager.h"
+#include "enemy.h"
 
 #include "controllers/keyboardMouse/mouse.h"
 #include "controllers/keyboardMouse/keyboard.h"
@@ -33,6 +34,7 @@ void gameLoop(void) {
     lcf_log_output("/home/lcom/labs/grupo_2leic18_2/proj/src/output.txt");
 
     init_cursor();
+    init_enemies();
 
     while (running) {
         if (state == EXIT) {
@@ -52,6 +54,10 @@ void gameLoop(void) {
                         timer_event_handler(state);
 
                         draw_cursor(cursor);
+
+                        if (state == PLAYING) {
+                            spawnEnemies();
+                        }
 
                         vg_swap_buffers();
                     }

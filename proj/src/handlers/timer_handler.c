@@ -12,7 +12,6 @@ void timer_event_handler(gameState game_state) {
             break;
         case PLAYING:
             draw_game();
-            spawnEnemies();
             break;
         case INSTRUCTIONS:
             draw_instructions();

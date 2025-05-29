@@ -37,6 +37,8 @@ typedef struct {
 
 Character *createEnemy(CharacterPos pos, int enemy_type);
 
-void spawnEnemies();
+void spawnEnemies(void);
+
+bool init_enemies(void);
 
 #endif // ENEMY_H

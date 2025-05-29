@@ -6,768 +6,503 @@ Red: Size 5, Pos 11
 Green: Size 6, Pos 5
 Blue: Size 5, Pos 0
 Graphics mode initialized
-Cursor position updated: x = 260, y = 141
-Cursor position updated: x = 261, y = 143
-Cursor position updated: x = 263, y = 149
-Cursor position updated: x = 263, y = 151
-Cursor position updated: x = 264, y = 155
-Cursor position updated: x = 264, y = 159
-Cursor position updated: x = 264, y = 163
-Cursor position updated: x = 264, y = 167
-Cursor position updated: x = 265, y = 171
-Cursor position updated: x = 265, y = 173
-Cursor position updated: x = 266, y = 177
-Cursor position updated: x = 267, y = 180
-Cursor position updated: x = 267, y = 182
-Cursor position updated: x = 267, y = 186
-Cursor position updated: x = 267, y = 187
-Cursor position updated: x = 267, y = 190
-Cursor position updated: x = 268, y = 190
-Cursor position updated: x = 268, y = 192
-Cursor position updated: x = 269, y = 194
-Cursor position updated: x = 269, y = 195
-Cursor position updated: x = 270, y = 197
-Cursor position updated: x = 270, y = 199
-Cursor position updated: x = 271, y = 200
-Cursor position updated: x = 271, y = 202
-Cursor position updated: x = 272, y = 203
-Cursor position updated: x = 272, y = 205
-Cursor position updated: x = 273, y = 208
-Cursor position updated: x = 274, y = 210
-Cursor position updated: x = 275, y = 213
-Cursor position updated: x = 275, y = 215
-Cursor position updated: x = 276, y = 217
-Cursor position updated: x = 276, y = 219
-Cursor position updated: x = 277, y = 221
-Cursor position updated: x = 278, y = 223
-Cursor position updated: x = 278, y = 224
-Cursor position updated: x = 278, y = 227
-Cursor position updated: x = 279, y = 228
-Cursor position updated: x = 279, y = 229
-Cursor position updated: x = 280, y = 230
-Cursor position updated: x = 280, y = 231
-Cursor position updated: x = 281, y = 232
-Cursor position updated: x = 282, y = 233
-Cursor position updated: x = 283, y = 236
-Cursor position updated: x = 284, y = 236
-Cursor position updated: x = 284, y = 239
-Cursor position updated: x = 284, y = 241
-Cursor position updated: x = 285, y = 243
-Cursor position updated: x = 286, y = 244
-Cursor position updated: x = 287, y = 245
-Cursor position updated: x = 287, y = 246
-Cursor position updated: x = 287, y = 248
-Cursor position updated: x = 287, y = 249
-Cursor position updated: x = 288, y = 250
-Cursor position updated: x = 288, y = 251
-Cursor position updated: x = 289, y = 252
-Cursor position updated: x = 289, y = 254
-Cursor position updated: x = 290, y = 256
-Cursor position updated: x = 291, y = 258
-Cursor position updated: x = 292, y = 259
-Cursor position updated: x = 292, y = 260
-Cursor position updated: x = 293, y = 262
-Cursor position updated: x = 294, y = 263
-Cursor position updated: x = 295, y = 264
-Cursor position updated: x = 295, y = 265
-Cursor position updated: x = 295, y = 267
-Cursor position updated: x = 296, y = 267
-Cursor position updated: x = 296, y = 268
-Cursor position updated: x = 297, y = 268
-Cursor position updated: x = 297, y = 269
-Cursor position updated: x = 297, y = 270
-Cursor position updated: x = 297, y = 271
-Cursor position updated: x = 298, y = 272
-Cursor position updated: x = 299, y = 273
-Cursor position updated: x = 299, y = 274
-Cursor position updated: x = 300, y = 275
-Cursor position updated: x = 300, y = 276
-Cursor position updated: x = 300, y = 277
-Cursor position updated: x = 300, y = 278
-Cursor position updated: x = 300, y = 279
-Cursor position updated: x = 301, y = 280
-Cursor position updated: x = 301, y = 281
-Cursor position updated: x = 302, y = 284
-Cursor position updated: x = 302, y = 285
-Cursor position updated: x = 302, y = 287
-Cursor position updated: x = 302, y = 288
-Cursor position updated: x = 303, y = 290
-Cursor position updated: x = 304, y = 292
-Cursor position updated: x = 304, y = 293
-Cursor position updated: x = 304, y = 294
-Cursor position updated: x = 305, y = 296
-Cursor position updated: x = 305, y = 297
-Cursor position updated: x = 305, y = 300
-Cursor position updated: x = 305, y = 301
-Cursor position updated: x = 305, y = 302
-Cursor position updated: x = 306, y = 305
-Cursor position updated: x = 306, y = 306
-Cursor position updated: x = 307, y = 307
-Cursor position updated: x = 307, y = 308
-Cursor position updated: x = 307, y = 309
-Cursor position updated: x = 307, y = 310
-Cursor position updated: x = 307, y = 312
-Cursor position updated: x = 307, y = 313
-Cursor position updated: x = 307, y = 314
-Cursor position updated: x = 307, y = 315
-Cursor position updated: x = 307, y = 317
-Cursor position updated: x = 307, y = 319
-Cursor position updated: x = 307, y = 321
-Cursor position updated: x = 308, y = 327
-Cursor position updated: x = 309, y = 329
-Cursor position updated: x = 309, y = 331
-Cursor position updated: x = 310, y = 334
-Cursor position updated: x = 310, y = 336
-Cursor position updated: x = 310, y = 339
-Cursor position updated: x = 311, y = 342
-Cursor position updated: x = 311, y = 343
-Cursor position updated: x = 312, y = 344
-Cursor position updated: x = 312, y = 345
-Cursor position updated: x = 312, y = 347
-Cursor position updated: x = 312, y = 350
-Cursor position updated: x = 313, y = 351
-Cursor position updated: x = 313, y = 352
-Cursor position updated: x = 313, y = 353
-Cursor position updated: x = 313, y = 354
-Cursor position updated: x = 313, y = 356
-Cursor position updated: x = 313, y = 358
-Cursor position updated: x = 314, y = 359
-Cursor position updated: x = 314, y = 360
-Cursor position updated: x = 314, y = 362
-Cursor position updated: x = 314, y = 364
-Cursor position updated: x = 314, y = 365
-Cursor position updated: x = 315, y = 367
-Cursor position updated: x = 315, y = 368
-Cursor position updated: x = 315, y = 369
-Cursor position updated: x = 315, y = 371
-Cursor position updated: x = 315, y = 372
-Cursor position updated: x = 315, y = 374
-Cursor position updated: x = 315, y = 375
-Cursor position updated: x = 315, y = 376
-Cursor position updated: x = 315, y = 377
-Cursor position updated: x = 316, y = 378
-Cursor position updated: x = 316, y = 379
-Cursor position updated: x = 316, y = 380
-Cursor position updated: x = 316, y = 381
-Cursor position updated: x = 316, y = 382
-Cursor position updated: x = 317, y = 382
-Cursor position updated: x = 317, y = 383
-Cursor position updated: x = 317, y = 384
-Cursor position updated: x = 318, y = 384
-Cursor position updated: x = 318, y = 386
-Cursor position updated: x = 318, y = 387
-Cursor position updated: x = 318, y = 389
-Cursor position updated: x = 318, y = 390
-Cursor position updated: x = 318, y = 391
-Cursor position updated: x = 318, y = 392
-Cursor position updated: x = 318, y = 394
-Cursor position updated: x = 318, y = 395
-Cursor position updated: x = 319, y = 396
-Cursor position updated: x = 319, y = 397
-Cursor position updated: x = 319, y = 399
-Cursor position updated: x = 320, y = 402
-Cursor position updated: x = 320, y = 403
-Cursor position updated: x = 320, y = 405
-Cursor position updated: x = 321, y = 407
-Cursor position updated: x = 322, y = 409
-Cursor position updated: x = 323, y = 410
-Cursor position updated: x = 324, y = 412
-Cursor position updated: x = 324, y = 413
-Cursor position updated: x = 325, y = 414
-Cursor position updated: x = 325, y = 416
-Cursor position updated: x = 326, y = 417
-Cursor position updated: x = 327, y = 418
-Cursor position updated: x = 328, y = 420
-Cursor position updated: x = 329, y = 421
-Cursor position updated: x = 330, y = 422
-Cursor position updated: x = 330, y = 423
-Cursor position updated: x = 331, y = 424
-Cursor position updated: x = 332, y = 426
-Cursor position updated: x = 332, y = 427
-Cursor position updated: x = 332, y = 428
-Cursor position updated: x = 333, y = 430
-Cursor position updated: x = 333, y = 432
-Cursor position updated: x = 333, y = 434
-Cursor position updated: x = 334, y = 436
-Cursor position updated: x = 335, y = 439
-Cursor position updated: x = 335, y = 441
-Cursor position updated: x = 337, y = 446
-Cursor position updated: x = 338, y = 448
-Cursor position updated: x = 339, y = 449
-Cursor position updated: x = 339, y = 452
-Cursor position updated: x = 340, y = 453
-Cursor position updated: x = 340, y = 454
-Cursor position updated: x = 340, y = 456
-Cursor position updated: x = 341, y = 459
-Cursor position updated: x = 342, y = 462
-Cursor position updated: x = 343, y = 465
-Cursor position updated: x = 344, y = 467
-Cursor position updated: x = 345, y = 469
-Cursor position updated: x = 345, y = 471
-Cursor position updated: x = 346, y = 473
-Cursor position updated: x = 348, y = 478
-Cursor position updated: x = 348, y = 481
-Cursor position updated: x = 349, y = 481
-Cursor position updated: x = 349, y = 485
-Cursor position updated: x = 350, y = 487
-Cursor position updated: x = 350, y = 488
-Cursor position updated: x = 351, y = 491
-Cursor position updated: x = 351, y = 492
-Cursor position updated: x = 353, y = 496
-Cursor position updated: x = 353, y = 498
-Cursor position updated: x = 354, y = 500
-Cursor position updated: x = 355, y = 502
-Cursor position updated: x = 356, y = 506
-Cursor position updated: x = 358, y = 508
-Cursor position updated: x = 361, y = 514
-Cursor position updated: x = 361, y = 516
-Cursor position updated: x = 362, y = 519
-Cursor position updated: x = 362, y = 520
-Cursor position updated: x = 363, y = 521
-Cursor position updated: x = 363, y = 523
-Cursor position updated: x = 364, y = 526
-Cursor position updated: x = 365, y = 528
-Cursor position updated: x = 368, y = 533
-Cursor position updated: x = 369, y = 535
-Cursor position updated: x = 370, y = 538
-Cursor position updated: x = 372, y = 542
-Cursor position updated: x = 375, y = 549
-Cursor position updated: x = 376, y = 552
-Cursor position updated: x = 377, y = 768
-Cursor position updated: x = 378, y = 984
-Cursor position updated: x = 379, y = 988
-Cursor position updated: x = 419, y = 988
-Cursor position updated: x = 459, y = 988
-Cursor position updated: x = 460, y = 988
-Cursor position updated: x = 500, y = 988
-Cursor position updated: x = 500, y = 988
-Cursor position updated: x = 540, y = 988
-Cursor position updated: x = 340, y = 988
-Cursor position updated: x = 92, y = 988
-Cursor position updated: x = 94, y = 987
-Cursor position updated: x = 98, y = 987
-Cursor position updated: x = 99, y = 985
-Cursor position updated: x = 104, y = 977
-Cursor position updated: x = 105, y = 972
-Cursor position updated: x = 105, y = 971
-Cursor position updated: x = 105, y = 966
-Cursor position updated: x = 105, y = 964
-Cursor position updated: x = 103, y = 959
-Cursor position updated: x = 102, y = 955
-Cursor position updated: x = 100, y = 951
-Cursor position updated: x = 99, y = 948
-Cursor position updated: x = 98, y = 943
-Cursor position updated: x = 97, y = 940
-Cursor position updated: x = 96, y = 934
-Cursor position updated: x = 95, y = 928
-Cursor position updated: x = 95, y = 923
-Cursor position updated: x = 93, y = 918
-Cursor position updated: x = 92, y = 912
-Cursor position updated: x = 92, y = 908
-Cursor position updated: x = 92, y = 900
-Cursor position updated: x = 92, y = 895
-Cursor position updated: x = 92, y = 891
-Cursor position updated: x = 92, y = 889
-Cursor position updated: x = 92, y = 886
-Cursor position updated: x = 92, y = 883
-Cursor position updated: x = 92, y = 876
-Cursor position updated: x = 92, y = 874
-Cursor position updated: x = 92, y = 869
-Cursor position updated: x = 92, y = 868
-Cursor position updated: x = 92, y = 864
-Cursor position updated: x = 92, y = 856
-Cursor position updated: x = 92, y = 851
-Cursor position updated: x = 92, y = 849
-Cursor position updated: x = 92, y = 845
-Cursor position updated: x = 92, y = 844
-Cursor position updated: x = 92, y = 840
-Cursor position updated: x = 92, y = 837
-Cursor position updated: x = 92, y = 834
-Cursor position updated: x = 92, y = 832
-Cursor position updated: x = 93, y = 827
-Cursor position updated: x = 93, y = 825
-Cursor position updated: x = 94, y = 821
-Cursor position updated: x = 95, y = 816
-Cursor position updated: x = 95, y = 811
-Cursor position updated: x = 96, y = 809
-Cursor position updated: x = 98, y = 801
-Cursor position updated: x = 100, y = 796
-Cursor position updated: x = 100, y = 792
-Cursor position updated: x = 101, y = 786
-Cursor position updated: x = 101, y = 783
-Cursor position updated: x = 102, y = 777
-Cursor position updated: x = 103, y = 772
-Cursor position updated: x = 103, y = 770
-Cursor position updated: x = 103, y = 769
-Cursor position updated: x = 103, y = 768
-Cursor position updated: x = 103, y = 767
-Cursor position updated: x = 104, y = 767
-Cursor position updated: x = 104, y = 766
-Cursor position updated: x = 104, y = 765
-Cursor position updated: x = 104, y = 764
-Cursor position updated: x = 105, y = 763
-Cursor position updated: x = 108, y = 761
-Cursor position updated: x = 114, y = 757
-Cursor position updated: x = 118, y = 754
-Cursor position updated: x = 121, y = 753
-Cursor position updated: x = 128, y = 749
-Cursor position updated: x = 131, y = 748
-Cursor position updated: x = 136, y = 747
-Cursor position updated: x = 139, y = 746
-Cursor position updated: x = 142, y = 746
-Cursor position updated: x = 143, y = 746
-Cursor position updated: x = 144, y = 746
-Cursor position updated: x = 146, y = 746
-Cursor position updated: x = 150, y = 746
-Cursor position updated: x = 153, y = 746
-Cursor position updated: x = 156, y = 747
-Cursor position updated: x = 161, y = 748
-Cursor position updated: x = 164, y = 750
-Cursor position updated: x = 171, y = 752
-Cursor position updated: x = 179, y = 754
-Cursor position updated: x = 185, y = 756
-Cursor position updated: x = 192, y = 757
-Cursor position updated: x = 203, y = 760
-Cursor position updated: x = 207, y = 761
-Cursor position updated: x = 219, y = 763
-Cursor position updated: x = 227, y = 764
-Cursor position updated: x = 233, y = 765
-Cursor position updated: x = 237, y = 766
-Cursor position updated: x = 241, y = 767
-Cursor position updated: x = 243, y = 768
-Cursor position updated: x = 244, y = 768
-Cursor position updated: x = 245, y = 768
-Cursor position updated: x = 246, y = 768
-Cursor position updated: x = 246, y = 769
-Cursor position updated: x = 247, y = 769
-Cursor position updated: x = 251, y = 769
-Cursor position updated: x = 254, y = 769
-Cursor position updated: x = 255, y = 769
-Cursor position updated: x = 256, y = 769
-Cursor position updated: x = 257, y = 769
-Cursor position updated: x = 259, y = 769
-Cursor position updated: x = 260, y = 769
-Cursor position updated: x = 262, y = 769
-Cursor position updated: x = 263, y = 769
-Cursor position updated: x = 265, y = 769
-Cursor position updated: x = 267, y = 769
-Cursor position updated: x = 269, y = 769
-Cursor position updated: x = 270, y = 769
-Cursor position updated: x = 270, y = 770
-Cursor position updated: x = 271, y = 770
-Cursor position updated: x = 272, y = 771
-Cursor position updated: x = 275, y = 771
-Cursor position updated: x = 277, y = 771
-Cursor position updated: x = 278, y = 771
-Cursor position updated: x = 280, y = 771
-Cursor position updated: x = 282, y = 773
-Cursor position updated: x = 283, y = 773
-Cursor position updated: x = 284, y = 773
-Cursor position updated: x = 287, y = 774
-Cursor position updated: x = 288, y = 774
-Cursor position updated: x = 291, y = 774
-Cursor position updated: x = 292, y = 775
-Cursor position updated: x = 294, y = 775
-Cursor position updated: x = 295, y = 775
-Cursor position updated: x = 296, y = 776
-Cursor position updated: x = 297, y = 776
-Cursor position updated: x = 298, y = 776
-Cursor position updated: x = 299, y = 776
-Cursor position updated: x = 302, y = 776
-Cursor position updated: x = 303, y = 776
-Cursor position updated: x = 305, y = 776
-Cursor position updated: x = 307, y = 777
-Cursor position updated: x = 309, y = 777
-Cursor position updated: x = 313, y = 777
-Cursor position updated: x = 316, y = 778
-Cursor position updated: x = 321, y = 780
-Cursor position updated: x = 331, y = 781
-Cursor position updated: x = 337, y = 781
-Cursor position updated: x = 343, y = 782
-Cursor position updated: x = 348, y = 782
-Cursor position updated: x = 354, y = 783
-Cursor position updated: x = 358, y = 784
-Cursor position updated: x = 362, y = 785
-Cursor position updated: x = 364, y = 786
-Cursor position updated: x = 366, y = 786
-Cursor position updated: x = 367, y = 787
-Cursor position updated: x = 367, y = 788
-Cursor position updated: x = 367, y = 788
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 367, y = 788
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Cursor position updated: x = 368, y = 788
-Cursor position updated: x = 385, y = 783
-Invalid enemy type
-Invalid enemy type
-Cursor position updated: x = 398, y = 779
-Cursor position updated: x = 425, y = 771
-Cursor position updated: x = 457, y = 762
-Cursor position updated: x = 519, y = 750
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 556, y = 745
-Cursor position updated: x = 598, y = 737
-Invalid enemy type
-Cursor position updated: x = 632, y = 732
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 681, y = 728
-Cursor position updated: x = 705, y = 724
-Cursor position updated: x = 735, y = 721
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 747, y = 719
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Cursor position updated: x = 761, y = 715
-Cursor position updated: x = 767, y = 712
-Invalid enemy type
-Cursor position updated: x = 769, y = 711
-Cursor position updated: x = 769, y = 710
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 770, y = 710
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 782, y = 710
-Invalid enemy type
-Cursor position updated: x = 791, y = 709
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 807, y = 699
-Invalid enemy type
-Cursor position updated: x = 823, y = 683
-Cursor position updated: x = 825, y = 680
-Cursor position updated: x = 826, y = 680
-Cursor position updated: x = 827, y = 680
-Cursor position updated: x = 831, y = 684
-Cursor position updated: x = 835, y = 687
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 843, y = 681
-Invalid enemy type
-Cursor position updated: x = 865, y = 672
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 881, y = 667
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 904, y = 663
-Invalid enemy type
-Cursor position updated: x = 918, y = 660
-Invalid enemy type
-Cursor position updated: x = 936, y = 655
-Cursor position updated: x = 950, y = 650
-Invalid enemy type
-Cursor position updated: x = 962, y = 646
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 981, y = 636
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 989, y = 632
-Cursor position updated: x = 998, y = 626
-Invalid enemy type
-Cursor position updated: x = 1012, y = 618
-Cursor position updated: x = 1026, y = 611
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1043, y = 603
-Invalid enemy type
-Cursor position updated: x = 1071, y = 592
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1089, y = 584
-Cursor position updated: x = 1121, y = 571
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1143, y = 563
-Invalid enemy type
-Cursor position updated: x = 1181, y = 548
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1221, y = 536
-Invalid enemy type
-Cursor position updated: x = 1248, y = 528
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 515
-Cursor position updated: x = 1274, y = 506
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 493
-Cursor position updated: x = 1274, y = 483
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 469
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 463
-Cursor position updated: x = 1274, y = 460
-Cursor position updated: x = 1274, y = 454
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 451
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Cursor position updated: x = 1274, y = 448
-Invalid enemy type
-Cursor position updated: x = 1274, y = 444
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 441
-Invalid enemy type
-Cursor position updated: x = 1274, y = 437
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 436
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 435
-Cursor position updated: x = 1274, y = 435
-Cursor position updated: x = 1274, y = 435
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1274, y = 435
-Invalid enemy type
-Cursor position updated: x = 1274, y = 436
-Invalid enemy type
-Cursor position updated: x = 1267, y = 437
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1265, y = 438
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Invalid enemy type
-Cursor position updated: x = 1265, y = 439
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1265, y = 440
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1265, y = 442
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-Cursor position updated: x = 1265, y = 443
-Cursor position updated: x = 1266, y = 445
-Cursor position updated: x = 1266, y = 447
-Invalid enemy type
-Cursor position updated: x = 1266, y = 448
-Invalid enemy type
-Cursor position updated: x = 1266, y = 449
-Invalid enemy type
-Cursor position updated: x = 1266, y = 450
-vg_draw_scaled_pixmap: Invalid parameters.
-Cursor position updated: x = 1266, y = 451
-Invalid enemy type
-Cursor position updated: x = 1266, y = 452
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-vg_draw_scaled_pixmap: Invalid parameters.
-Invalid enemy type
+Cursor position updated: x = 259, y = 140
+Cursor position updated: x = 252, y = 150
+Cursor position updated: x = 252, y = 153
+Cursor position updated: x = 252, y = 154
+Cursor position updated: x = 253, y = 154
+Cursor position updated: x = 254, y = 155
+Cursor position updated: x = 256, y = 156
+Cursor position updated: x = 268, y = 166
+Cursor position updated: x = 280, y = 176
+Cursor position updated: x = 287, y = 183
+Cursor position updated: x = 290, y = 187
+Cursor position updated: x = 291, y = 188
+Cursor position updated: x = 292, y = 189
+Cursor position updated: x = 292, y = 190
+Cursor position updated: x = 292, y = 193
+Cursor position updated: x = 292, y = 199
+Cursor position updated: x = 292, y = 209
+Cursor position updated: x = 293, y = 218
+Cursor position updated: x = 295, y = 226
+Cursor position updated: x = 297, y = 238
+Cursor position updated: x = 299, y = 248
+Cursor position updated: x = 302, y = 262
+Cursor position updated: x = 303, y = 274
+Cursor position updated: x = 304, y = 283
+Cursor position updated: x = 305, y = 305
+Cursor position updated: x = 305, y = 318
+Cursor position updated: x = 305, y = 331
+Cursor position updated: x = 306, y = 351
+Cursor position updated: x = 308, y = 365
+Cursor position updated: x = 308, y = 372
+Cursor position updated: x = 311, y = 384
+Cursor position updated: x = 313, y = 394
+Cursor position updated: x = 315, y = 401
+Cursor position updated: x = 316, y = 411
+Cursor position updated: x = 318, y = 428
+Cursor position updated: x = 319, y = 434
+Cursor position updated: x = 319, y = 443
+Cursor position updated: x = 319, y = 448
+Cursor position updated: x = 319, y = 453
+Cursor position updated: x = 319, y = 455
+Cursor position updated: x = 319, y = 459
+Cursor position updated: x = 319, y = 462
+Cursor position updated: x = 320, y = 468
+Cursor position updated: x = 320, y = 471
+Cursor position updated: x = 320, y = 475
+Cursor position updated: x = 320, y = 478
+Cursor position updated: x = 320, y = 481
+Cursor position updated: x = 320, y = 485
+Cursor position updated: x = 321, y = 490
+Cursor position updated: x = 321, y = 496
+Cursor position updated: x = 321, y = 500
+Cursor position updated: x = 321, y = 503
+Cursor position updated: x = 321, y = 510
+Cursor position updated: x = 321, y = 514
+Cursor position updated: x = 321, y = 515
+Cursor position updated: x = 321, y = 516
+Cursor position updated: x = 321, y = 518
+Cursor position updated: x = 322, y = 522
+Cursor position updated: x = 325, y = 527
+Cursor position updated: x = 327, y = 531
+Cursor position updated: x = 328, y = 533
+Cursor position updated: x = 331, y = 538
+Cursor position updated: x = 334, y = 545
+Cursor position updated: x = 335, y = 549
+Cursor position updated: x = 338, y = 555
+Cursor position updated: x = 340, y = 559
+Cursor position updated: x = 344, y = 571
+Cursor position updated: x = 347, y = 578
+Cursor position updated: x = 348, y = 582
+Cursor position updated: x = 350, y = 590
+Cursor position updated: x = 353, y = 597
+Cursor position updated: x = 356, y = 606
+Cursor position updated: x = 362, y = 611
+Cursor position updated: x = 364, y = 617
+Cursor position updated: x = 370, y = 628
+Cursor position updated: x = 379, y = 643
+Cursor position updated: x = 382, y = 647
+Cursor position updated: x = 387, y = 653
+Cursor position updated: x = 389, y = 655
+Cursor position updated: x = 392, y = 659
+Cursor position updated: x = 392, y = 661
+Cursor position updated: x = 393, y = 667
+Cursor position updated: x = 394, y = 670
+Cursor position updated: x = 394, y = 674
+Cursor position updated: x = 395, y = 676
+Cursor position updated: x = 395, y = 679
+Cursor position updated: x = 396, y = 682
+Cursor position updated: x = 396, y = 685
+Cursor position updated: x = 397, y = 686
+Cursor position updated: x = 397, y = 690
+Cursor position updated: x = 397, y = 693
+Cursor position updated: x = 397, y = 696
+Cursor position updated: x = 398, y = 697
+Cursor position updated: x = 398, y = 699
+Cursor position updated: x = 398, y = 701
+Cursor position updated: x = 398, y = 703
+Cursor position updated: x = 398, y = 705
+Cursor position updated: x = 398, y = 707
+Cursor position updated: x = 398, y = 708
+Cursor position updated: x = 398, y = 710
+Cursor position updated: x = 398, y = 713
+Cursor position updated: x = 398, y = 714
+Cursor position updated: x = 399, y = 716
+Cursor position updated: x = 399, y = 718
+Cursor position updated: x = 399, y = 719
+Cursor position updated: x = 400, y = 721
+Cursor position updated: x = 400, y = 724
+Cursor position updated: x = 400, y = 725
+Cursor position updated: x = 401, y = 730
+Cursor position updated: x = 401, y = 731
+Cursor position updated: x = 402, y = 734
+Cursor position updated: x = 403, y = 736
+Cursor position updated: x = 404, y = 738
+Cursor position updated: x = 404, y = 739
+Cursor position updated: x = 404, y = 741
+Cursor position updated: x = 405, y = 741
+Cursor position updated: x = 405, y = 743
+Cursor position updated: x = 405, y = 743
 vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
 vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
 vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Cursor position updated: x = 405, y = 743
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 415) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 415) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 415) with type 1
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 415) with type 1
+Enemy created at position (1238, 415) with type 1
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 415) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+Enemy created at position (1238, 665) with type 1
+Enemy created at position (1238, 665) with type 1
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+Enemy created at position (1238, 665) with type 1
+Enemy created at position (1238, 415) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 415) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+Enemy created at position (1238, 415) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+Enemy created at position (1238, 415) with type 1
+Enemy created at position (1238, 544) with type 1
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 415) with type 1
+Enemy created at position (1238, 285) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 415) with type 1
+Enemy created at position (1238, 544) with type 1
+Enemy created at position (1238, 665) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 794) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 665) with type 1
+Enemy created at position (1238, 415) with type 1
+Enemy created at position (1238, 415) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+Enemy created at position (1238, 285) with type 1
 Scancode: 0x1 (make code)
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Invalid enemy type
-Scancode: 0x81 (break code)
-Scancode: 0x1 (make code)
+Enemy created at position (1238, 544) with type 1
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
+vg_draw_scaled_pixmap: Invalid parameters.
+Error loading enemy sprite
 Scancode: 0x81 (break code)
