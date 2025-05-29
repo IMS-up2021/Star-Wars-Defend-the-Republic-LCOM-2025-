@@ -649,3 +649,7 @@ Failed to create enemy of type 0.
 Error: Sprite data not loaded or invalid for enemy type 0.
 Failed to create enemy of type 0.
 Spawned enemy of type 1 at position (1200, 190). Total: 20
+Scancode: 0x1 (make code)
+Scancode: 0x81 (break code)
+Scancode: 0x1 (make code)
+Scancode: 0x81 (break code)
