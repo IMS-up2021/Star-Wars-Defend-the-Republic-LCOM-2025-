@@ -25,6 +25,16 @@
 #define FAST_BTN_Y1    910
 #define FAST_BTN_Y2    975
 
+typedef enum {
+    PLAY_PAUSED,
+    PLAY_NORMAL,
+    PLAY_FAST
+} PlayState;
+
+extern PlayState play_state;
+
+void set_play_state(PlayState new_state);
+
 void load_game_assets(void);
 void draw_game(void);
 

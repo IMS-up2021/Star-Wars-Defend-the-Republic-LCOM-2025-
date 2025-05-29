@@ -41,7 +41,7 @@ void mouse_event_handler(struct packet mouse_packet) {
         if (cursor->pos_x >= PAUSE_BTN_X1 && cursor->pos_x <= PAUSE_BTN_X2 &&
             cursor->pos_y >= PAUSE_BTN_Y1 && cursor->pos_y <= PAUSE_BTN_Y2) {
             printf("Pause button clicked!\n");
-            //state = PAUSED;
+			set_play_state(PLAY_PAUSED);
             return;
             }
 
@@ -51,7 +51,7 @@ void mouse_event_handler(struct packet mouse_packet) {
             printf("Resume button clicked!\n");
             // Provavelmente queres manter o estado em PLAYING
             // Mas pode ser útil em caso de retomar de PAUSED
-            //state = PLAYING;
+			set_play_state(PLAY_NORMAL);
             return;
             }
 
@@ -59,7 +59,7 @@ void mouse_event_handler(struct packet mouse_packet) {
         if (cursor->pos_x >= FAST_BTN_X1 && cursor->pos_x <= FAST_BTN_X2 &&
             cursor->pos_y >= FAST_BTN_Y1 && cursor->pos_y <= FAST_BTN_Y2) {
             printf("Fast button clicked! Spawning fast character...\n");
-            // Aqui podes chamar a função que faz o spawn de um personagem rápido
+			set_play_state(PLAY_FAST);
             return;
             }
 
