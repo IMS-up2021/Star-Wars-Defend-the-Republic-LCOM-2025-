@@ -1,7 +1,7 @@
 #include "enemy.h"
 #include "gameState.h"
 
-#include "xpms/bg1_pose1.xpm"
+#include "xpms/enemy1/bg1_pose1.xpm"
 #include "xpms/bg2_pose1.xpm"
 #include "xpms/bg3_pose1.xpm"
 
@@ -126,7 +126,7 @@ void draw_enemies(void) {
 
 bool init_enemies(void) {
 
-    e1_sprite_data = xpm_load(en1_xpm, XPM_5_6_5, &enemy1_img);
+    e1_sprite_data = xpm_load(bg1_run1_xpm, XPM_5_6_5, &enemy1_img);
     e2_sprite_data = xpm_load(en2_xpm, XPM_5_6_5, &enemy2_img);
     e3_sprite_data = xpm_load(en3_xpm, XPM_5_6_5, &enemy3_img);
 
