@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #include "enemy.h"
+#include "health.h"
 #include "gameState.h"
 #include "characters.h"
 #include "controllers/video/graphics.h"
@@ -36,6 +37,9 @@ unsigned int timer_frequency_hz_enemy = 60;
 CharacterPos positions[5] = {
     {1200, 190}, {1200, 320}, {1200, 449}, {1200, 570}, {1200, 699}
 };
+
+
+//Player *player_health;
 
 Character *createEnemy(CharacterPos pos, int enemy_type) {
     Character *enemy = (Character *)malloc(sizeof(Character));
@@ -161,6 +165,7 @@ void update_and_spawn_enemies(void) {
                 }
                 break; // só ataca o primeiro jogador válido
             }
+    
         }
 
         // Lida com o temporizador da animação de ataque
@@ -187,6 +192,11 @@ void update_and_spawn_enemies(void) {
         if (!player_in_range) {
             unsigned int pixels_to_move = enemy->pixels_per_sec / timer_frequency_hz_enemy;
             enemy->x_pos -= pixels_to_move;
+        }
+
+        if (enemy->x_pos == 0) {
+            player_health->health = player_health->health - 10;
+            printf("Player health: %u\n", player_health->health);
         }
 
         // Despawning do inimigo se sair do ecrã

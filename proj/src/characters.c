@@ -5,7 +5,7 @@
 
 #include "characters.h"
 #include "gameState.h"
-//#include "health.h"
+#include "health.h"
 #include "controllers/video/graphics.h"
 #include "enemy.h" // for access to active enemies
 
@@ -37,6 +37,9 @@ unsigned int player_spawn_tick_counter = 0;
 unsigned int timer_frequency_hz_hero = 60;
 
 extern CharacterPos player_spawn_positions[5];
+
+
+//Player *enemy_health;
 
 bool init_player_units(void) {
     pc1_sprite_data = xpm_load(h1_pose_1, XPM_5_6_5, &pc1_img);
@@ -200,6 +203,7 @@ void update_and_spawn_player_units(void) {
                 }
                 break;  // only attack the first valid enemy in range
             }
+            
         }
 
         // Handle attack animation duration
@@ -226,6 +230,11 @@ void update_and_spawn_player_units(void) {
         if (!enemy_in_range) {
             unsigned int pixels_to_move = unit->pixels_per_sec / timer_frequency_hz_hero;
             unit->x_pos += pixels_to_move;
+        }
+        
+        if (unit->x_pos == SCREEN_WIDTH) {
+            enemy_health->health = enemy_health->health - 10;
+            printf("Enemy health: %u\n", enemy_health->health);
         }
 
         // Despawn unit if off-screen

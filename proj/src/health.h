@@ -42,14 +42,13 @@ typedef struct {
     uint8_t *sprite;
 } Player;
 
-extern Player player_health;
-extern Player enemy_health;
-extern unsigned int health_enemy;
-extern unsigned int health_player;
+extern Player *player_health;
+extern Player *enemy_health;
+
 
 bool init_healthbar(void);
 Player *create_healthbar(unsigned int x, unsigned int y, bool is_player);
 void draw_healthbar(Player *healthbar, bool is_player);
-void update_healthbar(Player *healthbar, unsigned int health, bool is_player);
+void update_healthbar(Player *healthbar, bool is_player);
 
 #endif // HEALTH_H

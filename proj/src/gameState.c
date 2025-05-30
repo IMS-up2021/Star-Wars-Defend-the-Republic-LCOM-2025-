@@ -6,6 +6,7 @@
 #include "manager.h"
 #include "enemy.h"
 #include "characters.h"
+#include "health.h"
 
 #include "controllers/keyboardMouse/mouse.h"
 #include "controllers/keyboardMouse/keyboard.h"
@@ -28,6 +29,9 @@ uint8_t scancode[2];
 
 gameState state = MAIN_MENU;
 
+unsigned int health_player = MAX_HEALTH;
+unsigned int health_enemy = MAX_HEALTH;
+
 void gameLoop(void) {
     int ipc_status, r;
     message msg;
@@ -37,6 +41,7 @@ void gameLoop(void) {
     init_cursor();
     init_enemies();
     init_player_units();
+    init_healthbar();
 
     while (running) {
         if (state == EXIT) {

@@ -4,13 +4,42 @@ Enemy attack2 sprites loaded: o1, o2, o3
 Player sprites loaded: pc1, pc2, pc3
 Attack sprites loaded: NULL, ah2, ah3
 Attack2 sprites loaded: pc1_attack2, pc2_attack2, pc3_attack2
-Player unit type 0 spawned at (65, 699).
-Spawned player unit at position 4
+Player health: 90
+Player health: 80
+Player health: 70
+Player health: 60
+Player health: 50
+Player health: 40
+Player health: 30
+Player health: 20
+Player health: 10
+Player health: 0
+Player health: 4294967286
+Player health: 4294967276
+Player health: 4294967266
+Player health: 4294967256
+Player health: 4294967246
+Player health: 4294967236
+Player unit type 0 spawned at (65, 570).
+Spawned player unit at position 3
+Player unit type 0 spawned at (65, 190).
+Spawned player unit at position 0
+Player health: 4294967226
 Scancode: 0x3 (make code)
 Scancode: 0x83 (break code)
 Player unit type 1 spawned at (65, 449).
 Spawned player unit at position 2
+Player health: 4294967216
+Player health: 4294967206
+Enemy health: 90
+Player health: 4294967196
+Enemy health: 80
+Enemy health: 70
 Scancode: 0x1 (make code)
 Scancode: 0x81 (break code)
+Scancode: 0x0 (make code)
+Scancode: 0x0 (make code)
+Scancode: 0xE04B (make code)
+Scancode: 0xE0CB (break code)
 Scancode: 0x1 (make code)
 Scancode: 0x81 (break code)

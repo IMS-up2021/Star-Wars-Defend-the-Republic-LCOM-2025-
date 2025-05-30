@@ -7,9 +7,15 @@
 #include "kbd_handler.h"
 #include "mouse_handler.h"
 #include "characters.h"
-//#include "health.h"
+#include "health.h"
 
 #include "game.h"
+
+Player *player_health;
+Player *enemy_health;
+
+unsigned int health_player;
+unsigned int health_enemy;
 
 void timer_event_handler(gameState game_state) {
     switch (state) {
@@ -19,8 +25,8 @@ void timer_event_handler(gameState game_state) {
         case PLAYING:
             update_and_spawn_enemies();
             update_and_spawn_player_units();
-            //update_healthbar(&player_health, health_player, true);
-            //update_healthbar(&enemy_health, health_enemy, false);
+            update_healthbar(player_health, true);
+            update_healthbar(enemy_health, false);
             switch(kbd_state){
                 case 2:
                     draw_characters2();
@@ -34,10 +40,11 @@ void timer_event_handler(gameState game_state) {
                 default:
                     break;
             }
-            //draw_healthbar(&player_health, true);
-            //draw_healthbar(&enemy_health, false);
+            draw_healthbar(player_health, true);
+            draw_healthbar(enemy_health, false);
             draw_player_units();
             draw_enemies();
+            
 
             switch (play_state) {
                 case PLAY_PAUSED:

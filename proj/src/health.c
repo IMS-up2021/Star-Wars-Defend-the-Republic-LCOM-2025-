@@ -6,8 +6,8 @@ xpm_image_t player1, player2, player3, player4, player5, player6, player7, playe
 uint8_t *enemy_1, *enemy_2, *enemy_3, *enemy_4, *enemy_5, *enemy_6, *enemy_7, *enemy_8, *enemy_9, *enemy_10, *enemy_11;
 uint8_t *player_1, *player_2, *player_3, *player_4, *player_5, *player_6, *player_7, *player_8, *player_9, *player_10, *player_11;
 
-Player player_health;
-Player enemy_health;
+Player *player_health;
+Player *enemy_health;
 
 bool init_healthbar(void) {
     enemy_1 = xpm_load(enemy1_xpm, XPM_5_6_5, &enemy1);
@@ -34,8 +34,43 @@ bool init_healthbar(void) {
     player_10 = xpm_load(player10_xpm, XPM_5_6_5, &player10);
     player_11 = xpm_load(player11_xpm, XPM_5_6_5, &player11);
 
-    player_health = create_healthbar(0, 0, true);
-    enemy_health = create_healthbar(1274, 0, false);
+    if (!enemy_1 || !player_1) {
+        fprintf(stderr, "Error loading healthbar sprites\n");
+        return false;
+    }
+    if (!enemy_2 || !player_2) {
+        fprintf(stderr, "2Error loading healthbar sprites\n");
+        return false;
+    }
+    if (!enemy_3 || !player_3) {
+        fprintf(stderr, "3Error loading healthbar sprites\n");
+        return false;
+    }
+    if (!enemy_4 || !player_4) {
+        fprintf(stderr, "4Error loading healthbar sprites\n");
+        return false;
+    }
+    if (!enemy_5 || !player_5) {
+        fprintf(stderr, "5Error loading healthbar sprites\n");
+        return false;
+    }
+    if (!enemy_6 || !player_6) {
+        fprintf(stderr, "6Error loading healthbar sprites\n");
+        return false;
+    }
+    if (!enemy_7 || !player_7) {
+        fprintf(stderr, "7Error loading healthbar sprites\n");
+        return false;
+    }
+    if (!enemy_8 || !player_8) {
+        fprintf(stderr, "Error loading healthbar sprites\n");
+        return false;
+    }
+
+
+
+    player_health = create_healthbar(50, 50, true);
+    enemy_health = create_healthbar(830, 50, false);
 
     return true;
 }
@@ -79,53 +114,92 @@ void draw_healthbar(Player *healthbar, bool is_player) {
     }
 }
 
-void update_healthbar(Player *healthbar, unsigned int health, bool is_player) {
+void update_healthbar(Player *healthbar, bool is_player) {
     if (!healthbar) return;
 
-    healthbar->health = health;
     if (is_player){
-        if (healthbar->sprite == player_1 && healthbar->health = 90) {
-            healthbar->sprite = player_2;
-        } else if (healthbar->sprite == player_2 && healthbar->health = 80) {
+        if (healthbar->sprite == player_1 && healthbar->health == 90) {
+           healthbar->sprite = player_2;
+           healthbar->width = player2.width;
+           healthbar->height = player2.height;
+        } else if (healthbar->sprite == player_2 && healthbar->health == 80) {
             healthbar->sprite = player_3;
-        } else if (healthbar->sprite == player_3 && healthbar->health = 70) {
+            healthbar->width = player3.width;
+            healthbar->height = player3.height;
+        } else if (healthbar->sprite == player_3 && healthbar->health == 70) {
             healthbar->sprite = player_4;
-        } else if (healthbar->sprite == player_4 && healthbar->health = 60) {
+            healthbar->width = player4.width;
+            healthbar->height = player4.height;
+        } else if (healthbar->sprite == player_4 && healthbar->health == 60) {
             healthbar->sprite = player_5;
-        } else if (healthbar->sprite == player_5 && healthbar->health = 50) {
+            healthbar->width = player5.width;
+            healthbar->height = player5.height;
+        } else if (healthbar->sprite == player_5 && healthbar->health == 50) {
             healthbar->sprite = player_6;
-        } else if (healthbar->sprite == player_6 && healthbar->health = 40) {
+            healthbar->width = player6.width;
+            healthbar->height = player6.height;
+        } else if (healthbar->sprite == player_6 && healthbar->health == 40) {
             healthbar->sprite = player_7;
-        } else if (healthbar->sprite == player_7 && healthbar->health = 30) {
+            healthbar->width = player7.width;
+            healthbar->height = player7.height;
+        } else if (healthbar->sprite == player_7 && healthbar->health == 30) {
             healthbar->sprite = player_8;
-        } else if (healthbar->sprite == player_8 && healthbar->health = 20) {
+            healthbar->width = player8.width;
+            healthbar->height = player8.height;
+        } else if (healthbar->sprite == player_8 && healthbar->health == 20) {
             healthbar->sprite = player_9;
-        } else if (healthbar->sprite == player_9 && healthbar->health = 10) {
+            healthbar->width = player9.width;
+            healthbar->height = player9.height;
+        } else if (healthbar->sprite == player_9 && healthbar->health == 10) {
             healthbar->sprite = player_10;
-        } else if (healthbar->sprite == player_10 && healthbar->health <= 0) {
+            healthbar->width = player10.width;
+            healthbar->height = player10.height;
+        } else if (healthbar->sprite == player_10 && healthbar->health == 0) {
             healthbar->sprite = player_11;
+            healthbar->width = player11.width;
+            healthbar->height = player11.height;
         }
-    } else{
-        if (healthbar->sprite == enemy_1 && healthbar->health = 90) {
-            healthbar->sprite = enemy_2;
-        } else if (healthbar->sprite == enemy_2 && healthbar->health = 80) {
+    } else {
+        if (healthbar->sprite == enemy_1 && healthbar->health == 90) {
+           healthbar->sprite = enemy_2;
+           healthbar->width = enemy2.width;
+           healthbar->height = enemy2.height;
+        } else if (healthbar->sprite == enemy_2 && healthbar->health == 80) {
             healthbar->sprite = enemy_3;
-        } else if (healthbar->sprite == enemy_3 && healthbar->health = 70) {
+            healthbar->width = enemy3.width;
+            healthbar->height = enemy3.height;
+        } else if (healthbar->sprite == enemy_3 && healthbar->health == 70) {
             healthbar->sprite = enemy_4;
-        } else if (healthbar->sprite == enemy_4 && healthbar->health = 60) {
+            healthbar->width = enemy4.width;
+            healthbar->height = enemy4.height;
+        } else if (healthbar->sprite == enemy_4 && healthbar->health == 60) {
             healthbar->sprite = enemy_5;
-        } else if (healthbar->sprite == enemy_5 && healthbar->health = 50) {
+            healthbar->width = enemy5.width;
+            healthbar->height = enemy5.height;
+        } else if (healthbar->sprite == enemy_5 && healthbar->health == 50) {
             healthbar->sprite = enemy_6;
-        } else if (healthbar->sprite == enemy_6 && healthbar->health = 40) {
+            healthbar->width = enemy6.width;
+            healthbar->height = enemy6.height;
+        } else if (healthbar->sprite == enemy_6 && healthbar->health == 40) {
             healthbar->sprite = enemy_7;
-        } else if (healthbar->sprite == enemy_7 && healthbar->health = 30) {
+            healthbar->width = enemy7.width;
+            healthbar->height = enemy7.height;
+        } else if (healthbar->sprite == enemy_7 && healthbar->health == 30) {
             healthbar->sprite = enemy_8;
-        } else if (healthbar->sprite == enemy_8 && healthbar->health = 20) {
+            healthbar->width = enemy8.width;
+            healthbar->height = enemy8.height;
+        } else if (healthbar->sprite == enemy_8 && healthbar->health == 20) {
             healthbar->sprite = enemy_9;
-        } else if (healthbar->sprite == enemy_9 && healthbar->health = 10) {
+            healthbar->width = enemy9.width;
+            healthbar->height = enemy9.height;
+        } else if (healthbar->sprite == enemy_9 && healthbar->health == 10) {
             healthbar->sprite = enemy_10;
-        } else if (healthbar->sprite == enemy_10 && healthbar->health <= 0) {
+            healthbar->width = enemy10.width;
+            healthbar->height = enemy10.height;
+        } else if (healthbar->sprite == enemy_10 && healthbar->health == 0) {
             healthbar->sprite = enemy_11;
+            healthbar->width = enemy11.width;
+            healthbar->height = enemy11.height;
         }
     }
     

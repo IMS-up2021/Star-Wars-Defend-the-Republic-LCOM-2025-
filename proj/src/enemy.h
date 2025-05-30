@@ -11,10 +11,6 @@
 
 #include "controllers/video/graphics.h"
 
-typedef struct {
-    int gold;
-    unsigned int max_health;
-} Player;
 
 typedef struct {
     uint16_t x_pos, y_pos;
