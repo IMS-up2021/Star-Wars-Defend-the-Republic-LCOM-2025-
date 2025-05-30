@@ -31,9 +31,9 @@
 
 #define ENTER               0x1c
 #define SPACE               0x39
-#define ONE_T               0x02
-#define TWO_T               0x03
-#define THREE_T             0x04
+#define ONE_T               0x82
+#define TWO_T               0x83
+#define THREE_T             0x84
 #define FOUR_T              0x05
 #define FIVE_T              0x06
 

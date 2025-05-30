@@ -4,7 +4,8 @@
 #include "menu.h"
 #include "enemy.h"
 
-//unsigned int enemy_spawn_timer = 0;
+#include "kbd_handler.h"
+#include "characters.h"
 
 
 void timer_event_handler(gameState game_state) {
@@ -14,7 +15,19 @@ void timer_event_handler(gameState game_state) {
             break;
         case PLAYING:
             update_and_spawn_enemies();
-            draw_game();
+            switch(kbd_state){
+                case 2:
+                    draw_characters2();
+                    break;
+                case 3:
+                    draw_characters3();
+                    break;
+                case 1:
+                    draw_game();
+                    break;
+                default:
+                    break;
+            }
             draw_enemies();
             break;
         case INSTRUCTIONS:
