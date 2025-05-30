@@ -82,6 +82,4 @@ void (update_mouse_location)(int16_t delta_x, int16_t delta_y){
     cursor->pos_x = (unsigned int)temp_x;
     cursor->pos_y = (unsigned int)temp_y;
 
-    printf("Cursor position updated: x = %u, y = %u\n", cursor->pos_x, cursor->pos_y);
-
 }

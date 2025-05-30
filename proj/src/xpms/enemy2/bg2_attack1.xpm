@@ -1,5 +1,5 @@
 /* XPM */
-static char * bg2_attack1_xpm[] = {
+static const xpm_row_t bg2_attack1_xpm[] = {
 "36 68 15 1",
 " 	c #000000",
 ".	c #903018",
