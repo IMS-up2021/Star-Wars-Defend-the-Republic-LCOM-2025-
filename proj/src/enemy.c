@@ -1,7 +1,8 @@
 #include "enemy.h"
 #include "gameState.h"
+#include <lcom/lcf.h>
 
-#include "xpms/enemy1/bg1_pose1.xpm"
+#include "xpms/bg1_pose1.xpm"
 #include "xpms/bg2_pose1.xpm"
 #include "xpms/bg3_pose1.xpm"
 
@@ -40,16 +41,16 @@ Character *createEnemy(CharacterPos pos, int enemy_type) {
     switch (enemy_type) {
         case 0:
             if (e1_sprite_data) {
-                enemy->width = enemy1_img.width;
-                enemy->height = enemy1_img.height;
+                enemy->width = enemy1_img.width  ;
+                enemy->height = enemy1_img.height  ;
                 enemy->sprite = e1_sprite_data;
                 success = true;
             }
             break;
         case 1:
             if (e2_sprite_data) {
-                enemy->width = enemy2_img.width;
-                enemy->height = enemy2_img.height;
+                enemy->width = enemy2_img.width  ;
+                enemy->height = enemy2_img.height  ;
                 enemy->sprite = e2_sprite_data;
                 success = true;
             }
@@ -114,21 +115,25 @@ void draw_enemies(void) {
     for (int i = 0; i < num_active_enemies; i++) {
         Character *enemy = active_enemies[i];
         if (enemy && enemy->sprite) {
-            unsigned scaled_width = (unsigned int)(enemy->width * 1.5f);
-            unsigned scaled_height = (unsigned int)(enemy->height * 1.5f);
+            uint16_t *pixels = (uint16_t *)enemy->sprite;
 
-            vg_draw_scaled_pixmap(enemy->sprite, enemy->width, enemy->height, 2,
-                                  enemy->x_pos, enemy->y_pos, 
-                                  scaled_width, scaled_height);
+            for (uint16_t y = 0; y < enemy->height; y++) {
+                for (uint16_t x = 0; x < enemy->width; x++) {
+                    uint16_t color = pixels[y * enemy->width + x];
+                    if (color == TRANSPARENT_COLOR) continue;
+                    vg_draw_pixel(enemy->x_pos + x, enemy->y_pos + y, color);
+                }
+            }
         }
     }
 }
 
+
 bool init_enemies(void) {
 
-    e1_sprite_data = xpm_load(bg1_run1_xpm, XPM_5_6_5, &enemy1_img);
-    e2_sprite_data = xpm_load(en2_xpm, XPM_5_6_5, &enemy2_img);
-    e3_sprite_data = xpm_load(en3_xpm, XPM_5_6_5, &enemy3_img);
+    e1_sprite_data = xpm_load(bg1_pose1_xpm, XPM_5_6_5, &enemy1_img);
+    e2_sprite_data = xpm_load(bg2_pose1_xpm, XPM_5_6_5, &enemy2_img);
+    e3_sprite_data = xpm_load(bg3_pose1_xpm, XPM_5_6_5, &enemy3_img);
 
     if (e1_sprite_data == NULL) printf("Failed to load e1 sprite\n");
     if (e2_sprite_data == NULL) printf("Failed to load e2 sprite\n");

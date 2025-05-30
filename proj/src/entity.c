@@ -7,8 +7,6 @@
 #include "controllers/keyboardMouse/mouse.h"
 
 
-#define TRANSPARENT_COLOR 0x000000
-#define XPM_DIRECT 1
 
 Cursor *cursor;
 Position mouse_pos = {260, 140};

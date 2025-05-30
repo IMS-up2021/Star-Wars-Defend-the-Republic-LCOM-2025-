@@ -1,8 +1,8 @@
 /* XPM */
-static const char *pose_1[] = {
+static const char *idle_1[] = {
 /* columns rows colors chars-per-pixel */
 "33 60 25 1 ",
-"  c None",
+"  c #000000",
 ". c black",
 "X c #0B0500",
 "o c #05050B",

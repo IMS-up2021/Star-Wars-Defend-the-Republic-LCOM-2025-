@@ -38,7 +38,7 @@ void mouse_event_handler(struct packet mouse_packet) {
             update_mouse_location(mouse_packet.delta_x, mouse_packet.delta_y);
         if (!mouse_packet.lb) return;
 
-         if (cursor->pos_x >= BTN1_X1 && cursor->pos_x <= BTN1_X2 &&
+        if (cursor->pos_x >= BTN1_X1 && cursor->pos_x <= BTN1_X2 &&
         cursor->pos_y >= BTN1_Y1 && cursor->pos_y <= BTN1_Y2) {
         printf("Button 1 clicked!\n");
         return;
