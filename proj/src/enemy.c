@@ -2,9 +2,9 @@
 #include "gameState.h"
 #include <lcom/lcf.h>
 
-#include "xpms/bg1_pose1.xpm"
-#include "xpms/bg2_pose1.xpm"
-#include "xpms/bg3_pose1.xpm"
+#include "xpms/enemy1/bg1_pose1.xpm"
+#include "xpms/enemy2/bg2_pose1.xpm"
+#include "xpms/enemy3/bg3_pose1.xpm"
 
 uint8_t *e1_sprite_data, *e2_sprite_data, *e3_sprite_data;
 xpm_image_t enemy1_img, enemy2_img, enemy3_img;
