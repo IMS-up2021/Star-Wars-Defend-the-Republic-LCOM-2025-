@@ -1,0 +1,47 @@
+\doxysection{manager.\+h File Reference}
+\hypertarget{manager_8h}{}\label{manager_8h}\index{manager.h@{manager.h}}
+
+
+Central management for game initialization, event handling, and state transitions.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}controllers/timer/timer.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/keyboard\+Mouse/keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/keyboard\+Mouse/mouse.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/keyboard\+Mouse/\+KBC.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/video/graphics.\+h"{}}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}game.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__manager_ga6613b9fe93798d044c19154df9437142}{initialize\+\_\+graphics}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the graphics subsystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__manager_gafd7728c9e6ae89e5932e641b54556aba}{exit\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Cleans up resources and exits the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t {\bfseries timer\+\_\+irq\+\_\+set}
+\item 
+uint32\+\_\+t {\bfseries kbd\+\_\+irq\+\_\+set}
+\item 
+uint32\+\_\+t {\bfseries mouse\+\_\+irq\+\_\+set}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries frame\+\_\+buffer}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries second\+\_\+buffer}
+\item 
+uint16\+\_\+t {\bfseries center\+\_\+x}
+\item 
+uint16\+\_\+t {\bfseries center\+\_\+y}
+\item 
+uint64\+\_\+t {\bfseries delta\+\_\+time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Central management for game initialization, event handling, and state transitions. 
+
+This file declares global variables related to interrupt sets, graphics buffers, timing, and core game management functions like initialization and exit. It acts as a high-\/level coordinator for various modules like timer, keyboard, mouse, graphics, menu, and game logic. 

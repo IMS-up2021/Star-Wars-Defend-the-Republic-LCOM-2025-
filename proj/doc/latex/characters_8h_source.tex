@@ -1,0 +1,40 @@
+\doxysection{characters.\+h}
+\hypertarget{characters_8h_source}{}\label{characters_8h_source}\mbox{\hyperlink{characters_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ \_\_CHARACTERS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ \_\_CHARACTERS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <lcom/xpm.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enemy_8h}{enemy.h}}"{}}\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MAX\_PLAYER\_CHARACTERS\ 15\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ PLAYER\_CHAR\_TYPE\_1\ 0}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ PLAYER\_CHAR\_TYPE\_2\ 1}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ PLAYER\_CHAR\_TYPE\_3\ 2}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_character}{Character}}\ *active\_player\_chars[MAX\_PLAYER\_CHARACTERS];}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ num\_active\_player\_chars;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{characters_8h_af97b0a2b3d462ff0aa7e6b33bb32e44a}{init\_player\_units}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{struct_character}{Character}}\ *\mbox{\hyperlink{characters_8h_ab6acca3f1803076ccddbf58c603f9a80}{create\_player\_unit}}(\mbox{\hyperlink{struct_character_pos}{CharacterPos}}\ pos,\ \textcolor{keywordtype}{int}\ unit\_type);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{characters_8h_a89736ce717b6e2515a5b495f400c1409}{add\_player\_unit\_to\_game}}(\mbox{\hyperlink{struct_character_pos}{CharacterPos}}\ pos,\ \textcolor{keywordtype}{int}\ unit\_type);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{characters_8h_a0923c8f0d285dae91ae517140546285a}{handle\_player\_unit\_spawn\_input}}(uint8\_t\ scancode);\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{characters_8h_a09d09a279a22e90cecdd58cfb8e19a2b}{update\_and\_spawn\_player\_units}}(\textcolor{keywordtype}{void});\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{characters_8h_aee902ab341cb87764a571de09b3acf89}{draw\_player\_units}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{characters_8h_a65cc8d569780af20a3c5da700889d82b}{set\_timer\_frequency\_for\_heroes}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hz);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

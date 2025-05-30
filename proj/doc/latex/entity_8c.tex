@@ -1,0 +1,123 @@
+\doxysection{entity.\+c File Reference}
+\hypertarget{entity_8c}{}\label{entity_8c}\index{entity.c@{entity.c}}
+
+
+Implements functionality related to game entities, specifically the mouse cursor.  
+
+
+{\ttfamily \#include "{}entity.\+h"{}}\newline
+{\ttfamily \#include "{}game\+State.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}controllers/video/graphics.\+h"{}}\newline
+{\ttfamily \#include "{}xpms/mouse\+\_\+cursor.\+xpm"{}}\newline
+{\ttfamily \#include "{}controllers/keyboard\+Mouse/mouse.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_cursor}{Cursor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{entity_8c_a78bd80513b255b4fc9249234b4364962}{create\+\_\+cursor}} (unsigned int pos\+\_\+x, unsigned int pos\+\_\+y, xpm\+\_\+map\+\_\+t xpm)
+\begin{DoxyCompactList}\small\item\em Creates a new cursor object. Allocates memory for a \doxylink{struct_cursor}{Cursor} struct, loads its XPM sprite, and initializes its position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{entity_8c_aa46a17109cde7bb446c8e7693c9d7640}{init\+\_\+cursor}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the mouse cursor. Creates the cursor using {\ttfamily create\+\_\+cursor} with predefined settings. Sets the global {\ttfamily x\+\_\+max} and {\ttfamily y\+\_\+max} based on {\ttfamily mode\+\_\+info}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{entity_8c_a32a4d3c358f6d67910025161fe427323}{draw\+\_\+cursor}} (\mbox{\hyperlink{struct_cursor}{Cursor}} \texorpdfstring{$\ast$}{*}c)
+\begin{DoxyCompactList}\small\item\em Draws the specified cursor on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{entity_8c_aac4c2b814b5a19cd8cbff1d9110ca03f}{update\+\_\+mouse\+\_\+location}} (int16\+\_\+t delta\+\_\+x, int16\+\_\+t delta\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Updates the mouse cursor\textquotesingle{}s location based on delta movements. Ensures the cursor stays within the screen boundaries defined by {\ttfamily x\+\_\+max} and {\ttfamily y\+\_\+max}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{entity_8c_a8a6bb85bf44d1392b588a65de57652c0}\label{entity_8c_a8a6bb85bf44d1392b588a65de57652c0} 
+\mbox{\hyperlink{struct_cursor}{Cursor}} \texorpdfstring{$\ast$}{*} {\bfseries cursor}
+\item 
+\Hypertarget{entity_8c_a2f80ace229f6532001af9ee403b8ea50}\label{entity_8c_a2f80ace229f6532001af9ee403b8ea50} 
+\mbox{\hyperlink{struct_position}{Position}} {\bfseries mouse\+\_\+pos} = \{260, 140\}
+\item 
+\Hypertarget{entity_8c_a85cc0f4334633f7f998e2d55e15aa948}\label{entity_8c_a85cc0f4334633f7f998e2d55e15aa948} 
+uint16\+\_\+t {\bfseries x\+\_\+max} = 1274
+\item 
+\Hypertarget{entity_8c_a6c2ea0e2f3ad699f6b5bb36f4ada9abc}\label{entity_8c_a6c2ea0e2f3ad699f6b5bb36f4ada9abc} 
+uint16\+\_\+t {\bfseries y\+\_\+max} = 988
+\item 
+\Hypertarget{entity_8c_a3b2e64ffb96c650d6525c99be01c7331}\label{entity_8c_a3b2e64ffb96c650d6525c99be01c7331} 
+struct packet {\bfseries mouse\+\_\+packet}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements functionality related to game entities, specifically the mouse cursor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{entity_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{entity_8c_a78bd80513b255b4fc9249234b4364962}\index{entity.c@{entity.c}!create\_cursor@{create\_cursor}}
+\index{create\_cursor@{create\_cursor}!entity.c@{entity.c}}
+\doxysubsubsection{\texorpdfstring{create\_cursor()}{create\_cursor()}}
+{\footnotesize\ttfamily \label{entity_8c_a78bd80513b255b4fc9249234b4364962} 
+\mbox{\hyperlink{struct_cursor}{Cursor}} \texorpdfstring{$\ast$}{*} create\+\_\+cursor (\begin{DoxyParamCaption}\item[{unsigned int}]{pos\+\_\+x}{, }\item[{unsigned int}]{pos\+\_\+y}{, }\item[{xpm\+\_\+map\+\_\+t}]{xpm}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new cursor object. Allocates memory for a \doxylink{struct_cursor}{Cursor} struct, loads its XPM sprite, and initializes its position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+x} & The initial x-\/coordinate for the cursor. \\
+\hline
+{\em pos\+\_\+y} & The initial y-\/coordinate for the cursor. \\
+\hline
+{\em xpm} & The XPM map (sprite) for the cursor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created \doxylink{struct_cursor}{Cursor}, or NULL on failure (memory allocation or XPM loading). 
+\end{DoxyReturn}
+\Hypertarget{entity_8c_a32a4d3c358f6d67910025161fe427323}\index{entity.c@{entity.c}!draw\_cursor@{draw\_cursor}}
+\index{draw\_cursor@{draw\_cursor}!entity.c@{entity.c}}
+\doxysubsubsection{\texorpdfstring{draw\_cursor()}{draw\_cursor()}}
+{\footnotesize\ttfamily \label{entity_8c_a32a4d3c358f6d67910025161fe427323} 
+int draw\+\_\+cursor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cursor}{Cursor}} \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Draws the specified cursor on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Pointer to the \doxylink{struct_cursor}{Cursor} object to draw. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 if the cursor or its sprite is NULL. 
+\end{DoxyReturn}
+\Hypertarget{entity_8c_aa46a17109cde7bb446c8e7693c9d7640}\index{entity.c@{entity.c}!init\_cursor@{init\_cursor}}
+\index{init\_cursor@{init\_cursor}!entity.c@{entity.c}}
+\doxysubsubsection{\texorpdfstring{init\_cursor()}{init\_cursor()}}
+{\footnotesize\ttfamily \label{entity_8c_aa46a17109cde7bb446c8e7693c9d7640} 
+bool init\+\_\+cursor (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the mouse cursor. Creates the cursor using {\ttfamily create\+\_\+cursor} with predefined settings. Sets the global {\ttfamily x\+\_\+max} and {\ttfamily y\+\_\+max} based on {\ttfamily mode\+\_\+info}. 
+
+\begin{DoxyReturn}{Returns}
+True if the cursor was successfully initialized, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{entity_8c_aac4c2b814b5a19cd8cbff1d9110ca03f}\index{entity.c@{entity.c}!update\_mouse\_location@{update\_mouse\_location}}
+\index{update\_mouse\_location@{update\_mouse\_location}!entity.c@{entity.c}}
+\doxysubsubsection{\texorpdfstring{update\_mouse\_location()}{update\_mouse\_location()}}
+{\footnotesize\ttfamily \label{entity_8c_aac4c2b814b5a19cd8cbff1d9110ca03f} 
+void update\+\_\+mouse\+\_\+location (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{delta\+\_\+x}{, }\item[{int16\+\_\+t}]{delta\+\_\+y}{}\end{DoxyParamCaption})}
+
+
+
+Updates the mouse cursor\textquotesingle{}s location based on delta movements. Ensures the cursor stays within the screen boundaries defined by {\ttfamily x\+\_\+max} and {\ttfamily y\+\_\+max}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+\_\+x} & The change in x-\/coordinate. \\
+\hline
+{\em delta\+\_\+y} & The change in y-\/coordinate (note\+: typically inverted from mouse hardware). \\
+\hline
+\end{DoxyParams}

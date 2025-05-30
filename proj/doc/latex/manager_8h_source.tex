@@ -1,0 +1,35 @@
+\doxysection{manager.\+h}
+\hypertarget{manager_8h_source}{}\label{manager_8h_source}\mbox{\hyperlink{manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}controllers/timer/timer.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}controllers/keyboardMouse/keyboard.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}controllers/keyboardMouse/mouse.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}controllers/keyboardMouse/KBC.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}controllers/video/graphics.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menu_8h}{menu.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game_8h}{game.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ uint32\_t\ timer\_irq\_set;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{extern}\ uint32\_t\ kbd\_irq\_set;}
+\DoxyCodeLine{00032\ \textcolor{keyword}{extern}\ uint32\_t\ mouse\_irq\_set;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ uint8\_t\ *frame\_buffer;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ uint8\_t\ *second\_buffer;}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ uint16\_t\ center\_x;}
+\DoxyCodeLine{00037\ \textcolor{keyword}{extern}\ uint16\_t\ center\_y;}
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ uint64\_t\ delta\_time;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00050\ int\ (\mbox{\hyperlink{group__manager_ga6613b9fe93798d044c19154df9437142}{initialize\_graphics}})();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00063\ int\ (\mbox{\hyperlink{group__manager_gafd7728c9e6ae89e5932e641b54556aba}{exit\_game}})();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MANAGER\_H}}
+
+\end{DoxyCode}

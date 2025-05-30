@@ -1,0 +1,118 @@
+\doxysection{game.\+c File Reference}
+\hypertarget{game_8c}{}\label{game_8c}\index{game.c@{game.c}}
+
+
+Implements core game logic, state management, and drawing of game-\/specific elements. This includes handling game play states (paused, normal, fast) and loading/drawing game assets.  
+
+
+{\ttfamily \#include "{}xpms/selected1.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/selected2.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/selected3.\+xpm"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/xpm.\+h$>$}\newline
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/video/graphics.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_8c_a942e3d319d2180332571ec1fa2885008}{set\+\_\+play\+\_\+state}} (Play\+State new\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Sets the current play state of the game. Also prints a message to the console indicating the new state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_aa98197089d3e7274952c54df96c08e46}{load\+\_\+game\+\_\+assets}} ()
+\begin{DoxyCompactList}\small\item\em Loads game-\/specific assets, primarily XPM images for backgrounds. Prints an error message if loading fails. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a7e6baca1b635c8aadd95c4d821cda8fc}{draw\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Draws the main game background. Scales the background to fit the screen resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a216ae4a22501712a9180ef34ef5abcc9}{draw\+\_\+characters2}} ()
+\begin{DoxyCompactList}\small\item\em Draws an alternate game background/\+UI element ("{}selected2"{}). Scales the image to fit the screen resolution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_ab10d6d94e5c07a7cf535e78fe86b2d06}{draw\+\_\+characters3}} ()
+\begin{DoxyCompactList}\small\item\em Draws another alternate game background/\+UI element ("{}selected3"{}). Scales the image to fit the screen resolution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{game_8c_a27ec8603670e318c5b72b8a19fb94f5e}\label{game_8c_a27ec8603670e318c5b72b8a19fb94f5e} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries bg\+\_\+game}
+\item 
+\Hypertarget{game_8c_a2744bcea1f0adad4b490bda5f709f9d7}\label{game_8c_a2744bcea1f0adad4b490bda5f709f9d7} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries sel2}
+\item 
+\Hypertarget{game_8c_a91e41893943078873217710814a4f424}\label{game_8c_a91e41893943078873217710814a4f424} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries sel3}
+\item 
+\Hypertarget{game_8c_a4364c0d2e3f05580cb56bf6bd84f8c51}\label{game_8c_a4364c0d2e3f05580cb56bf6bd84f8c51} 
+xpm\+\_\+image\+\_\+t {\bfseries game\+\_\+bg}
+\item 
+\Hypertarget{game_8c_a4c5e1212c930a579b794fddf8d6fa204}\label{game_8c_a4c5e1212c930a579b794fddf8d6fa204} 
+xpm\+\_\+image\+\_\+t {\bfseries selected2}
+\item 
+\Hypertarget{game_8c_a269f6e8e117a2845643d031f4891ca4f}\label{game_8c_a269f6e8e117a2845643d031f4891ca4f} 
+xpm\+\_\+image\+\_\+t {\bfseries selected3}
+\item 
+\Hypertarget{game_8c_a3db125f12ac28b00e2bda2fad02153c5}\label{game_8c_a3db125f12ac28b00e2bda2fad02153c5} 
+Play\+State {\bfseries play\+\_\+state} = PLAY\+\_\+\+NORMAL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements core game logic, state management, and drawing of game-\/specific elements. This includes handling game play states (paused, normal, fast) and loading/drawing game assets. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{game_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{game_8c_a216ae4a22501712a9180ef34ef5abcc9}\index{game.c@{game.c}!draw\_characters2@{draw\_characters2}}
+\index{draw\_characters2@{draw\_characters2}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_characters2()}{draw\_characters2()}}
+{\footnotesize\ttfamily \label{game_8c_a216ae4a22501712a9180ef34ef5abcc9} 
+void draw\+\_\+characters2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws an alternate game background/\+UI element ("{}selected2"{}). Scales the image to fit the screen resolution. 
+
+Draws an alternate game background or UI element (referred to as "{}characters2"{}). \Hypertarget{game_8c_ab10d6d94e5c07a7cf535e78fe86b2d06}\index{game.c@{game.c}!draw\_characters3@{draw\_characters3}}
+\index{draw\_characters3@{draw\_characters3}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_characters3()}{draw\_characters3()}}
+{\footnotesize\ttfamily \label{game_8c_ab10d6d94e5c07a7cf535e78fe86b2d06} 
+void draw\+\_\+characters3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws another alternate game background/\+UI element ("{}selected3"{}). Scales the image to fit the screen resolution. 
+
+Draws another alternate game background or UI element (referred to as "{}characters3"{}). \Hypertarget{game_8c_a7e6baca1b635c8aadd95c4d821cda8fc}\index{game.c@{game.c}!draw\_game@{draw\_game}}
+\index{draw\_game@{draw\_game}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_game()}{draw\_game()}}
+{\footnotesize\ttfamily \label{game_8c_a7e6baca1b635c8aadd95c4d821cda8fc} 
+void draw\+\_\+game (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws the main game background. Scales the background to fit the screen resolution. 
+
+Draws the main game screen elements (e.\+g., background). \Hypertarget{game_8c_aa98197089d3e7274952c54df96c08e46}\index{game.c@{game.c}!load\_game\_assets@{load\_game\_assets}}
+\index{load\_game\_assets@{load\_game\_assets}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{load\_game\_assets()}{load\_game\_assets()}}
+{\footnotesize\ttfamily \label{game_8c_aa98197089d3e7274952c54df96c08e46} 
+void load\+\_\+game\+\_\+assets (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Loads game-\/specific assets, primarily XPM images for backgrounds. Prints an error message if loading fails. 
+
+Loads assets required for the game screen (e.\+g., backgrounds). \Hypertarget{game_8c_a942e3d319d2180332571ec1fa2885008}\index{game.c@{game.c}!set\_play\_state@{set\_play\_state}}
+\index{set\_play\_state@{set\_play\_state}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{set\_play\_state()}{set\_play\_state()}}
+{\footnotesize\ttfamily \label{game_8c_a942e3d319d2180332571ec1fa2885008} 
+void set\+\_\+play\+\_\+state (\begin{DoxyParamCaption}\item[{Play\+State}]{new\+\_\+state}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current play state of the game. Also prints a message to the console indicating the new state. 
+
+Sets the current play state of the game.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+state} & The new Play\+State to set. \\
+\hline
+\end{DoxyParams}

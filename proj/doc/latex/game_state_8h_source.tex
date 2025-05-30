@@ -1,0 +1,36 @@
+\doxysection{game\+State.\+h}
+\hypertarget{game_state_8h_source}{}\label{game_state_8h_source}\mbox{\hyperlink{game_state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ GAME\_STATE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ GAME\_STATE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ MAIN\_MENU,}
+\DoxyCodeLine{00014\ \ \ \ \ PLAYING,}
+\DoxyCodeLine{00015\ \ \ \ \ INSTRUCTIONS,}
+\DoxyCodeLine{00016\ \ \ \ \ EXIT}
+\DoxyCodeLine{00017\ \}\ gameState;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_position}{Position}}\ \{}
+\DoxyCodeLine{00020\ \ \ uint16\_t\ x;}
+\DoxyCodeLine{00021\ \ \ uint16\_t\ y;}
+\DoxyCodeLine{00022\ \}\ \mbox{\hyperlink{struct_position}{Position}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_position}{Position}}\ mouse\_pos;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_state_8h_a5afa3e5ed97aee6a63292a37260a383e}{gameLoop}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ gameState\ state;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ setGameState(gameState\ newState);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00041\ }
+
+\end{DoxyCode}

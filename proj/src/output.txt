@@ -4,5 +4,11 @@ Enemy attack2 sprites loaded: o1, o2, o3
 Player sprites loaded: pc1, pc2, pc3
 Attack sprites loaded: NULL, ah2, ah3
 Attack2 sprites loaded: pc1_attack2, pc2_attack2, pc3_attack2
+Scancode: 0x3 (make code)
+Scancode: 0x83 (break code)
+Scancode: 0x4 (make code)
+Scancode: 0x84 (break code)
+Scancode: 0x1 (make code)
+Scancode: 0x81 (break code)
 Scancode: 0x1 (make code)
 Scancode: 0x81 (break code)

@@ -1,0 +1,257 @@
+\doxysection{characters.\+c File Reference}
+\hypertarget{characters_8c}{}\label{characters_8c}\index{characters.c@{characters.c}}
+
+
+Implements player character logic, including spawning, movement, attacking, and drawing.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/xpm.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}characters.\+h"{}}\newline
+{\ttfamily \#include "{}game\+State.\+h"{}}\newline
+{\ttfamily \#include "{}health.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/video/graphics.\+h"{}}\newline
+{\ttfamily \#include "{}enemy.\+h"{}}\newline
+{\ttfamily \#include "{}xpms/char1/pose\+\_\+1.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/char2/h2\+\_\+pose1.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/char3/h3\+\_\+pose1.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/char1/attack\+\_\+1.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/char2/h2\+\_\+attack1.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/char3/h3\+\_\+attack1.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/char1/attack\+\_\+2.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/char2/h2\+\_\+attack2.\+xpm"{}}\newline
+{\ttfamily \#include "{}xpms/char3/h3\+\_\+attack2.\+xpm"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{characters_8c_a798f3d3f54c7cf02cebb0901cabe0ad6}{PLAYER\+\_\+\+SPAWN\+\_\+\+DELAY}}~180
+\item 
+\#define \mbox{\hyperlink{characters_8c_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\+\_\+\+WIDTH}}~1275
+\item 
+\#define \mbox{\hyperlink{characters_8c_a18bf0e04aad0fd6812561d29e38a91fb}{ATTACK\+\_\+\+COOLDOWN\+\_\+\+TICKS}}~120
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{characters_8c_af97b0a2b3d462ff0aa7e6b33bb32e44a}{init\+\_\+player\+\_\+units}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes player unit sprites. Loads all XPM images for player characters and their attack animations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{characters_8c_ab6acca3f1803076ccddbf58c603f9a80}{create\+\_\+player\+\_\+unit}} (\mbox{\hyperlink{struct_character_pos}{Character\+Pos}} pos, int unit\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Creates a new player character unit. Allocates memory for a \doxylink{struct_character}{Character} struct and initializes its properties based on the unit type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8c_a89736ce717b6e2515a5b495f400c1409}{add\+\_\+player\+\_\+unit\+\_\+to\+\_\+game}} (\mbox{\hyperlink{struct_character_pos}{Character\+Pos}} pos, int unit\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Adds a newly created player unit to the game. Creates a player unit and adds it to the {\ttfamily active\+\_\+player\+\_\+chars} array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8c_a09d09a279a22e90cecdd58cfb8e19a2b}{update\+\_\+and\+\_\+spawn\+\_\+player\+\_\+units}} (void)
+\begin{DoxyCompactList}\small\item\em Updates all active player units and handles spawning logic. This function iterates through active player units, updating their state\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8c_aee902ab341cb87764a571de09b3acf89}{draw\+\_\+player\+\_\+units}} (void)
+\begin{DoxyCompactList}\small\item\em Draws all active player units on the screen. Iterates through {\ttfamily active\+\_\+player\+\_\+chars} and draws each unit\textquotesingle{}s current sprite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8c_a65cc8d569780af20a3c5da700889d82b}{set\+\_\+timer\+\_\+frequency\+\_\+for\+\_\+heroes}} (unsigned int hz)
+\begin{DoxyCompactList}\small\item\em Sets the timer frequency for player character updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{characters_8c_a2eff559078a9c7450484ebcbdaa1e377}\label{characters_8c_a2eff559078a9c7450484ebcbdaa1e377} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries pc1\+\_\+sprite\+\_\+data} = NULL
+\item 
+\Hypertarget{characters_8c_aef258707adcd452c41d76d37fb7a2e18}\label{characters_8c_aef258707adcd452c41d76d37fb7a2e18} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries pc2\+\_\+sprite\+\_\+data} = NULL
+\item 
+\Hypertarget{characters_8c_ad3802feace0ec883b17082dc58a08e2b}\label{characters_8c_ad3802feace0ec883b17082dc58a08e2b} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries pc3\+\_\+sprite\+\_\+data} = NULL
+\item 
+\Hypertarget{characters_8c_a72cf43313e3e77ff52c986832aa6539a}\label{characters_8c_a72cf43313e3e77ff52c986832aa6539a} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries ah1\+\_\+sprite\+\_\+data} = NULL
+\item 
+\Hypertarget{characters_8c_a1b42fc122a730b98787e5e0cf112a269}\label{characters_8c_a1b42fc122a730b98787e5e0cf112a269} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries ah2\+\_\+sprite\+\_\+data} = NULL
+\item 
+\Hypertarget{characters_8c_aceb5dca1b034460696793074a2cd01ff}\label{characters_8c_aceb5dca1b034460696793074a2cd01ff} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries ah3\+\_\+sprite\+\_\+data} = NULL
+\item 
+\Hypertarget{characters_8c_a2caa67dae64a3091065142e6652c9144}\label{characters_8c_a2caa67dae64a3091065142e6652c9144} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries pc1\+\_\+attack2\+\_\+img} = NULL
+\item 
+\Hypertarget{characters_8c_a4a07a35833dba6d4690eda7eed6f94e8}\label{characters_8c_a4a07a35833dba6d4690eda7eed6f94e8} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries pc2\+\_\+attack2\+\_\+img} = NULL
+\item 
+\Hypertarget{characters_8c_a03bec166d7bc29a9bce828c6cccc5591}\label{characters_8c_a03bec166d7bc29a9bce828c6cccc5591} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries pc3\+\_\+attack2\+\_\+img} = NULL
+\item 
+\Hypertarget{characters_8c_a0754d74098279d0f3e74207b3f89120e}\label{characters_8c_a0754d74098279d0f3e74207b3f89120e} 
+xpm\+\_\+image\+\_\+t {\bfseries pc1\+\_\+img}
+\item 
+\Hypertarget{characters_8c_ae118dc1a73f96dacb4a9a7cb34797e06}\label{characters_8c_ae118dc1a73f96dacb4a9a7cb34797e06} 
+xpm\+\_\+image\+\_\+t {\bfseries pc2\+\_\+img}
+\item 
+\Hypertarget{characters_8c_a9f12b62b4bdc7f3106d9ba1866a61ca3}\label{characters_8c_a9f12b62b4bdc7f3106d9ba1866a61ca3} 
+xpm\+\_\+image\+\_\+t {\bfseries pc3\+\_\+img}
+\item 
+\Hypertarget{characters_8c_ae75b13d31b5682c1c6979155c4b763a2}\label{characters_8c_ae75b13d31b5682c1c6979155c4b763a2} 
+xpm\+\_\+image\+\_\+t {\bfseries ah1\+\_\+img}
+\item 
+\Hypertarget{characters_8c_a1c9735de5f7ffa9eb766632d969fc348}\label{characters_8c_a1c9735de5f7ffa9eb766632d969fc348} 
+xpm\+\_\+image\+\_\+t {\bfseries ah2\+\_\+img}
+\item 
+\Hypertarget{characters_8c_ab4067106d72fdb999b3fe54ba4d17641}\label{characters_8c_ab4067106d72fdb999b3fe54ba4d17641} 
+xpm\+\_\+image\+\_\+t {\bfseries ah3\+\_\+img}
+\item 
+\Hypertarget{characters_8c_ade6ab6d15451663d86b8a0868bfd4216}\label{characters_8c_ade6ab6d15451663d86b8a0868bfd4216} 
+xpm\+\_\+image\+\_\+t {\bfseries pc1\+\_\+attack2}
+\item 
+\Hypertarget{characters_8c_a7bc40d67b183d1f9bea1b11a46754a66}\label{characters_8c_a7bc40d67b183d1f9bea1b11a46754a66} 
+xpm\+\_\+image\+\_\+t {\bfseries pc2\+\_\+attack2}
+\item 
+\Hypertarget{characters_8c_af02a2afe80bd48055f2f48272c791481}\label{characters_8c_af02a2afe80bd48055f2f48272c791481} 
+xpm\+\_\+image\+\_\+t {\bfseries pc3\+\_\+attack2}
+\item 
+\Hypertarget{characters_8c_a1b87485b1eccd88e217bd142ef72e761}\label{characters_8c_a1b87485b1eccd88e217bd142ef72e761} 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} {\bfseries active\+\_\+player\+\_\+chars} \mbox{[}MAX\+\_\+\+PLAYER\+\_\+\+CHARACTERS\mbox{]}
+\item 
+\Hypertarget{characters_8c_aee44e4f25777ee022e28ac7176bef4f3}\label{characters_8c_aee44e4f25777ee022e28ac7176bef4f3} 
+int {\bfseries num\+\_\+active\+\_\+player\+\_\+chars} = 0
+\item 
+\Hypertarget{characters_8c_a936e6a7fdfe038a5462ab221985ec3f4}\label{characters_8c_a936e6a7fdfe038a5462ab221985ec3f4} 
+unsigned int {\bfseries player\+\_\+spawn\+\_\+tick\+\_\+counter} = 0
+\item 
+\Hypertarget{characters_8c_a945da805768e7ed6c3ef50d9838d0a08}\label{characters_8c_a945da805768e7ed6c3ef50d9838d0a08} 
+unsigned int {\bfseries timer\+\_\+frequency\+\_\+hz\+\_\+hero} = 60
+\item 
+\Hypertarget{characters_8c_a3b9f5abe2f4620f0df5e906bfc4e7272}\label{characters_8c_a3b9f5abe2f4620f0df5e906bfc4e7272} 
+\mbox{\hyperlink{struct_character_pos}{Character\+Pos}} {\bfseries player\+\_\+spawn\+\_\+positions} \mbox{[}5\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements player character logic, including spawning, movement, attacking, and drawing. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{characters_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{characters_8c_a18bf0e04aad0fd6812561d29e38a91fb}\index{characters.c@{characters.c}!ATTACK\_COOLDOWN\_TICKS@{ATTACK\_COOLDOWN\_TICKS}}
+\index{ATTACK\_COOLDOWN\_TICKS@{ATTACK\_COOLDOWN\_TICKS}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{ATTACK\_COOLDOWN\_TICKS}{ATTACK\_COOLDOWN\_TICKS}}
+{\footnotesize\ttfamily \label{characters_8c_a18bf0e04aad0fd6812561d29e38a91fb} 
+\#define ATTACK\+\_\+\+COOLDOWN\+\_\+\+TICKS~120}
+
+Cooldown in ticks between player unit attacks (2 seconds at 60Hz). \Hypertarget{characters_8c_a798f3d3f54c7cf02cebb0901cabe0ad6}\index{characters.c@{characters.c}!PLAYER\_SPAWN\_DELAY@{PLAYER\_SPAWN\_DELAY}}
+\index{PLAYER\_SPAWN\_DELAY@{PLAYER\_SPAWN\_DELAY}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_SPAWN\_DELAY}{PLAYER\_SPAWN\_DELAY}}
+{\footnotesize\ttfamily \label{characters_8c_a798f3d3f54c7cf02cebb0901cabe0ad6} 
+\#define PLAYER\+\_\+\+SPAWN\+\_\+\+DELAY~180}
+
+Delay in ticks before a new player unit can be spawned. \Hypertarget{characters_8c_a2cd109632a6dcccaa80b43561b1ab700}\index{characters.c@{characters.c}!SCREEN\_WIDTH@{SCREEN\_WIDTH}}
+\index{SCREEN\_WIDTH@{SCREEN\_WIDTH}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_WIDTH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily \label{characters_8c_a2cd109632a6dcccaa80b43561b1ab700} 
+\#define SCREEN\+\_\+\+WIDTH~1275}
+
+Width of the game screen in pixels. 
+
+\label{doc-func-members}
+\Hypertarget{characters_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{characters_8c_a89736ce717b6e2515a5b495f400c1409}\index{characters.c@{characters.c}!add\_player\_unit\_to\_game@{add\_player\_unit\_to\_game}}
+\index{add\_player\_unit\_to\_game@{add\_player\_unit\_to\_game}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{add\_player\_unit\_to\_game()}{add\_player\_unit\_to\_game()}}
+{\footnotesize\ttfamily \label{characters_8c_a89736ce717b6e2515a5b495f400c1409} 
+void add\+\_\+player\+\_\+unit\+\_\+to\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_pos}{Character\+Pos}}}]{pos}{, }\item[{int}]{unit\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Adds a newly created player unit to the game. Creates a player unit and adds it to the {\ttfamily active\+\_\+player\+\_\+chars} array. 
+
+Adds a player unit to the game. This function typically calls create\+\_\+player\+\_\+unit and then adds the unit to the active list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The initial position of the unit. \\
+\hline
+{\em unit\+\_\+type} & The type of player unit to create. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{characters_8c_ab6acca3f1803076ccddbf58c603f9a80}\index{characters.c@{characters.c}!create\_player\_unit@{create\_player\_unit}}
+\index{create\_player\_unit@{create\_player\_unit}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{create\_player\_unit()}{create\_player\_unit()}}
+{\footnotesize\ttfamily \label{characters_8c_ab6acca3f1803076ccddbf58c603f9a80} 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} create\+\_\+player\+\_\+unit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_pos}{Character\+Pos}}}]{pos}{, }\item[{int}]{unit\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new player character unit. Allocates memory for a \doxylink{struct_character}{Character} struct and initializes its properties based on the unit type. 
+
+Creates a new player character unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The initial position of the unit. \\
+\hline
+{\em unit\+\_\+type} & The type of player unit to create (0, 1, or 2). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created \doxylink{struct_character}{Character}, or NULL if allocation fails or unit\+\_\+type is invalid. 
+\end{DoxyReturn}
+\Hypertarget{characters_8c_aee902ab341cb87764a571de09b3acf89}\index{characters.c@{characters.c}!draw\_player\_units@{draw\_player\_units}}
+\index{draw\_player\_units@{draw\_player\_units}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{draw\_player\_units()}{draw\_player\_units()}}
+{\footnotesize\ttfamily \label{characters_8c_aee902ab341cb87764a571de09b3acf89} 
+void draw\+\_\+player\+\_\+units (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws all active player units on the screen. Iterates through {\ttfamily active\+\_\+player\+\_\+chars} and draws each unit\textquotesingle{}s current sprite. 
+
+Draws all active player units to the screen. \Hypertarget{characters_8c_af97b0a2b3d462ff0aa7e6b33bb32e44a}\index{characters.c@{characters.c}!init\_player\_units@{init\_player\_units}}
+\index{init\_player\_units@{init\_player\_units}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{init\_player\_units()}{init\_player\_units()}}
+{\footnotesize\ttfamily \label{characters_8c_af97b0a2b3d462ff0aa7e6b33bb32e44a} 
+bool init\+\_\+player\+\_\+units (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes player unit sprites. Loads all XPM images for player characters and their attack animations. 
+
+Initializes player unit resources, such as loading sprites.
+
+\begin{DoxyReturn}{Returns}
+True if all sprites were loaded successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{characters_8c_a65cc8d569780af20a3c5da700889d82b}\index{characters.c@{characters.c}!set\_timer\_frequency\_for\_heroes@{set\_timer\_frequency\_for\_heroes}}
+\index{set\_timer\_frequency\_for\_heroes@{set\_timer\_frequency\_for\_heroes}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{set\_timer\_frequency\_for\_heroes()}{set\_timer\_frequency\_for\_heroes()}}
+{\footnotesize\ttfamily \label{characters_8c_a65cc8d569780af20a3c5da700889d82b} 
+void set\+\_\+timer\+\_\+frequency\+\_\+for\+\_\+heroes (\begin{DoxyParamCaption}\item[{unsigned int}]{hz}{}\end{DoxyParamCaption})}
+
+
+
+Sets the timer frequency for player character updates. 
+
+Sets the timer frequency used for player character updates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hz} & The new frequency in Hertz. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{characters_8c_a09d09a279a22e90cecdd58cfb8e19a2b}\index{characters.c@{characters.c}!update\_and\_spawn\_player\_units@{update\_and\_spawn\_player\_units}}
+\index{update\_and\_spawn\_player\_units@{update\_and\_spawn\_player\_units}!characters.c@{characters.c}}
+\doxysubsubsection{\texorpdfstring{update\_and\_spawn\_player\_units()}{update\_and\_spawn\_player\_units()}}
+{\footnotesize\ttfamily \label{characters_8c_a09d09a279a22e90cecdd58cfb8e19a2b} 
+void update\+\_\+and\+\_\+spawn\+\_\+player\+\_\+units (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Updates all active player units and handles spawning logic. This function iterates through active player units, updating their state\+: 
+
+Updates the state of all active player units. This includes movement, AI logic (like attacking), and managing animations. It does not handle direct spawning from input, but can manage timed or conditional spawning.
+
+
+\begin{DoxyItemize}
+\item Checks for enemies in range and initiates attacks.
+\item Manages attack cooldown and animation.
+\item Moves units forward if no enemy is in range.
+\item Handles units reaching the screen edge (damaging enemy base).
+\item Despawns units that move off-\/screen. This function does not actually spawn units; spawning is handled by {\ttfamily add\+\_\+player\+\_\+unit\+\_\+to\+\_\+game}. 
+\end{DoxyItemize}

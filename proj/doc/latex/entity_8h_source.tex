@@ -1,0 +1,33 @@
+\doxysection{entity.\+h}
+\hypertarget{entity_8h_source}{}\label{entity_8h_source}\mbox{\hyperlink{entity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PROJ\_ENTITY\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PROJ\_ENTITY\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pos\_x;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pos\_y;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height;}
+\DoxyCodeLine{00019\ \ \ \ \ uint8\_t\ *sprite;}
+\DoxyCodeLine{00020\ \ \ \ \ xpm\_image\_t\ img;}
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{struct_cursor}{Cursor}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00031\ \mbox{\hyperlink{struct_cursor}{Cursor}}\ *\mbox{\hyperlink{entity_8h_a78bd80513b255b4fc9249234b4364962}{create\_cursor}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pos\_x,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pos\_y,\ xpm\_map\_t\ xpm);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ bool\ (\mbox{\hyperlink{entity_8c_aa46a17109cde7bb446c8e7693c9d7640}{init\_cursor}})(void);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{entity_8h_adfe1ab28925727966515351112a666cf}{draw\_cursor}}(\mbox{\hyperlink{struct_cursor}{Cursor}}\ *cursor);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entity_8h_aac4c2b814b5a19cd8cbff1d9110ca03f}{update\_mouse\_location}}(int16\_t\ delta\_x,\ int16\_t\ delta\_y);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

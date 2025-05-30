@@ -1,0 +1,80 @@
+\doxysection{game\+State.\+c File Reference}
+\hypertarget{game_state_8c}{}\label{game_state_8c}\index{gameState.c@{gameState.c}}
+
+
+Manages the main game loop, game states, and event dispatching.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}game\+State.\+h"{}}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}entity.\+h"{}}\newline
+{\ttfamily \#include "{}manager.\+h"{}}\newline
+{\ttfamily \#include "{}enemy.\+h"{}}\newline
+{\ttfamily \#include "{}characters.\+h"{}}\newline
+{\ttfamily \#include "{}health.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/keyboard\+Mouse/mouse.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/keyboard\+Mouse/keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}controllers/timer/timer.\+h"{}}\newline
+{\ttfamily \#include "{}handlers/mouse\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include "{}handlers/timer\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include "{}handlers/kbd\+\_\+handler.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_state_8c_a5afa3e5ed97aee6a63292a37260a383e}{game\+Loop}} (void)
+\begin{DoxyCompactList}\small\item\em The main game loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{game_state_8c_ab3ae786aee1f20eff4f6d9ff85e41299}\label{game_state_8c_ab3ae786aee1f20eff4f6d9ff85e41299} 
+bool {\bfseries mouse\+\_\+ready}
+\item 
+\Hypertarget{game_state_8c_a8a6bb85bf44d1392b588a65de57652c0}\label{game_state_8c_a8a6bb85bf44d1392b588a65de57652c0} 
+\mbox{\hyperlink{struct_cursor}{Cursor}} \texorpdfstring{$\ast$}{*} {\bfseries cursor}
+\item 
+\Hypertarget{game_state_8c_a6473b5098c114ab97fc4cde61684ab7b}\label{game_state_8c_a6473b5098c114ab97fc4cde61684ab7b} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries double\+\_\+buffer}
+\item 
+\Hypertarget{game_state_8c_a4160e770616417161772b854a61798d2}\label{game_state_8c_a4160e770616417161772b854a61798d2} 
+int {\bfseries timer\+\_\+global\+\_\+counter}
+\item 
+\Hypertarget{game_state_8c_a3b2e64ffb96c650d6525c99be01c7331}\label{game_state_8c_a3b2e64ffb96c650d6525c99be01c7331} 
+struct packet {\bfseries mouse\+\_\+packet}
+\item 
+\Hypertarget{game_state_8c_a292c9dfd6bd1567fca7e760ac8135f60}\label{game_state_8c_a292c9dfd6bd1567fca7e760ac8135f60} 
+int {\bfseries kbd\+\_\+index}
+\item 
+\Hypertarget{game_state_8c_a01577ed8d3646775ae6a8e00d24c1d94}\label{game_state_8c_a01577ed8d3646775ae6a8e00d24c1d94} 
+uint8\+\_\+t {\bfseries scancode} \mbox{[}2\mbox{]}
+\item 
+\Hypertarget{game_state_8c_a901f7dfa886d0037befa160b8d671bb6}\label{game_state_8c_a901f7dfa886d0037befa160b8d671bb6} 
+game\+State {\bfseries state} = MAIN\+\_\+\+MENU
+\item 
+\Hypertarget{game_state_8c_afc811fde50cfb2745e38c715f0bbb65d}\label{game_state_8c_afc811fde50cfb2745e38c715f0bbb65d} 
+unsigned int {\bfseries health\+\_\+player} = MAX\+\_\+\+HEALTH
+\item 
+\Hypertarget{game_state_8c_af233304bbb1b8e1ab857ffe50db80ebb}\label{game_state_8c_af233304bbb1b8e1ab857ffe50db80ebb} 
+unsigned int {\bfseries health\+\_\+enemy} = MAX\+\_\+\+HEALTH
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the main game loop, game states, and event dispatching. 
+
+This file contains the central game loop {\ttfamily \doxylink{game_state_8c_a5afa3e5ed97aee6a63292a37260a383e}{game\+Loop()}}, which handles hardware interrupts (timer, keyboard, mouse) and dispatches events to appropriate handlers based on the current game state. 
+
+\label{doc-func-members}
+\Hypertarget{game_state_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{game_state_8c_a5afa3e5ed97aee6a63292a37260a383e}\index{gameState.c@{gameState.c}!gameLoop@{gameLoop}}
+\index{gameLoop@{gameLoop}!gameState.c@{gameState.c}}
+\doxysubsubsection{\texorpdfstring{gameLoop()}{gameLoop()}}
+{\footnotesize\ttfamily \label{game_state_8c_a5afa3e5ed97aee6a63292a37260a383e} 
+void game\+Loop (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+The main game loop. 
+
+Initializes game components and then enters a loop to process hardware interrupts (timer, keyboard, mouse). It calls appropriate handlers for these events and manages screen updates with double buffering. The loop continues until the game state is set to EXIT. 

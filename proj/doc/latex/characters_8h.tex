@@ -1,0 +1,207 @@
+\doxysection{characters.\+h File Reference}
+\hypertarget{characters_8h}{}\label{characters_8h}\index{characters.h@{characters.h}}
+
+
+Defines structures and functions for player characters. This file includes the definition of player character types, an array to hold active player characters, and function prototypes for initializing, creating, adding, updating, and drawing player units.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/xpm.\+h$>$}\newline
+{\ttfamily \#include "{}enemy.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{characters_8h_a37b04eb18272488f7570a7ac59b16cb1}\label{characters_8h_a37b04eb18272488f7570a7ac59b16cb1} 
+\#define {\bfseries MAX\+\_\+\+PLAYER\+\_\+\+CHARACTERS}~15 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Maximum number of player characters allowed on screen. \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{characters_8h_a0fc590e31eecbd756149f04d82b76ff9}\label{characters_8h_a0fc590e31eecbd756149f04d82b76ff9} 
+\#define {\bfseries PLAYER\+\_\+\+CHAR\+\_\+\+TYPE\+\_\+1}~0
+\item 
+\Hypertarget{characters_8h_a7539686214da1abf40cd47f86b2752cd}\label{characters_8h_a7539686214da1abf40cd47f86b2752cd} 
+\#define {\bfseries PLAYER\+\_\+\+CHAR\+\_\+\+TYPE\+\_\+2}~1
+\item 
+\Hypertarget{characters_8h_a7a1ffb96d1fd21c5d0d76d373be756ec}\label{characters_8h_a7a1ffb96d1fd21c5d0d76d373be756ec} 
+\#define {\bfseries PLAYER\+\_\+\+CHAR\+\_\+\+TYPE\+\_\+3}~2
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{characters_8h_af97b0a2b3d462ff0aa7e6b33bb32e44a}{init\+\_\+player\+\_\+units}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes player unit resources, such as loading sprites. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{characters_8h_ab6acca3f1803076ccddbf58c603f9a80}{create\+\_\+player\+\_\+unit}} (\mbox{\hyperlink{struct_character_pos}{Character\+Pos}} pos, int unit\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Creates a new player character unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8h_a89736ce717b6e2515a5b495f400c1409}{add\+\_\+player\+\_\+unit\+\_\+to\+\_\+game}} (\mbox{\hyperlink{struct_character_pos}{Character\+Pos}} pos, int unit\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Adds a player unit to the game. This function typically calls create\+\_\+player\+\_\+unit and then adds the unit to the active list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8h_a0923c8f0d285dae91ae517140546285a}{handle\+\_\+player\+\_\+unit\+\_\+spawn\+\_\+input}} (uint8\+\_\+t scancode)
+\begin{DoxyCompactList}\small\item\em Handles player input for spawning units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8h_a09d09a279a22e90cecdd58cfb8e19a2b}{update\+\_\+and\+\_\+spawn\+\_\+player\+\_\+units}} (void)
+\begin{DoxyCompactList}\small\item\em Updates the state of all active player units. This includes movement, AI logic (like attacking), and managing animations. It does not handle direct spawning from input, but can manage timed or conditional spawning. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8h_aee902ab341cb87764a571de09b3acf89}{draw\+\_\+player\+\_\+units}} (void)
+\begin{DoxyCompactList}\small\item\em Draws all active player units to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{characters_8h_a65cc8d569780af20a3c5da700889d82b}{set\+\_\+timer\+\_\+frequency\+\_\+for\+\_\+heroes}} (unsigned int hz)
+\begin{DoxyCompactList}\small\item\em Sets the timer frequency used for player character updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{characters_8h_a1b87485b1eccd88e217bd142ef72e761}\label{characters_8h_a1b87485b1eccd88e217bd142ef72e761} 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} {\bfseries active\+\_\+player\+\_\+chars} \mbox{[}MAX\+\_\+\+PLAYER\+\_\+\+CHARACTERS\mbox{]}
+\item 
+\Hypertarget{characters_8h_aee44e4f25777ee022e28ac7176bef4f3}\label{characters_8h_aee44e4f25777ee022e28ac7176bef4f3} 
+int {\bfseries num\+\_\+active\+\_\+player\+\_\+chars}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines structures and functions for player characters. This file includes the definition of player character types, an array to hold active player characters, and function prototypes for initializing, creating, adding, updating, and drawing player units. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{characters_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{characters_8h_a89736ce717b6e2515a5b495f400c1409}\index{characters.h@{characters.h}!add\_player\_unit\_to\_game@{add\_player\_unit\_to\_game}}
+\index{add\_player\_unit\_to\_game@{add\_player\_unit\_to\_game}!characters.h@{characters.h}}
+\doxysubsubsection{\texorpdfstring{add\_player\_unit\_to\_game()}{add\_player\_unit\_to\_game()}}
+{\footnotesize\ttfamily \label{characters_8h_a89736ce717b6e2515a5b495f400c1409} 
+void add\+\_\+player\+\_\+unit\+\_\+to\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_pos}{Character\+Pos}}}]{pos}{, }\item[{int}]{unit\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Adds a player unit to the game. This function typically calls create\+\_\+player\+\_\+unit and then adds the unit to the active list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position (\doxylink{struct_character_pos}{Character\+Pos}) where the unit will be spawned. \\
+\hline
+{\em unit\+\_\+type} & The type of player unit to add.\\
+\hline
+\end{DoxyParams}
+Adds a player unit to the game. This function typically calls create\+\_\+player\+\_\+unit and then adds the unit to the active list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The initial position of the unit. \\
+\hline
+{\em unit\+\_\+type} & The type of player unit to create. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{characters_8h_ab6acca3f1803076ccddbf58c603f9a80}\index{characters.h@{characters.h}!create\_player\_unit@{create\_player\_unit}}
+\index{create\_player\_unit@{create\_player\_unit}!characters.h@{characters.h}}
+\doxysubsubsection{\texorpdfstring{create\_player\_unit()}{create\_player\_unit()}}
+{\footnotesize\ttfamily \label{characters_8h_ab6acca3f1803076ccddbf58c603f9a80} 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} create\+\_\+player\+\_\+unit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_pos}{Character\+Pos}}}]{pos}{, }\item[{int}]{unit\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new player character unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position (\doxylink{struct_character_pos}{Character\+Pos}) where the unit will be created. \\
+\hline
+{\em unit\+\_\+type} & The type of player unit to create (e.\+g., PLAYER\+\_\+\+CHAR\+\_\+\+TYPE\+\_\+1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{struct_character}{Character}, or NULL on failure.
+\end{DoxyReturn}
+Creates a new player character unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The initial position of the unit. \\
+\hline
+{\em unit\+\_\+type} & The type of player unit to create (0, 1, or 2). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created \doxylink{struct_character}{Character}, or NULL if allocation fails or unit\+\_\+type is invalid. 
+\end{DoxyReturn}
+\Hypertarget{characters_8h_aee902ab341cb87764a571de09b3acf89}\index{characters.h@{characters.h}!draw\_player\_units@{draw\_player\_units}}
+\index{draw\_player\_units@{draw\_player\_units}!characters.h@{characters.h}}
+\doxysubsubsection{\texorpdfstring{draw\_player\_units()}{draw\_player\_units()}}
+{\footnotesize\ttfamily \label{characters_8h_aee902ab341cb87764a571de09b3acf89} 
+void draw\+\_\+player\+\_\+units (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws all active player units to the screen. 
+
+Draws all active player units to the screen. \Hypertarget{characters_8h_a0923c8f0d285dae91ae517140546285a}\index{characters.h@{characters.h}!handle\_player\_unit\_spawn\_input@{handle\_player\_unit\_spawn\_input}}
+\index{handle\_player\_unit\_spawn\_input@{handle\_player\_unit\_spawn\_input}!characters.h@{characters.h}}
+\doxysubsubsection{\texorpdfstring{handle\_player\_unit\_spawn\_input()}{handle\_player\_unit\_spawn\_input()}}
+{\footnotesize\ttfamily \label{characters_8h_a0923c8f0d285dae91ae517140546285a} 
+void handle\+\_\+player\+\_\+unit\+\_\+spawn\+\_\+input (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{scancode}{}\end{DoxyParamCaption})}
+
+
+
+Handles player input for spawning units. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scancode} & The scancode of the key pressed, used to determine which unit to spawn. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is declared but its implementation might be in a different file (e.\+g., input handler). 
+\end{DoxyNote}
+\Hypertarget{characters_8h_af97b0a2b3d462ff0aa7e6b33bb32e44a}\index{characters.h@{characters.h}!init\_player\_units@{init\_player\_units}}
+\index{init\_player\_units@{init\_player\_units}!characters.h@{characters.h}}
+\doxysubsubsection{\texorpdfstring{init\_player\_units()}{init\_player\_units()}}
+{\footnotesize\ttfamily \label{characters_8h_af97b0a2b3d462ff0aa7e6b33bb32e44a} 
+bool init\+\_\+player\+\_\+units (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes player unit resources, such as loading sprites. 
+
+\begin{DoxyReturn}{Returns}
+True if initialization is successful, false otherwise.
+\end{DoxyReturn}
+Initializes player unit resources, such as loading sprites.
+
+\begin{DoxyReturn}{Returns}
+True if all sprites were loaded successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{characters_8h_a65cc8d569780af20a3c5da700889d82b}\index{characters.h@{characters.h}!set\_timer\_frequency\_for\_heroes@{set\_timer\_frequency\_for\_heroes}}
+\index{set\_timer\_frequency\_for\_heroes@{set\_timer\_frequency\_for\_heroes}!characters.h@{characters.h}}
+\doxysubsubsection{\texorpdfstring{set\_timer\_frequency\_for\_heroes()}{set\_timer\_frequency\_for\_heroes()}}
+{\footnotesize\ttfamily \label{characters_8h_a65cc8d569780af20a3c5da700889d82b} 
+void set\+\_\+timer\+\_\+frequency\+\_\+for\+\_\+heroes (\begin{DoxyParamCaption}\item[{unsigned int}]{hz}{}\end{DoxyParamCaption})}
+
+
+
+Sets the timer frequency used for player character updates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hz} & The frequency in Hertz.\\
+\hline
+\end{DoxyParams}
+Sets the timer frequency used for player character updates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hz} & The new frequency in Hertz. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{characters_8h_a09d09a279a22e90cecdd58cfb8e19a2b}\index{characters.h@{characters.h}!update\_and\_spawn\_player\_units@{update\_and\_spawn\_player\_units}}
+\index{update\_and\_spawn\_player\_units@{update\_and\_spawn\_player\_units}!characters.h@{characters.h}}
+\doxysubsubsection{\texorpdfstring{update\_and\_spawn\_player\_units()}{update\_and\_spawn\_player\_units()}}
+{\footnotesize\ttfamily \label{characters_8h_a09d09a279a22e90cecdd58cfb8e19a2b} 
+void update\+\_\+and\+\_\+spawn\+\_\+player\+\_\+units (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the state of all active player units. This includes movement, AI logic (like attacking), and managing animations. It does not handle direct spawning from input, but can manage timed or conditional spawning. 
+
+Updates the state of all active player units. This includes movement, AI logic (like attacking), and managing animations. It does not handle direct spawning from input, but can manage timed or conditional spawning.
+
+
+\begin{DoxyItemize}
+\item Checks for enemies in range and initiates attacks.
+\item Manages attack cooldown and animation.
+\item Moves units forward if no enemy is in range.
+\item Handles units reaching the screen edge (damaging enemy base).
+\item Despawns units that move off-\/screen. This function does not actually spawn units; spawning is handled by {\ttfamily add\+\_\+player\+\_\+unit\+\_\+to\+\_\+game}. 
+\end{DoxyItemize}

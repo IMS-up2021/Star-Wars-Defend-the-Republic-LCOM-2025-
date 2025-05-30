@@ -1,0 +1,61 @@
+\doxysection{menu.\+h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{menu.h@{menu.h}}
+
+
+Defines coordinates for menu buttons and declares functions for loading and drawing menu and instructions screens.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/xpm.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries PLAY\+\_\+\+BTN\+\_\+\+X1}~340
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the top-\/left corner of the Play button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries PLAY\+\_\+\+BTN\+\_\+\+X2}~485
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the bottom-\/right corner of the Play button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries PLAY\+\_\+\+BTN\+\_\+\+Y1}~715
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the top-\/left corner of the Play button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries PLAY\+\_\+\+BTN\+\_\+\+Y2}~890
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the bottom-\/right corner of the Play button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries INSTR\+\_\+\+BTN\+\_\+\+X1}~565
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the top-\/left corner of the Instructions button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries INSTR\+\_\+\+BTN\+\_\+\+X2}~710
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the bottom-\/right corner of the Instructions button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries INSTR\+\_\+\+BTN\+\_\+\+Y1}~715
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the top-\/left corner of the Instructions button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries INSTR\+\_\+\+BTN\+\_\+\+Y2}~890
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the bottom-\/right corner of the Instructions button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries BACK\+\_\+\+BTN\+\_\+\+X1}~160
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the top-\/left corner of the Back button\textquotesingle{}s clickable area (e.\+g., in instructions screen). \end{DoxyCompactList}\item 
+\#define {\bfseries BACK\+\_\+\+BTN\+\_\+\+X2}~260
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the bottom-\/right corner of the Back button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries BACK\+\_\+\+BTN\+\_\+\+Y1}~80
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the top-\/left corner of the Back button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries BACK\+\_\+\+BTN\+\_\+\+Y2}~140
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the bottom-\/right corner of the Back button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries EXIT\+\_\+\+BTN\+\_\+\+X1}~790
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the top-\/left corner of the Exit button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries EXIT\+\_\+\+BTN\+\_\+\+X2}~935
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the bottom-\/right corner of the Exit button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries EXIT\+\_\+\+BTN\+\_\+\+Y1}~715
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the top-\/left corner of the Exit button\textquotesingle{}s clickable area. \end{DoxyCompactList}\item 
+\#define {\bfseries EXIT\+\_\+\+BTN\+\_\+\+Y2}~890
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the bottom-\/right corner of the Exit button\textquotesingle{}s clickable area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__menu_ga50eec52290522e006cc46413507150dd}{load\+\_\+menu\+\_\+assets}} (void)
+\begin{DoxyCompactList}\small\item\em Loads all necessary visual assets for the main menu screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__menu_gafdc423790eed6f1b7823a249bbf8eac6}{draw\+\_\+menu}} (void)
+\begin{DoxyCompactList}\small\item\em Draws the main menu screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__menu_ga1725b1403daeb3d1f8e28b00ef322a50}{load\+\_\+instructions\+\_\+assets}} (void)
+\begin{DoxyCompactList}\small\item\em Loads all necessary visual assets for the instructions screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__menu_gaec42d4ee94c59e288f9a18b315efb62e}{draw\+\_\+instructions}} (void)
+\begin{DoxyCompactList}\small\item\em Draws the instructions screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines coordinates for menu buttons and declares functions for loading and drawing menu and instructions screens. 
+
+This file contains macros for the bounding boxes of interactive menu elements (buttons) and function prototypes for managing the visual assets and rendering of different menu states. 

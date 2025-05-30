@@ -1,0 +1,53 @@
+\doxysection{game.\+h}
+\hypertarget{game_8h_source}{}\label{game_8h_source}\mbox{\hyperlink{game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <lcom/xpm.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}controllers/video/graphics.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Pause\ button\ coordinates}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ PAUSE\_BTN\_X1\ \ \ 805}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ PAUSE\_BTN\_X2\ \ \ 920}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ PAUSE\_BTN\_Y1\ \ \ 910}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ PAUSE\_BTN\_Y2\ \ \ 975}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ Resume\ button\ coordinates}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ FAST\_BTN\_X1\ \ 1085}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ FAST\_BTN\_X2\ \ 1200}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ FAST\_BTN\_Y1\ \ 910}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ FAST\_BTN\_Y2\ \ 975}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Fast\ button\ coordinates}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ RESUME\_BTN\_X1\ \ \ \ 945}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ RESUME\_BTN\_X2\ \ \ \ 1055}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ RESUME\_BTN\_Y1\ \ \ \ 910}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ RESUME\_BTN\_Y2\ \ \ \ 975}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ PLAY\_PAUSED,}
+\DoxyCodeLine{00035\ \ \ \ \ PLAY\_NORMAL,}
+\DoxyCodeLine{00036\ \ \ \ \ PLAY\_FAST}
+\DoxyCodeLine{00037\ \}\ PlayState;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ PlayState\ play\_state;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a942e3d319d2180332571ec1fa2885008}{set\_play\_state}}(PlayState\ new\_state);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_af44a4a6720f7d57c7a63b10fbaf1b0cb}{load\_game\_assets}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a3f8738d8a4d14df84773fae22cbd2bd6}{draw\_game}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_ac44584aaaab017a6b6ab888513202a29}{draw\_characters2}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a5800013d466757f63b2ab25351cd298d}{draw\_characters3}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAME\_H}}
+
+\end{DoxyCode}

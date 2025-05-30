@@ -1,0 +1,108 @@
+\doxysection{Game Manager }
+\hypertarget{group__manager}{}\label{group__manager}\index{Game Manager@{Game Manager}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__manager_ga6613b9fe93798d044c19154df9437142}{initialize\+\_\+graphics}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the graphics subsystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__manager_gafd7728c9e6ae89e5932e641b54556aba}{exit\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Cleans up resources and exits the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__manager_ga3462fc5fe41d7f3738b28e8db5c34afa}\label{group__manager_ga3462fc5fe41d7f3738b28e8db5c34afa} 
+uint32\+\_\+t {\bfseries timer\+\_\+irq\+\_\+set}
+\item 
+\Hypertarget{group__manager_ga4a804c5ed9fbbb87e678bc754a0050df}\label{group__manager_ga4a804c5ed9fbbb87e678bc754a0050df} 
+uint32\+\_\+t {\bfseries kbd\+\_\+irq\+\_\+set}
+\item 
+\Hypertarget{group__manager_ga19510d6e8f8e3683abe25e8936a4401e}\label{group__manager_ga19510d6e8f8e3683abe25e8936a4401e} 
+uint32\+\_\+t {\bfseries mouse\+\_\+irq\+\_\+set}
+\item 
+\Hypertarget{group__manager_gaca42f7778287b9a79affe540ce98d0f5}\label{group__manager_gaca42f7778287b9a79affe540ce98d0f5} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries frame\+\_\+buffer}
+\item 
+\Hypertarget{group__manager_ga34682117071d485946ec3a6636d4e26d}\label{group__manager_ga34682117071d485946ec3a6636d4e26d} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries second\+\_\+buffer}
+\item 
+\Hypertarget{group__manager_ga996ba02291d503560aaabc70d79d27e3}\label{group__manager_ga996ba02291d503560aaabc70d79d27e3} 
+uint16\+\_\+t {\bfseries center\+\_\+x}
+\item 
+\Hypertarget{group__manager_gacf63d510f4423c85b97f9cc2d37854b3}\label{group__manager_gacf63d510f4423c85b97f9cc2d37854b3} 
+uint16\+\_\+t {\bfseries center\+\_\+y}
+\item 
+\Hypertarget{group__manager_ga73deb81f6fc8e23364ea015fece26847}\label{group__manager_ga73deb81f6fc8e23364ea015fece26847} 
+uint64\+\_\+t {\bfseries delta\+\_\+time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global variables and core functions for managing the game\textquotesingle{}s lifecycle, input, graphics, and overall state. 
+
+\label{doc-func-members}
+\Hypertarget{group__manager_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{group__manager_gafd7728c9e6ae89e5932e641b54556aba}\index{Game Manager@{Game Manager}!exit\_game@{exit\_game}}
+\index{exit\_game@{exit\_game}!Game Manager@{Game Manager}}
+\doxysubsubsection{\texorpdfstring{exit\_game()}{exit\_game()}}
+{\footnotesize\ttfamily \label{group__manager_gafd7728c9e6ae89e5932e641b54556aba} 
+int exit\+\_\+game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleans up resources and exits the game. 
+
+This function handles the graceful termination of the game. It should unsubscribe all interrupts, free allocated memory (like graphics buffers), restore the system to text mode, and perform any other necessary cleanup before the program terminates.
+
+\begin{DoxyReturn}{Returns}
+int 0 upon successful exit (though often this function might not return if it calls {\ttfamily exit()}), non-\/zero if an error occurs during cleanup (less common for an exit function).
+\end{DoxyReturn}
+Cleans up resources and exits the game.
+
+This function performs the necessary cleanup operations before the game exits\+:
+\begin{DoxyEnumerate}
+\item Unsubscribes mouse interrupts.
+\item Unsubscribes keyboard interrupts.
+\item Unsubscribes timer interrupts.
+\item Attempts to re-\/enable mouse data reporting. This step is unusual for an exit sequence, as disabling data reporting or resetting the mouse to defaults is more common. It might be intended to restore a specific mouse state expected by the OS/environment.
+\item Exits the graphics mode and returns to text mode using {\ttfamily vg\+\_\+exit()}.
+\end{DoxyEnumerate}
+
+If any unsubscription or cleanup step fails, it prints an error message and returns an error code (1). {\ttfamily fflush(stdout)} is used to ensure error messages are displayed immediately, which is useful if the program terminates abruptly afterwards.
+
+\begin{DoxyReturn}{Returns}
+int 0 upon successful cleanup of all components, 1 if any error occurs. 
+\end{DoxyReturn}
+\Hypertarget{group__manager_ga6613b9fe93798d044c19154df9437142}\index{Game Manager@{Game Manager}!initialize\_graphics@{initialize\_graphics}}
+\index{initialize\_graphics@{initialize\_graphics}!Game Manager@{Game Manager}}
+\doxysubsubsection{\texorpdfstring{initialize\_graphics()}{initialize\_graphics()}}
+{\footnotesize\ttfamily \label{group__manager_ga6613b9fe93798d044c19154df9437142} 
+int initialize\+\_\+graphics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the graphics subsystem. 
+
+This function is responsible for setting the desired video mode, mapping video memory, initializing drawing buffers, and preparing the system for graphical output. It typically calls {\ttfamily set\+\_\+graphic\+\_\+mode} from the graphics module.
+
+\begin{DoxyReturn}{Returns}
+int 0 upon successful initialization, non-\/zero otherwise.
+\end{DoxyReturn}
+Initializes the graphics subsystem.
+
+This function performs several critical setup steps\+:
+\begin{DoxyEnumerate}
+\item Subscribes to interrupts for the timer, keyboard, and mouse.
+\item Stores the IRQ bitmasks for these devices in global variables ({\ttfamily timer\+\_\+irq\+\_\+set}, {\ttfamily kbd\+\_\+irq\+\_\+set}, {\ttfamily mouse\+\_\+irq\+\_\+set}).
+\item Sends a command to the mouse to enable data reporting.
+\item Initializes the frame buffer for the specified graphics mode (VBE\+\_\+1024p\+\_\+\+DC).
+\item Sets the video controller to the specified graphics mode.
+\item Sets the frequency of timer 0 to 60 Hz.
+\item Loads all necessary visual assets for the menu, instructions screen, and the main game.
+\end{DoxyEnumerate}
+
+If any step fails, it attempts to clean up by unsubscribing any previously subscribed interrupts and then returns an error code (1).
+
+\begin{DoxyReturn}{Returns}
+int 0 upon successful initialization of all components, 1 if any error occurs. 
+\end{DoxyReturn}

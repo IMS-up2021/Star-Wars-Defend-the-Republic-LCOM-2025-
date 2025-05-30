@@ -1,0 +1,239 @@
+\doxysection{health.\+c File Reference}
+\hypertarget{health_8c}{}\label{health_8c}\index{health.c@{health.c}}
+
+
+Implements health bar functionality for player and enemy. This includes initialization of health bar sprites, creation of health bar objects, drawing, and updating health bars based on health values.  
+
+
+{\ttfamily \#include "{}health.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{health_8c_a1f6bd6bba5f2925b80f6090540bbc906}{init\+\_\+healthbar}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes all health bar sprites and creates health bar objects. Loads XPM images for 11 states of both player and enemy health bars. Creates player and enemy health bar instances using {\ttfamily create\+\_\+healthbar}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{health_8c_af26eedf00b143e8ee50fb7fae5d4bade}{create\+\_\+healthbar}} (unsigned int x, unsigned int y, bool is\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Creates a health bar object. Allocates memory for a {\ttfamily \doxylink{struct_player}{Player}} struct (used for health bars) and initializes its properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{health_8c_a654ecec6606425a6160500bc57cccce4}{draw\+\_\+healthbar}} (\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}healthbar, bool is\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Draws a health bar on the screen. Iterates through the health bar\textquotesingle{}s current sprite and draws its pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{health_8c_a24add5a918424a2328d1d164b9ca56d9}{update\+\_\+healthbar}} (\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}healthbar, bool is\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Updates the sprite of a health bar based on its current health value. Selects one of the 11 preloaded sprites corresponding to health ranges (100\%, 90\%, ..., 0\%). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{health_8c_a9b09e118790e48117e97330d8b35d35b}\label{health_8c_a9b09e118790e48117e97330d8b35d35b} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy1}
+\item 
+\Hypertarget{health_8c_afbfb87ee8fed5d4c1197eb00675939a4}\label{health_8c_afbfb87ee8fed5d4c1197eb00675939a4} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy2}
+\item 
+\Hypertarget{health_8c_aa75e36bc7715e055e393630c9ee65a9a}\label{health_8c_aa75e36bc7715e055e393630c9ee65a9a} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy3}
+\item 
+\Hypertarget{health_8c_abb095b29eea57fa6a151de211b70c873}\label{health_8c_abb095b29eea57fa6a151de211b70c873} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy4}
+\item 
+\Hypertarget{health_8c_af831713980a9fcf0d1e7030cf4aa2679}\label{health_8c_af831713980a9fcf0d1e7030cf4aa2679} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy5}
+\item 
+\Hypertarget{health_8c_a6a8a7db68bdb8dc32cc7f5ad51e7b211}\label{health_8c_a6a8a7db68bdb8dc32cc7f5ad51e7b211} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy6}
+\item 
+\Hypertarget{health_8c_a6516027806d69d97c9a105445cdc8273}\label{health_8c_a6516027806d69d97c9a105445cdc8273} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy7}
+\item 
+\Hypertarget{health_8c_ad99f02db7be851d3d27a42bc05fe9fac}\label{health_8c_ad99f02db7be851d3d27a42bc05fe9fac} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy8}
+\item 
+\Hypertarget{health_8c_ad62401f4dfd6e1e0d8befd4e6696e009}\label{health_8c_ad62401f4dfd6e1e0d8befd4e6696e009} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy9}
+\item 
+\Hypertarget{health_8c_a7baa367d85a530e7b47e538731c373ef}\label{health_8c_a7baa367d85a530e7b47e538731c373ef} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy10}
+\item 
+\Hypertarget{health_8c_ad3e51590109dd8e111d62be2dbbb0292}\label{health_8c_ad3e51590109dd8e111d62be2dbbb0292} 
+xpm\+\_\+image\+\_\+t {\bfseries enemy11}
+\item 
+\Hypertarget{health_8c_a84e09d8929e5ebd1a3836ae443d56140}\label{health_8c_a84e09d8929e5ebd1a3836ae443d56140} 
+xpm\+\_\+image\+\_\+t {\bfseries player1}
+\item 
+\Hypertarget{health_8c_ab602c152519ea598fbbb1bbc0f798240}\label{health_8c_ab602c152519ea598fbbb1bbc0f798240} 
+xpm\+\_\+image\+\_\+t {\bfseries player2}
+\item 
+\Hypertarget{health_8c_a500fb0083d2be38a159c52d154542439}\label{health_8c_a500fb0083d2be38a159c52d154542439} 
+xpm\+\_\+image\+\_\+t {\bfseries player3}
+\item 
+\Hypertarget{health_8c_a698c24e3c2d1aacc07044f53b3667826}\label{health_8c_a698c24e3c2d1aacc07044f53b3667826} 
+xpm\+\_\+image\+\_\+t {\bfseries player4}
+\item 
+\Hypertarget{health_8c_a4167ef828cdcb8a418f5ddd5d9a142ce}\label{health_8c_a4167ef828cdcb8a418f5ddd5d9a142ce} 
+xpm\+\_\+image\+\_\+t {\bfseries player5}
+\item 
+\Hypertarget{health_8c_accc25a48cf1fd3104d59399ec63f9f6a}\label{health_8c_accc25a48cf1fd3104d59399ec63f9f6a} 
+xpm\+\_\+image\+\_\+t {\bfseries player6}
+\item 
+\Hypertarget{health_8c_a9c3d249bea06fecd5f04b2beeaba1117}\label{health_8c_a9c3d249bea06fecd5f04b2beeaba1117} 
+xpm\+\_\+image\+\_\+t {\bfseries player7}
+\item 
+\Hypertarget{health_8c_a99ac609d5441e2070c4ca70070efb2a3}\label{health_8c_a99ac609d5441e2070c4ca70070efb2a3} 
+xpm\+\_\+image\+\_\+t {\bfseries player8}
+\item 
+\Hypertarget{health_8c_aa92d36872d68fe408e782226136c4fd9}\label{health_8c_aa92d36872d68fe408e782226136c4fd9} 
+xpm\+\_\+image\+\_\+t {\bfseries player9}
+\item 
+\Hypertarget{health_8c_ac6541b00c4a4b6f7fa7c4574bdbeba9b}\label{health_8c_ac6541b00c4a4b6f7fa7c4574bdbeba9b} 
+xpm\+\_\+image\+\_\+t {\bfseries player10}
+\item 
+\Hypertarget{health_8c_a1dad8176a0fa8c82555fbbf7e6544eae}\label{health_8c_a1dad8176a0fa8c82555fbbf7e6544eae} 
+xpm\+\_\+image\+\_\+t {\bfseries player11}
+\item 
+\Hypertarget{health_8c_a854e277b18726598fbdd13b9f0c53fa0}\label{health_8c_a854e277b18726598fbdd13b9f0c53fa0} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+1}
+\item 
+\Hypertarget{health_8c_a5385a97478eceac0e9ca4f7ec5c1c93f}\label{health_8c_a5385a97478eceac0e9ca4f7ec5c1c93f} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+2}
+\item 
+\Hypertarget{health_8c_a5e28029a806437a6b6e9253b8c0493c4}\label{health_8c_a5e28029a806437a6b6e9253b8c0493c4} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+3}
+\item 
+\Hypertarget{health_8c_a840010acd8ea5675e2b7ae5132a5bb56}\label{health_8c_a840010acd8ea5675e2b7ae5132a5bb56} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+4}
+\item 
+\Hypertarget{health_8c_a3a516224ab519e544c0d783d408e854d}\label{health_8c_a3a516224ab519e544c0d783d408e854d} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+5}
+\item 
+\Hypertarget{health_8c_a864d9376e502108544c373d8120dda95}\label{health_8c_a864d9376e502108544c373d8120dda95} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+6}
+\item 
+\Hypertarget{health_8c_ae6c6aff4568996c9cf3265f42e6506f6}\label{health_8c_ae6c6aff4568996c9cf3265f42e6506f6} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+7}
+\item 
+\Hypertarget{health_8c_a7966ae634a7fa5dc24c09f8c2ea144be}\label{health_8c_a7966ae634a7fa5dc24c09f8c2ea144be} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+8}
+\item 
+\Hypertarget{health_8c_a7f0fe90e8131724c7db1d33a7c44390e}\label{health_8c_a7f0fe90e8131724c7db1d33a7c44390e} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+9}
+\item 
+\Hypertarget{health_8c_a2093191b2e96b7bc0c82b57365dd2394}\label{health_8c_a2093191b2e96b7bc0c82b57365dd2394} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+10}
+\item 
+\Hypertarget{health_8c_a8bf7545606526b8acbbb1210a0b8c1a8}\label{health_8c_a8bf7545606526b8acbbb1210a0b8c1a8} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+11}
+\item 
+\Hypertarget{health_8c_af33c90d109e6aca8732145552a732dd7}\label{health_8c_af33c90d109e6aca8732145552a732dd7} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+1}
+\item 
+\Hypertarget{health_8c_ae37644ac10e1b36a5ddd80d765c72e86}\label{health_8c_ae37644ac10e1b36a5ddd80d765c72e86} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+2}
+\item 
+\Hypertarget{health_8c_a1878dc37a74a44ac0bedf4347f8ae72e}\label{health_8c_a1878dc37a74a44ac0bedf4347f8ae72e} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+3}
+\item 
+\Hypertarget{health_8c_abec5fa08d10f6209fdfc0f7c0493c85b}\label{health_8c_abec5fa08d10f6209fdfc0f7c0493c85b} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+4}
+\item 
+\Hypertarget{health_8c_a8165cc3570c86279229fc2d80f836fac}\label{health_8c_a8165cc3570c86279229fc2d80f836fac} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+5}
+\item 
+\Hypertarget{health_8c_a5cfb4cd667e981064418d2cfcbf451ab}\label{health_8c_a5cfb4cd667e981064418d2cfcbf451ab} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+6}
+\item 
+\Hypertarget{health_8c_a2e075af4363376b133aecce019d50a2c}\label{health_8c_a2e075af4363376b133aecce019d50a2c} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+7}
+\item 
+\Hypertarget{health_8c_a7169850ca0673a0884cb61ff69db2991}\label{health_8c_a7169850ca0673a0884cb61ff69db2991} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+8}
+\item 
+\Hypertarget{health_8c_adcb0231ee796c46c1c21b810ae939b02}\label{health_8c_adcb0231ee796c46c1c21b810ae939b02} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+9}
+\item 
+\Hypertarget{health_8c_af93fae07f9161e0d9c97a5e6584d59e2}\label{health_8c_af93fae07f9161e0d9c97a5e6584d59e2} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+10}
+\item 
+\Hypertarget{health_8c_accd7a2a5529406d3a71d01412680fef0}\label{health_8c_accd7a2a5529406d3a71d01412680fef0} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+11}
+\item 
+\Hypertarget{health_8c_ad8c214d70843f1727c79ba076721853a}\label{health_8c_ad8c214d70843f1727c79ba076721853a} 
+\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*} {\bfseries player\+\_\+health}
+\item 
+\Hypertarget{health_8c_ab83bc4ae746a9cb6479aba850f4d3607}\label{health_8c_ab83bc4ae746a9cb6479aba850f4d3607} 
+\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*} {\bfseries enemy\+\_\+health}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements health bar functionality for player and enemy. This includes initialization of health bar sprites, creation of health bar objects, drawing, and updating health bars based on health values. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{health_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{health_8c_af26eedf00b143e8ee50fb7fae5d4bade}\index{health.c@{health.c}!create\_healthbar@{create\_healthbar}}
+\index{create\_healthbar@{create\_healthbar}!health.c@{health.c}}
+\doxysubsubsection{\texorpdfstring{create\_healthbar()}{create\_healthbar()}}
+{\footnotesize\ttfamily \label{health_8c_af26eedf00b143e8ee50fb7fae5d4bade} 
+\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*} create\+\_\+healthbar (\begin{DoxyParamCaption}\item[{unsigned int}]{x}{, }\item[{unsigned int}]{y}{, }\item[{bool}]{is\+\_\+player}{}\end{DoxyParamCaption})}
+
+
+
+Creates a health bar object. Allocates memory for a {\ttfamily \doxylink{struct_player}{Player}} struct (used for health bars) and initializes its properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate for the health bar\textquotesingle{}s top-\/left corner. \\
+\hline
+{\em y} & The y-\/coordinate for the health bar\textquotesingle{}s top-\/left corner. \\
+\hline
+{\em is\+\_\+player} & True if this health bar is for the player, false for the enemy. Determines the initial sprite and potentially other properties. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created {\ttfamily \doxylink{struct_player}{Player}} (health bar) object, or NULL on allocation failure. 
+\end{DoxyReturn}
+\Hypertarget{health_8c_a654ecec6606425a6160500bc57cccce4}\index{health.c@{health.c}!draw\_healthbar@{draw\_healthbar}}
+\index{draw\_healthbar@{draw\_healthbar}!health.c@{health.c}}
+\doxysubsubsection{\texorpdfstring{draw\_healthbar()}{draw\_healthbar()}}
+{\footnotesize\ttfamily \label{health_8c_a654ecec6606425a6160500bc57cccce4} 
+void draw\+\_\+healthbar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}}]{healthbar}{, }\item[{bool}]{is\+\_\+player}{}\end{DoxyParamCaption})}
+
+
+
+Draws a health bar on the screen. Iterates through the health bar\textquotesingle{}s current sprite and draws its pixels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em healthbar} & Pointer to the {\ttfamily \doxylink{struct_player}{Player}} (health bar) object to draw. \\
+\hline
+{\em is\+\_\+player} & Unused parameter in this implementation, but could be used for context. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{health_8c_a1f6bd6bba5f2925b80f6090540bbc906}\index{health.c@{health.c}!init\_healthbar@{init\_healthbar}}
+\index{init\_healthbar@{init\_healthbar}!health.c@{health.c}}
+\doxysubsubsection{\texorpdfstring{init\_healthbar()}{init\_healthbar()}}
+{\footnotesize\ttfamily \label{health_8c_a1f6bd6bba5f2925b80f6090540bbc906} 
+bool init\+\_\+healthbar (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes all health bar sprites and creates health bar objects. Loads XPM images for 11 states of both player and enemy health bars. Creates player and enemy health bar instances using {\ttfamily create\+\_\+healthbar}. 
+
+\begin{DoxyReturn}{Returns}
+True if all initializations are successful (or at least appear to be, as it always returns true in the snippet). Should ideally check XPM load results. 
+\end{DoxyReturn}
+\Hypertarget{health_8c_a24add5a918424a2328d1d164b9ca56d9}\index{health.c@{health.c}!update\_healthbar@{update\_healthbar}}
+\index{update\_healthbar@{update\_healthbar}!health.c@{health.c}}
+\doxysubsubsection{\texorpdfstring{update\_healthbar()}{update\_healthbar()}}
+{\footnotesize\ttfamily \label{health_8c_a24add5a918424a2328d1d164b9ca56d9} 
+void update\+\_\+healthbar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}}]{healthbar}{, }\item[{bool}]{is\+\_\+player}{}\end{DoxyParamCaption})}
+
+
+
+Updates the sprite of a health bar based on its current health value. Selects one of the 11 preloaded sprites corresponding to health ranges (100\%, 90\%, ..., 0\%). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em healthbar} & Pointer to the {\ttfamily \doxylink{struct_player}{Player}} (health bar) object to update. \\
+\hline
+{\em is\+\_\+player} & True if updating the player\textquotesingle{}s health bar, false for the enemy\textquotesingle{}s. \\
+\hline
+\end{DoxyParams}

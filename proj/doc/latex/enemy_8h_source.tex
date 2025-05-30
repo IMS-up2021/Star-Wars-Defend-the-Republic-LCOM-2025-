@@ -1,0 +1,69 @@
+\doxysection{enemy.\+h}
+\hypertarget{enemy_8h_source}{}\label{enemy_8h_source}\mbox{\hyperlink{enemy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ ENEMY\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ENEMY\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ENEMY\_SPAWN\_DELAY\ 180\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ MAX\_ENEMIES\ 20\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}controllers/video/graphics.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ uint16\_t\ x\_pos,\ y\_pos;}
+\DoxyCodeLine{00026\ \ \ \ \ uint16\_t\ width,\ height;}
+\DoxyCodeLine{00027\ \ \ \ \ uint8\_t\ *sprite;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ health;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ damage;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ attack\_range;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ pixels\_per\_sec;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ enemy;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ attack\_cooldown;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Animation}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_attacking;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ attack\_anim\_timer;}
+\DoxyCodeLine{00040\ \ \ \ \ uint8\_t\ *default\_sprite;}
+\DoxyCodeLine{00041\ \ \ \ \ uint16\_t\ default\_width,\ default\_height;}
+\DoxyCodeLine{00042\ \ \ \ \ uint8\_t\ *attack\_sprite;}
+\DoxyCodeLine{00043\ \ \ \ \ uint16\_t\ attack\_width,\ attack\_height;}
+\DoxyCodeLine{00044\ \ \ \ \ uint8\_t\ *attack\_sprite2;}
+\DoxyCodeLine{00045\ \ \ \ \ uint16\_t\ attack2\_width,\ attack2\_height;}
+\DoxyCodeLine{00046\ \}\ \mbox{\hyperlink{struct_character}{Character}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{struct_character_pos}{CharacterPos}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_character}{Character}}\ *active\_enemies[\mbox{\hyperlink{enemy_8h_a544651f3405cff79c40d898a8e54f507}{MAX\_ENEMIES}}];}
+\DoxyCodeLine{00055\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ num\_active\_enemies;}
+\DoxyCodeLine{00056\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ enemy\_spawn\_tick\_counter;}
+\DoxyCodeLine{00057\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ timer\_frequency\_hz;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \mbox{\hyperlink{struct_character}{Character}}\ *\mbox{\hyperlink{enemy_8h_a5dbd9f347bbb55083fb8317ab00113aa}{createEnemy}}(\mbox{\hyperlink{struct_character_pos}{CharacterPos}}\ pos,\ \textcolor{keywordtype}{int}\ enemy\_type);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{enemy_8h_aff075b4ffde84322fc3b60100130cf9d}{add\_enemy\_to\_game}}(\mbox{\hyperlink{struct_character_pos}{CharacterPos}}\ pos,\ \textcolor{keywordtype}{int}\ enemy\_type);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{enemy_8h_a6634f93ecd05aa2398f20d2e5e71dd7c}{update\_and\_spawn\_enemies}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{enemy_8h_a1a4198ffc6edc8202751babfe960eb74}{draw\_enemies}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{enemy_8h_abedf902b6f5b87153caf520875a53594}{init\_enemies}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{enemy_8h_a56639c0684ee40dfff125b9bac31b583}{set\_timer\_frequency\_for\_enemies}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hz);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ENEMY\_H}}
+
+\end{DoxyCode}

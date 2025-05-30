@@ -1,0 +1,155 @@
+\doxysection{game.\+h File Reference}
+\hypertarget{game_8h}{}\label{game_8h}\index{game.h@{game.h}}
+
+
+Defines game states, UI button coordinates for game controls, and function prototypes for game logic.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/xpm.\+h$>$}\newline
+{\ttfamily \#include "{}controllers/video/graphics.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{game_8h_adaf3507756ef31e65eb5baed31707193}\label{game_8h_adaf3507756ef31e65eb5baed31707193} 
+\#define {\bfseries PAUSE\+\_\+\+BTN\+\_\+\+X1}~805
+\item 
+\Hypertarget{game_8h_a0cdc8453148d477ced0c6ae284486494}\label{game_8h_a0cdc8453148d477ced0c6ae284486494} 
+\#define {\bfseries PAUSE\+\_\+\+BTN\+\_\+\+X2}~920
+\item 
+\Hypertarget{game_8h_a5e9468ae9f104efd84d7973a615ff22b}\label{game_8h_a5e9468ae9f104efd84d7973a615ff22b} 
+\#define {\bfseries PAUSE\+\_\+\+BTN\+\_\+\+Y1}~910
+\item 
+\Hypertarget{game_8h_a680fb9893eb1026b7ccf9fb03bdc18d5}\label{game_8h_a680fb9893eb1026b7ccf9fb03bdc18d5} 
+\#define {\bfseries PAUSE\+\_\+\+BTN\+\_\+\+Y2}~975
+\item 
+\Hypertarget{game_8h_a6a9a000bd272e10fe4b58a6384ef2ae4}\label{game_8h_a6a9a000bd272e10fe4b58a6384ef2ae4} 
+\#define {\bfseries FAST\+\_\+\+BTN\+\_\+\+X1}~1085
+\item 
+\Hypertarget{game_8h_a276acde9082c865b4d57ebc57105aac6}\label{game_8h_a276acde9082c865b4d57ebc57105aac6} 
+\#define {\bfseries FAST\+\_\+\+BTN\+\_\+\+X2}~1200
+\item 
+\Hypertarget{game_8h_abe6c7906a915856687cef5d54e8ec506}\label{game_8h_abe6c7906a915856687cef5d54e8ec506} 
+\#define {\bfseries FAST\+\_\+\+BTN\+\_\+\+Y1}~910
+\item 
+\Hypertarget{game_8h_ad9c4d352e3db52c11548708bfaa24ec5}\label{game_8h_ad9c4d352e3db52c11548708bfaa24ec5} 
+\#define {\bfseries FAST\+\_\+\+BTN\+\_\+\+Y2}~975
+\item 
+\Hypertarget{game_8h_ae694562d336b94d79c63d8b144cb9f00}\label{game_8h_ae694562d336b94d79c63d8b144cb9f00} 
+\#define {\bfseries RESUME\+\_\+\+BTN\+\_\+\+X1}~945
+\item 
+\Hypertarget{game_8h_a732d5629900decbf0272c5aa4cb996ad}\label{game_8h_a732d5629900decbf0272c5aa4cb996ad} 
+\#define {\bfseries RESUME\+\_\+\+BTN\+\_\+\+X2}~1055
+\item 
+\Hypertarget{game_8h_a8acb6858eff29356a990e3e34ccacd9a}\label{game_8h_a8acb6858eff29356a990e3e34ccacd9a} 
+\#define {\bfseries RESUME\+\_\+\+BTN\+\_\+\+Y1}~910
+\item 
+\Hypertarget{game_8h_a49e931ad6bc3a86c466d41807f859a2f}\label{game_8h_a49e931ad6bc3a86c466d41807f859a2f} 
+\#define {\bfseries RESUME\+\_\+\+BTN\+\_\+\+Y2}~975
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{game_8h_ac50b7a27648377985d393a152187b7f0}\label{game_8h_ac50b7a27648377985d393a152187b7f0} 
+enum {\bfseries Play\+State} \{ {\bfseries PLAY\+\_\+\+PAUSED}
+, {\bfseries PLAY\+\_\+\+NORMAL}
+, {\bfseries PLAY\+\_\+\+FAST}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_8h_a942e3d319d2180332571ec1fa2885008}{set\+\_\+play\+\_\+state}} (Play\+State new\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Sets the current play state of the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_af44a4a6720f7d57c7a63b10fbaf1b0cb}{load\+\_\+game\+\_\+assets}} (void)
+\begin{DoxyCompactList}\small\item\em Loads assets required for the game screen (e.\+g., backgrounds). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a3f8738d8a4d14df84773fae22cbd2bd6}{draw\+\_\+game}} (void)
+\begin{DoxyCompactList}\small\item\em Draws the main game screen elements (e.\+g., background). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_ac44584aaaab017a6b6ab888513202a29}{draw\+\_\+characters2}} (void)
+\begin{DoxyCompactList}\small\item\em Draws an alternate game background or UI element (referred to as "{}characters2"{}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a5800013d466757f63b2ab25351cd298d}{draw\+\_\+characters3}} (void)
+\begin{DoxyCompactList}\small\item\em Draws another alternate game background or UI element (referred to as "{}characters3"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{game_8h_a3db125f12ac28b00e2bda2fad02153c5}\label{game_8h_a3db125f12ac28b00e2bda2fad02153c5} 
+Play\+State {\bfseries play\+\_\+state}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines game states, UI button coordinates for game controls, and function prototypes for game logic. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{game_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{game_8h_ac44584aaaab017a6b6ab888513202a29}\index{game.h@{game.h}!draw\_characters2@{draw\_characters2}}
+\index{draw\_characters2@{draw\_characters2}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_characters2()}{draw\_characters2()}}
+{\footnotesize\ttfamily \label{game_8h_ac44584aaaab017a6b6ab888513202a29} 
+void draw\+\_\+characters2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws an alternate game background or UI element (referred to as "{}characters2"{}). 
+
+\begin{DoxyNote}{Note}
+The function name might be misleading as it likely draws a background/\+UI, not characters.
+\end{DoxyNote}
+Draws an alternate game background or UI element (referred to as "{}characters2"{}). \Hypertarget{game_8h_a5800013d466757f63b2ab25351cd298d}\index{game.h@{game.h}!draw\_characters3@{draw\_characters3}}
+\index{draw\_characters3@{draw\_characters3}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_characters3()}{draw\_characters3()}}
+{\footnotesize\ttfamily \label{game_8h_a5800013d466757f63b2ab25351cd298d} 
+void draw\+\_\+characters3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws another alternate game background or UI element (referred to as "{}characters3"{}). 
+
+\begin{DoxyNote}{Note}
+The function name might be misleading as it likely draws a background/\+UI, not characters.
+\end{DoxyNote}
+Draws another alternate game background or UI element (referred to as "{}characters3"{}). \Hypertarget{game_8h_a3f8738d8a4d14df84773fae22cbd2bd6}\index{game.h@{game.h}!draw\_game@{draw\_game}}
+\index{draw\_game@{draw\_game}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game()}{draw\_game()}}
+{\footnotesize\ttfamily \label{game_8h_a3f8738d8a4d14df84773fae22cbd2bd6} 
+void draw\+\_\+game (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws the main game screen elements (e.\+g., background). 
+
+Draws the main game screen elements (e.\+g., background). \Hypertarget{game_8h_af44a4a6720f7d57c7a63b10fbaf1b0cb}\index{game.h@{game.h}!load\_game\_assets@{load\_game\_assets}}
+\index{load\_game\_assets@{load\_game\_assets}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{load\_game\_assets()}{load\_game\_assets()}}
+{\footnotesize\ttfamily \label{game_8h_af44a4a6720f7d57c7a63b10fbaf1b0cb} 
+void load\+\_\+game\+\_\+assets (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Loads assets required for the game screen (e.\+g., backgrounds). 
+
+Loads assets required for the game screen (e.\+g., backgrounds). \Hypertarget{game_8h_a942e3d319d2180332571ec1fa2885008}\index{game.h@{game.h}!set\_play\_state@{set\_play\_state}}
+\index{set\_play\_state@{set\_play\_state}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{set\_play\_state()}{set\_play\_state()}}
+{\footnotesize\ttfamily \label{game_8h_a942e3d319d2180332571ec1fa2885008} 
+void set\+\_\+play\+\_\+state (\begin{DoxyParamCaption}\item[{Play\+State}]{new\+\_\+state}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current play state of the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+state} & The new Play\+State to set.\\
+\hline
+\end{DoxyParams}
+Sets the current play state of the game.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+state} & The new Play\+State to set. \\
+\hline
+\end{DoxyParams}

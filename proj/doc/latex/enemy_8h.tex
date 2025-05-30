@@ -1,0 +1,212 @@
+\doxysection{enemy.\+h File Reference}
+\hypertarget{enemy_8h}{}\label{enemy_8h}\index{enemy.h@{enemy.h}}
+
+
+Defines structures and functions for enemy characters.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}controllers/video/graphics.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_character}{Character}}
+\item 
+struct \mbox{\hyperlink{struct_character_pos}{Character\+Pos}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{enemy_8h_a07c8d355557e327087080908b697b842}{ENEMY\+\_\+\+SPAWN\+\_\+\+DELAY}}~180
+\item 
+\#define \mbox{\hyperlink{enemy_8h_a544651f3405cff79c40d898a8e54f507}{MAX\+\_\+\+ENEMIES}}~20
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{enemy_8h_a5dbd9f347bbb55083fb8317ab00113aa}{create\+Enemy}} (\mbox{\hyperlink{struct_character_pos}{Character\+Pos}} pos, int enemy\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Creates a new enemy character instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemy_8h_aff075b4ffde84322fc3b60100130cf9d}{add\+\_\+enemy\+\_\+to\+\_\+game}} (\mbox{\hyperlink{struct_character_pos}{Character\+Pos}} pos, int enemy\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Adds an enemy unit to the game. This function typically calls create\+Enemy and then adds the unit to the active list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemy_8h_a6634f93ecd05aa2398f20d2e5e71dd7c}{update\+\_\+and\+\_\+spawn\+\_\+enemies}} (void)
+\begin{DoxyCompactList}\small\item\em Updates the state of all active enemy units and handles spawning. This includes movement, AI logic (like attacking), managing animations, and periodic spawning of new enemies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemy_8h_a1a4198ffc6edc8202751babfe960eb74}{draw\+\_\+enemies}} (void)
+\begin{DoxyCompactList}\small\item\em Draws all active enemy units to the screen. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{enemy_8h_abedf902b6f5b87153caf520875a53594}{init\+\_\+enemies}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes enemy resources, such as loading sprites. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemy_8h_a56639c0684ee40dfff125b9bac31b583}{set\+\_\+timer\+\_\+frequency\+\_\+for\+\_\+enemies}} (unsigned int hz)
+\begin{DoxyCompactList}\small\item\em Sets the timer frequency used for enemy character updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{enemy_8h_ace1ec5564a4c63fd2bf2805ffde0256f}\label{enemy_8h_ace1ec5564a4c63fd2bf2805ffde0256f} 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} {\bfseries active\+\_\+enemies} \mbox{[}\mbox{\hyperlink{enemy_8h_a544651f3405cff79c40d898a8e54f507}{MAX\+\_\+\+ENEMIES}}\mbox{]}
+\item 
+\Hypertarget{enemy_8h_ab97799c5b56f2107d75bf92f1a446a72}\label{enemy_8h_ab97799c5b56f2107d75bf92f1a446a72} 
+int {\bfseries num\+\_\+active\+\_\+enemies}
+\item 
+\Hypertarget{enemy_8h_a2c26c94f14ba0cb1661835014ca9eede}\label{enemy_8h_a2c26c94f14ba0cb1661835014ca9eede} 
+unsigned int {\bfseries enemy\+\_\+spawn\+\_\+tick\+\_\+counter}
+\item 
+\Hypertarget{enemy_8h_a8405615bd5c444ae456df97b6da3e36d}\label{enemy_8h_a8405615bd5c444ae456df97b6da3e36d} 
+unsigned int {\bfseries timer\+\_\+frequency\+\_\+hz}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines structures and functions for enemy characters. 
+
+This file includes the definition of the {\ttfamily \doxylink{struct_character}{Character}} struct (used for both players and enemies), the {\ttfamily \doxylink{struct_character_pos}{Character\+Pos}} struct, constants for enemy management, and function prototypes for initializing, creating, adding, updating, and drawing enemy units. 
+
+\label{doc-define-members}
+\Hypertarget{enemy_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{enemy_8h_a07c8d355557e327087080908b697b842}\index{enemy.h@{enemy.h}!ENEMY\_SPAWN\_DELAY@{ENEMY\_SPAWN\_DELAY}}
+\index{ENEMY\_SPAWN\_DELAY@{ENEMY\_SPAWN\_DELAY}!enemy.h@{enemy.h}}
+\doxysubsubsection{\texorpdfstring{ENEMY\_SPAWN\_DELAY}{ENEMY\_SPAWN\_DELAY}}
+{\footnotesize\ttfamily \label{enemy_8h_a07c8d355557e327087080908b697b842} 
+\#define ENEMY\+\_\+\+SPAWN\+\_\+\+DELAY~180}
+
+Delay in timer ticks before attempting to spawn a new enemy. \Hypertarget{enemy_8h_a544651f3405cff79c40d898a8e54f507}\index{enemy.h@{enemy.h}!MAX\_ENEMIES@{MAX\_ENEMIES}}
+\index{MAX\_ENEMIES@{MAX\_ENEMIES}!enemy.h@{enemy.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ENEMIES}{MAX\_ENEMIES}}
+{\footnotesize\ttfamily \label{enemy_8h_a544651f3405cff79c40d898a8e54f507} 
+\#define MAX\+\_\+\+ENEMIES~20}
+
+Maximum number of active enemies allowed at once. 
+
+\label{doc-func-members}
+\Hypertarget{enemy_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{enemy_8h_aff075b4ffde84322fc3b60100130cf9d}\index{enemy.h@{enemy.h}!add\_enemy\_to\_game@{add\_enemy\_to\_game}}
+\index{add\_enemy\_to\_game@{add\_enemy\_to\_game}!enemy.h@{enemy.h}}
+\doxysubsubsection{\texorpdfstring{add\_enemy\_to\_game()}{add\_enemy\_to\_game()}}
+{\footnotesize\ttfamily \label{enemy_8h_aff075b4ffde84322fc3b60100130cf9d} 
+void add\+\_\+enemy\+\_\+to\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_pos}{Character\+Pos}}}]{pos}{, }\item[{int}]{enemy\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Adds an enemy unit to the game. This function typically calls create\+Enemy and then adds the unit to the active list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position (\doxylink{struct_character_pos}{Character\+Pos}) where the enemy will be spawned. \\
+\hline
+{\em enemy\+\_\+type} & The type of enemy to add.\\
+\hline
+\end{DoxyParams}
+Adds an enemy unit to the game. This function typically calls create\+Enemy and then adds the unit to the active list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The initial position of the enemy. \\
+\hline
+{\em enemy\+\_\+type} & The type of enemy to create. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{enemy_8h_a5dbd9f347bbb55083fb8317ab00113aa}\index{enemy.h@{enemy.h}!createEnemy@{createEnemy}}
+\index{createEnemy@{createEnemy}!enemy.h@{enemy.h}}
+\doxysubsubsection{\texorpdfstring{createEnemy()}{createEnemy()}}
+{\footnotesize\ttfamily \label{enemy_8h_a5dbd9f347bbb55083fb8317ab00113aa} 
+\mbox{\hyperlink{struct_character}{Character}} \texorpdfstring{$\ast$}{*} create\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_pos}{Character\+Pos}}}]{pos}{, }\item[{int}]{enemy\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new enemy character instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position (\doxylink{struct_character_pos}{Character\+Pos}) where the enemy will be created. \\
+\hline
+{\em enemy\+\_\+type} & The type of enemy to create (determines stats and sprites). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{struct_character}{Character}, or NULL on failure.
+\end{DoxyReturn}
+Creates a new enemy character instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The initial position of the enemy. \\
+\hline
+{\em enemy\+\_\+type} & The type of enemy to create (0, 1, or 2). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created \doxylink{struct_character}{Character}, or NULL if allocation fails or enemy\+\_\+type is invalid. 
+\end{DoxyReturn}
+\Hypertarget{enemy_8h_a1a4198ffc6edc8202751babfe960eb74}\index{enemy.h@{enemy.h}!draw\_enemies@{draw\_enemies}}
+\index{draw\_enemies@{draw\_enemies}!enemy.h@{enemy.h}}
+\doxysubsubsection{\texorpdfstring{draw\_enemies()}{draw\_enemies()}}
+{\footnotesize\ttfamily \label{enemy_8h_a1a4198ffc6edc8202751babfe960eb74} 
+void draw\+\_\+enemies (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Draws all active enemy units to the screen. 
+
+Draws all active enemy units to the screen. \Hypertarget{enemy_8h_abedf902b6f5b87153caf520875a53594}\index{enemy.h@{enemy.h}!init\_enemies@{init\_enemies}}
+\index{init\_enemies@{init\_enemies}!enemy.h@{enemy.h}}
+\doxysubsubsection{\texorpdfstring{init\_enemies()}{init\_enemies()}}
+{\footnotesize\ttfamily \label{enemy_8h_abedf902b6f5b87153caf520875a53594} 
+bool init\+\_\+enemies (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes enemy resources, such as loading sprites. 
+
+\begin{DoxyReturn}{Returns}
+True if initialization is successful, false otherwise.
+\end{DoxyReturn}
+Initializes enemy resources, such as loading sprites.
+
+\begin{DoxyReturn}{Returns}
+True if all default sprites were loaded successfully, false otherwise. Note\+: attack sprites are also loaded but only default sprite success is checked in return. 
+\end{DoxyReturn}
+\Hypertarget{enemy_8h_a56639c0684ee40dfff125b9bac31b583}\index{enemy.h@{enemy.h}!set\_timer\_frequency\_for\_enemies@{set\_timer\_frequency\_for\_enemies}}
+\index{set\_timer\_frequency\_for\_enemies@{set\_timer\_frequency\_for\_enemies}!enemy.h@{enemy.h}}
+\doxysubsubsection{\texorpdfstring{set\_timer\_frequency\_for\_enemies()}{set\_timer\_frequency\_for\_enemies()}}
+{\footnotesize\ttfamily \label{enemy_8h_a56639c0684ee40dfff125b9bac31b583} 
+void set\+\_\+timer\+\_\+frequency\+\_\+for\+\_\+enemies (\begin{DoxyParamCaption}\item[{unsigned int}]{hz}{}\end{DoxyParamCaption})}
+
+
+
+Sets the timer frequency used for enemy character updates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hz} & The frequency in Hertz.\\
+\hline
+\end{DoxyParams}
+Sets the timer frequency used for enemy character updates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hz} & The new frequency in Hertz. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{enemy_8h_a6634f93ecd05aa2398f20d2e5e71dd7c}\index{enemy.h@{enemy.h}!update\_and\_spawn\_enemies@{update\_and\_spawn\_enemies}}
+\index{update\_and\_spawn\_enemies@{update\_and\_spawn\_enemies}!enemy.h@{enemy.h}}
+\doxysubsubsection{\texorpdfstring{update\_and\_spawn\_enemies()}{update\_and\_spawn\_enemies()}}
+{\footnotesize\ttfamily \label{enemy_8h_a6634f93ecd05aa2398f20d2e5e71dd7c} 
+void update\+\_\+and\+\_\+spawn\+\_\+enemies (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the state of all active enemy units and handles spawning. This includes movement, AI logic (like attacking), managing animations, and periodic spawning of new enemies. 
+
+Updates the state of all active enemy units and handles spawning. This includes movement, AI logic (like attacking), managing animations, and periodic spawning of new enemies.
+
+
+\begin{DoxyItemize}
+\item Spawns new enemies periodically.
+\item Checks for player units in range and initiates attacks.
+\item Manages attack cooldown and animation.
+\item Moves enemies forward if no player unit is in range.
+\item Handles enemies reaching the player base (damaging player base).
+\item Despawns enemies that move off-\/screen or are defeated. 
+\end{DoxyItemize}
