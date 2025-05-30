@@ -33,42 +33,6 @@ bool init_healthbar(void) {
     player_9 = xpm_load(player9_xpm, XPM_5_6_5, &player9);
     player_10 = xpm_load(player10_xpm, XPM_5_6_5, &player10);
     player_11 = xpm_load(player11_xpm, XPM_5_6_5, &player11);
-
-    if (!enemy_1 || !player_1) {
-        fprintf(stderr, "Error loading healthbar sprites\n");
-        return false;
-    }
-    if (!enemy_2 || !player_2) {
-        fprintf(stderr, "2Error loading healthbar sprites\n");
-        return false;
-    }
-    if (!enemy_3 || !player_3) {
-        fprintf(stderr, "3Error loading healthbar sprites\n");
-        return false;
-    }
-    if (!enemy_4 || !player_4) {
-        fprintf(stderr, "4Error loading healthbar sprites\n");
-        return false;
-    }
-    if (!enemy_5 || !player_5) {
-        fprintf(stderr, "5Error loading healthbar sprites\n");
-        return false;
-    }
-    if (!enemy_6 || !player_6) {
-        fprintf(stderr, "6Error loading healthbar sprites\n");
-        return false;
-    }
-    if (!enemy_7 || !player_7) {
-        fprintf(stderr, "7Error loading healthbar sprites\n");
-        return false;
-    }
-    if (!enemy_8 || !player_8) {
-        fprintf(stderr, "Error loading healthbar sprites\n");
-        return false;
-    }
-
-
-
     player_health = create_healthbar(50, 50, true);
     enemy_health = create_healthbar(830, 50, false);
 
