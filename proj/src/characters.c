@@ -5,6 +5,7 @@
 
 #include "characters.h"
 #include "gameState.h"
+#include "health.h"
 #include "controllers/video/graphics.h"
 
 // Define constantes que faltavam

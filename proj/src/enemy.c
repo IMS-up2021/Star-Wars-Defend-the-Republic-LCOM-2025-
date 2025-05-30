@@ -1,5 +1,6 @@
 #include "enemy.h"
 #include "gameState.h"
+#include "health.h"
 #include <lcom/lcf.h>
 
 #include "xpms/enemy1/bg1_pose1.xpm"
