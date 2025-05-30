@@ -6,6 +6,10 @@
 #include "xpms/mouse_cursor.xpm"
 #include "controllers/keyboardMouse/mouse.h"
 
+
+#define TRANSPARENT_COLOR 0x000000
+#define XPM_DIRECT 1
+
 Cursor *cursor;
 Position mouse_pos = {260, 140};
 
@@ -15,31 +19,26 @@ uint16_t y_max = 988;
 struct packet mouse_packet;
 
 Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm) {
-    // Carregar a imagem primeiro
-    xpm_image_t image;
-    uint8_t *sprite = xpm_load(xpm, XPM_5_6_5, &image);
-    if (sprite == NULL) {
-        printf("Error loading xpm image\n");
-        return NULL;
-    }
-
-    // Alocar memória para o cursor
     Cursor *cursor = (Cursor *)malloc(sizeof(Cursor));
     if (cursor == NULL) {
         printf("Error allocating memory for cursor\n");
-        free(sprite); 
         return NULL;
     }
 
-    // Inicializar os campos
+    if (cursor->sprite == NULL) {
+        printf("Error loading xpm image\n");
+        free(cursor);
+        return NULL;
+    }
+
     cursor->pos_x = pos_x;
     cursor->pos_y = pos_y;
-    cursor->width = image.width;
-    cursor->height = image.height;
-    cursor->sprite = sprite;
+    cursor->sprite = xpm_load(xpm, XPM_DIRECT, &cursor->img);
+
 
     return cursor;
 }
+
 
 
 bool init_cursor(void) {
@@ -52,22 +51,22 @@ bool init_cursor(void) {
 }
 
 int draw_cursor(Cursor *c) {
-    if (!c || !c->sprite) {
-        printf("%s: NULL cursor or NULL sprite\n", __func__);
-        return 1;
+    if (!c || !c->sprite) return 1;
+
+    uint32_t *pixels = (uint32_t *)c->img.bytes;
+
+    for (uint16_t y = 0; y < c->img.height; y++) {
+        for (uint16_t x = 0; x < c->img.width; x++) {
+            uint32_t color = pixels[y * c->img.width + x];
+            if (color == TRANSPARENT_COLOR) continue; // define o que consideras transparente
+            vg_draw_pixel(c->pos_x + x, c->pos_y + y, color);
+        }
     }
-
-    uint8_t src_bpp_for_cursor = 2;
-
-    float scale_factor = 1.5f; // Para 50% maior
-
-    uint16_t target_width = (uint16_t)(c->width * scale_factor);
-    uint16_t target_height = (uint16_t)(c->height * scale_factor);
-
-    vg_draw_scaled_pixmap(c->sprite, c->width, c->height, src_bpp_for_cursor, cursor->pos_x, cursor->pos_y, target_width, target_height);
 
     return 0;
 }
+
+
 
 void (update_mouse_location)(int16_t delta_x, int16_t delta_y){
     int32_t temp_x = cursor->pos_x;

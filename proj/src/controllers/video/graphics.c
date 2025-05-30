@@ -206,4 +206,23 @@ int vg_draw_scaled_pixmap(uint8_t *pixmap_data, uint16_t original_width, uint16_
     return 0;
 }
 
+int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
+
+    xpm_image_t img;
+
+    uint16_t *colors = (uint16_t*)xpm_load(xpm, XPM_5_6_5, &img);
+
+    for (int h = 0 ; h < img.height ; h++) {
+      for (int w = 0 ; w < img.width ; w++) {
+        // printf("%u",*colors); -> to check errors in colors
+        if(*colors == 0) {
+          colors++;
+          continue;
+        }
+        if (vg_draw_pixel(x + w, y + h, *colors) != 0) return 1;
+        colors++;
+      }
+    }
+    return 0;
+  }
 

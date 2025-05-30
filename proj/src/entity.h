@@ -12,6 +12,7 @@ typedef struct {
     unsigned int width;
     unsigned int height;
     uint8_t *sprite;
+    xpm_image_t img;
 } Cursor;
 
 
