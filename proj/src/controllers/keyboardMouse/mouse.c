@@ -13,7 +13,7 @@ uint8_t mouse_bytes[3];
 bool mouse_ready = false;
 
 
-// Subscrição das interrupções - Modo REENABLE para modo EXCLUSIVE
+
 int (mouse_subscribe_int)(uint8_t *bit_no) {
     if (bit_no == NULL) return 1;
     *bit_no = (uint8_t)mouse_hook_id;
@@ -26,7 +26,7 @@ int (mouse_subscribe_int)(uint8_t *bit_no) {
     return 0;
 }
 
-// Desativação
+
 int (mouse_unsubscribe_int)() {
     return sys_irqrmpolicy(&mouse_hook_id);
 }
@@ -34,14 +34,13 @@ int (mouse_unsubscribe_int)() {
 
 void (mouse_ih)() {
     uint8_t byte_just_read;
-    read_kbc_out(KBC_OUT_CMD, &byte_just_read, 1); // Lê o byte do KBC Output Buffer
+    read_kbc_out(KBC_OUT_CMD, &byte_just_read, 1);
     if (byte_index != 0 || byte_just_read & BIT(3)) {
         
             mouse_bytes[byte_index] = byte_just_read;
             byte_index++;
         
     } 
-    // Se o pacote de 3 bytes estiver completo
     if (byte_index == 3) {
         for (int i = 0; i < 3; i++) {
             mouse_packet.bytes[i] = mouse_bytes[i];
@@ -72,12 +71,10 @@ int (mouse_write)(uint8_t command_to_mouse) {
 
     do {
         attempts--;
-        // Dizer ao KBC que o próximo byte é para o rato
         if (kbc_write_byte(KBC_IN_CMD, 0xD4)) {
             printf("mouse_write: Failed to send 0xD4 to KBC\n");
             return 1;
         }
-        // Enviar o comando para o rato através do KBC Input Buffer (que o KBC encaminhará para o rato)
         if (kbc_write_byte(KBC_WRITE_CMD, command_to_mouse)) {
             printf("mouse_write: Failed to send command (0x%02X) to KBC for mouse\n", command_to_mouse);
             return 1;
@@ -85,9 +82,9 @@ int (mouse_write)(uint8_t command_to_mouse) {
         
             if (util_sys_inb(KBC_OUT_CMD, &mouse_response)) {
                 printf("mouse_write: Failed to read mouse response\n");
-                continue; // Tentar novamente
+                continue; // Try again
             }
-            if (mouse_response == MOUSE_ACK) { // MOUSE_ACK é 0xFA
+            if (mouse_response == MOUSE_ACK) { // MOUSE_ACK is 0xFA
                 return 0;
             } else {
                 printf("Mouse response: 0x%02X to command 0x%02X (attempt %d)\n", mouse_response, command_to_mouse, MAX_ATTEMPS - attempts);

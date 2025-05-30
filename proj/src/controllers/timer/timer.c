@@ -17,7 +17,7 @@ int (timer_subscribe_int)(uint8_t *bit_no_out) {
       return 1;
     }
 
-    return 0; // Sucesso
+    return 0;
 
 }
 
@@ -76,7 +76,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   if(st == NULL || timer < 0  || timer > 2) return 1; // interruption in case: the address memory is not defined, and the timer not int the correct interval
-  uint8_t RBC = (TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer)); // construímos o READ BACK COMMAND (ver tabela)
+  uint8_t RBC = (TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer));
   if(sys_outb(TIMER_CTRL, RBC) != 0) return 1; 
   if(util_sys_inb(TIMER_0 + timer, st)) return 1;
   return 0;
