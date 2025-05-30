@@ -57,7 +57,7 @@ void gameLoop(void) {
 
                         vg_swap_buffers();
                     }
-                    if (timer_global_counter % 1 == 0) { 
+                    /*if (timer_global_counter % 1 == 0) {
                         unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
                         memset(double_buffer, 0, frame_size);
 
@@ -66,7 +66,7 @@ void gameLoop(void) {
                         draw_cursor(cursor);
 
                         vg_swap_buffers();
-                    }
+                    }*/
                 }
                 if (msg.m_notify.interrupts & kbd_irq_set) {
                     kbc_ih();

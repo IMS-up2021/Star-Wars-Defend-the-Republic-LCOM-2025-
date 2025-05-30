@@ -14,16 +14,16 @@
 #define PAUSE_BTN_Y2   975
 
 // Resume button coordinates
-#define RESUME_BTN_X1  1085
-#define RESUME_BTN_X2  1200
-#define RESUME_BTN_Y1  910
-#define RESUME_BTN_Y2  975
+#define FAST_BTN_X1  1085
+#define FAST_BTN_X2  1200
+#define FAST_BTN_Y1  910
+#define FAST_BTN_Y2  975
 
 // Fast button coordinates
-#define FAST_BTN_X1    945
-#define FAST_BTN_X2    1055
-#define FAST_BTN_Y1    910
-#define FAST_BTN_Y2    975
+#define RESUME_BTN_X1    945
+#define RESUME_BTN_X2    1055
+#define RESUME_BTN_Y1    910
+#define RESUME_BTN_Y2    975
 
 typedef enum {
     PLAY_PAUSED,

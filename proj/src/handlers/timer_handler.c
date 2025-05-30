@@ -34,15 +34,19 @@ void timer_event_handler(gameState game_state) {
 
             switch (play_state) {
                 case PLAY_PAUSED:
-					timer_set_frequency(0, 1);
-          			break;
+                    timer_set_frequency(0, 1);
+                    set_timer_frequency_for_enemies(0);
+                    break;
                 case PLAY_NORMAL:
-					timer_set_frequency(0, 60); // Normal game speed
+                    timer_set_frequency(0, 60);
+                    set_timer_frequency_for_enemies(60);
                     break;
                 case PLAY_FAST:
-					timer_set_frequency(0, 120); // Fast game speed
+                    timer_set_frequency(0, 120);
+                    set_timer_frequency_for_enemies(120);
                     break;
             }
+
             break;
         case INSTRUCTIONS:
             draw_instructions();
