@@ -1,5 +1,5 @@
 /* XPM */
-static char *h2_attack1[] = {
+static const xpm_row_t h2_attack1[] = {
 /* columns rows colors chars-per-pixel */
 "54 60 57 1 ",
 "  c black",

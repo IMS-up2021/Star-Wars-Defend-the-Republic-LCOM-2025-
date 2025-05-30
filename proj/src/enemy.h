@@ -17,17 +17,27 @@ typedef struct {
 } Player;
 
 typedef struct {
-    unsigned int x_pos;
-    unsigned int y_pos;
-    unsigned int width;
-    unsigned int height;
-    unsigned int damage;
-    unsigned int health;
-    unsigned int pixels_per_sec;  // Movement in pixels per second
-    unsigned int attack_range;
+    uint16_t x_pos, y_pos;
+    uint16_t width, height;
     uint8_t *sprite;
+
+    int health;
+    int damage;
+    int attack_range;
+    int pixels_per_sec;
+
     bool enemy;
+    unsigned int attack_cooldown;
+
+    // Animation
+    bool is_attacking;
+    unsigned int attack_anim_timer;
+    uint8_t *default_sprite;
+    uint16_t default_width, default_height;
+    uint8_t *attack_sprite;
+    uint16_t attack_width, attack_height;
 } Character;
+
 
 typedef struct {
     unsigned int x;

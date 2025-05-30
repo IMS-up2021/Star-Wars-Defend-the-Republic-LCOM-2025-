@@ -1,7 +1,7 @@
 /* XPM */
-static char * bg1_attack1_xpm[] = {
+static const xpm_row_t bg1_attack1_xpm[] = {
 "44 68 12 1",
-" 	c None",
+" 	c #000000",
 ".	c #787878",
 "+	c #909090",
 "@	c #B0B0B0",
