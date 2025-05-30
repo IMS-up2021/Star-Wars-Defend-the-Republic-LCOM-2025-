@@ -41,24 +41,24 @@ Character *createEnemy(CharacterPos pos, int enemy_type) {
     switch (enemy_type) {
         case 0:
             if (e1_sprite_data) {
-                enemy->width = enemy1_img.width * 2.0f;
-                enemy->height = enemy1_img.height * 2.0f;
+                enemy->width = enemy1_img.width  ;
+                enemy->height = enemy1_img.height  ;
                 enemy->sprite = e1_sprite_data;
                 success = true;
             }
             break;
         case 1:
             if (e2_sprite_data) {
-                enemy->width = enemy2_img.width * 2.0f;
-                enemy->height = enemy2_img.height * 2.0f;
+                enemy->width = enemy2_img.width  ;
+                enemy->height = enemy2_img.height  ;
                 enemy->sprite = e2_sprite_data;
                 success = true;
             }
             break;
         case 2:
             if (e3_sprite_data) {
-                enemy->width = enemy3_img.width * 2.0f;
-                enemy->height = enemy3_img.height * 2.0f;
+                enemy->width = enemy3_img.width;
+                enemy->height = enemy3_img.height;
                 enemy->sprite = e3_sprite_data;
                 success = true;
             }

@@ -21,71 +21,21 @@
   <component name="ChangeListManager">
     <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/characters.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/characters.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/VBE.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/VBE.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/enemy.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/enemy.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/entity.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/entity.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/game.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/menu.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/menu.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/.gdbinit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/characters.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/entity.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/game.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/game.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/gameState.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/handlers/mouse_handler.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/handlers/mouse_handler.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/kbd_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/manager.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/menu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/mouse_handler.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/proj" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/proj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/timer_handler.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/timer_handler.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/proj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/timer_handler.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/trace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/trace.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/1selected.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/1selected.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/2selected.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/2selected.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/3selected.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/3selected.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_attack1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_attack2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_attack3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_attack3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_death1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_death1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_death2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_death2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_death3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_death3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_pose1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_run1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_run1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_run2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_run2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_attack1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_attack2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_attack3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_attack3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_death1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_death1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_death2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_death2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_death3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_death3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_pose1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_run1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_run1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_run2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_run2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_attack1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_attack2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_attack3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_attack3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death4.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death5.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death5.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_pose1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_run1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_run1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_run2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_run2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_attack1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_attack2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_death1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_death1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_death2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_death2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_death3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_death3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_jump1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_jump1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_jump2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_jump2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_pose1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_run3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_run3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_run4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_run4.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_run5.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_run5.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_attack1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_attack2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_attack3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_attack3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_attack4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_attack4.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_pose1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run4.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run5.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run5.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/idle_1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/idle_1.xpm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

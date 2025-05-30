@@ -32,6 +32,8 @@ void set_play_state(PlayState new_state) {
 
 void load_game_assets() {
     bg_game = xpm_load(selected1_xpm, XPM_5_6_5, &game_bg);
+    sel2 = xpm_load(selected2_xpm, XPM_5_6_5, &selected2);
+    sel3 = xpm_load(selected3_xpm, XPM_5_6_5, &selected3);
     if (!bg_game)
         printf("Failed to load game background XPM!\n");
 }
@@ -41,22 +43,11 @@ void draw_game() {
                       0, 0, mode_info.XResolution, mode_info.YResolution);
 }
 
-
-void load_characters2_assets(){
-    sel2 = xpm_load(selected2_xpm, XPM_5_6_5, &selected2);
-}
-
 void draw_characters2(){
-    load_characters2_assets();
     vg_draw_scaled_pixmap(sel2, selected2.width, selected2.height, 2, 0, 0, mode_info.XResolution, mode_info.YResolution);
 }
 
-void load_characters3_assets(){
-    sel3 = xpm_load(selected3_xpm, XPM_5_6_5, &selected3);
-}
-
 void draw_characters3(){
-    load_characters3_assets();
     vg_draw_scaled_pixmap(sel3, selected3.width, selected3.height, 2, 0, 0, mode_info.XResolution, mode_info.YResolution);
 }
 
