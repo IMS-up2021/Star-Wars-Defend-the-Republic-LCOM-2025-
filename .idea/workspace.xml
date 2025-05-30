@@ -21,20 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/.gdbinit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/characters.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/entity.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/game.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/game.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/gameState.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/handlers/mouse_handler.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/handlers/mouse_handler.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/kbd_handler.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/manager.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/menu.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/mouse_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/enemy.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/enemy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/enemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/enemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/gameState.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/gameState.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/handlers/timer_handler.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/handlers/timer_handler.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/proj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/timer_handler.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/trace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/trace.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
