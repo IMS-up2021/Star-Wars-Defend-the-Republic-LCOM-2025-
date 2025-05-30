@@ -5,6 +5,7 @@
 #include "enemy.h"
 
 #include "kbd_handler.h"
+#include "mouse_handler.h"
 #include "characters.h"
 
 #include "game.h"
@@ -29,6 +30,8 @@ void timer_event_handler(gameState game_state) {
                 default:
                     break;
             }
+
+            draw_player_units();
             
             draw_enemies();
 

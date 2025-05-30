@@ -5,7 +5,18 @@
 #include "entity.h"
 #include "game.h"
 #include "buttons.h"
+#include "characters.h"
+#include "kbd_handler.h"
 
+int kbd_state;
+
+CharacterPos player_spawn_positions[5] = {
+    {65, 190},
+    {65, 320},
+    {65, 449},
+    {65, 570},
+    {65, 699}
+};
 
 Cursor *cursor;
 Position mouse_pos;
@@ -39,29 +50,66 @@ void mouse_event_handler(struct packet mouse_packet) {
         if (!mouse_packet.lb) return;
 
         if (cursor->pos_x >= BTN1_X1 && cursor->pos_x <= BTN1_X2 &&
-        cursor->pos_y >= BTN1_Y1 && cursor->pos_y <= BTN1_Y2) {
-        printf("Button 1 clicked!\n");
-        return;
+            cursor->pos_y >= BTN1_Y1 && cursor->pos_y <= BTN1_Y2) {
+            if(kbd_state == 1) {
+                add_player_unit_to_game(player_spawn_positions[0], PLAYER_CHAR_TYPE_1);
+            } else if(kbd_state == 2) {
+                add_player_unit_to_game(player_spawn_positions[0], PLAYER_CHAR_TYPE_2);
+            } else if(kbd_state == 3) {
+                add_player_unit_to_game(player_spawn_positions[0], PLAYER_CHAR_TYPE_3);
+            }
+            printf("Spawned player unit at position 0\n");
+            return;
         }
         if (cursor->pos_x >= BTN2_X1 && cursor->pos_x <= BTN2_X2 &&
             cursor->pos_y >= BTN2_Y1 && cursor->pos_y <= BTN2_Y2) {
-            printf("Button 2 clicked!\n");
+            if(kbd_state == 1) {
+                add_player_unit_to_game(player_spawn_positions[1], PLAYER_CHAR_TYPE_1);
+            } else if(kbd_state == 2) {
+                add_player_unit_to_game(player_spawn_positions[1], PLAYER_CHAR_TYPE_2);
+            } else if(kbd_state == 3) {
+                add_player_unit_to_game(player_spawn_positions[1], PLAYER_CHAR_TYPE_3);
+            }
+            printf("Spawned player unit at position 1\n");
             return;
         }
         if (cursor->pos_x >= BTN3_X1 && cursor->pos_x <= BTN3_X2 &&
             cursor->pos_y >= BTN3_Y1 && cursor->pos_y <= BTN3_Y2) {
-            printf("Button 3 clicked!\n");
+            if(kbd_state == 1) {
+                add_player_unit_to_game(player_spawn_positions[2], PLAYER_CHAR_TYPE_1);
+            } else if(kbd_state == 2) {
+                add_player_unit_to_game(player_spawn_positions[2], PLAYER_CHAR_TYPE_2);
+            } else if(kbd_state == 3) {
+                add_player_unit_to_game(player_spawn_positions[2], PLAYER_CHAR_TYPE_3);
+            }
+            printf("Spawned player unit at position 2\n");
             return;
         }
         if (cursor->pos_x >= BTN4_X1 && cursor->pos_x <= BTN4_X2 &&
             cursor->pos_y >= BTN4_Y1 && cursor->pos_y <= BTN4_Y2) {
-            printf("Button 4 clicked!\n");}
+            if(kbd_state == 1) {
+                add_player_unit_to_game(player_spawn_positions[3], PLAYER_CHAR_TYPE_1);
+            } else if(kbd_state == 2) {
+                add_player_unit_to_game(player_spawn_positions[3], PLAYER_CHAR_TYPE_2);
+            } else if(kbd_state == 3) {
+                add_player_unit_to_game(player_spawn_positions[3], PLAYER_CHAR_TYPE_3);
+            }
+            printf("Spawned player unit at position 3\n");
+            return;
+        }
 
         if (cursor->pos_x >= BTN5_X1 && cursor->pos_x <= BTN5_X2 &&
             cursor->pos_y >= BTN5_Y1 && cursor->pos_y <= BTN5_Y2) {
-            printf("Button 5 clicked!\n");
-        return;
-    }
+            if(kbd_state == 1) {
+                add_player_unit_to_game(player_spawn_positions[4], PLAYER_CHAR_TYPE_1);
+            } else if(kbd_state == 2) {
+                add_player_unit_to_game(player_spawn_positions[4], PLAYER_CHAR_TYPE_2);
+            } else if(kbd_state == 3) {
+                add_player_unit_to_game(player_spawn_positions[4], PLAYER_CHAR_TYPE_3);
+            }
+            printf("Spawned player unit at position 4\n");
+            return;
+        }
 
         // Verifica se clicou no botão PAUSE
         if (cursor->pos_x >= PAUSE_BTN_X1 && cursor->pos_x <= PAUSE_BTN_X2 &&

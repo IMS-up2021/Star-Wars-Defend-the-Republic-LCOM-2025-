@@ -1,8 +1,8 @@
 /* XPM */
-static char *h3_pose1[] = {
+static const char *h3_pose1[] = {
 /* columns rows colors chars-per-pixel */
 "48 64 10 1 ",
-"  c black",
+"  c #000000",
 ". c #282828",
 "X c #780010",
 "o c #505050",
