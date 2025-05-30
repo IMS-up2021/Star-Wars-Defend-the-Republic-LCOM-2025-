@@ -1,6 +1,13 @@
+/**
+ * @file buttons
+ * @brief Defines coordinates for various UI buttons
+ * 
+ * This file contains macro definitions for the x and y coordinates
+ * that define the rectangular areas of different buttons used in the game's UI.
+ */
+
 #ifndef BUTTONS_H
 #define BUTTONS_H
-
 
 #define BTN5_X1  8
 #define BTN5_X2  152

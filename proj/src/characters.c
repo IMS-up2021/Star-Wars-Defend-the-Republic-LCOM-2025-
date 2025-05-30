@@ -1,3 +1,8 @@
+/**
+ * @file characters.c
+ * @brief Implements player character logic, including spawning, movement, attacking, and drawing.
+ */
+
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
 #include <stdlib.h>
@@ -9,9 +14,9 @@
 #include "controllers/video/graphics.h"
 #include "enemy.h" // for access to active enemies
 
-#define PLAYER_SPAWN_DELAY 180
-#define SCREEN_WIDTH 1275
-#define ATTACK_COOLDOWN_TICKS 120  // 2 seconds at 60Hz
+#define PLAYER_SPAWN_DELAY 180  /**< Delay in ticks before a new player unit can be spawned. */
+#define SCREEN_WIDTH 1275  /**< Width of the game screen in pixels. */
+#define ATTACK_COOLDOWN_TICKS 120  /**< Cooldown in ticks between player unit attacks (2 seconds at 60Hz). */
 
 #include "xpms/char1/pose_1.xpm"
 #include "xpms/char2/h2_pose1.xpm"
@@ -38,8 +43,11 @@ unsigned int timer_frequency_hz_hero = 60;
 
 extern CharacterPos player_spawn_positions[5];
 
-
-//Player *enemy_health;
+/**
+ * @brief Initializes player unit sprites. 
+ * Loads all XPM images for player characters and their attack animations.
+ * @return True if all sprites were loaded successfully, false otherwise.
+ */
 
 bool init_player_units(void) {
     pc1_sprite_data = xpm_load(h1_pose_1, XPM_5_6_5, &pc1_img);
@@ -72,6 +80,14 @@ bool init_player_units(void) {
 
     return (pc1_sprite_data && pc2_sprite_data && pc3_sprite_data && ah1_sprite_data && ah2_sprite_data && ah3_sprite_data);
 }
+
+/**
+ * @brief Creates a new player character unit.
+ * Allocates memory for a Character struct and initializes its properties based on the unit type.
+ * @param pos The initial position of the unit.
+ * @param unit_type The type of player unit to create (0, 1, or 2).
+ * @return A pointer to the newly created Character, or NULL if allocation fails or unit_type is invalid.
+ */
 
 Character *create_player_unit(CharacterPos pos, int unit_type) {
     Character *unit = (Character *)malloc(sizeof(Character));
@@ -151,6 +167,13 @@ Character *create_player_unit(CharacterPos pos, int unit_type) {
     return unit;
 }
 
+/**
+ * @brief Adds a newly created player unit to the game.
+ * Creates a player unit and adds it to the `active_player_chars` array.
+ * @param pos The initial position of the unit.
+ * @param unit_type The type of player unit to create.
+ */
+
 void add_player_unit_to_game(CharacterPos pos, int unit_type) {
     if (num_active_player_chars >= MAX_PLAYER_CHARACTERS) {
         printf("Max player characters reached.\n");
@@ -165,6 +188,17 @@ void add_player_unit_to_game(CharacterPos pos, int unit_type) {
         printf("Failed to create player unit of type %d.\n", unit_type);
     }
 }
+
+/**
+ * @brief Updates all active player units and handles spawning logic.
+ * This function iterates through active player units, updating their state:
+ *  - Checks for enemies in range and initiates attacks.
+ *  - Manages attack cooldown and animation.
+ *  - Moves units forward if no enemy is in range.
+ *  - Handles units reaching the screen edge (damaging enemy base).
+ *  - Despawns units that move off-screen.
+ *  This function does not actually spawn units; spawning is handled by `add_player_unit_to_game`.
+ */
 
 void update_and_spawn_player_units(void) {
     if (timer_frequency_hz_hero == 0) return;
@@ -251,6 +285,11 @@ void update_and_spawn_player_units(void) {
 
 }
 
+/**
+ *  @brief Draws all active player units on the screen.
+ *  Iterates through `active_player_chars` and draws each unit's current sprite.
+ */
+
 void draw_player_units(void) {
     for (int i = 0; i < num_active_player_chars; i++) {
         Character *unit = active_player_chars[i];
@@ -266,6 +305,11 @@ void draw_player_units(void) {
         }
     }
 }
+
+/**
+ * @brief Sets the timer frequency for player character updates.
+ * @param hz The new frequency in Hertz.
+ */
 
 void set_timer_frequency_for_heroes(unsigned int hz) {
     timer_frequency_hz_hero = hz;

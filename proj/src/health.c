@@ -1,3 +1,10 @@
+/**
+ * @file health.c
+ * @brief Implements health bar functionality for player and enemy.
+ * This includes initialization of health bar sprites, creation of health bar objects,
+ * drawing, and updating health bars based on health values.
+ */
+
 #include "health.h"
 
 xpm_image_t enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9, enemy10, enemy11;
@@ -9,6 +16,13 @@ uint8_t *player_1, *player_2, *player_3, *player_4, *player_5, *player_6, *playe
 Player *player_health;
 Player *enemy_health;
 
+/**
+ * @brief Initializes all health bar sprites and creates health bar objects.
+ * Loads XPM images for 11 states of both player and enemy health bars.
+ * Creates player and enemy health bar instances using `create_healthbar`.
+ * @return True if all initializations are successful (or at least appear to be, as it always returns true in the snippet).
+ *         Should ideally check XPM load results.
+ */
 bool init_healthbar(void) {
     enemy_1 = xpm_load(enemy1_xpm, XPM_5_6_5, &enemy1);
     enemy_2 = xpm_load(enemy2_xpm, XPM_5_6_5, &enemy2);
@@ -39,6 +53,15 @@ bool init_healthbar(void) {
     return true;
 }
 
+/**
+ * @brief Creates a health bar object.
+ * Allocates memory for a `Player` struct (used for health bars) and initializes its properties.
+ * @param x The x-coordinate for the health bar's top-left corner.
+ * @param y The y-coordinate for the health bar's top-left corner.
+ * @param is_player True if this health bar is for the player, false for the enemy.
+ *                  Determines the initial sprite and potentially other properties.
+ * @return A pointer to the newly created `Player` (health bar) object, or NULL on allocation failure.
+ */
 Player *create_healthbar(unsigned int x, unsigned int y, bool is_player) {
     Player *healthbar = (Player *)malloc(sizeof(Player));
     if (!healthbar) {
@@ -64,6 +87,12 @@ Player *create_healthbar(unsigned int x, unsigned int y, bool is_player) {
     return healthbar;
 }
 
+/**
+ * @brief Draws a health bar on the screen.
+ * Iterates through the health bar's current sprite and draws its pixels.
+ * @param healthbar Pointer to the `Player` (health bar) object to draw.
+ * @param is_player Unused parameter in this implementation, but could be used for context.
+ */
 void draw_healthbar(Player *healthbar, bool is_player) {
     if (!healthbar || !healthbar->sprite) return;
 
@@ -77,6 +106,13 @@ void draw_healthbar(Player *healthbar, bool is_player) {
         }
     }
 }
+
+/**
+ * @brief Updates the sprite of a health bar based on its current health value.
+ * Selects one of the 11 preloaded sprites corresponding to health ranges (100%, 90%, ..., 0%).
+ * @param healthbar Pointer to the `Player` (health bar) object to update.
+ * @param is_player True if updating the player's health bar, false for the enemy's.
+ */
 
 void update_healthbar(Player *healthbar, bool is_player) {
     if (!healthbar) return;

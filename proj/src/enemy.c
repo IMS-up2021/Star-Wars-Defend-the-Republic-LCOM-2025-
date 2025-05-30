@@ -1,3 +1,8 @@
+/**
+ * @file enemy.c
+ * @brief Implements enemy character logic, including spawning, movement, attacking, and drawing.
+ */
+
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
 #include <stdlib.h>
@@ -9,8 +14,8 @@
 #include "characters.h"
 #include "controllers/video/graphics.h"
 
-#define ENEMY_SPAWN_DELAY 180
-#define ATTACK_COOLDOWN_TICKS 120
+#define ENEMY_SPAWN_DELAY 180 /**< Delay in ticks before a new enemy unit can be spawned. */
+#define ATTACK_COOLDOWN_TICKS 120 /**< Cooldown in ticks between enemy unit attacks (2 seconds at 60Hz). */
 
 #include "xpms/enemy1/bg1_pose1.xpm"
 #include "xpms/enemy2/bg2_pose1.xpm"
@@ -34,13 +39,22 @@ int num_active_enemies = 0;
 unsigned int enemy_spawn_tick_counter = 0;
 unsigned int timer_frequency_hz_enemy = 60;
 
+/**
+ * @brief Predefined spawn positions for enemies.
+ * Enemies are typically spawned at the right edge of the screen at various y-coordinates.
+ */
 CharacterPos positions[5] = {
     {1200, 190}, {1200, 320}, {1200, 449}, {1200, 570}, {1200, 699}
 };
 
 
-//Player *player_health;
-
+/**
+ * @brief Creates a new enemy character.
+ * Allocates memory for a Character struct and initializes its properties based on the enemy type.
+ * @param pos The initial position of the enemy.
+ * @param enemy_type The type of enemy to create (0, 1, or 2).
+ * @return A pointer to the newly created Character, or NULL if allocation fails or enemy_type is invalid.
+ */
 Character *createEnemy(CharacterPos pos, int enemy_type) {
     Character *enemy = (Character *)malloc(sizeof(Character));
     if (!enemy) {
@@ -114,12 +128,28 @@ Character *createEnemy(CharacterPos pos, int enemy_type) {
     return enemy;
 }
 
+/**
+ * @brief Adds a newly created enemy to the game.
+ * Creates an enemy and adds it to the `active_enemies` array.
+ * @param pos The initial position of the enemy.
+ * @param enemy_type The type of enemy to create.
+ */
 void add_enemy_to_game(CharacterPos pos, int enemy_type) {
     if (num_active_enemies >= MAX_ENEMIES) return;
     Character *new_enemy = createEnemy(pos, enemy_type);
     if (new_enemy) active_enemies[num_active_enemies++] = new_enemy;
 }
 
+/**
+ * @brief Updates all active enemies and handles spawning new enemies.
+ * This function iterates through active enemies, updating their state:
+ * - Spawns new enemies periodically.
+ * - Checks for player units in range and initiates attacks.
+ * - Manages attack cooldown and animation.
+ * - Moves enemies forward if no player unit is in range.
+ * - Handles enemies reaching the player base (damaging player base).
+ * - Despawns enemies that move off-screen or are defeated.
+ */
 void update_and_spawn_enemies(void) {
     if (timer_frequency_hz_enemy == 0) return;
 
@@ -163,12 +193,11 @@ void update_and_spawn_enemies(void) {
                         enemy->height = enemy->attack_height;
                     }
                 }
-                break; // só ataca o primeiro jogador válido
+                break; 
             }
     
         }
 
-        // Lida com o temporizador da animação de ataque
         if (enemy->is_attacking) {
             enemy->attack_anim_timer--;
 
@@ -188,7 +217,6 @@ void update_and_spawn_enemies(void) {
             }
         }
 
-        // Só se move se não houver jogador na frente
         if (!player_in_range) {
             unsigned int pixels_to_move = enemy->pixels_per_sec / timer_frequency_hz_enemy;
             enemy->x_pos -= pixels_to_move;
@@ -199,7 +227,6 @@ void update_and_spawn_enemies(void) {
             printf("Player health: %u\n", player_health->health);
         }
 
-        // Despawning do inimigo se sair do ecrã
         if ((int)(enemy->x_pos + enemy->width) < 0) {
             free(enemy);
             for (int j = i; j < num_active_enemies - 1; j++) {
@@ -212,7 +239,10 @@ void update_and_spawn_enemies(void) {
     }
 }
 
-
+/**
+ * @brief Draws all active enemies on the screen.
+ * Iterates through `active_enemies` and draws each enemy's current sprite.
+ */
 void draw_enemies(void) {
     for (int i = 0; i < num_active_enemies; i++) {
         Character *enemy = active_enemies[i];
@@ -229,6 +259,11 @@ void draw_enemies(void) {
     }
 }
 
+/**
+ * @brief Initializes enemy sprites.
+ * Loads all XPM images for enemy characters and their attack animations.
+ * @return True if all default sprites were loaded successfully, false otherwise. Note: attack sprites are also loaded but only default sprite success is checked in return.
+ */
 bool init_enemies(void) {
     e1_sprite_data = xpm_load(bg1_pose1_xpm, XPM_5_6_5, &enemy1_img);
     e2_sprite_data = xpm_load(bg2_pose1_xpm, XPM_5_6_5, &enemy2_img);
@@ -262,6 +297,10 @@ bool init_enemies(void) {
     return (e1_sprite_data && e2_sprite_data && e3_sprite_data);
 }
 
+/**
+ * @brief Sets the timer frequency for enemy character updates.
+ * @param hz The new frequency in Hertz.
+ */
 void set_timer_frequency_for_enemies(unsigned int hz) {
     timer_frequency_hz_enemy = hz;
 }
