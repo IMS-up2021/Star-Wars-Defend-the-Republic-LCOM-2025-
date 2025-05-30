@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Enemy sprites loaded: e1, e2, e3
 Enemy attack sprites loaded: a1, a2, a3
 Enemy attack2 sprites loaded: o1, o2, o3
@@ -16,5 +17,32 @@ Scancode: 0x0 (make code)
 Scancode: 0x0 (make code)
 Scancode: 0x1 (make code)
 Scancode: 0x81 (break code)
+=======
+Cursor position updated: x = 260, y = 140
+Cursor position updated: x = 261, y = 140
+Cursor position updated: x = 515, y = 202
+Cursor position updated: x = 770, y = 246
+Cursor position updated: x = 1025, y = 330
+Cursor position updated: x = 1274, y = 433
+Cursor position updated: x = 1274, y = 496
+Cursor position updated: x = 1274, y = 697
+Cursor position updated: x = 1274, y = 746
+Cursor position updated: x = 1274, y = 916
+Cursor position updated: x = 1274, y = 972
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+Cursor position updated: x = 1274, y = 988
+>>>>>>> bfe1229 (need merge)
 Scancode: 0x1 (make code)
 Scancode: 0x81 (break code)
