@@ -1,3 +1,12 @@
+/**
+ * @file gameState.c
+ * @brief Manages the main game loop, game states, and event dispatching.
+ *
+ * This file contains the central game loop `gameLoop()`, which handles
+ * hardware interrupts (timer, keyboard, mouse) and dispatches events
+ * to appropriate handlers based on the current game state.
+ */
+
 #include <lcom/lcf.h>
 
 #include "gameState.h"
@@ -32,6 +41,13 @@ gameState state = MAIN_MENU;
 unsigned int health_player = MAX_HEALTH;
 unsigned int health_enemy = MAX_HEALTH;
 
+/**
+ * @brief The main game loop.
+ *
+ * Initializes game components and then enters a loop to process hardware interrupts
+ * (timer, keyboard, mouse). It calls appropriate handlers for these events and manages
+ * screen updates with double buffering. The loop continues until the game state is set to EXIT.
+ */
 void gameLoop(void) {
     int ipc_status, r;
     message msg;

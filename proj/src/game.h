@@ -1,3 +1,8 @@
+/**
+ * @file game.h
+ * @brief Defines game states, UI button coordinates for game controls, and function prototypes for game logic.
+ */
+
 #ifndef GAME_H
 #define GAME_H
 
@@ -33,13 +38,32 @@ typedef enum {
 
 extern PlayState play_state;
 
+/**
+ * @brief Sets the current play state of the game.
+ * @param new_state The new PlayState to set.
+ */
 void set_play_state(PlayState new_state);
 
+/**
+ * @brief Loads assets required for the game screen (e.g., backgrounds).
+ */
 void load_game_assets(void);
+
+/**
+ * @brief Draws the main game screen elements (e.g., background).
+ */
 void draw_game(void);
 
+/**
+ * @brief Draws an alternate game background or UI element (referred to as "characters2").
+ * @note The function name might be misleading as it likely draws a background/UI, not characters.
+ */
 void draw_characters2(void);
 
+/**
+ * @brief Draws another alternate game background or UI element (referred to as "characters3").
+ * @note The function name might be misleading as it likely draws a background/UI, not characters.
+ */
 void draw_characters3(void);
 
 #endif // GAME_H
