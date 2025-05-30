@@ -38,10 +38,8 @@ void set_play_state(PlayState new_state);
 void load_game_assets(void);
 void draw_game(void);
 
-void load_characters2_assets(void);
 void draw_characters2(void);
 
-void load_characters3_assets(void);
 void draw_characters3(void);
 
 #endif // GAME_H
