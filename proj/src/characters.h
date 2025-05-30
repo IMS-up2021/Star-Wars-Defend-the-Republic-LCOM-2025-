@@ -20,8 +20,9 @@ Character *create_player_unit(CharacterPos pos, int unit_type);
 void add_player_unit_to_game(CharacterPos pos, int unit_type);
 
 void handle_player_unit_spawn_input(uint8_t scancode); 
-void update_player_units(void); // For movement, AI, etc.
+void update_and_spawn_player_units(void); // For movement, AI, etc.
 void draw_player_units(void);
+void set_timer_frequency_for_heroes(unsigned int hz);
 
 
 #endif

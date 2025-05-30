@@ -17,6 +17,7 @@ void timer_event_handler(gameState game_state) {
             break;
         case PLAYING:
             update_and_spawn_enemies();
+            update_and_spawn_player_units();
             switch(kbd_state){
                 case 2:
                     draw_characters2();
@@ -39,14 +40,17 @@ void timer_event_handler(gameState game_state) {
                 case PLAY_PAUSED:
                     timer_set_frequency(0, 1);
                     set_timer_frequency_for_enemies(0);
+                    set_timer_frequency_for_heroes(0);
                     break;
                 case PLAY_NORMAL:
                     timer_set_frequency(0, 60);
                     set_timer_frequency_for_enemies(60);
+                    set_timer_frequency_for_heroes(60);
                     break;
                 case PLAY_FAST:
                     timer_set_frequency(0, 120);
                     set_timer_frequency_for_enemies(120);
+                    set_timer_frequency_for_heroes(120);
                     break;
             }
 

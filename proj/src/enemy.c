@@ -13,7 +13,7 @@ Character *active_enemies[MAX_ENEMIES];
 int num_active_enemies = 0;
 unsigned int enemy_spawn_tick_counter = 0;
 
-unsigned int timer_frequency_hz = 60; // Default timer frequency
+unsigned int timer_frequency_hz_enemy = 60; // Default timer frequency
 
 CharacterPos positions[5] = {
     {1200, 190},
@@ -91,7 +91,7 @@ void add_enemy_to_game(CharacterPos pos, int enemy_type) {
 }
 
 void update_and_spawn_enemies(void) {
-    if (timer_frequency_hz == 0) return;
+    if (timer_frequency_hz_enemy  == 0) return;
 
     enemy_spawn_tick_counter++;
     if (enemy_spawn_tick_counter >= ENEMY_SPAWN_DELAY) {
@@ -110,7 +110,7 @@ void update_and_spawn_enemies(void) {
             continue;
         }
 
-        unsigned int pixels_to_move = enemy->pixels_per_sec / timer_frequency_hz;
+        unsigned int pixels_to_move = enemy->pixels_per_sec / timer_frequency_hz_enemy ;
         enemy->x_pos -= pixels_to_move;
 
         if ((int)(enemy->x_pos + enemy->width) < 0) {
@@ -159,5 +159,5 @@ bool init_enemies(void) {
 }
 
 void set_timer_frequency_for_enemies(unsigned int hz) {
-    timer_frequency_hz = hz;
+    timer_frequency_hz_enemy  = hz;
 }

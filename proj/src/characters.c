@@ -1,14 +1,19 @@
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "characters.h"
 #include "gameState.h"
 #include "controllers/video/graphics.h"
 
-#include "characters.h"
-#include "gameState.h" 
+// Define constantes que faltavam
+#define PLAYER_SPAWN_DELAY 180  // Exemplo: spawn a cada 3 segundos, com timer a 60 Hz
+#define SCREEN_WIDTH 1275     // Define conforme a resolução do teu jogo
 
 
-#include "xpms/char1/pose_1.xpm" 
+// Inclui os XPMs (assumindo os nomes corretos conforme os erros)
+#include "xpms/char1/pose_1.xpm"
 #include "xpms/char2/h2_pose1.xpm"
 #include "xpms/char3/h3_pose1.xpm"
 
@@ -18,12 +23,16 @@ xpm_image_t pc1_img, pc2_img, pc3_img;
 // --- Active Player Characters Array ---
 Character *active_player_chars[MAX_PLAYER_CHARACTERS];
 int num_active_player_chars = 0;
+unsigned int player_spawn_tick_counter = 0;
+
+unsigned int timer_frequency_hz_hero = 60; // Default timer frequency
 
 
- extern CharacterPos player_spawn_positions[5];
+// Suponho que tens isto declarado no teu código ou header
+extern CharacterPos player_spawn_positions[5];
 
 bool init_player_units(void) {
-    pc1_sprite_data = xpm_load(char_1, XPM_5_6_5, &pc1_img);
+    pc1_sprite_data = xpm_load(h1_pose_1, XPM_5_6_5, &pc1_img);
     pc2_sprite_data = xpm_load(h2_pose1, XPM_5_6_5, &pc2_img);
     pc3_sprite_data = xpm_load(h3_pose1, XPM_5_6_5, &pc3_img);
 
@@ -32,6 +41,7 @@ bool init_player_units(void) {
     if (!pc3_sprite_data) printf("Failed to load Player Char 3 sprite\n");
 
     num_active_player_chars = 0;
+    player_spawn_tick_counter = 0;
 
     return (pc1_sprite_data && pc2_sprite_data && pc3_sprite_data);
 }
@@ -47,42 +57,38 @@ Character *create_player_unit(CharacterPos pos, int unit_type) {
     unit->y_pos = pos.y;
     unit->enemy = false;
 
-    bool success = false;
     switch (unit_type) {
-        case PLAYER_CHAR_TYPE_1:
+        case 0: // PLAYER_CHAR_TYPE_1
             if (pc1_sprite_data) {
                 unit->width = pc1_img.width;
                 unit->height = pc1_img.height;
                 unit->sprite = pc1_sprite_data;
-                unit->damage = 15; // Example stats
+                unit->damage = 15;
                 unit->health = 120;
-                unit->speed = 3;
+                unit-> pixels_per_sec = 120;
                 unit->attack_range = 60;
-                success = true;
             }
             break;
-        case PLAYER_CHAR_TYPE_2:
+        case 1: // PLAYER_CHAR_TYPE_2
             if (pc2_sprite_data) {
                 unit->width = pc2_img.width;
                 unit->height = pc2_img.height;
                 unit->sprite = pc2_sprite_data;
                 unit->damage = 10;
                 unit->health = 80;
-                unit->speed = 4;
-                unit->attack_range = 100; // e.g., a ranged unit
-                success = true;
+                unit-> pixels_per_sec = 120;
+                unit->attack_range = 100;
             }
             break;
-        case PLAYER_CHAR_TYPE_3:
+        case 2: // PLAYER_CHAR_TYPE_3
             if (pc3_sprite_data) {
                 unit->width = pc3_img.width;
                 unit->height = pc3_img.height;
                 unit->sprite = pc3_sprite_data;
-                unit->damage = 25; // e.g., a tanky unit
+                unit->damage = 25;
                 unit->health = 200;
-                unit->speed = 1;
+                unit-> pixels_per_sec = 120;
                 unit->attack_range = 40;
-                success = true;
             }
             break;
         default:
@@ -90,11 +96,6 @@ Character *create_player_unit(CharacterPos pos, int unit_type) {
             break;
     }
 
-    if (!success || unit->sprite == NULL) {
-        printf("Error: Sprite data not loaded or invalid for player unit type %d.\n", unit_type);
-        free(unit);
-        return NULL;
-    }
     return unit;
 }
 
@@ -106,11 +107,36 @@ void add_player_unit_to_game(CharacterPos pos, int unit_type) {
 
     Character *new_unit = create_player_unit(pos, unit_type);
     if (new_unit) {
-        active_player_chars[num_active_player_chars] = new_unit;
-        num_active_player_chars++;
+        active_player_chars[num_active_player_chars++] = new_unit;
         printf("Player unit type %d spawned at (%u, %u).\n", unit_type, pos.x, pos.y);
     } else {
         printf("Failed to create player unit of type %d.\n", unit_type);
+    }
+}
+
+void update_and_spawn_player_units(void) {
+  if (timer_frequency_hz_hero == 0) return;
+
+    for (int i = 0; i < num_active_player_chars;) {
+        Character *unit = active_player_chars[i];
+        if (!unit) {
+            i++;
+            continue;
+        }
+
+        unsigned int pixels_to_move = unit->pixels_per_sec / timer_frequency_hz_hero; // Ajusta se quiseres por timer_frequency
+        unit->x_pos += pixels_to_move; // Exemplo: player anda para a direita (contrário do inimigo)
+
+        if ((int)unit->x_pos > SCREEN_WIDTH) { // Saiu do ecrã, remove
+            free(unit);
+            for (int j = i; j < num_active_player_chars - 1; j++) {
+                active_player_chars[j] = active_player_chars[j + 1];
+            }
+            active_player_chars[num_active_player_chars - 1] = NULL;
+            num_active_player_chars--;
+        } else {
+            i++;
+        }
     }
 }
 
@@ -128,5 +154,8 @@ void draw_player_units(void) {
             }
         }
     }
-    printf("All player units drawn.\n");
+}
+
+void set_timer_frequency_for_heroes(unsigned int hz) {
+    timer_frequency_hz_hero = hz;
 }
