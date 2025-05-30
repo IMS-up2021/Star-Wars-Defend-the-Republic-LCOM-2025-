@@ -21,13 +21,71 @@
   <component name="ChangeListManager">
     <list default="true" id="d3f63942-373f-47e6-bb10-e93c287ab835" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/graphics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/characters.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/characters.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/controllers/video/VBE.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/controllers/video/VBE.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/enemy.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/enemy.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/entity.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/entity.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/entity.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/game.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/game.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/menu.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/menu.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj/src/proj" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/proj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/jump_8.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/jump_8.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj/src/xpms/mouse_cursor.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/mouse_cursor.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/timer_handler.o" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/timer_handler.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/trace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/trace.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/1selected.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/1selected.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/2selected.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/2selected.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/3selected.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/3selected.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_attack1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_attack2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_attack3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_attack3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_death1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_death1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_death2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_death2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_death3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_death3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_pose1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_run1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_run1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg1_run2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg1_run2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_attack1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_attack2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_attack3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_attack3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_death1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_death1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_death2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_death2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_death3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_death3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_pose1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_run1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_run1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg2_run2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg2_run2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_attack1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_attack2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_attack3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_attack3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death4.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_death5.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_death5.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_pose1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_run1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_run1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/bg3_run2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/bg3_run2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_attack1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_attack2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_death1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_death1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_death2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_death2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_death3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_death3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_jump1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_jump1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_jump2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_jump2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_pose1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_run3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_run3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_run4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_run4.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h2_run5.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h2_run5.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_attack1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_attack1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_attack2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_attack2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_attack3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_attack3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_attack4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_attack4.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_pose1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_pose1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run3.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run4.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/h3_run5.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/h3_run5.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj/src/xpms/idle_1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/proj/src/xpms/idle_1.xpm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +98,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="handler_game" />
+        <entry key="$PROJECT_DIR$" value="proj_anime" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,28 +115,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.advertisement.text.has.clang-format&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;handler__mouse&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jose-b-reis/repos/MINIX-LCOM/shared/grupo_2leic18_2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.advertisement.text.has.clang-format": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "proj__enemy",
+    "last_opened_file_path": "/home/jose-b-reis/repos/MINIX-LCOM/shared/grupo_2leic18_2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -1,7 +1,8 @@
-/* XPM */
-static char * bg1_pose1_xpm[] = {
+#include <lcom/xpm.h>
+
+static const xpm_row_t bg1_pose1_xpm[] = {
 "35 71 12 1",
-" 	c None",
+" 	c #000000",
 ".	c #909090",
 "+	c #A0A0A0",
 "@	c #787878",

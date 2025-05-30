@@ -1,7 +1,7 @@
 /* XPM */
 static char * bg1_death3_xpm[] = {
 "69 33 13 1",
-" 	c None",
+" 	c #000000",
 ".	c #787878",
 "+	c #A0A0A0",
 "@	c #909090",

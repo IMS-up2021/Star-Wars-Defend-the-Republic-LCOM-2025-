@@ -1,7 +1,7 @@
 /* XPM */
 static char * bg2_attack3_xpm[] = {
 "31 66 15 1",
-" 	c None",
+" 	c #000000",
 ".	c #C06048",
 "+	c #B85030",
 "@	c #A04830",
