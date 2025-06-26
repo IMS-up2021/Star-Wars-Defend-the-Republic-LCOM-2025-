@@ -9,6 +9,7 @@
 #include <lcom/lcf.h>
 #include "controllers/video/graphics.h"
 #include "xpms/mouse_cursor.xpm"
+#include "xpms/button_cursor.xpm" 
 #include "controllers/keyboardMouse/mouse.h"
 
 Cursor *cursor;
@@ -34,6 +35,7 @@ Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm) {
         return NULL;
     }
 
+    cursor->sprite = xpm_load(xpm, XPM_5_6_5, &cursor->img);
     if (cursor->sprite == NULL) {
         printf("Error loading xpm image\n");
         free(cursor);
@@ -42,8 +44,8 @@ Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm) {
 
     cursor->pos_x = pos_x;
     cursor->pos_y = pos_y;
-    cursor->sprite = xpm_load(xpm, XPM_DIRECT, &cursor->img);
-
+    cursor->width = cursor->img.width;
+    cursor->height = cursor->img.height;
 
     return cursor;
 }
@@ -56,6 +58,7 @@ Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm) {
  */
 bool init_cursor(void) {
     cursor = create_cursor(mouse_pos.x, mouse_pos.y, (xpm_map_t)mouse_cursor_xpm);
+
     if (cursor == NULL) {
         printf("Error creating cursor\n");
         return false;
@@ -71,12 +74,12 @@ bool init_cursor(void) {
 int draw_cursor(Cursor *c) {
     if (!c || !c->sprite) return 1;
 
-    uint32_t *pixels = (uint32_t *)c->img.bytes;
+    uint16_t *pixels = (uint16_t *)c->img.bytes;
 
     for (uint16_t y = 0; y < c->img.height; y++) {
         for (uint16_t x = 0; x < c->img.width; x++) {
-            uint32_t color = pixels[y * c->img.width + x];
-            if (color == TRANSPARENT_COLOR) continue; // define o que consideras transparente
+            uint16_t color = pixels[y * c->img.width + x];
+            if (color == TRANSPARENT_COLOR) continue;
             vg_draw_pixel(c->pos_x + x, c->pos_y + y, color);
         }
     }
