@@ -9,7 +9,9 @@
 #include <stdbool.h>
 #include <lcom/lcf.h>
 
-
+#include "menu.h"
+#include "game.h"
+#include "buttons.h"
 
 typedef struct {
     unsigned int pos_x;
@@ -17,7 +19,9 @@ typedef struct {
     unsigned int width;
     unsigned int height;
     uint8_t *sprite;
+    uint8_t *button_sprite;
     xpm_image_t img;
+    xpm_image_t button_img;
 } Cursor;
 
 /**

@@ -28,22 +28,38 @@ struct packet mouse_packet;
  * @param xpm The XPM map (sprite) for the cursor.
  * @return A pointer to the newly created Cursor, or NULL on failure (memory allocation or XPM loading).
  */
-Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t xpm) {
+Cursor *create_cursor(unsigned int pos_x, unsigned int pos_y, xpm_map_t default_xpm) {
     Cursor *cursor = (Cursor *)malloc(sizeof(Cursor));
     if (cursor == NULL) {
         printf("Error allocating memory for cursor\n");
         return NULL;
     }
 
-    cursor->sprite = xpm_load(xpm, XPM_5_6_5, &cursor->img);
+    // Inicializar ponteiros para NULL para segurança
+    cursor->sprite = NULL;
+    cursor->button_sprite = NULL;
+
+    // Carregar o sprite padrão
+    cursor->sprite = xpm_load(default_xpm, XPM_5_6_5, &cursor->img);
     if (cursor->sprite == NULL) {
-        printf("Error loading xpm image\n");
+        printf("Error loading default cursor XPM\n");
         free(cursor);
         return NULL;
     }
 
+    // Carregar o sprite de botão
+    cursor->button_sprite = xpm_load((xpm_map_t)button_cursor_xpm, XPM_5_6_5, &cursor->button_img);
+    if (cursor->button_sprite == NULL) {
+        printf("Error loading button cursor XPM\n");
+        free(cursor->sprite); // Libertar o que já foi carregado
+        free(cursor);
+        return NULL;
+    }
+
+    // Inicializar propriedades
     cursor->pos_x = pos_x;
     cursor->pos_y = pos_y;
+    // As dimensões devem ser as do sprite padrão inicialmente
     cursor->width = cursor->img.width;
     cursor->height = cursor->img.height;
 
@@ -67,18 +83,70 @@ bool init_cursor(void) {
 }
 
 /**
- * @brief Draws the specified cursor on the screen.
+ * @brief Checks if the cursor is currently over any active button based on the game state.
+ * @return True if the cursor is over a button, false otherwise.
+ */
+bool is_cursor_on_any_button() {
+    // Usa a posição do cursor global
+    unsigned int x = cursor->pos_x;
+    unsigned int y = cursor->pos_y;
+    
+    switch (state) {
+        case MAIN_MENU:
+            if (x >= PLAY_BTN_X1 && x <= PLAY_BTN_X2 && y >= PLAY_BTN_Y1 && y <= PLAY_BTN_Y2) return true;
+            if (x >= INSTR_BTN_X1 && x <= INSTR_BTN_X2 && y >= INSTR_BTN_Y1 && y <= INSTR_BTN_Y2) return true;
+            if (x >= EXIT_BTN_X1 && x <= EXIT_BTN_X2 && y >= EXIT_BTN_Y1 && y <= EXIT_BTN_Y2) return true;
+            break;
+        case PLAYING:
+            if (x >= BTN1_X1 && x <= BTN1_X2 && y >= BTN1_Y1 && y <= BTN1_Y2) return true;
+            if (x >= BTN2_X1 && x <= BTN2_X2 && y >= BTN2_Y1 && y <= BTN2_Y2) return true;
+            if (x >= BTN3_X1 && x <= BTN3_X2 && y >= BTN3_Y1 && y <= BTN3_Y2) return true;
+            if (x >= BTN4_X1 && x <= BTN4_X2 && y >= BTN4_Y1 && y <= BTN4_Y2) return true;
+            if (x >= BTN5_X1 && x <= BTN5_X2 && y >= BTN5_Y1 && y <= BTN5_Y2) return true;
+            if (x >= PAUSE_BTN_X1 && x <= PAUSE_BTN_X2 && y >= PAUSE_BTN_Y1 && y <= PAUSE_BTN_Y2) return true;
+            if (x >= RESUME_BTN_X1 && x <= RESUME_BTN_X2 && y >= RESUME_BTN_Y1 && y <= RESUME_BTN_Y2) return true;
+            if (x >= FAST_BTN_X1 && x <= FAST_BTN_X2 && y >= FAST_BTN_Y1 && y <= FAST_BTN_Y2) return true;
+            break;
+        case INSTRUCTIONS:
+            if (x >= BACK_BTN_X1 && x <= BACK_BTN_X2 && y >= BACK_BTN_Y1 && y <= BACK_BTN_Y2) return true;
+            break;
+        default:
+            return false;
+    }
+    return false;
+}
+
+/**
+ * @brief Draws the cursor, selecting the appropriate sprite based on its position.
  * @param c Pointer to the Cursor object to draw.
  * @return 0 on success, 1 if the cursor or its sprite is NULL.
  */
 int draw_cursor(Cursor *c) {
-    if (!c || !c->sprite) return 1;
+    if (c == NULL) return 1;
 
-    uint16_t *pixels = (uint16_t *)c->img.bytes;
+    uint8_t *active_sprite_data;
+    xpm_image_t active_img;
 
-    for (uint16_t y = 0; y < c->img.height; y++) {
-        for (uint16_t x = 0; x < c->img.width; x++) {
-            uint16_t color = pixels[y * c->img.width + x];
+    // Decide qual sprite e qual imagem usar
+    if (is_cursor_on_any_button()) {
+        active_sprite_data = c->button_sprite;
+        active_img = c->button_img;
+    } else {
+        active_sprite_data = c->sprite;
+        active_img = c->img;
+    }
+
+    // Verifica se os dados do sprite ativo são válidos
+    if (active_sprite_data == NULL) return 1;
+
+    // Extrai os dados dos pixeis da imagem ativa
+    uint16_t *pixels = (uint16_t *)active_img.bytes;
+    unsigned int width = active_img.width;
+    unsigned int height = active_img.height;
+
+    for (uint16_t y = 0; y < height; y++) {
+        for (uint16_t x = 0; x < width; x++) {
+            uint16_t color = pixels[y * width + x];
             if (color == TRANSPARENT_COLOR) continue;
             vg_draw_pixel(c->pos_x + x, c->pos_y + y, color);
         }
